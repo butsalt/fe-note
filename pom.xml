@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>butsalt</groupId>
+	<artifactId>learn</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>learn Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<build>
+		<finalName>learn</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.0.6.v20130930</version>
+				<configuration>
+					<httpConnector>
+						<port>7070</port>
+					</httpConnector>
+					<webApp>
+						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
+						<contextPath>/</contextPath>
+					</webApp>
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
