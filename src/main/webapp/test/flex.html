@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+<style>
+	*{
+		margin:0 0;
+		padding:0 0;
+	}
+	html{
+		height:100%;
+	}
+	body{
+		height:100%;
+	}
+	div div{
+		margin:3px 0px;
+		background-color:#741;
+		color:#ddd;
+	}
+	/**
+	flex:1 1 auto;
+	第一个参数：	当父级容器的主轴上还有空余空间，按照权数参加剩余空间的分配
+	第二个参数：	当父级容器的主轴上空间不足，按照权数缩窄
+	第三个参数： 计算父级容器是否还有剩余空间的标准，auto时采用它自身在主轴上未发生扩张/紧缩时的实际长度
+	**/
+</style>
+</head>
+<body>
+<div style="height:100%;display:flex;flex-direction:column">
+	<div style="flex:1 1 auto;">
+		div1
+	</div>
+	<div style="flex:1 1 auto;">
+		div2
+	</div>
+	<div style="flex:none">
+		div333333333333
+	</div>
+</div>
+</body>
+</html>
