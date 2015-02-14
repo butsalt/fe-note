@@ -11,8 +11,14 @@
 	html,body{
 		width:100%;
 		height:100%;
+		position:relative;
 	}
 	div{
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-left:-50px;
+		margin-top:-50px;
 		width:100px;
 		height:100px;
 		background-color:#cbd;
@@ -25,18 +31,16 @@
 	$(function(){
 		var d = $('div');
 		var tween = new TWEEN.Tween({
-			x:0,
-			y:0
+			z:0
 		})
 		.to({
-			x:200,
-			y:200
-		},2000)
+			z:300
+		},2500)
 		.yoyo(true)
 		.repeat(1)
 		.easing(TWEEN.Easing.Elastic.InOut)
 		.onUpdate(function(){
-			d.css('transform','translate3d('+this.x+'px,'+this.y+'px,0px)');
+			d.css('transform','perspective(400px) translate3d(0px,0px,'+this.z+'px)');
 		})
 		.start();
 		
