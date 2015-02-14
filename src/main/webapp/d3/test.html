@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	html,body{
+		width:100%;
+		height:100%;
+	}
+</style>
+<script type="text/javascript" src="../scripts/jquery-2.1.3.js"></script>
+<script type="text/javascript" src="../scripts/d3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var data = [50,10,90,30];
+		var colors = d3.scale.category10();
+		d3.select(document.body)
+			.selectAll('div')
+			.data(data)
+			.enter()
+			.append('div')
+			.style('height','100px')
+			.style('background-color',function(d,i){
+				return colors(i);
+			})
+			.style('width',function(d,i){
+				return d+'px';
+			});
+		//绑定的数据
+		d3.select('div').datum(300).transition().delay(1000).duration(200).style('width',function(d,i){
+			return d+'px';
+		});
+		//tween 根据开始时间，当前时间，总时间段，来确定一个[0,1]之间的数字
+		//interpolate 根据开始数据，结束数据和tween返回的[0,1]之间的数字来返回插入值
+	});
+</script>
+</head>
+<body>
+</body>
+</html>
