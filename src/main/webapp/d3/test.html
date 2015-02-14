@@ -32,9 +32,13 @@
 				return d+'px';
 			});
 		//绑定的数据
+		//调用transition之后设置的style相当于是设置元素最终的样式，在动画过程中不会被调用
 		d3.select('div').datum(300).transition().delay(1000).duration(200).style('width',function(d,i){
 			return d+'px';
-		});
+		})
+			.styleTween('background-color',function(d,i,a){
+				return d3.interpolateRgb(a, '#cbd')
+			});
 		//tween 根据开始时间，当前时间，总时间段，来确定一个[0,1]之间的数字
 		//interpolate 根据开始数据，结束数据和tween返回的[0,1]之间的数字来返回插入值
 	});
