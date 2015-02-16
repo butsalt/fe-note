@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	html,body{
+		width:100%;
+	}
+	div{
+		width:100px;
+		height:100px;
+		background-color:#cbd;
+		border:1px black solid;
+	}
+	.first{
+		float:left;
+	}
+	/**
+		块的左侧和右侧都不允许出现浮动元素
+	**/
+	.second{
+		clear:both;
+	}
+	.third{
+		float:right;
+	}
+</style>
+</head>
+<body>
+	<div class="first">1</div>
+	<div class="second">2</div>
+	<div class="third">3</div>
+</body>
+</html>
