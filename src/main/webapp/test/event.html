@@ -7,6 +7,7 @@
 	*{
 		margin:0;
 		padding:0;
+		line-height:22px;
 	}
 	.outer{
 		width:2000px;
@@ -28,23 +29,41 @@
 		width:500px;
 		height:500px;
 	}
+	.info{
+		position:fixed;
+		width:200px;
+		height:150px;
+		background-color:#cef;
+		right:0px;
+		top:0px;
+		z-index:500;
+	}
+	
 </style>
+<script type="text/javascript" src="../scripts/jquery-2.1.3.js"></script>
 <script type="text/javascript">
 	document.addEventListener('click',function(e){
-		console.log('>>>>>>');
-		console.log('pageY:'+e.pageY);//参考整个文档的左上角
-		console.log('clientY:'+e.clientY);//参考当前可视区域的左上角
-		console.log('screenY:'+e.screenY);//参考整个屏幕的左上角
-		console.log('layerY:'+e.layerY);//参考父节点的左上角
-		console.log('offsetY:'+e.offsetY);//参考自己的左上角
-		console.log('Y:'+e.y);//同clientY
+		var html = '';
+		html += 'pageY:'+e.pageY;//参考整个文档的左上角
+		html += ' <br/>';
+		html += 'clientY:'+e.clientY;//参考当前可视区域的左上角
+		html += ' <br/>';
+		html += 'screenY:'+e.screenY;//参考整个屏幕的左上角
+		html += ' <br/>';
+		html += 'layerY:'+e.layerY;//参考父节点的左上角
+		html += ' <br/>';
+		html +='offsetY:'+e.offsetY;//参考自己的左上角
+		html += ' <br/>';
+		html += 'y:'+e.y;//同clientY
+		$('.info').html(html);
 	});
 </script>
 </head>
 <body>
+<div class='info'></div>
 <div class='outer'>
 	<div class='gap'>
-		<div style='height:50px;width:50px;background-color:#ddd;'></div>
+		<div style='height:50px;width:500px;background-color:#ddd;'></div>
 		<div class='inner'></div>
 	</div>
 </div>
