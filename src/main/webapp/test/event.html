@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	.outer{
+		width:2000px;
+		height:2000px;
+		position:relative;
+		background-color:#ccc;
+		overflow:auto;
+	}
+	.gap{
+		position:absolute;
+		top:1000px;
+		left:1000px;
+		width:300px;
+		height:300px;
+		overflow:auto;
+	}
+	.inner{
+		background-color:#fff;
+		width:500px;
+		height:500px;
+	}
+</style>
+<script type="text/javascript">
+	document.addEventListener('click',function(e){
+		console.log('>>>>>>');
+		console.log('pageY:'+e.pageY);//参考整个文档的左上角
+		console.log('clientY:'+e.clientY);//参考当前可视区域的左上角
+		console.log('screenY:'+e.screenY);//参考整个屏幕的左上角
+		console.log('layerY:'+e.layerY);//父节点的左上角
+		console.log('offsetY:'+e.offsetY);//自己的左上角
+		console.log('Y:'+e.y);//同clientY
+	});
+</script>
+</head>
+<body>
+<div class='outer'>
+	<div class='gap'>
+		<div style='height:50px;width:50px;background-color:#ddd;'></div>
+		<div class='inner'></div>
+	</div>
+</div>
+</body>
+</html>
