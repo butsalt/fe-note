@@ -187,60 +187,60 @@ dd.El.prototype.flex = function(value){
 };
 dd.El.prototype.absolute = function(){
 	var me = this;
-	me.css('position','absolute');
+	me.dom.style.position = 'absolute';
 	return me;
 };
 dd.El.prototype.absfit = function(){
 	var me = this;
-	me.css('position','absolute');
-	me.css('top','0px');
-	me.css('right','0px');
-	me.css('left','0px');
-	me.css('bottom','0px');
+	me.dom.style.position = 'absolute';
+	me.dom.style.top = '0px';
+	me.dom.style.right = '0px';
+	me.dom.style.bootom = '0px';
+	me.dom.style.left = '0px';
 	return me;
 };
-dd.El.prototype.left = function(px){
+dd.El.prototype.left = function(value){
 	var me = this;
-	if(px!=null){
-		me.css('left',px+'px');
+	if(value!=null){
+		me.dom.style.left = value;
 		return me;
 	}
-	return dd.trimPx(me.css('left'));
+	return me.dom.style.left;
 };
-dd.El.prototype.top = function(px){
+dd.El.prototype.top = function(value){
 	var me = this;
-	if(px!=null){
-		me.css('top',px+'px');
+	if(value!=null){
+		me.dom.style.top = value;
 		return me;
 	}
-	return dd.trimPx(me.css('top'));
+	return me.dom.style.top;
 };
-dd.El.prototype.right = function(px){
+dd.El.prototype.right = function(value){
 	var me = this;
-	if(px!=null){
-		me.css('right',px+'px');
+	if(value!=null){
+		me.dom.style.right = value;
 		return me;
 	}
-	return dd.trimPx(me.css('right'));
+	return me.dom.style.right;
 };
-dd.El.prototype.bottom = function(px){
+dd.El.prototype.bottom = function(value){
 	var me = this;
-	if(px!=null){
-		me.css('bottom',px+'px');
+	if(value!=null){
+		me.dom.style.bottom = value;
 		return me;
 	}
-	return dd.trimPx(me.css('bottom'));
+	return me.dom.style.bottom;
 };
 dd.El.prototype.relative = function(){
 	var me = this;
-	me.css('position','relative');
+	me.dom.style.position = 'relative';
 	return me;
 };
 dd.El.prototype.fit = function(){
 	var me = this;
-	me.css('position','relative');
-	me.css('width','100%');
-	me.css('height','100%');
+	me.dom.style.position = 'relative';
+	me.dom.style.width = '100%';
+	me.dom.style.height = '100%';
 	return me;
 };
 dd.El.prototype.html = function(html){
@@ -278,8 +278,15 @@ dd.trimPx = function(str){
 };
 
 dd.observable=function(cls){
-	var map = {};
 	cls.prototype.on=function(type, handler, scope) {
+		var me = this;
+		if(!me.dd){
+			me.dd = {};
+		}
+		if(!me.dd.observable){
+			me.dd.observable = {};
+		}
+		var map = me.dd.observable;
 		if(!map[type]){
 			map[type] = [];
 		}
@@ -290,6 +297,14 @@ dd.observable=function(cls){
     };
     
     cls.prototype.un=function(type, handler) {
+    	var me = this;
+    	if(!me.dd){
+			me.dd = {};
+		}
+		if(!me.dd.observable){
+			me.dd.observable = {};
+		}
+		var map = me.dd.observable;
     	var items = map[type];
         if(!items){
         	return;
@@ -314,6 +329,14 @@ dd.observable=function(cls){
 	    
 	    
     cls.prototype.fire=function(type, args) {
+    	var me = this;
+    	if(!me.dd){
+			me.dd = {};
+		}
+		if(!me.dd.observable){
+			me.dd.observable = {};
+		}
+		var map = me.dd.observable;
     	var items = map[type];
     	if(!items){
     		return;
@@ -321,5 +344,58 @@ dd.observable=function(cls){
     	items.slice(0).forEach(function(item){
     		item.handler.apply(item.scope,args);
     	});
+	};
+};
+
+dd.clearable = function(cls){
+	cls.prototype.addClear = function(key,handler,scope){
+		var me = this;
+		if(!me.dd){
+			me.dd = {};
+		}
+		if(!me.dd.clearable){
+			me.dd.clearable = {};
+		}
+		var map = me.dd.clearable;
+		if(dd.isFunction(key)){
+			scope = handler;
+			handler = key;
+			key = 'default';
+		}
+		if(!map[key]){
+			map[key] = [];
+		}
+		var arr = map[key];
+		arr.push({
+			handler:handler,
+			scope:scope
+		});
+	};
+	cls.prototype.clear = function(key){
+		var me = this;
+		if(!me.dd){
+			me.dd = {};
+		}
+		if(!me.dd.clearable){
+			me.dd.clearable = {};
+		}
+		var map = me.dd.clearable;
+		var keys;
+		if(!key){
+			keys = Object.keys(map);
+			keys.push('default');
+		}else{
+			keys = [key];
+		}
+		keys.forEach(function(key){
+			var arr = map[key];
+			if(!arr){
+				return;
+			}
+			delete map[key];
+			arr.forEach(function(task){
+				task.handler.apply(task.scope);
+			});
+		});
 	};
 };
