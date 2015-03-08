@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	html,body{
+		height:100%;
+	}
+	body{
+		-webkit-perspective:300px;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+	@-webkit-keyframes 'hide'{
+		0% {
+			-webkit-transform: rotateX(0deg) translate3d(0,0,0) scale(1);
+			opacity:1;
+		}
+		100% {
+			-webkit-transform: rotateX(180deg) translate3d(0,0,300px) scale(0);
+			opacity:0.3;
+		}
+	}
+	.hide{
+	    -webkit-animation-name:'hide';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+     	-webkit-animation-duration: 1s;/*动画持续时间*/
+     	-webkit-animation-timing-function: linear; /*动画频率，和transition-timing-function是一样的*/
+     	-webkit-animation-delay: 0s;/*动画延迟时间*/
+    	-webkit-animation-iteration-count: 1;/*定义循环资料，infinite为无限次*/
+     	-webkit-animation-direction: normal;/*定义动画方式*/
+	}
+	.card{
+		width:250px;
+		height:125px;
+		background-color:#f94;
+		-webkit-user-select:none;
+		position:relative;
+		top:0px;
+		left:0px;
+	}
+</style>
+<script type="text/javascript" src="../scripts/dd.js"></script>
+<script type="text/javascript" src="../scripts/Tween.js"></script>
+<script type="text/javascript" src="../scripts/jquery-2.1.3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var target = $('<div>');
+		target.addClass('card').html('haha');
+		var tween;
+		
+		target.bind('mousedown',function(e){
+			var $d = $(document);
+			if(tween){
+				tween.stop();
+				tween = null;
+			}
+			var pos = {
+				x:e.clientX,
+				y:e.clientY,
+				top:dd.trimPx(target.css('top')),
+				left:dd.trimPx(target.css('left'))
+			};
+			$d.bind('mousemove',function(e){
+				var curPos = {
+					x:e.clientX,
+					y:e.clientY,
+				};
+				//var deltaX = curPos.x - pos.x;
+				//target.css('left',pos.left+deltaX);
+				var deltaY = curPos.y - pos.y;
+				target.css('top',pos.top+deltaY);
+			});	
+			$d.bind('mouseup',function(){
+				$d.unbind('mouseup');
+				$d.unbind('mousemove');
+				
+				if(dd.trimPx(target.css('top'))<-50){
+					target.addClass('hide');
+					setTimeout(function(){
+						target.detach();
+					},980);
+				}else{
+					tween = new TWEEN.Tween({
+						top:dd.trimPx(target.css('top')),
+						left:dd.trimPx(target.css('left'))
+					}).to({
+						top:0,
+						left:0
+					},500).easing(TWEEN.Easing.Exponential.Out).onUpdate(function(){
+						target.css('top',this.top);
+						//target.css('left',this.left);
+					}).onComplete(function(){
+						tween = null;
+					});
+					tween.start();
+				}
+			});
+		});
+		
+		$(document.body).append(target);
+
+		function render(time){
+			requestAnimationFrame(render);
+			TWEEN.update(time);
+		};
+		
+		requestAnimationFrame(render);
+	});
+</script>
+</head>
+<body>
+</body>
+</html>
