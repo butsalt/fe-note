@@ -35,7 +35,7 @@
 	function getPos(el,e){
 		return {
 			y:e.pageY,
-			top:el.top()
+			top:dd.trimPx(el.top())
 		};
 	}
 	function getTops(group){
@@ -64,7 +64,7 @@
 		var group = [];
 		for(var i=0;i<5;i++){
 			var el = dd.el();
-			el.absolute().top(height*group.length).width(width).height(height);
+			el.absolute().top(height*group.length+'px').width(width+'px').height(height+'px');
 			if(i%2==0){
 				el.css('background-color','#999');
 			}else{
@@ -84,10 +84,10 @@
 			change = !change;
 		}
 		
-		var dragEl = dd.el().width(width).height(80).css('background-color','#444').css('color','#ccc').html('Drag me!');
+		var dragEl = dd.el().width(width+'px').height(80+'px').css('background-color','#444').css('color','#ccc').html('Drag me!');
 		dragEl.css('line-height','80px').css('text-align','center').css('cursor','pointer');
 		max = height*group.length;
-		dragEl.absolute().top(max);
+		dragEl.absolute().top(max+'px');
 		dragEl.css('border-bottom-left-radius','7px');
 		dragEl.css('border-bottom-right-radius','7px');
 		dragEl.on('mousedown',function(e){
@@ -96,7 +96,7 @@
 			d.on('mousemove',function(e){
 				var curPos = getPos(dragEl,e);
 				var curTop = Math.max(0,Math.min(pos.top+curPos.y-pos.y,max));
-				dragEl.top(curTop);
+				dragEl.top(curTop+'px');
 				var rotate = (1-curTop/max)*90;
 				var change = true;
 				for(var i=group.length-1;i>=0;i--){
@@ -109,7 +109,7 @@
 					change = !change;
 				}
 				getTops(group).forEach(function(top,i){
-					group[i].top(top);
+					group[i].top(top+'px');
 				});
 			});
 			d.on('mouseup',function(){
@@ -120,7 +120,7 @@
 		cnt.append(dragEl.dom);
 		
 		
-		cnt.height(height*group.length+80);
+		cnt.height(height*group.length+80+'px');
 		cnt.width(width);
 		
 		function render(time){
