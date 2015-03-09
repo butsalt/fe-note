@@ -8,7 +8,7 @@
 		margin:0;
 		padding:0;
 	}
-	div{
+	body>div:nth-of-type(1){
 		width:200px;
 		height:200px;
 		background-color:#ed4;
@@ -16,11 +16,30 @@
 			perspective:眼睛到对投影平面的距离
 			translateZ:眼睛到对象的距离
 		**/
-		-webkit-transform: perspective(300px) translateZ(299px);
+		-webkit-transform: perspective(300px) translateZ(20px);
+	}
+	
+	body>div:nth-of-type(2){
+		width:200px;
+		height:200px;
+		border:1px black solid;
+		overflow:auto;
+	}
+	body>div:nth-of-type(2)>div{
+		width:50px;
+		height:50px;
+		background-color:#ed4;
+		/**
+			如果偏移后的位置超出父元素的可视区域范围，需要增加滚动条
+		**/
+		-webkit-transform:translateY(200px);
 	}
 </style>
 </head>
 <body>
 <div></div>
+<div>
+	<div></div>
+</div>
 </body>
 </html>
