@@ -195,7 +195,7 @@ dd.El.prototype.absfit = function(){
 	me.dom.style.position = 'absolute';
 	me.dom.style.top = '0px';
 	me.dom.style.right = '0px';
-	me.dom.style.bootom = '0px';
+	me.dom.style.bottom = '0px';
 	me.dom.style.left = '0px';
 	return me;
 };
@@ -257,6 +257,14 @@ dd.El.prototype.attach = function(el){
 		el.dom.appendChild(me.dom);
 	}else{
 		el.appendChild(me.dom);
+	}
+	return me;
+};
+dd.El.prototype.detach = function(){
+	var me = this;
+	var parent = me.dom.parentElement;
+	if(parent){
+		parent.removeChild(me.dom);
 	}
 	return me;
 };
