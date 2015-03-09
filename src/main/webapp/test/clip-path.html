@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	img{
+		display:block;
+	}
+	img:nth-of-type(1){
+		-webkit-clip-path:polygon(100px 0px,100px 100%,0px 100%);
+	}
+	img:nth-of-type(2){
+		-webkit-clip-path:circle(20px at 50px 50px);
+	}
+</style>
+</head>
+<body>
+<img id="first" src="../assets/maple.jpg"/>
+<img id="second" src="../assets/maple.jpg"/>
+<svg height="0" width="0">
+<clipPath id="svgPath">
+	<circle cx="30" cy="30" r="15" />
+</clipPath>
+</svg>
+</body>
+</html>
