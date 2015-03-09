@@ -17,14 +17,21 @@
 	img:nth-of-type(2){
 		-webkit-clip-path:circle(20px at 50px 50px);
 	}
+	img:nth-of-type(3){
+	/**
+		把整个body看成是一个画布
+	**/
+		-webkit-clip-path:url(#svgPath);
+	}
 </style>
 </head>
 <body>
-<img id="first" src="../assets/maple.jpg"/>
-<img id="second" src="../assets/maple.jpg"/>
+<img src="../assets/maple.jpg"/>
+<img src="../assets/maple.jpg"/>
+<img src="../assets/maple.jpg"/>
 <svg height="0" width="0">
 <clipPath id="svgPath">
-	<circle cx="30" cy="30" r="15" />
+	<circle cx="30" cy="955" r="15" />
 </clipPath>
 </svg>
 </body>
