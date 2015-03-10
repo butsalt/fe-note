@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	html,body{
+		height:100%;
+	}
+	body{
+		background-color:#ddd;
+		display:flex;
+		flex-direction:column;
+		flex-wrap:wrap;
+	}
+	div{
+		width:250px;
+		height:100px;
+		margin-bottom:5px;
+	}
+	
+	
+	body>div:nth-of-type(1){
+		/**参数1定义了起始位置*/
+		background:-webkit-linear-gradient(bottom,red,green);
+	}
+	body>div:nth-of-type(2){
+		background:-webkit-linear-gradient(90deg,red,green);
+	}
+	body>div:nth-of-type(3){
+		background:-webkit-linear-gradient(bottom,red 0%,green 50%,blue 100%);
+	}
+	body>div:nth-of-type(4){
+		/**均匀分布*/
+		background:-webkit-linear-gradient(bottom,green,red,blue,yellow);
+	}
+	
+	
+	body>div:nth-of-type(5){
+		background:-webkit-radial-gradient(red,green,blue,yellow);
+	}
+	body>div:nth-of-type(6){
+		background:-webkit-radial-gradient(circle,red,green,blue,yellow);
+	}
+	body>div:nth-of-type(7){
+		background:-webkit-radial-gradient(red 0%,green 10%,blue 20%,yellow 100%);
+	}
+	body>div:nth-of-type(8){
+		background:-webkit-radial-gradient(ellipse closest-side,white,black);
+	}
+	body>div:nth-of-type(9){
+		background:-webkit-radial-gradient(ellipse closest-corner,white,black);
+	}
+	body>div:nth-of-type(10){
+		background:-webkit-radial-gradient(ellipse farthest-side,white,black);
+	}
+	body>div:nth-of-type(11){
+		background:-webkit-radial-gradient(ellipse farthest-corner,white,black);
+	}
+	body>div:nth-of-type(12){
+		background:-webkit-radial-gradient(ellipse contain,white,black);
+	}
+	body>div:nth-of-type(13){
+		/**默认**/
+		background:-webkit-radial-gradient(ellipse cover,white,black);
+	}
+	body>div:nth-of-type(14){
+		background:-webkit-repeating-linear-gradient(-45deg, #ace, #ace 5px, #f96 5px, #f96 10px);
+	}
+	body>div:nth-of-type(15){
+		background:-webkit-repeating-radial-gradient(#ace, #ace 5px, #f96 5px, #f96 10px);
+	}
+</style>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<div>7</div>
+<div>8</div>
+<div>9</div>
+<div>10</div>
+<div>11</div>
+<div>12</div>
+<div>13</div>
+<div>14</div>
+<div>15</div>
+</body>
+</html>
