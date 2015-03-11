@@ -50,23 +50,24 @@
 		background:-webkit-radial-gradient(red 0%,green 10%,blue 20%,yellow 100%);
 	}
 	body>div:nth-of-type(8){
-		background:-webkit-radial-gradient(ellipse closest-side,white,black);
+		background:-webkit-radial-gradient(25% 25%,ellipse closest-side,white,black);
 	}
 	body>div:nth-of-type(9){
-		background:-webkit-radial-gradient(ellipse closest-corner,white,black);
+		background:-webkit-radial-gradient(25% 25%,ellipse closest-corner,white,black);
 	}
 	body>div:nth-of-type(10){
-		background:-webkit-radial-gradient(ellipse farthest-side,white,black);
+		background:-webkit-radial-gradient(25% 25%,ellipse farthest-side,white,black);
 	}
 	body>div:nth-of-type(11){
-		background:-webkit-radial-gradient(ellipse farthest-corner,white,black);
+		background:-webkit-radial-gradient(25% 25%,ellipse farthest-corner,white,black);
 	}
 	body>div:nth-of-type(12){
-		background:-webkit-radial-gradient(ellipse contain,white,black);
+		/**即cloest-side**/
+		background:-webkit-radial-gradient(25% 25%,ellipse contain,white,black);
 	}
 	body>div:nth-of-type(13){
-		/**默认**/
-		background:-webkit-radial-gradient(ellipse cover,white,black);
+		/**默认，即farthest-corner**/
+		background:-webkit-radial-gradient(25% 25%,ellipse cover,white,black);
 	}
 	body>div:nth-of-type(14){
 		background:-webkit-repeating-linear-gradient(-45deg, red, green 10px);
