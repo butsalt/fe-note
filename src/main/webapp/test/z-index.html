@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	div div{
+		width:100px;
+		height:100px;
+	}
+	body>div{
+		height:200px;
+		position:relative;
+	}
+</style>
+</head>
+<body>
+<div>
+	<!-- 后添加的覆盖先添加的 -->
+	<div style="position:absolute;background-color:#444;"></div>
+	<div style="position:absolute;background-color:#eee;top:50px;left:50px;"></div>
+</div>
+<div>
+	<!-- position:static的z-index无效-->
+	<div style="position:static;background-color:black;z-index:999;"></div>
+	<div style="position:absolute;background-color:#444;z-index:100;top:25px;left:25px;"></div>
+	<div style="position:absolute;background-color:#eee;top:50px;left:50px;"></div>
+</div>
+<div>
+	<div style="z-index:999;">
+		<div style="position:absolute;top:0;left:0;background-color:#444;width:100px;height:100px;"></div>
+	</div>
+	<div>
+		<div style="position:absolute;top:25px;left:25px;background-color:#eee;width:100px;height:100px;"></div>
+	</div>
+</div>
+<div>
+	<div style="z-index:999;position:relative;">
+		<div style="position:absolute;top:0;left:0;background-color:#444;width:100px;height:100px;"></div>
+	</div>
+	<div>
+		<div style="position:absolute;top:25px;left:25px;background-color:#eee;width:100px;height:100px;"></div>
+	</div>
+</div>
+</body>
+</html>
