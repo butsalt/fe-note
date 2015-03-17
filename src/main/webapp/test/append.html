@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	body>div{
+		width:300px;
+		height:300px;
+		border:1px #eee solid;
+	}
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',function(){
+	var first = document.getElementById('first');
+	var second = document.getElementById('second');
+	
+	var box = document.createElement('div');
+	box.style.width='100px';
+	box.style.height='100px';
+	box.style['background-color']='#ddd';
+	
+	first.appendChild(box);
+	setTimeout(function(){
+		//box从first中移除，加入到second中
+		second.appendChild(box);
+		//由于此时first中没有对应子元素，所以抛异常
+		try{
+			first.removeChild(box);
+		}catch(e){
+			console.error(e);
+		}
+	},1000);
+});
+</script>
+</head>
+<body>
+<div id="first">
+</div>
+<div id="second">
+</div>
+</body>
+</html>
