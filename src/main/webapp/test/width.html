@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	body>div{
+		width:1000px;
+		height:30px;
+		background-color:#444;
+	}
+	/**块级元素默认与父级元素的宽度一致，但没有高度**/
+	div div div{
+		width:33%;
+		height:30px;
+		border:1px #fff solid;
+	}
+	/**行级元素不能调整宽高**/
+	span{
+		background-color:#fa5;
+	}
+</style>
+</head>
+<body>
+<div>
+	<div>
+		<div></div>
+	</div>
+</div>
+<span>Haha</span>
+</body>
+</html>

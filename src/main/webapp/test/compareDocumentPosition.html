@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+</style>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded',function(){
+		var outer = document.getElementById('outer');
+		var inner = document.getElementById('inner');
+		var second = document.getElementById('second');
+		var no = document.createElement('div');
+		var nono = document.createElement('div');
+		
+		//&&单纯表示与逻辑
+		console.log(!!(outer.compareDocumentPosition(inner)&4));//判断outer是否在inner之前
+		console.log(!!(inner.compareDocumentPosition(outer)&2));//判断inner是否在outer之后
+		console.log(!!(outer.compareDocumentPosition(inner)&16));//判断outer是否包含inner
+		console.log(!!(inner.compareDocumentPosition(outer)&8));//判断inner是否被outer包含
+		console.log(!!(outer.compareDocumentPosition(no)&1));//判断outer和inner是否不在同一个文档中
+		
+		console.log(!!(no.compareDocumentPosition(nono)&4));//先后顺序不一定
+		no.appendChild(nono);
+		console.log(!!(no.compareDocumentPosition(nono)&4));//现在一定了
+	});
+</script>
+</head>
+<body>
+<div id="outer">
+	<div id="inner"></div>
+</div>
+<div id="second">
+</div>
+</body>
+</html>
