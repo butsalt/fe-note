@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+</style>
+<script type="text/javascript">
+
+console.log(1);
+var reg = /"([^"]*)"/g;
+var text = '\"Joker!\"';
+//使用$来引用括号内匹配的文本
+console.log(text.replace(reg,'“$1”'));
+
+console.log(2);
+//没有g，只替换第一个
+reg = /s/;
+text = 'ssssssssss';
+console.log(text.replace(reg,'A'));
+
+console.log(3);
+reg = /S"([^"]*)"S/;
+text = 'S"Joker!\"S';
+//如果是g，返回一个数组，包含所有满足匹配的字符串
+//如果不是g，返回一个数组，第一个返回满足匹配的字符串，第二个返回满足匹配的字符串下的第一个子模式匹配的字符串(\1)，...
+console.log(text.match(reg));
+
+console.log(4);
+//如果有g，调用时如果存在匹配的，记录匹配字符串的index+1的位置(lastIndex)，下一次调用时从这个位置开始，如果没找到，则将lastIndex置为0
+reg = /test(\d)/g;
+text = 'test0test1';
+console.log(reg.exec(text));
+console.log(reg.exec(text));
+console.log(reg.exec(text));
+console.log(reg.exec(text));
+
+console.log(5);
+reg = /test(\d)/g;
+text = 'test0test1';
+console.log(reg.test(text));
+console.log(reg.test(text));
+console.log(reg.test(text));
+
+console.log(6);
+//匹配的字符串后一定要跟着冒号
+reg = /Javascript(?=:)/;
+text = 'Javascript:';
+console.log(reg.exec(text));
+
+console.log(7);
+//匹配的字符串后一定不能跟着冒号
+reg = /Javascript(?!:)/;
+text = 'Javascripts';
+console.log(reg.exec(text));
+
+console.log(8);
+//\b定位到单词边界
+reg = /\b\w+\b/g;
+text = 'JavaS cooker';
+console.log(text.match(reg));
+
+//如果没有m，将^定位到字符串的开头，将$定位到字符串的结尾
+//如果有m，将^定位到每行的开头，$定位到每行的结尾
+console.log(9);
+reg = /^\w+$/gm;
+text = 'Java\nScript';
+console.log(text.match(reg));
+</script>
+</head>
+<body>
+
+</body>
+</html>
