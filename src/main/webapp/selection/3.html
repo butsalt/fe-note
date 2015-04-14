@@ -23,9 +23,11 @@
 	body > div{
 		background:green;
 	}
+	/**.activate之后的第一个且满足特定条件的**/
 	.active + div{
 		background:lime;
 	}
+	/**.activate之后所有满足特定条件的**/
 	.active ~ div{
 		background:red;
 	}
