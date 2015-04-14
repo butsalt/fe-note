@@ -75,6 +75,26 @@
 	body>div:nth-of-type(15){
 		background:-webkit-repeating-radial-gradient(red,green 10px);
 	}
+	
+	
+	@-webkit-keyframes 'run'{
+		0% {
+			background:-webkit-repeating-linear-gradient(45deg,#05f,#05f 10px,#eee 10px,#eee 20px);
+		}
+		100% {
+			background:-webkit-repeating-linear-gradient(45deg,#eee,#eee 10px,#05f 10px,#05f 20px);
+		}
+	}
+	body>div:nth-of-type(16){
+		/**和image一样，默认从padding左上角开始**/
+		padding:10px;
+		border:10px black dashed;
+		background-origin:border-box;
+	    -webkit-animation-name:'run';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+     	-webkit-animation-duration: 0.35s;/*动画持续时间*/
+     	-webkit-animation-timing-function: linear; /*动画频率，和transition-timing-function是一样的*/
+    	-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+	}
 </style>
 </head>
 <body>
@@ -93,5 +113,6 @@
 <div>13</div>
 <div>14</div>
 <div>15</div>
+<div>16</div>
 </body>
 </html>
