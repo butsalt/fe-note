@@ -13,13 +13,13 @@
 	}
 	div:nth-of-type(1){
 		/**
-			vw,vh指的是除滚动条之外的可视范围的宽度，高度
-			100vw即100%视口宽度
+			vw,vh指的是window.innerWidth,window.innerHeight(包含滚动条的窗口宽度和高度)
+			100vw=window.innerWidth
 			vmin是取vw,vh中的最小值
 			vmax是取vw,vh中的最大值
 		**/
 		height:200px;
-		width:100vmin;
+		width:100vw;
 		background-color:#f84;
 	}
 	div:nth-of-type(2){
