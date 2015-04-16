@@ -9,13 +9,17 @@
 		padding:0;
 	}
 	body>div:nth-of-type(1){
+		/**
+			width:50%,设置宽度为它父元素宽度的50%
+		**/
 		width:200px;
 		height:200px;
 		background-color:#ed4;
 		/**
 			perspective:眼睛到对投影平面的距离
 			scaleZ:z轴上的放大比例
-			translateZ:眼睛到对象的距离
+			translateZ:对象到投影平面的距离
+			translateX:50%,对象向右移动它的50%宽长度的距离
 		**/
 		-webkit-transform: perspective(300px) scaleZ(1.5) translateZ(100px);
 	}
