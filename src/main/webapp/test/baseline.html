@@ -15,7 +15,7 @@
 		line-height:1;
 	}
 	.dot{
-		vertical-align:text-top;
+		vertical-align:super;
 	}
 	span{
 		/**
@@ -32,8 +32,8 @@
 		2.	vertical-align的值不为baseline的对象会从当前行计算baseline的集合中排除
 		3.	vertical-align的值为top时，对象的顶端会与父元素的顶端对齐
 		4.	vertical-align的值为text-top时，对象的顶端会与父元素的默认span的文本顶端(不包含line-height)对齐
-		5.	vertical-align的值为super时，对象的会与父元素的默认sup的baseline对齐
-		6.  vertical-align的值为sup时，对象的会与父元素的默认sub的baseline对齐
+		5.	vertical-align的值为super时，对象的baseline会与父元素的默认sup的baseline对齐
+		6.  vertical-align的值为sup时，对象的baseline会与父元素的默认sub的baseline对齐
 		7.	vertical-align的值为middle时，对象的中垂点与 父元素的默认span的baseline向上再提高1/2个x的位置对齐。
 	**/
 </style>
@@ -42,7 +42,7 @@
 <div>
 	<span>Lyx中</span>
 	<sub>Lyx中</sub>
-	<super>Lyx中</super>
+	<sup>Lyx中</sup>
 	<span class='dot'>Lyx中</span>
 	<span style='font-size:40px;'>Lyx中</span>
 	<span style='font-size:50px;'>Lyx中</span>
