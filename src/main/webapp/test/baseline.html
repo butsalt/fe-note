@@ -4,36 +4,49 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	body{
+	*{
 		margin:0px 0px;
 		padding:0px 0px;
 	}
 	div{
-		margin:0px 0px;
-		padding:0px 0px;
-		line-height:1;
 		background-color: #521;
 		color:#ddd;
 		font-size:30px;
+		line-height:1;
+	}
+	.dot{
+		vertical-align:text-top;
 	}
 	span{
-		line-height:1;
+		/**
+			line-height,默认继承
+			120%	font-size*120%(继承时继承的是这个计算后的结果)
+			20px	继承时继承20px
+			normal	font-size*约1.2(继承时继承这个倍数)
+			1.5		font-szie*1.5(继承时继承这个倍数)
+		**/
 		background-color: #663;
 	}
 	/**
-		1.	span元素的高度要比设置的font-size高一点
+		1.	span元素的高度要比设置的font-size高一点(中文的原因)
 		2.	vertical-align的值不为baseline的对象会从当前行计算baseline的集合中排除
 		3.	vertical-align的值为top时，对象的顶端会与父元素的顶端对齐
-		4.	vertical-align的值为text-top时，对象的顶端会与父元素的textline的顶端对齐
+		4.	vertical-align的值为text-top时，对象的顶端会与父元素的默认span的顶端对齐
+		5.	vertical-align的值为super时，对象的会与父元素的默认sup的baseline对齐
+		6.  vertical-align的值为sup时，对象的会与父元素的默认sub的baseline对齐
+		7.	vertical-align的值为middle时，对象的中垂点与 父元素的默认span的baseline向上再提高1/2个x的位置对齐。
 	**/
 </style>
 </head>
 <body>
 <div>
-	Ly
-	<span style='font-size:40px;'>Ly</span>
-	<span style='font-size:50px;'>Ly</span>
-	<span style='font-size:60px;'>Ly</span>
+	<span>Lyx中</span>
+	<sub>Lyx中</sub>
+	<super>Lyx中</super>
+	<span class='dot'>Lyx中</span>
+	<span style='font-size:40px;'>Lyx中</span>
+	<span style='font-size:50px;'>Lyx中</span>
+	<span style='font-size:60px;'>Lyx中</span>
 </div>
 </body>
 </html>
