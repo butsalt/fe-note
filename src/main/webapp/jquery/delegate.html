@@ -7,7 +7,7 @@
 <script type="text/javascript">
 $(function(){
 	//div下的所有h1（包括将来创建的），都绑定click方法
-	$('div').delegate('h1','click',function(){
+	$('div').delegate('h1','click',function(e){
 		$('div').append($('<h1>Click Me!</h1>'));
 	});
 });
