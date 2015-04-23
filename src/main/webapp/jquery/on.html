@@ -15,11 +15,13 @@ $(function(){
 	
 	//也可以是自定义事件
 	obj = $({}).on('speak.my',{name:'butSalt'},function(e){
+		//e.namespace = my  如果triiger('speak')，则namespace=''
+		//e.type = speak
 		console.log(e.data);
 		console.log(arguments);
 	});
 	//用数组来表示arguments
-	obj.trigger('speak',[1,2,3]);
+	obj.trigger('speak.my',[1,2,3]);
 });
 </script>
 <style type="text/css">
