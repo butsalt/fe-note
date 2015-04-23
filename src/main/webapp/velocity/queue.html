@@ -13,7 +13,7 @@ $(function(){
 	},{
 		duration:3000
 	});
-	//直接将动画跳转到宽度为500px的时机，再继续播放动画
+	//直接将动画跳转到宽度为500px的时机(只跳转有冲突的属性,complete方法执行时机照常)，再继续播放动画
 	setTimeout(function(){
 		$('div').velocity({
 			width:'100px'
