@@ -33,14 +33,17 @@
 			});
 		//绑定的数据
 		//调用transition之后设置的style相当于是设置元素最终的样式，在动画过程中不会被调用
-		d3.select('div').datum(300).transition().delay(1000).duration(200).style('width',function(d,i){
-			return d+'px';
-		})
+		d3.select('div').datum(300).transition().delay(1000).duration(1000)
+			.style('width',function(d,i){
+				return d+'px';
+			})
 			.styleTween('background-color',function(d,i,a){
 				return d3.interpolateRgb(a, '#cbd')
-			});
-		//tween 根据开始时间，当前时间，总时间段，来确定一个[0,1]之间的数字
-		//interpolate 根据开始数据，结束数据和tween返回的[0,1]之间的数字来返回插入值
+			})
+			.ease('poly',3);//采用poly(3)
+		//styleTween d当前绑定的数据，i在队列中的位置，a此时的属性值，需要返回一个interpolate方法用于播放动画
+		//interpolate 生成一个函数，根据0到1之间的一个值返回一个插入值
+		//ease 根据当前已过去的时间，总时长，以及ease类型(比如poly)，决定一个0到1的值用于计算interpolate
 	});
 </script>
 </head>
