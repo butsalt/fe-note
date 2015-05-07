@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+#first{
+	width:300px;
+	height:300px;
+	padding:10px;
+	border:3px black solid;
+	background-color:gray;
+}
+#second{
+	box-sizing:border-box;
+	width:300px;
+	height:300px;
+	padding:10px;
+	border:3px black solid;
+	background-color:gray;
+}
+</style>
+<script type="text/javascript" src="/scripts/jquery-2.1.3.js"></script>
+<script type="text/javascript">
+$(function(){
+	gen( $('#first') );
+	gen( $('#second') );
+});
+
+function gen( el ){
+	var text = '';
+	//去掉border和padding后的宽度
+	text += 'width: ' + el.width() + '</br>';
+	//去掉border后的宽度
+	text += 'innerWidth: ' + el.innerWidth() + '</br>';
+	//实际宽度
+	text += 'outerWidth: ' + el.outerWidth();
+	el.html(text);
+}
+</script>
+</head>
+<body>
+<div id="first"></div>
+<div id="second"></div>
+</body>
+</html>
