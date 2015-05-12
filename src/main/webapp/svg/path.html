@@ -67,6 +67,24 @@
 	<!-- 图形始终都会有填充，但只有用z后才会显示最后一条连线 -->
 	<path d="M0 0 H100 V100 Z" style="stroke:#000;fill:rgba(255,255,255,1)"></path>
 </g>
+<g	transform="translate(0,600)">
+	<!-- A rx ry x-axis-rotation large-arc-flag sweep-flag x y -->
+	<!-- x-axis-rotation 顺时针是正方向 -->
+	<!-- large-arc-flag 0小角度 1大角度 -->
+	<!-- sweep-flag 0起点到终点逆时针 1起点到终点顺时针 -->
+	<path d="M80 80
+	         A 45 45, 0, 0, 0, 125 125
+	         L 125 80 Z" fill="green"/>
+	<path d="M230 80
+	         A 45 45, 0, 1, 0, 275 125
+	         L 275 80 Z" fill="red"/>
+	<path d="M80 230
+	         A 45 45, 0, 0, 1, 125 275
+	         L 125 230 Z" fill="purple"/>
+	<path d="M230 230
+	         A 45 45, 0, 1, 1, 275 275
+	         L 275 230 Z" fill="blue"/>
+</g>
 </svg>
 </body>
 </html>
