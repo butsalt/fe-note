@@ -19,9 +19,13 @@
 $(function(){
 	var data = [50,75,100,125];
 	var colors = d3.scale.category10();
+	//bar维护一个长度为4的数组，但每个位置上都是null
 	var bar = d3.select(document.body)
 		.selectAll('div')
-		.data(data)
+		.data(data);
+	
+	//barEnter只关心新加入的对象
+	var barEnter = bar
 		.enter()
 		.append('div')
 		.style('height','100px')
@@ -31,12 +35,13 @@ $(function(){
 		.style('width',function(d,i){
 			return d+'px';
 		});
-		/**如果直接append到span，则bar指向所有span而不是div
+		/**如果直接append到span，则barEnter指向所有span而不是div
 		.append("span")
 		.html(function(d){
 			return d;
 		});
 		**/
+	//enter后，bar维护的数组被div对象填满
 	
 	window.look = function(){
 		bar.each(function( d, i ){
