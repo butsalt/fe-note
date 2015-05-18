@@ -4,4 +4,20 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>page</servlet-name>
+  	<servlet-class>learn.PageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>page</servlet-name>
+  	<url-pattern>/page/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>index</servlet-name>
+  	<jsp-file>/page/index.html</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>index</servlet-name>
+  	<url-pattern>/page/index.html</url-pattern>
+  </servlet-mapping>
 </web-app>
