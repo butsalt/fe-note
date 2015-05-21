@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<ul id="target">
+</ul>
+<br/>
+<button id="slowButton">Slow</button>
+<button id="quickButton">Quick</button>
+<button id="resetButton">Reset</button>
+<script type="text/javascript">
+	var target = document.getElementById("target");
+	var slowButton = document.getElementById("slowButton");
+	var quickButton = document.getElementById("quickButton");
+	var resetButton = document.getElementById("resetButton");
+	
+	function append( target ){
+		for( var i=0; i<10000; i++ ){
+			var li = document.createElement("li");
+			li.innerHTML = i;
+			target.appendChild(li);
+		}
+	}
+	
+	function reset(){
+		target.innerHTML = "";
+	}
+	
+	slowButton.addEventListener("click",function(){
+		append(target);
+	});
+	
+	quickButton.addEventListener("click",function(){
+		//创建一个文档片段，可以向这个片段内插入dom，再将片段一次性插入到文档流中
+		var frag = document.createDocumentFragment();
+		append(frag);
+		target.appendChild(frag);
+	});
+	
+	resetButton.addEventListener("click",function(){
+		reset();
+	});
+</script>
+</body>
+</html>
