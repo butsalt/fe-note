@@ -14,7 +14,7 @@
 console.log(1);
 var reg = /"([^"]*)"/g;
 var text = '\"Joker!\"';
-//使用$来引用括号内匹配的文本
+//使用$来引用括号内匹配的文本 ^是取反的意思
 console.log(text.replace(reg,'“$1”'));
 
 console.log(2);
