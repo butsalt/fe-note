@@ -78,6 +78,12 @@ function replacer(match, p1, p2, p3, offset, string) {
 	return [p1, p2, p3].join(' - ');
 }
 console.log('abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer));
+
+console.log(11);
+//*? +?实现的是最小匹配，"big"已经满足了正则表达式的要求，所以匹配的是"big"
+reg = /".*?"/;
+text = '"big""boy"';
+console.log(reg.exec(text));
 </script>
 </head>
 <body>
