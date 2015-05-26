@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+</style>
+<script type="text/javascript">
+ var obj = {};
+ //在该线程所有方法执行完毕后的末尾调用回调
+ Object.observe( obj, function( changes ){
+	 changes.forEach(function( change ){
+		 console.log( change );
+	 });
+ } );
+ 
+ //add
+ // name		新增的属性名
+ // object		更新后的对象本身
+
+ //update
+ // name		更新的属性名
+ // oldValue	更新前的属性值
+ // object		更新后的对象本身
+ 
+ //delete
+ // name		删除的属性名
+ // oldValue	删除前的属性值
+ // object		更新后的对象本身
+ 
+ 
+ obj.name = "Sun";
+ 
+ //update
+ obj.name = "butSalt";
+ 
+ //delete
+ delete obj.name;
+</script>
+</head>
+<body>
+
+</body>
+</html>
