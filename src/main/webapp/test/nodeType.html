@@ -14,13 +14,16 @@
 $(function(){
 	var target = $("#target")[0];
 	var nodes = target.childNodes;
-	//1: Dom节点    2: Text节点
+	//1: Dom节点    3: Text节点    11: DocumentFragment 
 	//"Text"
 	//<div>Dom</div>
 	//"\n"    换行符/空格，也被认为是一个TextNode
 	for( var i=0; i<nodes.length; i++ ){
 		console.log(nodes[i].nodeType);
 	}
+	
+	var frag = document.createDocumentFragment();
+	console.log(frag.nodeType);
 });
 </script>
 </head>
