@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	.test1{
+		background-color: #eee;
+	}
+	.test1 div{
+		border: 1px black solid;
+	}
+	.first{
+		margin-top: 10px;
+		margin-left: 10px;
+		width: 500px;
+		height: 500px;
+	}
+	.second{
+		margin-top: 10px;
+		margin-left: 10px;
+		width: 250px;
+		height: 250px;
+	}
+	.third{
+		margin-top: 10px;
+		margin-left: 10px;
+		width: 125px;
+		height: 125px;
+	}
+	.test{
+		background-color: #444;
+	}
+	.test2 .first{
+		background-color: steelblue;
+	}
+	.test2 .second{
+		background-color: #f80;
+	}
+	.test2 .third{
+		background-color: #0f0;
+	}
+</style>
+</head>
+<body>
+<h1>有border时垂直方向上的margin不会重叠</h1>
+<div class="test1">
+<div class="first">
+	<div class="second">
+		<div class="third">
+		</div>
+	</div>
+</div>
+</div>
+<!-- 取最大的正数，和最小的负数进行加法计算  -->
+<h1>没有border时垂直方向上的margin会重叠</h1>
+<div class="test2">
+<div class="first">
+	<div class="second">
+		<div class="third">
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
