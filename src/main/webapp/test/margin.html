@@ -44,9 +44,69 @@
 	.test2 .third{
 		background-color: #0f0;
 	}
+	.test3,
+	.test4,
+	.test5{
+		height: 350px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.test3 div,
+	.test4 div{
+		border: 1px black solid;
+	}
+	.outer{
+		width: 300px;
+		height: 300px;
+		margin: 10px;
+	}
+	.inner{
+		height: 100%;
+		margin: -10px;
+	}
+	.test4 .inner{
+		width: 100%;
+	}
+	.float1{
+		float: left;
+		width:30px;
+		height:30px;
+		background-color:red;
+		margin-bottom:10px;
+	}
+	.float2{
+		clear: left;
+		float: left;
+		width:30px;
+		height:30px;
+		background-color:red;
+		margin-top:10px;
+	}
+	.test5{
+		background-color: #ddd;
+	}
+	.test5 .outer,
+	.test5 .inner,
+	.test5 .innner{
+		width: 350px;
+		height: 350px;
+		margin: 10px;
+	}
+	.test5 .outer{
+		background-color: steelblue;
+	}
+	.test5 .inner{
+		background-color: #f80;
+	}
+	.test5 .innner{
+		background-color:green;
+	}
 </style>
 </head>
 <body>
+<!-- 如果外层没有border，里层有border，仍会重叠 -->
+<!-- 如果外层有border，里层没有border，不会重叠 -->
 <h1>有border时垂直方向上的margin不会重叠</h1>
 <div class="test1">
 <div class="first">
@@ -63,6 +123,31 @@
 	<div class="second">
 		<div class="third">
 		</div>
+	</div>
+</div>
+</div>
+<!-- 左侧的超出不会引起滚动条的出现，而右侧的超出会引起滚动条的出现 -->
+<h1>inner的margin如果为负，但没指定width，左右两边会超出outer</h1>
+<div class="test3">
+<div class="outer">
+	<div class="inner">
+	</div>
+</div>
+</div>
+<h1>inner的margin如果为负，但指定了width，只有margin的left和top发生作用</h1>
+<div class="test4">
+<div class="outer">
+	<div class="inner">
+	</div>
+</div>
+</div>
+<h1>float可以避免重叠</h1>
+<div class="float1"></div><div class="float2"></div>
+<h1 style="clear:both">flex居中使得flex导致居中的对象的margin失效，所以它内侧一层对象的margin不会与失效的margin合并</h1>
+<div class="test5">
+<div class="outer">
+	<div class="inner">
+		<div class="innner"></div>
 	</div>
 </div>
 </div>
