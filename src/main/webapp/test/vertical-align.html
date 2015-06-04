@@ -11,15 +11,22 @@
 	div{
 		background-color: #521;
 		color:#ddd;
-		font-size:30px;
+		font-size:60px;
 		line-height:1;
 	}
-	.dot{
-		vertical-align:text-top;
-		font-size:15px;
-		line-height:20px;
+	span.dot{
+		font-size: 70px;
 	}
-	span{
+	div.dot{
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+	}
+	.dot{
+		vertical-align:text-bottom;
+		background-color: #383;
+	}
+	span,sub,sup{
 		/**
 			line-height,默认继承
 			120%	font-size*120%(继承时继承的是这个计算后的结果)
@@ -33,10 +40,15 @@
 		1.	span元素的高度要比设置的font-size高一点(中文的原因)
 		2.	vertical-align的值不为baseline的对象会从当前行计算baseline的集合中排除
 		3.	vertical-align的值为top时，对象的顶端会与父元素的顶端对齐
-		4.	vertical-align的值为text-top时，对象的顶端会与父元素的默认span的文本顶端(不包含line-height)对齐
-		5.	vertical-align的值为super时，对象的baseline会与父元素的默认sup的baseline对齐
-		6.  vertical-align的值为sub时，对象的baseline会与父元素的默认sub的baseline对齐
-		7.	vertical-align的值为middle时，对象的中垂点与 父元素的默认span的baseline向上再提高1/2个x的位置对齐。
+		4.	vertical-align的值为bottom时，
+			如果对象是span，它的文本实际底端会与父元素的底端对齐。
+			如果对象不是span，它的底端会与父元素的底端对齐。
+		5.	vertical-align的值为text-top时，
+			如果对象是span，它的文本实际顶端会与父元素的默认span的文本实际顶端对齐。
+			如果对象不是span，它的顶端会与父元素的默认span的文本表现顶端对齐。
+		6.	vertical-align的值为super时，对象的baseline会与父元素的默认sup的baseline对齐
+		7.  vertical-align的值为sub时，对象的baseline会与父元素的默认sub的baseline对齐
+		8.	vertical-align的值为middle时，对象的中垂点与 父元素的默认span的baseline向上再提高1/2个x的位置对齐。
 	**/
 </style>
 </head>
@@ -45,10 +57,11 @@
 	<span>Lyx中</span>
 	<sub>Lyx中</sub>
 	<sup>Lyx中</sup>
-	<span class='dot'>Lyx中</span>
-	<span style='font-size:40px;'>Lyx中</span>
-	<span style='font-size:50px;'>Lyx中</span>
-	<span style='font-size:60px;'>Lyx中</span>
+	<div class="dot"></div>
+	<span class="dot">Lyx中</span>
+	<span style='font-size:80px;'>Lyx中</span>
+	<span style='font-size:100px;'>Lyx中</span>
+	<span style='font-size:120px;'>Lyx中</span>
 </div>
 </body>
 </html>
