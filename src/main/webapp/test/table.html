@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+table{
+	background-color: #eee;
+	width: 100%;
+	/**设置成collapse时，border-spacing无效**/
+	border-collapse: separate;
+	/**单元格的margin**/
+	border-spacing: 3px 10px;
+	/**单元格的padding**/
+	/**设置成hide时，隐藏空的单元格**/
+	empty-cells: show;
+}
+
+/**thead,tbody,tfoot,tr不占空间**/
+caption{
+	background-color: #999;
+}
+thead{
+	background-color: #fff;
+	margin: 200px;
+}
+/** 被border-spacing隔开的空间无法被thead，tbody，tfoot，tr设置背景色 **/
+tbody{
+	background-color: #ddd;
+}
+tfoot{
+	background-color: #fff;
+}
+/** 前4个限宽度，后面的自适应 **/
+/** 自适应：类似flex: 1 1 auto **/
+th:not(:nth-child(n+5)){
+	width: 10%;
+}
+</style>
+</head>
+<body>
+<table>
+	<caption>
+		学生列表
+	</caption>
+	<thead>
+		<tr>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>年级</th>
+			<th>班级</th>
+			<th>备注</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>孙雨珩</td>
+			<td>男</td>
+			<td colspan="2">已毕业</td>
+			<td>哈哈</td>
+		</tr>
+		<tr>
+			<td>黄雯</td>
+			<td>女</td>
+			<td>大一</td>
+			<td>0987-2</td>
+			<td></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="5">共计2人</td>
+		</tr>
+	</tfoot>
+</table>
+</body>
+</html>
