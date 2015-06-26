@@ -31,7 +31,8 @@ text = 'S"Joker!\"S';
 console.log(text.match(reg));
 
 console.log(4);
-//如果有g，调用时如果存在匹配的，记录匹配字符串的index+1的位置(lastIndex)，下一次调用时从这个位置开始，如果没找到，则将lastIndex置为0
+//如果是g，调用时如果存在匹配的，记录匹配字符串的index+1的位置(lastIndex)，下一次调用时从这个位置开始，如果没找到，则将lastIndex置为0
+//如果不是g，每次查询都是从头开始查，即lastIndex始终为0
 reg = /test(\d)/g;
 text = 'test0test1';
 console.log(reg.exec(text));
