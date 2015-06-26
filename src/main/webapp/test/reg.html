@@ -18,7 +18,8 @@ var text = '\"Joker!\"';
 console.log(text.replace(reg,'“$1”'));
 
 console.log(2);
-//没有g，只替换第一个
+//如果是g，替换所有满足规则的字符串
+//如果不是g，只替换第一个满足匹配规则的字符串
 reg = /s/;
 text = 'ssssssssss';
 console.log(text.replace(reg,'A'));
