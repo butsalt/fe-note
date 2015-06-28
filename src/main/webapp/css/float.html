@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	.container::after{
+		content:"";
+		display: table;
+		clear: both;
+	}
+	p{
+		background-color: #eee;
+	}
+	.dot{
+		width: 100px;
+		height: 100px;
+		background-color: rgba(0,0,255,0.5);
+	}
+	.left{
+		float: left;
+	}
+	.right{
+		float: right;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="left dot"></div>
+	<div class="right dot"></div>
+	<p>浮动后的元素从文档流内脱出，轮到本段落渲染时，实际上本段落已经占据了整个父元素的所有空间。但是在渲染段落中的文字时，不会渲染到浮动元素上。所以达到了文字环绕的效果。</p>
+</div>
+<div class="container">
+	<div class="left dot"></div>
+	<p>右侧的浮动元素在本段落渲染完后才渲染。</p>
+	<div class="right dot"></div>
+</div>
+</body>
+</html>
