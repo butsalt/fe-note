@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	body > div{
+		background-color: #eee;
+		padding: 20px;
+	}
+	div > div{
+		display: inline-block;
+	}
+	.big{
+		width: 200px;
+		height: 200px;
+		background-color: steelblue;
+	}
+	.absolute{
+		/** 脱离文档流， 默认相对于body**/
+		/** display被重写为block;，y轴方向相对位置不变，x轴方向改为默认紧贴父元素的上方padding的下边缘 **/
+		position: absolute;
+	}
+	.small{
+		width: 100px;
+		height: 100px;
+		background-color: darkred;
+	}
+</style>
+</head>
+<body>
+<div><div class="big"></div><div class="small absolute"></div><div class="big"></div></div>
+</body>
+</html>
