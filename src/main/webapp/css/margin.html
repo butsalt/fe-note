@@ -105,9 +105,10 @@
 </style>
 </head>
 <body>
+<h1>本例只针对display:block</h1>
 <!-- 如果外层没有border，里层有border，仍会重叠 -->
 <!-- 如果外层有border，里层没有border，不会重叠 -->
-<h1>有border时垂直方向上的margin不会重叠</h1>
+<h2>有border时垂直方向上的margin不会重叠</h2>
 <div class="test1">
 <div class="first">
 	<div class="second">
@@ -117,7 +118,7 @@
 </div>
 </div>
 <!-- 取最大的正数，和最小的负数进行加法计算  -->
-<h1>没有border时垂直方向上的margin会重叠</h1>
+<h2>没有border时垂直方向上的margin会重叠</h2>
 <div class="test2">
 <div class="first">
 	<div class="second">
@@ -127,21 +128,21 @@
 </div>
 </div>
 <!-- 左侧的超出不会引起滚动条的出现，而右侧的超出会引起滚动条的出现 -->
-<h1>inner的margin如果为负，但没指定width，左右两边会超出outer</h1>
+<h2>inner的margin如果为负，但没指定width，左右两边会超出outer</h2>
 <div class="test3">
 <div class="outer">
 	<div class="inner">
 	</div>
 </div>
 </div>
-<h1>inner的margin如果为负，但指定了width，只有margin的left和top发生作用</h1>
+<h2>inner的margin如果为负，但指定了width，只有margin的left和top发生作用</h2>
 <div class="test4">
 <div class="outer">
 	<div class="inner">
 	</div>
 </div>
 </div>
-<h1>float可以避免重叠</h1>
+<h2>float可以避免重叠</h2>
 <div class="float1"></div><div class="float2"></div>
 <h1 style="clear:both">flex居中使得flex导致居中的对象的margin失效，所以它内侧一层对象的margin不会与失效的margin合并</h1>
 <div class="test5">
