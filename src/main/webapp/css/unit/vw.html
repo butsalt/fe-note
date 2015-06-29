@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	html,body{
+		height:100%;
+	}
+	div:nth-of-type(1){
+		/**
+			vw,vh指的是window.innerWidth,window.innerHeight(包含滚动条的窗口宽度和高度)
+			100vw=window.innerWidth
+			vmin是取vw,vh中的最小值
+			vmax是取vw,vh中的最大值
+		**/
+		height:200px;
+		width:100vw;
+		background-color:#f84;
+	}
+	div:nth-of-type(2){
+		height:120%;
+		width:120%;
+		background-color:#444;
+	}
+</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+</body>
+</html>
