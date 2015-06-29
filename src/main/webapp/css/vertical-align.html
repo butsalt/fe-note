@@ -25,7 +25,7 @@
 		height: 50px;
 	}
 	.dot{
-		vertical-align:text-bottom;
+		vertical-align: sub;
 		background-color: #383;
 	}
 	span,sub,sup{
@@ -48,8 +48,12 @@
 		5.	vertical-align的值为text-top时，
 			如果对象是span，它的文本实际顶端会与父元素的默认span的文本实际顶端对齐。
 			如果对象不是span，它的顶端会与父元素的默认span的文本表现顶端对齐。
-		6.	vertical-align的值为super时，对象的baseline会与父元素的默认sup的baseline对齐
-		7.  vertical-align的值为sub时，对象的baseline会与父元素的默认sub的baseline对齐
+		6.	vertical-align的值为super时，
+			如果对象是span，它的baseline会与父元素的默认sup的baseline对齐。
+			如果对象不是span，它的底端会与父元素的默认sup的baseline对齐。
+		7.  vertical-align的值为sub时，
+			如果对象是span，它的baseline会与父元素的默认sub的baseline对齐。
+			如果对象不是span，它的底端会与父元素的默认sub的baseline对齐。
 		8.	vertical-align的值为middle时，对象的中垂点与 父元素的默认span的baseline向上再提高1/2个x的位置对齐。
 	**/
 </style>
