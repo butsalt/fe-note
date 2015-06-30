@@ -91,7 +91,7 @@
 	.test5 .innner{
 		width: 350px;
 		height: 350px;
-		margin: 10px;
+		margin: 10px 0 0 10px;
 	}
 	.test5 .outer{
 		background-color: steelblue;
@@ -144,7 +144,7 @@
 </div>
 <h2>float可以避免重叠</h2>
 <div class="float1"></div><div class="float2"></div>
-<h2 style="clear:both">flex居中使得flex导致居中的对象的margin失效，所以它内侧一层对象的margin不会与失效的margin合并</h2>
+<h2 style="clear:both">flex居中的目标对象的margin，与内侧一层对象的margin不会重叠</h2>
 <div class="test5">
 <div class="outer">
 	<div class="inner">
