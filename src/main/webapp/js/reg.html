@@ -86,6 +86,12 @@ console.log(11);
 reg = /".*?"/;
 text = '"big""boy"';
 console.log(reg.exec(text));
+
+console.log(12);
+//(?:expression)，不捕获这个expression分组，如果expression内还有分组依旧可以被正常捕获
+reg = /^\d(?:\d(\d))$/;
+text = "123";
+console.log(reg.exec(text));
 </script>
 </head>
 <body>
