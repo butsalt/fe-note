@@ -86,9 +86,7 @@
 	.test5{
 		background-color: #ddd;
 	}
-	.test5 .outer,
-	.test5 .inner,
-	.test5 .innner{
+	.test5 .outer,.test5 .inner,.test5 .innner{
 		width: 350px;
 		height: 350px;
 		margin: 10px;
@@ -105,7 +103,7 @@
 </style>
 </head>
 <body>
-<h1>本例只针对display:block</h1>
+<h1>display:block</h1>
 <!-- 如果外层没有border，里层有border，仍会重叠 -->
 <!-- 如果外层有border，里层没有border，不会重叠 -->
 <h2>有border时垂直方向上的margin不会重叠</h2>
@@ -144,7 +142,7 @@
 </div>
 <h2>float可以避免重叠</h2>
 <div class="float1"></div><div class="float2"></div>
-<h1 style="clear:both">flex居中使得flex导致居中的对象的margin失效，所以它内侧一层对象的margin不会与失效的margin合并</h1>
+<h2 style="clear:both">flex居中使得flex导致居中的对象的margin失效，所以它内侧一层对象的margin不会与失效的margin合并</h2>
 <div class="test5">
 <div class="outer">
 	<div class="inner">
