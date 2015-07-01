@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	html,body{
+		height:100%;
+	}
+	*{
+		margin:0;
+		padding:0;
+	}
+	body>div{
+		width:100%;
+		height:100%;
+		background-color:#d63;
+		position:relative;
+		perspective:500px;
+	}
+	.outer{
+		width:300px;
+		height:300px;
+		position:absolute;
+		top:50%;
+		left:50%;
+		background-color:#274;
+		transform:rotateX(15deg);
+		transform-style:preserve-3d;
+	}
+	/**
+	preserve-3d
+		指定元素内容在三维空间内变换位置。
+	flat
+		指定元素内容在元素所在平面内变换位置。
+	**/
+	.inner{
+		width:150px;
+		height:150px;
+		background-color:#444;
+		transform:rotateX(15deg) translateZ(200px);
+	}
+</style>
+</head>
+<body>
+<div>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+</div>
+</body>
+</html>
