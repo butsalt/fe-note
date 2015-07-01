@@ -29,7 +29,9 @@
 	2.	clientHeight:除去border，除去滚动条后的可视区域高度
 	3.	scrollHeight:可以滚动的区域高度
 	4.	top:对象本身的css属性
-	5.	scrollTop:当前向上滚动的距离
+	5.	scrollTop:当前已向下滚动的距离
+		chrome浏览器，页面当前已向下滚动的距离:document.body.scrollTop
+		其他浏览器，页面当前已向下滚动的距离:document.documentElement.scrollTop
 	**/
 </style>
 <script type="text/javascript" src="../scripts/jquery-2.1.3.js"></script>
