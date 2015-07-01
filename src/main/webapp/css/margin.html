@@ -61,10 +61,13 @@
 	.greater-height{
 		height: 550px;
 	}
+	.inline-block{
+		display: inline-block;
+	}
 </style>
 </head>
 <body>
-<h1>display:block</h1>
+<h1>Block</h1>
 <!-- 如果外层没有border，里层有border，仍会重叠 -->
 <!-- 如果外层有border，里层没有border，不会重叠 -->
 <h2>有border时垂直方向上的margin不会重叠</h2>
@@ -117,6 +120,11 @@
 		<div class="third"></div>
 	</div>
 </div>
+</div>
+<h1>Inline</h1>
+<h2>inline元素的margin-top/margin-bottom无效。inline-block元素除负值的margin-top无效，其余有效且不与父元素的margin重叠。</h2>
+<div class="background">
+	<div class="first inline-block">Text here!</div><div class="second inline-block">More text!</div><span class="third">Text here..</span>
 </div>
 </body>
 </html>
