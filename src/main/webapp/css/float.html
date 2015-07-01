@@ -23,6 +23,9 @@
 	.right{
 		float: right;
 	}
+	span{
+		margin-top: 20px;
+	}
 </style>
 </head>
 <body>
@@ -35,6 +38,10 @@
 	<div class="left dot"></div>
 	<p>右侧的浮动元素在本段落渲染完后才渲染。</p>
 	<div class="right dot"></div>
+</div>
+<div class="container">
+	<span class="left dot">Text here!</span>
+	<p>inline标签float后display强制为block，width/height/margin-top/margin-bottom生效</p>
 </div>
 </body>
 </html>
