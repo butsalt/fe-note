@@ -8,10 +8,10 @@
 		margin:0;
 		padding:0;
 	}
-	.test1{
+	.background{
 		background-color: #eee;
 	}
-	.test1 div{
+	.inner-border div{
 		border: 1px black solid;
 	}
 	.first{
@@ -19,42 +19,27 @@
 		margin-left: 10px;
 		width: 500px;
 		height: 500px;
+		background-color: steelblue;
 	}
 	.second{
 		margin-top: 10px;
 		margin-left: 10px;
 		width: 250px;
 		height: 250px;
+		background-color: #f80;
 	}
 	.third{
 		margin-top: 10px;
 		margin-left: 10px;
 		width: 125px;
 		height: 125px;
-	}
-	.test{
-		background-color: #444;
-	}
-	.test2 .first{
-		background-color: steelblue;
-	}
-	.test2 .second{
-		background-color: #f80;
-	}
-	.test2 .third{
 		background-color: #0f0;
 	}
-	.test3,
-	.test4,
-	.test5{
+	.flex-center{
 		height: 350px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
-	.test3 div,
-	.test4 div{
-		border: 1px black solid;
 	}
 	.outer{
 		width: 300px;
@@ -65,42 +50,16 @@
 		height: 100%;
 		margin: -10px;
 	}
-	.test4 .inner{
-		width: 100%;
+	.clear-fix::after{
+		display: table;
+		clear: both;
+		content: "";
 	}
-	.float1{
+	.float{
 		float: left;
-		width:30px;
-		height:30px;
-		background-color:red;
-		margin-bottom:10px;
 	}
-	.float2{
-		clear: left;
-		float: left;
-		width:30px;
-		height:30px;
-		background-color:red;
-		margin-top:10px;
-	}
-	.test5{
-		background-color: #ddd;
-	}
-	.test5 .outer,
-	.test5 .inner,
-	.test5 .innner{
-		width: 350px;
-		height: 350px;
-		margin: 10px;
-	}
-	.test5 .outer{
-		background-color: steelblue;
-	}
-	.test5 .inner{
-		background-color: #f80;
-	}
-	.test5 .innner{
-		background-color:green;
+	.greater-height{
+		height: 550px;
 	}
 </style>
 </head>
@@ -109,7 +68,7 @@
 <!-- 如果外层没有border，里层有border，仍会重叠 -->
 <!-- 如果外层有border，里层没有border，不会重叠 -->
 <h2>有border时垂直方向上的margin不会重叠</h2>
-<div class="test1">
+<div class="background inner-border">
 <div class="first">
 	<div class="second">
 		<div class="third">
@@ -119,7 +78,7 @@
 </div>
 <!-- 取最大的正数，和最小的负数进行加法计算  -->
 <h2>没有border时垂直方向上的margin会重叠</h2>
-<div class="test2">
+<div class="background">
 <div class="first">
 	<div class="second">
 		<div class="third">
@@ -129,26 +88,33 @@
 </div>
 <!-- 左侧的超出不会引起滚动条的出现，而右侧的超出会引起滚动条的出现 -->
 <h2>inner的margin如果为负，但没指定width，左右两边会超出outer</h2>
-<div class="test3">
+<div class="flex-center inner-border background">
 <div class="outer">
 	<div class="inner">
 	</div>
 </div>
 </div>
 <h2>inner的margin如果为负，但指定了width，只有margin的left和top发生作用</h2>
-<div class="test4">
+<div class="flex-center inner-border background">
 <div class="outer">
 	<div class="inner">
 	</div>
 </div>
 </div>
-<h2>float可以避免重叠</h2>
-<div class="float1"></div><div class="float2"></div>
-<h2 style="clear:both">flex居中的目标对象的margin，与内侧一层对象的margin不会重叠</h2>
-<div class="test5">
-<div class="outer">
-	<div class="inner">
-		<div class="innner"></div>
+<h2>float可以避免目标元素与相邻元素margin重叠，避免目标元素与嵌套元素margin重叠</h2>
+<div class="clear-fix background">
+	<div class="float second">
+		<div class="third"></div>
+	</div>
+	<div class="float second">
+		<div class="third"></div>
+	</div>
+</div>
+<h1 style="clear:both">flex居中的目标对象的margin，与内侧一层对象的margin不会重叠</h1>
+<div class="flex-center greater-height background">
+<div class="first">
+	<div class="second">
+		<div class="third"></div>
 	</div>
 </div>
 </div>
