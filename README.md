@@ -11,9 +11,9 @@
  * css
  * js
  * svg
- * canvas(canvas的笔记)
+ * canvas
  * selection(选择器)
-2. 第三方js库
+2. 对第三方js库的尝试
  * jquery(jquery库)
  * d3(数据驱动，绘制svg库)
  * page(page.js库，可以在单页面应用上实现多页面的效果)
