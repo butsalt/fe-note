@@ -26,6 +26,9 @@
 	span{
 		margin-top: 20px;
 	}
+	.overflow{
+		overflow: auto;
+	}
 </style>
 </head>
 <body>
@@ -42,6 +45,10 @@
 <div class="container">
 	<span class="left dot">Text here!</span>
 	<p>inline标签float后display强制为block，width/height/margin-top/margin-bottom生效</p>
+</div>
+<div class="container">
+	<div class="left dot"></div>
+	<p class="overflow">overflow:auto/hidden/scroll使本元素(p)BFC，重叠消失</p>
 </div>
 </body>
 </html>
