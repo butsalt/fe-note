@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	h1::before{
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.float-box{
+		float: left;
+		background-color: rgba(200,30,30,0.3);
+		width: 100px;
+		height: 100px;
+	}
+	.bfc{
+		overflow: hidden;
+		background-color: rgba(30,30,200,0.3);
+	}
+	.margin{
+		margin: 20px;
+	}
+</style>
+</head>
+<body>
+<h1>BFC元素不与浮动元素重叠</h1>
+<div>
+	<div class="float-box"></div>
+	<div class="bfc">不重叠！</div>
+</div>
+<h1>BFC元素计算高度时，包括浮动元素</h1>
+<div class="bfc">
+	<div class="float-box"></div>
+</div>
+<h1>不同BFC下垂直方向上的margin不会合并</h1>
+<div>
+	<div class="bfc margin">不合并！</div>
+	<div class="bfc">
+		<div class="bfc margin">不合并！</div>
+	</div>
+</div>
+</body>
+</html>
