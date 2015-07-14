@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+	var target = document.getElementById("target");
+	
+	//Object state信息
+	//String 标题
+	//String 新的url地址
+	
+	//替换当前的state
+	history.replaceState({
+		"msg": "home",
+	},"At Home","./history.html?place=home");
+	
+	target.innerHTML = "home";
+	
+	var button = document.getElementById("button");
+	button.addEventListener("click", function(){
+		//推入一个新的state
+		history.pushState({
+			"msg": "school"
+		},"At School","./history.html?place=school");
+		target.innerHTML = "school";
+	});
+	
+	//在对history进行go/back时，会触发该事件
+	window.addEventListener( "popstate", function( e ){
+		console.log( e.state );
+		target.innerHTML = e.state.msg;
+	} );
+	
+});
+</script>
+</head>
+<body>
+<p id="target"></p>
+<button id="button">go school</button>
+</body>
+</html>
