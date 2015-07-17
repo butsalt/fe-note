@@ -51,7 +51,7 @@
 		html += ' <br/>';
 		html += 'screenY:'+e.screenY;//参考整个屏幕的左上角
 		html += ' <br/>';
-		html += 'layerY:'+e.layerY;//参考父节点的左上角，html/body标签参考自己的左上角
+		html += 'layerY:'+e.layerY;//参考父节点的左上角，html/body标签参考自己的左上角(会受transform影响，慎用)
 		html += ' <br/>';
 		html +='offsetY:'+e.offsetY;//参考自己的左上角
 		html += ' <br/>';
