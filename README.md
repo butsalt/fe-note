@@ -14,9 +14,9 @@
  * canvas
  * selection(选择器)
 2. 对第三方js库的尝试
- * jquery(jquery库)
+ * jquery
  * d3(数据驱动，绘制svg库)
- * page(page.js库，可以在单页面应用上实现多页面的效果)
+ * page(可以在单页面应用上实现多页面的效果)
  * velocity(动画库)
  * tween(使用requestAnimationFrame驱动的动画库)
 3. 杂类
