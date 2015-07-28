@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	h2{
+		margin-bottom: 0.2em;
+	}
+	img{
+		display: block;
+		background-color: #444;
+	}
+	.big{
+		width: 250px;
+		height: 200px;
+	}
+	.small{
+		width: 100px;
+		height: 50px;
+	}
+	.fill{
+		/** 完全填满（默认） **/
+		object-fit: fill;
+	}
+	.contain{
+		/** 保持比例，完全展示 **/
+		object-fit: contain;
+	}
+	.cover{
+		/** 保持比例，完全填充img**/
+		object-fit: cover;
+	}
+	.none{
+		/** 不调整 **/
+		object-fit: none;
+	}
+	.scale-down{
+		/** 空间充足时为none，不充足时contain **/
+		object-fit: scale-down;
+	}
+</style>
+</head>
+<body>
+	<h2>fill</h2>
+	<img class="fill big" src="../assets/maple-small.jpg"/>
+	<h2>contain</h2>
+	<img class="contain small" src="../assets/maple-small.jpg"/>
+	<h2>cover</h2>
+	<img class="cover big" src="../assets/maple-small.jpg"/>
+	<h2>none</h2>
+	<img class="none big" src="../assets/maple-small.jpg"/>
+	<h2>scale-down</h2>
+	<img class="scale-down big" src="../assets/maple-small.jpg"/>
+	<img class="scale-down small" src="../assets/maple-small.jpg"/>
+</body>
+</html>

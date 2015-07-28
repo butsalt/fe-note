@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	img{
+		display: block;
+		margin-top: 10px;
+		width: 400px;
+		height: 200px;
+		background-color: #444;
+		object-fit: none;
+	}
+	.px{
+		/**
+			以像素作单位，移动多少就是多少
+		**/
+		object-position: top 50px left 150px;
+	}
+	.percent{
+		/**
+			以百分比作单位，将图像从一边移到另一边需要的距离作为总长度
+		**/
+		object-position: top 50% left 50%;
+	}
+</style>
+</head>
+<body>
+	<img class="px" src="../assets/maple-small.jpg"/>
+	<img class="percent" src="../assets/maple-small.jpg"/>
+</body>
+</html>
