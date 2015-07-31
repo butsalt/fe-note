@@ -16,24 +16,32 @@
 		-webkit-clip-path:polygon(100px 0px,100px 100%,0px 100%);
 	}
 	img:nth-of-type(2){
-		-webkit-clip-path:circle(60px at 60px 60px);
+		-webkit-clip-path:circle(50px at 50px 50px);
 	}
 	img:nth-of-type(3){
-	/**
-		把整个body看成是一个画布
-	**/
-		-webkit-clip-path:url(#svgPath);
+		/**把整个文档看成是一个画布**/
+		-webkit-clip-path:url(#user);
+	}
+	img:nth-of-type(4){
+		/**把整个对象看成是一个画布(此时只能用百分比)**/
+		-webkit-clip-path:url(#object);
 	}
 </style>
 </head>
 <body>
-<img src="../assets/maple-big.jpg"/>
-<img src="../assets/maple-big.jpg"/>
-<img src="../assets/maple-big.jpg"/>
+<img src="../assets/maple-small.jpg"/>
+<img src="../assets/maple-small.jpg"/>
+<img src="../assets/maple-small.jpg"/>
+<img src="../assets/maple-small.jpg"/>
 <svg height="0" width="0">
-<clipPath id="svgPath">
-	<circle cx="60" cy="860" r="60" />
-</clipPath>
+	<defs>
+		<clipPath id="user">
+			<circle cx="50" cy="250" r="50" />
+		</clipPath>
+		<clipPath id="object" clipPathUnits="objectBoundingBox">
+			<circle cx="0.5" cy="0.5" r="0.5" />
+		</clipPath>
+	</defs>
 </svg>
 </body>
 </html>
