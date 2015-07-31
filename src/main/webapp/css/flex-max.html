@@ -14,7 +14,8 @@
 <div style="display:flex;width:1200px;height:500px;background-color:#ccc;flex-direction:column;">
 	<div style="flex:none;height:100px;background-color:#cbd;"></div>
 	<div style="flex:1 1 0;background-color:#444;position:relative;">
-		<!-- 对于postion为absolute元素来说，子元素将参考该元素width/height的实际值 -->
+		<!-- 对于postion为absolute元素来说，子元素将参考该元素height的实际值 -->
+		<!-- width始终参考父元素width的实际值 -->
 		<div style="position:absolute;top:0px;right:0px;bottom:0px;left:0px;">
 			<!-- 本元素height的值参考父亲的height设置下所能产生的效果，并没有考虑flex-item的拉伸对父亲height的实际值产生的影响 -->
 			<!-- 不嵌套一层的话，本元素height的实际值将为0 -->
