@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	.table{
+		display: table;
+		background-color: #eee;
+		border-spacing: 10px 7px;
+	}
+	.caption{
+		display: table-caption;
+		background-color: #999;
+		text-align: center;
+		font-weight: bold;
+	}
+	.thead{
+		display: table-header-group;
+	}
+	.tfoot{
+		display: table-footer-group;
+	}
+	.tbody{
+		display: table-row-group;
+	}
+	.row{
+		display: table-row;
+	}
+	.thead .cell{
+		background-color: #fff;
+	}
+	.tfoot .cell{
+		background-color: #777;
+	}
+	.cell{
+		background-color: #ddd;
+		padding: 5px 15px;
+		display: table-cell;
+	}
+</style>
+</head>
+<body>
+	<div class="table">
+		<div class="caption">
+			List
+		</div>
+		<div class="thead">
+			<div class="row">
+				<div class="cell">Name</div>
+				<div class="cell">Gender</div>
+			</div>
+		</div>
+		<div class="tfoot">
+			<div class="row">
+				<div class="cell">2</div>
+			</div>		
+		</div>
+		<div class="tbody">
+			<div class="row">
+				<div class="cell">butSalt</div>
+				<div class="cell">male</div>
+			</div>
+			<div class="row">
+				<div class="cell">krista</div>
+				<div class="cell">female</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
