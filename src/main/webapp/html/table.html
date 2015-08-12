@@ -52,6 +52,12 @@ th:not(:nth-child(n+5)){
 			<th>备注</th>
 		</tr>
 	</thead>
+	<!-- tfoot虽设置在tbody前，显示在tbody后 -->
+	<tfoot>
+		<tr>
+			<td colspan="5">共计2人</td>
+		</tr>
+	</tfoot>
 	<tbody>
 		<tr>
 			<td>孙雨珩</td>
@@ -67,11 +73,6 @@ th:not(:nth-child(n+5)){
 			<td></td>
 		</tr>
 	</tbody>
-	<tfoot>
-		<tr>
-			<td colspan="5">共计2人</td>
-		</tr>
-	</tfoot>
 </table>
 </body>
 </html>
