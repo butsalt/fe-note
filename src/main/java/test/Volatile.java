@@ -31,17 +31,14 @@ public class Volatile {
 		setFlag(true);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		new Thread(new Runnable() {
 			public void run() {
 				request();
 			}
 		}).start();
-		try {
-			TimeUnit.SECONDS.sleep(1);
-			stopRequest();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		
+		TimeUnit.SECONDS.sleep(1);
+		stopRequest();
 	}
 }
