@@ -21,7 +21,8 @@ public class Volatile {
 	}
 
 	//如果方法被synchronized修饰
-	// 执行方法时会将主内存中该方法所属对象的成员信息重新同步一次到工作内存中(可能取回初始化到一半的值)
+	// 执行方法前会将主内存中该方法所属对象的成员信息重新同步一次到工作内存中(可能取回初始化到一半的值)
+	// 执行方法后会将工作内存中该方法所属对象的成员信息重新同步一次回工作内存中
 	public static boolean getFlag() {
 		return stopRequested;
 	}
