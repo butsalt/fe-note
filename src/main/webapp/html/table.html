@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-/**table的默认display，也是块级元素，但默认宽度不会占满整行**/
+/**table是块级元素，但默认宽度不会占满整行**/
+/**设置height，background-color不包括caption**/
 table{
 	background-color: #eee;
 	width: 100%;
@@ -16,14 +17,14 @@ table{
 	empty-cells: show;
 }
 
-/**thead,tbody,tfoot,tr不占空间**/
 caption{
 	background-color: #999;
 }
+/**thead,tbody,tfoot,tr不占空间**/
+/** 被border-spacing隔开的空间无法被thead，tbody，tfoot，tr设置背景色 **/
 thead{
 	background-color: #fff;
 }
-/** 被border-spacing隔开的空间无法被thead，tbody，tfoot，tr设置背景色 **/
 tbody{
 	background-color: #ddd;
 }
