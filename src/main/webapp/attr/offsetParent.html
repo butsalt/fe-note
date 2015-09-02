@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+#outer{
+	position: relative;
+	background-color: #eee;
+}
+
+#inner{
+	width: 100px;
+	height: 100px;
+	background-color: steelblue;
+}
+</style>
+</head>
+<body>
+<div id="outer">
+	<div id="inner"></div>
+</div>
+<script type="text/javascript">
+	//offsetParent
+	//	指向最近的position不为static的长辈元素，默认为body标签
+
+	//offsetTop
+	//	offsetParent的padding-top上边缘开始到该元素border-top上边缘的距离
+	
+	//	一般情况下，当offsetParent为body时，offsetTop计算结果是相对于页面顶部
+	//	但如果body的position不为static时，offsetTop计算结果是相对于body标签
+
+	//position: fixed
+	//	相对于窗口，但offsetParent为null
+	//	offsetTop计算结果相对于窗口顶部
+
+	//display: none
+	//	offsetParent === null
+	//	offsetTop === 0
+
+	console.log('outer');
+	console.log(outer.offsetParent);
+	console.log( 'offsetTop: ' + outer.offsetTop + 'px' );
+
+	console.log('');
+	
+	console.log('inner:');
+	console.log(inner.offsetParent);
+	console.log( 'offsetTop: ' + inner.offsetTop + 'px' );
+</script>
+</body>
+</html>
