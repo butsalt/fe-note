@@ -31,10 +31,10 @@ $(function(){
 		d.css('top',positions[i++%positions.length]);
 		//包含四个属性：left、top、right和bottom
 		//计算结果包含border和padding
-		//left代表元素的左边与可视化区域左边的距离
-		//right代表元素的右边与可视化区域左边的距离
-		//top代表元素的上边与可视化区域上边的距离
-		//bottom代表元素的下边与可视化区域下边的距离
+		//left代表元素的左边与可视区域左边的距离
+		//right代表元素的右边与可视区域左边的距离
+		//top代表元素的上边与可视区域上边的距离
+		//bottom代表元素的下边与可视区域上边的距离
 		d.text(d[0].getBoundingClientRect().top);
 	},1500);
 });
