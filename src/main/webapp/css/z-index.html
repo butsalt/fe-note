@@ -4,10 +4,6 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-	}
 	div div{
 		width:100px;
 		height:100px;
@@ -26,25 +22,25 @@
 </div>
 <div>
 	<!-- position:static的z-index无效-->
-	<div style="position:static;background-color:black;z-index:999;"></div>
-	<div style="position:absolute;background-color:#444;z-index:100;top:25px;left:25px;"></div>
+	<div style="position:static;background-color:black;z-index:100;"></div>
+	<div style="position:absolute;background-color:#444;z-index:10;top:25px;left:25px;"></div>
 	<div style="position:absolute;background-color:#eee;top:50px;left:50px;"></div>
 </div>
-<div>
-	<div style="z-index:999;">
-		<div style="position:absolute;top:0;left:0;background-color:#444;width:100px;height:100px;"></div>
-	</div>
-	<div>
-		<div style="position:absolute;top:25px;left:25px;background-color:#eee;width:100px;height:100px;"></div>
-	</div>
+<!-- 子元素默认与父元素采用同一个层级 -->
+<!-- 当一个父元素声明了层级，另一个父元素没有声明层级，子元素之间如何覆盖由子元素上的层级决定 -->
+<!-- 当两个父元素都没有声明层级，子元素之间如何覆盖由子元素上的层级决定 -->
+<div style="z-index:10;">
+	<div style="position:absolute;background-color:purple;top:150px;"></div>
 </div>
 <div>
-	<div style="z-index:999;position:relative;">
-		<div style="position:absolute;top:0;left:0;background-color:#444;width:100px;height:100px;"></div>
-	</div>
-	<div>
-		<div style="position:absolute;top:25px;left:25px;background-color:#eee;width:100px;height:100px;"></div>
-	</div>
+	<div style="z-index:100;position:absolute;background-color:steelblue;left:50px"></div>
+</div>
+<!-- 当两个父元素都声明了层级，层级高的父元素的子元素一定覆盖层级低下的子元素 -->
+<div style="z-index:10;">
+	<div style="position:absolute;background-color:purple;top:150px;"></div>
+</div>
+<div style="z-index:1;">
+	<div style="z-index:100;position:absolute;background-color:steelblue;left:50px"></div>
 </div>
 </body>
 </html>
