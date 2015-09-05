@@ -4,13 +4,75 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	div div{
-		width:100px;
-		height:100px;
+	body > div{
+		background: #999;
+		margin-bottom: 20px;
 	}
-	body>div{
-		height:200px;
-		position:relative;
+	
+	.red{
+		width: 100px;
+		height: 100px;
+		background-color: #500;
+	}
+	
+	.red > div{
+		width: 80px;
+		height: 80px;
+		background-color: #a00;
+	}
+	
+	.red > div > div{
+		width: 60px;
+		height: 60px;
+		background-color: #f00;
+	}
+	
+	.green{
+		width: 100px;
+		height: 100px;
+		background-color: #050;
+	}
+	
+	.green > div{
+		width: 80px;
+		height: 80px;
+		background-color: #0a0;
+	}
+	
+	.green > div > div{
+		width: 60px;
+		height: 60px;
+		background-color: #0f0;
+	}
+	
+	.blue{
+		width: 100px;
+		height: 100px;
+		background-color: #005;
+	}
+	
+	.blue > div{
+		width: 80px;
+		height: 80px;
+		background-color: #00a;
+	}
+	
+	.blue > div > div{
+		width: 60px;
+		height: 60px;
+		background-color: #00f;
+	}
+	
+	.rel-20{
+		top: 20px;
+		left: 20px;
+	}
+	.rel-40{
+		top: 40px;
+		left: 40px;		
+	}
+	[class*="rel"]{
+		position: relative;
 	}
 </style>
 </head>
@@ -19,29 +81,29 @@
 	<!-- 同一层级下，同为position:static的元素，后添加的总是覆盖先添加的 -->
 	<!-- 同一层级下，不为position:static的元素覆盖position:static的元素 -->
 	<!-- 同一层级下，同不为position:static的元素，后添加的总是覆盖先添加的 -->
-	<div style="position:absolute;background-color:#444;"></div>
-	<div style="position:absolute;background-color:#eee;top:50px;left:50px;"></div>
-</div>
-<div>
 	<!-- position:static的元素的z-index无效-->
-	<div style="position:static;background-color:black;z-index:100;"></div>
-	<div style="position:absolute;background-color:#444;z-index:10;top:25px;left:25px;"></div>
-	<div style="position:absolute;background-color:#eee;top:50px;left:50px;"></div>
+	<div class="red rel-40"></div>
+	<div class="green rel-20"></div>
+	<div class="blue" style="z-index:999;"></div>
 </div>
 <!-- postion不为static且声明了z-index时，会创建一个层级 -->
-<!-- position不为static但未声明z-index时，只会对它与它的兄弟元素做优先级比较时起作用 -->
-<div style="z-index:10;">
-	<div style="position:absolute;background-color:purple;top:150px;"></div>
-</div>
+<!-- position不为static但未声明z-index时，只会对它与处在同一层级的元素做优先级比较时起作用 -->
 <div>
-	<div style="z-index:100;position:absolute;background-color:steelblue;left:50px"></div>
+	<div class="red rel-40">
+		<div>
+			<div></div>
+		</div>
+	</div>
+	<div class="green">
+		<div>
+			<div class="rel"></div>
+		</div>
+	</div>
 </div>
 <!-- 在同一层级下，z-index高的元素覆盖z-index低的的元素 -->
-<div style="z-index:10;">
-	<div style="position:absolute;background-color:purple;top:150px;"></div>
-</div>
-<div style="z-index:1;">
-	<div style="z-index:100;position:absolute;background-color:steelblue;left:50px"></div>
+<div>
+	<div class="red rel-40"></div>
+	<div class="green rel" style="z-index:1;"></div>
 </div>
 </body>
 </html>
