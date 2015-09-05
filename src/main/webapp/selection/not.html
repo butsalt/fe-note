@@ -4,31 +4,30 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-	}
 	div{
-		width:100px;
-		height:100px;
-		background-color:#444;
-		margin:1px;
-	}
-	div:not(.clicked):hover{
-		background-color:#bdbdbd;
+		width: 100px;
+		height: 100px;
+		background-color: #444;
+		margin: 10px;
 	}
 	
 	span{
 		font-size:20px;
 		color:#eee;
 	}
-	div :not(.clicked):hover{
-		color:green;
+	
+	.hoverable:hover{
+		background-color:#aaa;
+	}
+	
+	/** class不含hoverable的div 下的span在hover时 **/
+	div:not(.hoverable) span:hover{
+		color: red;
 	}
 </style>
 </head>
 <body>
-<div class="clicked"><span>haha</span></div>
-<div><span class="clicked">haha</span></div>
+<div class="hoverable"><span>haha</span></div>
+<div><span>haha</span></div>
 </body>
 </html>
