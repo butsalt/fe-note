@@ -1,35 +1,21 @@
 <!DOCTYPE html>
-<html lang='fr'>
+<!-- 设置语言 -->
+<html lang="ch">
 <head>
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	*{
-		margin:0;
-		padding:0;
+	p:lang(ch){
+		background-color: steelblue;
+		color: #ddd;
 	}
-	p:lang(fr){
-		color:#ddd;
+	q:lang(ch){
+		quotes: "${" "}";
 	}
-	:lang(fr) p{
-		background:green;
-	}
-	:lang(fr){
-		quotes:'!' '!';
-	}
-	/**
-		这个伪类生效的目标是在html元素上，看起来似乎怎么用都可以
-	**/
 </style>
 </head>
 <body>
-<p>
-	WWF's goal is to:
-	<q cite='http://www.wwf.org'>
-	build a future where people live in harmony with nature
-	</q>
-	We hopse they succeed.
-</p>
+<p>It's a <q>big</q> day!</p>
 <div></div>
 </body>
 </html>
