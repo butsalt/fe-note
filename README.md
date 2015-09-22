@@ -8,11 +8,12 @@
 1. 核心
  * html
  * attr(dom属性)
+ * selection(选择器)
+ * meta
  * css
  * js
  * svg
  * canvas
- * selection(选择器)
 2. 对第三方js库的尝试
  * jquery
  * d3(数据驱动，绘制svg库)
