@@ -37,9 +37,11 @@
 			1.5		font-szie*1.5(继承时继承这个倍数)
 		**/
 		/**
-			x的中心位置总是在字符内容区域高度(line-height)中心点的下方
-			字符高度由font-size决定
-			baseline始终位于x的下边缘
+			1.	x的中心位置总是在字符内容区域高度(line-height)中心点的下方
+			2.	baseline始终位于x的下边缘，根据字体不同可能会有几个像素的偏差
+			3.	包裹文字的父元素
+					如果为inline，会根据文字实际大小进行包裹
+					否则，会根据line-height的计算结果进行包裹
 		**/
 		background-color: #663;
 	}
