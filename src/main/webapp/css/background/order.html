@@ -4,10 +4,6 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-	}
 	/**
 	渲染优先级(高->低)
 	1.border
@@ -22,12 +18,11 @@
 		/**从border左上角到border右下角**/
 		background-color:#444;
 		/**从padding左上角到border右下角，如果是-background-repeat:repeat，padding左上角到border左上角用重复补充**/
-		background-image:url(../assets/maple-small.jpg);
+		background-image:url(/assets/maple-small.jpg);
 		background-repeat:repeat;
-		border:10px rgba(220,220,220,0.5) dashed;
-		padding:100px;
+		border:10px rgba(255,255,255,0.4) dashed;
 		/**内阴影从padding外边开始，外阴影从border外边开始**/
-		box-shadow:inset 0 0 0 1px green,0 0 0 1px red;
+		box-shadow:inset 0 0 0 8px green, 0 0 0 8px red;
 	}
 </style>
 </head>
