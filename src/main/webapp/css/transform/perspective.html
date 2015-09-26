@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+	html,
+	body {
+		height: 100%;
+	}
+	body {
+		margin: 0;
+	}
+	.port {
+		width: calc(100% - 40px);
+		height: calc(100% - 40px);
+		margin-top: 20px;
+		margin-left: 20px;
+		position: relative;
+		/** 定义眼睛到投影平面的距离，距离越近，旋转效果越明显 **/
+		perspective: 500px;
+		background-color: orange;
+	}
+	.unit {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		background-color: steelblue;
+		transform: rotateX(15deg);
+	}
+	.first {
+		top: 0;
+		left: 0;
+	}
+	.second {
+		top: 50%;
+		left: 50%;
+	}
+	.third {
+		bottom:0;
+		right:0;
+	}
+</style>
+</head>
+<body>
+<div></div>
+<div class="port">
+	<div class="first unit"></div>
+	<div class="second unit"></div>
+	<div class="third unit"></div>
+</div>
+</body>
+</html>
