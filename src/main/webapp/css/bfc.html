@@ -24,11 +24,11 @@
 	}
 	
 	/** 触发bfc的方式 **/
-	/** 1. 根元素 **/
+	/** 1. body元素 **/
 	/** 2. float不为none **/
 	/** 3. position为absolute, fixed **/
 	/** 4. display为inline-block, tabel-cell, table-caption, flex, inline-flex **/
-	/** 5. over不为visible **/
+	/** 5. overflow不为visible（body下首个元素使用这个方式实现的bfc仍会导致垂直方向上的margin与body合并） **/
 </style>
 </head>
 <body>
