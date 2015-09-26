@@ -64,12 +64,20 @@
 	.inline-block{
 		display: inline-block;
 	}
+	.useless-first{
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	.useless-second{
+		margin-top: -50px;
+		margin-bottom: 30px;
+	}
 </style>
 </head>
 <body>
 <h1>Block</h1>
-<!-- 如果外层没有border，里层有border，仍会重叠 -->
-<!-- 如果外层有border，里层没有border，不会重叠 -->
+<!-- 两个元素嵌套，如果外层没有border，里层有border，仍会重叠 -->
+<!-- 两个元素嵌套，如果外层有border，里层没有border，不会重叠 -->
 <h2>有border时垂直方向上的margin不会重叠</h2>
 <div class="background inner-border">
 <div class="first">
@@ -79,7 +87,8 @@
 	</div>
 </div>
 </div>
-<!-- 取最大的正数，和最小的负数进行加法计算  -->
+<!-- 最终的margin-top取最大的正数，和最小的负数进行加法计算，margin-bottom同理  -->
+<!-- 先用这种方式计算嵌套元素最外层的margin，再用这种方式计算相邻元素间的距离 -->
 <h2>没有border时垂直方向上的margin会重叠</h2>
 <div class="background">
 <div class="first">
@@ -126,5 +135,10 @@
 <div class="background">
 	<div class="first inline-block">Text here!</div><div class="second inline-block">More text!</div><span class="third">Text here..</span>
 </div>
+<h1>其他</h1>
+<h2>空元素的margin-top等价于margin-bottom</h2>
+<div class="useless-first"></div>
+<div class="useless-second"></div>
+<p>Text here!</p>
 </body>
 </html>
