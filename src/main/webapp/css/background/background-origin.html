@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+div {
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	border: 10px rgba(255, 255, 255, 0.5) dashed;
+	background-color: orange;
+	margin-top: 8px;
+	background-image: url("/assets/maple-small.jpg");
+	background-repeat: no-repeat;
+}
+
+/** 背景图片开始的位置（默认：padding-box） **/
+.content {
+	/** 从内容区域的左上角开始 **/
+	background-origin: content-box;
+}
+
+.padding {
+	/** 从padding的左上角的外边缘开始 **/
+	background-origin: padding-box;
+}
+
+.border {
+	/** 从border的左上角的外边缘开始 **/
+	background-origin: border-box;
+}
+</style>
+</head>
+<body>
+<div class="content"></div>
+<div class="padding"></div>
+<div class="border"></div>
+</body>
+</html>
