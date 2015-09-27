@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+div {
+	width: 50px;
+	height: 50px;
+	margin-top: 8px;
+	padding: 10px;
+	border: 10px rgba(255, 255, 255, 0.5) dashed;
+	background-color: orange;
+}
+
+/** 背景允许存在的区域（默认：border-box） **/
+.content {
+	/** 只允许存在于内容区域 **/
+	background-clip: content-box;
+}
+
+.padding {
+	/** 只允许存在于padding及padding内部 **/
+	background-clip: padding-box;
+}
+
+.border {
+	/** 只允许存在于border及border内部 **/
+	background-clip: border-box;
+}
+</style>
+</head>
+<body>
+<div class="content"></div>
+<div class="padding"></div>
+<div class="border"></div>
+</body>
+</html>
