@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+p {
+    background-color: #eee;
+}
+.wrapper {
+    display: inline-block;
+}
+</style>
+</head>
+<body>
+<!-- 空白文本在block的首尾时不占位置，即使使用span包裹 -->
+<p class="wrapper"><span>     </span>Text Here!     </p>
+<!-- 只要block中有行级元素，行级元素就会和baseline对齐 -->
+<p>x<img src="/assets/maple-small.jpg"/></p>
+</body>
+</html>
