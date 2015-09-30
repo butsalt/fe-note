@@ -4,37 +4,35 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-	}
-	html,body{
-		width:100%;
-	}
-	div{
-		width:100px;
-		height:100px;
-		background-color:#cbd;
-		border:1px black solid;
-	}
-	.first{
-		float:left;
-	}
-	/**
-		clear使目标元素的左侧/右侧不允许出现浮动元素(不影响其他元素)
-	**/
-	.second{
-		float:right;
-		clear:both;
-	}
-	.third{
-		float:right;
-	}
+    div {
+        width: 100px;
+        height: 100px;
+        border: 1px black solid;
+    }
+
+    .first {
+        float:left;
+    }
+
+    /**
+        clear使目标元素在按顺序渲染时，要求左侧/右侧不允许出现浮动元素
+        但这不影响其他浮动元素渲染时的位置
+        该属性只适用于块级元素
+    **/
+
+    .second {
+        float: right;
+        clear: both;
+    }
+
+    .third{
+        float:right;
+    }
 </style>
 </head>
 <body>
-	<div class="first">1</div>
-	<div class="second">2</div>
-	<div class="third">3</div>
+    <div class="first">1</div>
+    <div class="second">2</div>
+    <div class="third">3</div>
 </body>
 </html>
