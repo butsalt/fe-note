@@ -25,7 +25,7 @@
         height: 50px;
     }
     .dot{
-        vertical-align: text-bottom;
+        vertical-align: text-top;
         background-color: #383;
     }
 
@@ -51,21 +51,24 @@
         background-color: #663;
     }
     /**
-        1. vertical-align的值为top时，对象的顶端会与父元素的顶端对齐
-        2.  vertical-align的值为bottom时，
-            如果对象是span，它的文本实际底端会与父元素的底端对齐。
-            如果对象不是span，它的底端会与父元素的底端对齐。
+        1.  vertical-align的值为top时，
+            对象的顶端会与父元素的顶端对齐。
         3.  vertical-align的值为text-top时，
-            如果对象是span，它的文本实际顶端会与父元素的默认span的文本实际顶端对齐。
-            如果对象不是span，它的顶端会与父元素的默认span的文本表现顶端对齐。
+            对象的顶端会与父元素的默认span的文字上边缘对齐。
         4.  vertical-align的值为super时，
-            如果对象是span，它的baseline会与父元素的默认sup的baseline对齐。
-            如果对象不是span，它的底端会与父元素的默认sup的baseline对齐。
+            对象的baseline会与父元素的默认sup的baseline对齐。
         5.  vertical-align的值为sub时，
-            如果对象是span，它的baseline会与父元素的默认sub的baseline对齐。
-            如果对象不是span，它的底端会与父元素的默认sub的baseline对齐。
+            对象的baseline会与父元素的默认sub的baseline对齐。
         6.  vertical-align的值为middle时，
             对象的中垂点与父元素的默认span的baseline向上再提高1/2个x的位置对齐。
+    **/
+    /**
+        1.  当目标对象为inline时，
+            需要根据line-height来计算顶端 / 底部
+        2.  当目标对象为inline-block时，
+            如果未设置它的高，且内部含有文本，则需要根据line-height来计算顶端 / 底部。
+            如果内部含有文本，baseline由最后一行文本的baseline决定。
+            如果内部没有文本，baseline就是对象的底部。
     **/
 </style>
 </head>
