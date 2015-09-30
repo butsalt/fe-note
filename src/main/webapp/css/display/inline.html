@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+    /**
+        如果inline内部高度范围不超过默认span高度范围，inline的父元素则按照它的line-height进行包裹
+        如果inline内部高度范围超过默认span高度范围，inline的父元素会额外包裹超出部分
+    **/
+    .wrapper {
+        background-color: #eee;
+    }
+    /**
+        margin-top，margin-bottom，height 无效
+        高度由font-family和font-size一同决定 
+    **/
+    .span {
+        display: inline;
+        line-height: 1;
+        font-size: 20px;
+        font-family: arial;
+        background-color: green;
+    }
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="span"><img src="/assets/maple-small.jpg"/></div>
+</div>
+</body>
+</html>
