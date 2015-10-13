@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //判断当前浏览器品牌是否为以下中的一个
+    var supportList = ['chrome', 'firefox', 'safari'];
+    function supports () {
+        var useragent = navigator.userAgent.toLowerCase();
+        var i, ii;
+        for (i = 0 , ii = supportList.length; i < ii; i++) {
+            if (useragent.indexOf(supportList[i]) !== -1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    var url = '/download';
+    var filePath = 'assets';
+    var fileName = 'maple-small.jpg';
+
+    url += '?filePath=' + filePath + '&' + 'fileName=' + fileName;
+
+    var success = false;
+    if (supports()) {
+        var link = document.createElement('a');
+        link.href = url;
+
+        //指定文件名，如果当前文件浏览器支持显示也不会被打开
+        //消息头Content-Disposition中的文件名优先于此
+        if (link.download !== undefined) {
+            link.download = fileName;
+        }
+
+        if (MouseEvent) {
+            var e = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true
+            });
+            if (link.dispatchEvent) {
+                link.dispatchEvent(e);
+                success = true;
+            }
+        }
+    }
+
+    if (!success) {
+        window.open(url, '_self');
+    }
+</script>
+</body>
+</html>
