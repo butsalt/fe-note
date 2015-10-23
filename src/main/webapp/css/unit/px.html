@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+/** 现代浏览器在处理时，采取四舍五入 **/
+/** Chrome浏览器在处理小于1px时，直接舍去 **/
+div {
+    margin-top: 20px;
+    height: 10px;
+    border-left-style: solid;
+    border-left-color: black;
+}
+
+div.eq4 {
+    border-left-width: 0.4px;
+}
+
+div.normal {
+    border-left-width: 1px;
+}
+
+div.eq5 {
+    border-left-width: 0.5px;
+}
+
+p.eq4 {
+    font-size: 12.4px;
+}
+
+p.eq5 {
+    font-size: 13px;
+}
+
+p.normal {
+    font-size: 12.5px;
+}
+</style>
+</head>
+<body>
+<div class="eq4"></div>
+<div class="normal"></div>
+<div class="eq5"></div>
+<p class="eq4">xYz中</p>
+<p class="normal">xYz中</p>
+<p class="eq5">xYz中</p>
+</body>
+</html>
