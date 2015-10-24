@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>learn</title>
+<style type="text/css">
+body {
+    margin: 0;
+}
+
+#target {
+    width: 100px;
+    height: 100px;
+    background-color: steelblue;
+}
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+    var targetEl = document.getElementById('target');
+
+    //会冒泡
+    //触摸一个dom元素后，会fire它的touchstart，touchmove，touchend一系列事件
+
+    //event属性
+        //target 指向触发这个事件的touch的origin dom
+        //touches 所有还停留在触摸平面上的touches
+        //targetTouches origin dom为event.target的touches
+
+    //touch属性
+        //pageY 参考整个文档的左上角
+        //clientY 参考当前可视区域的左上角
+        //creenY 参考整个屏幕的左上角
+
+    targetEl.addEventListener('touchstart', function (e) {
+        console.log('target:start');
+        //changedTouches 新增加的touches
+        console.log(e);
+    });
+
+    targetEl.addEventListener('touchmove', function (e) {
+        console.log('target:move');
+        //changedTouches 位置发生变化的touches
+        console.log(e);
+        //避免窗口被拖动
+        e.preventDefault();
+    });
+
+    targetEl.addEventListener('touchend', function (e) {
+        console.log('target:end');
+        //changedTouches 离开触摸平面的touches
+        console.log(e);
+    });
+});
+</script>
+</head>
+<body>
+    <div id="target"></div>
+    <div id="another-target"></div>
+</body>
+</html>
