@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+    .container {
+        background-color: #eee;
+        width: 500px;
+        height: 500px;
+        padding: 15px;
+        border: 10px black solid;
+        position: relative;
+    }
+
+    .container > div {
+        display: inline-block;
+    }
+
+    .sibling {
+        width: 200px;
+        height: 200px;
+        background-color: steelblue;
+    }
+
+    .absolute {
+        /** 脱离文档流 **/
+        /** 取值相对于最近的position不为static的祖先元素，否则相对于窗口，宽相对于innerWidth，高相对innerHeight**/
+        /** display被重写为block **/
+        position: absolute;
+        /** y轴方向相对位置不变，x轴方向改为元素border-top上边缘紧贴该行的顶部 **/
+        border: 10px pink solid;
+        /** 宽相对于相对元素除去border包含padding的宽 **/
+        width: 10%;
+        /** 高相对于相对元素除去border包含padding的高 **/
+        height: 10%;
+        background-color: darkred;
+    }
+
+    .dropdown {
+        /** 元素border-top的上边缘紧贴相对元素border-top的下边缘 **/
+        top: 0;
+        /** 元素border-right的右边缘紧贴相对元素border-right的左边缘 **/
+        right: 0;
+        background-color: green;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="sibling"></div><!--
+  --><div class="absolute"></div><!--
+  --><div class="sibling"></div><!--
+  --><div class="absolute dropdown"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+.outer {
+    width: 500px;
+    height: 500px;
+    background-color: #eee;
+    padding: 10px;
+    border: 10px black solid;
+}
+
+.inner {
+    position: relative;
+    background-color: steelblue;
+    /** 宽相对于父亲元素除去border，padding后的宽度 **/
+    width: 50%;
+    /** 高相对于父亲元素除去border，padding后的高度 **/
+    height: 50%;
+    /** 初始位置 **/
+    top: 0;
+    /** 初始位置 **/
+    left: 0;
+}
+</style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner"></div>
+</body>
+</html>
