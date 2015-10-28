@@ -13,6 +13,10 @@ div {
 	background-color: orange;
 	background-image: url("/assets/maple-small.jpg");
 	background-repeat: no-repeat;
+    /** 根据background-origin计算空间 **/
+    /** content-box: 去除border，去除padding **/
+    /** padding-box: 去除border **/
+    /** border-box: 都不去除; **/
 	background-origin: content-box;
 }
 .percent {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+div {
+    width: 400px;
+    height: 200px;
+    margin-top: 8px;
+    padding: 10px;
+    border: 10px rgba(255, 255, 255, 0.5) dashed;
+    background-color: orange;
+    background-image: url("/assets/maple-small.jpg");
+    background-repeat: no-repeat;
+    /** 根据background-origin计算空间 **/
+    /** content-box: 去除border，去除padding **/
+    /** padding-box: 去除border **/
+    /** border-box: 都不去除; **/
+    background-origin: content-box;
+}
+/** 宽 高 **/
+.percent {
+    /** 参考空间的宽（高） **/
+    background-size: 100% 50%;
+}
+.px {
+    /** 设置多少就是多少 **/
+    background-size: 200px 100px;
+}
+.contain {
+    /** 保持比例，充分利用空间完全展示 **/
+    background-size: contain;
+}
+.cover {
+    /** 保持比例，完全填充空间 **/
+    background-size: cover;
+}
+</style>
+</head>
+<body>
+<div class="percent"></div>
+<div class="px"></div>
+<div class="contain"></div>
+<div class="cover"></div>
+</body>
+</html>
