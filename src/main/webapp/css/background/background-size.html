@@ -11,7 +11,7 @@ div {
     padding: 10px;
     border: 10px rgba(255, 255, 255, 0.5) dashed;
     background-color: orange;
-    background-image: url("/assets/maple-small.jpg");
+    background-image: url("/assets/maple-big.jpg");
     background-repeat: no-repeat;
     /** 根据background-origin计算空间 **/
     /** content-box: 去除border，去除padding **/
@@ -28,6 +28,10 @@ div {
     /** 设置多少就是多少 **/
     background-size: 200px 100px;
 }
+.auto {
+    /**定宽，高按比例缩放**/
+    background-size: 20px auto;
+}
 .contain {
     /** 保持比例，充分利用空间完全展示 **/
     background-size: contain;
@@ -41,6 +45,7 @@ div {
 <body>
 <div class="percent"></div>
 <div class="px"></div>
+<div class="auto"></div>
 <div class="contain"></div>
 <div class="cover"></div>
 </body>
