@@ -10,16 +10,33 @@ html, body {
 
 body {
     margin: 0;
+}
+
+.container {
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 300px;
+    background-color: darkred;
 }
-#target {
+
+.container:nth-child(even) {
+    background-color: orange;
+}
+
+.target {
+    box-sizing: border-box;
     width: 100px;
     height: 100px;
     border: 10px black solid;
     background-color: steelblue;
+}
+
+.port {
+    perspective: 300px;
+}
+
+.port .target {
     /** 固定点 **/
     /** 在变化过程中，该点位置永远不会动 **/
     /** 参数列表： 固定点x值-元素左上角x值 固定点y值-元素左上角y值 固定点到投影平面的距离 **/
@@ -27,11 +44,24 @@ body {
     /** 百分比是相对于元素包含border，padding的宽/高 **/
     /** 第三个参数不能使用百分比 **/
     transform-origin: 50% 50% 300px;
-    transform: rotateX(30deg);
+    transform: rotateY(15deg);
+}
+
+.self .target{
+    /** perspective被定义在transform中，则transform-origin相当于定义了焦点位置 **/
+    /** 为正值第的三个参数相当于进一步拉远了眼睛到元素的距离 **/
+    transform-origin: 0 50% 100px;
+    /** 元素围绕着焦点进行旋转 **/
+    transform: perspective(300px) rotateY(45deg);
 }
 </style>
 </head>
 <body>
-<div id="target"></div>
+<div class="container port">
+    <div class="target"></div>
+</div>
+<div class="container self">
+    <div class="target"></div>
+</div>
 </body>
 </html>
