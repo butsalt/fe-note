@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 300px;
+}
+#target {
+    width: 100px;
+    height: 100px;
+    border: 10px black solid;
+    background-color: steelblue;
+    /** 固定点 **/
+    /** 在变化过程中，该点位置永远不会动 **/
+    /** 参数列表： 固定点x值-元素左上角x值 固定点y值-元素左上角y值 固定点到投影平面的距离 **/
+    /** (0, 0)为元素左上角 **/
+    /** 百分比是相对于元素包含border，padding的宽/高 **/
+    /** 第三个参数不能使用百分比 **/
+    transform-origin: 50% 50% 300px;
+    transform: rotateX(30deg);
+}
+</style>
+</head>
+<body>
+<div id="target"></div>
+</body>
+</html>
