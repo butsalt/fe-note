@@ -4,47 +4,31 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-	}
-	body>div:nth-of-type(1){
-		/**
-			width:50%,设置宽度为它父元素宽度的50%
-		**/
-		width:200px;
-		height:200px;
-		background-color:#ed4;
-		/**
-			perspective:眼睛到对投影平面的距离
-			scaleZ:z轴上的放大比例
-			translateZ:对象到投影平面的距离
-			translateX:50%,对象向右移动它的50%宽长度的距离
-		**/
-		-webkit-transform: perspective(300px) scaleZ(1.5) translateZ(100px);
-	}
-	
-	body>div:nth-of-type(2){
-		width:200px;
-		height:200px;
-		border:1px black solid;
-		overflow:auto;
-	}
-	body>div:nth-of-type(2)>div{
-		width:50px;
-		height:50px;
-		background-color:#ed4;
-		/**
-			如果偏移后的位置超出父元素的可视区域范围，需要增加滚动条
-		**/
-		-webkit-transform:translateY(200px);
-	}
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#target {
+    width: 100px;
+    height: 100px;
+    background-color: steelblue;
+    /**
+        perspective: 眼睛到对投影平面的距离
+        scaleZ: z轴上的放大比例
+        translateZ: 对象到投影平面的距离
+        translateX: 50%,对象向右移动它的50%宽长度的距离
+    **/
+    transform: perspective(300px) scaleZ(1.5) translateZ(150px);
+}
 </style>
 </head>
 <body>
-<div></div>
-<div>
-	<div></div>
-</div>
+<div id="target"></div>
 </body>
 </html>
