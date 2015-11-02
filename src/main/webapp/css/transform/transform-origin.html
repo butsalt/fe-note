@@ -41,7 +41,7 @@ body {
 .port .target {
     /** 固定点 **/
     /** 在变化过程中，该点位置永远不会动 **/
-    /** 参数列表： 固定点x值-元素左上角x值 固定点y值-元素左上角y值 固定点到元素的距离 **/
+    /** 参数列表： 固定点x值 固定点y值 固定点到投影面的距离 **/
     /** (0, 0)为元素左上角 **/
     /** 百分比是相对于元素包含border，padding的宽/高 **/
     /** 第三个参数不能使用百分比 **/
@@ -50,11 +50,12 @@ body {
 }
 
 .self .target{
-    /** perspective被定义在transform中，则transform-origin相当于定义了焦点位置 **/
-    /** 为正值第的三个参数相当于进一步拉远了眼睛到元素的距离 **/
-    transform-origin: 0 50% 100px;
-    /** 元素围绕着焦点进行旋转 **/
-    transform: perspective(300px) rotateY(45deg);
+    /** 第一个参数相当于translateX(-50%) **/
+    /** 第二个参数相当于translateY(-50%) **/
+    /** 第三个参数相当于translateZ(-300px) **/
+    /** 固定点位于元素未translate时的中心点 **/
+    transform-origin: 0 0 300px;
+    transform: perspective(300px) rotateY(15deg) rotateX(15deg);
 }
 </style>
 </head>
