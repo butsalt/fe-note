@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+div {
+    width: 100px;
+    height: 50px;
+    border: 50px darkred solid;
+    margin-bottom: 8px;
+}
+
+div:nth-child(1) {
+    /** 先水平方向椭圆半径 后垂直方向椭圆半径 **/
+    /** 左 上 右 下 **/
+    /** 水平方向椭圆半径的最大值是元素含padding，border的宽 **/
+    /** 垂直方向椭圆半径的最大值是元素含padding，border的高 **/
+    border-radius: 150px 0 0 0 / 100% 0 0 0;
+}
+
+div:nth-child(2) {
+    /** 要求保持各个角上声明椭圆半径的比例 **/
+    /** 在空间不足的情况下，会按比例进行缩小，直到水平/垂直都在最大值约束的范围之下 **/
+    border-radius: 200px 0 0 0 / 200px 0 0 0;
+}
+
+</style>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+</html>
