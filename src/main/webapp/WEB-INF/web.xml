@@ -16,6 +16,10 @@
 		<servlet-name>download</servlet-name>
 		<servlet-class>learn.DownloadServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>method</servlet-name>
+		<servlet-class>learn.MethodServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>page</servlet-name>
 		<url-pattern>/page/*</url-pattern>
@@ -27,5 +31,9 @@
 	<servlet-mapping>
 		<servlet-name>download</servlet-name>
 		<url-pattern>/download</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>method</servlet-name>
+		<url-pattern>/method</url-pattern>
 	</servlet-mapping>
 </web-app>

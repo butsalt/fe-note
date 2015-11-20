@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 表单会根据charset对表单的key和value进行编码 -->
+<!-- 中 -> %E4%B8%AD -->
+<!-- %E4 -> %25E4 --> 
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<form method="get" action="/method">
+    <input type="text" name="msg"/>
+    <button type="submit">Get</button>
+</form>
+<hr/>
+<form method="post" action="/method">
+    <input type="text" name="msg"/>
+    <button type="submit">Post</button>
+</form>
+</body>
+</html>
