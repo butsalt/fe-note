@@ -14,6 +14,7 @@
  * js
  * svg
  * canvas
+ * http
 2. 对第三方js库的尝试
  * jquery
  * d3(数据驱动，绘制svg库)
