@@ -4,39 +4,45 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-	}
-	body>div{
-		width:1000px;
-		height:30px;
-		background-color:#444;
-	}
-	/**offsetHeight,offsetWidth包含了border和padding**/
-	/**块级元素默认与父级元素的宽度一致，但没有高度**/
-	div div div{
-		width:33%;
-		height:30px;
-		border:1px #fff solid;
-	}
-	/**行级元素不能调整宽高**/
-	span{
-		background-color:#fa5;
-	}
+
+   body > div {
+        width: 100%;
+        height: 30px;
+        background-color: darkred;
+    }
+
+    /** 块级元素默认与父级元素的宽度一致，但没有高度 **/
+    div div div {
+        width: 33%;
+        height: 30px;
+        background-color: steelblue;
+    }
+
+    /**行级元素不能调整宽高**/
+    span {
+        background-color: steelblue;
+    }
 </style>
 <script type="text/javascript">
-	//窗口的宽(出现滚动条也不会变)
-	console.log(window.innerWidth);
-	//窗口的高(出现滚动条也不会变)
-	console.log(window.innerHeight);
+    //使用鼠标滚轮放大/缩小的是layout viewport
+    //在手机中zoom in/zoom out的是visual viewport
+    //html元素的宽由layout viewport的宽决定
+
+    //窗口的宽(出现滚动条也不会变)
+    console.log(window.innerWidth);
+    //窗口的高(出现滚动条也不会变)
+    console.log(window.innerHeight);
+    //屏幕的宽
+    console.log(screen.width);
+    //屏幕的高
+    console.log(screen.height);
 </script>
 </head>
 <body>
 <div>
-	<div>
-		<div></div>
-	</div>
+    <div>
+        <div></div>
+    </div>
 </div>
 <span>Haha</span>
 </body>

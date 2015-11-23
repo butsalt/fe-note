@@ -12,7 +12,7 @@
         html的宽度等于width和device-width/initial-scale中较大的那个值
 -->
 <!-- 当前一屏能显示的宽度 = device-width / initial-scale -->
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="viewport" content="width=device-width,initial-scale=0.3"/>
 <title>learn</title>
 <style type="text/css">
 body {
@@ -21,7 +21,7 @@ body {
 
 @media screen and (width: 320px) {
     div::before {
-        content: "由viewport决定的html宽度为320px";
+        content: "由layout viewport决定的html宽度为320px";
     }
 }
 
