@@ -39,7 +39,6 @@ body {
 
 .port .target {
     /** 固定点 **/
-    /** 在变化过程中，该点位置永远不会动 **/
     /** 参数列表： 固定点x值 固定点y值 固定点到投影面的距离 **/
     /** (0, 0)为目标元素左上角 **/
     /** 百分比是相对于目标元素的offsetWidth/offsetHeight **/
@@ -52,10 +51,13 @@ body {
     /** 第一个参数相当于translateX(-50%) **/
     /** 第二个参数相当于translateY(-50%) **/
     /** 第三个参数相当于translateZ(-300px) **/
-    /** 固定点位于目标元素translate前的中心点 **/
+    /** 固定点位于目标元素在受transform-origin影响前的中心点 **/
     transform-origin: 0 0 300px;
     transform: perspective(300px) rotateY(15deg) rotateX(15deg);
 }
+
+/** 由于transform-origin是相对于目标元素的 **/
+/** 所以如果目标元素translate了，固定点会跟着translate，保持目标元素与固定点相对位置不变 **/
 </style>
 </head>
 <body>
