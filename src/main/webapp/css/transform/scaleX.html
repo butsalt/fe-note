@@ -33,9 +33,9 @@ body {
 }
 
 .port .target {
-    /** 向右移动了100px **/
-    /** 顺时针旋转了90度目标元素的高现在位于水平方向，所以显示上拉伸了1倍 **/
-    /** 拉伸的起源点根据transform-origin **/
+    /** 1.目标元素顺时针旋转90度 **/
+    /** 2.目标元素向右平移50px **/
+    /** 3.目标元素水平方向拉伸1倍，拉伸原点根据transform-origin **/
     transform: scaleX(2) translateX(50px) rotateZ(90deg);
 }
 
