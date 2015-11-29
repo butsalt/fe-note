@@ -40,16 +40,24 @@
 }
 
 .space {
-    width: 860px;
-    border-collapse: collapse;
+    padding: 10px;
+    width: 880px;
+    border: 10px black solid;
+    border-spacing: 10px;
+    /** border-collpase为collapse时，table的padding无效 **/
+    border-collapse: separate;
 }
 
 .space td {
-    background-color: #eee;
     padding: 0;
-    /** border-collapse为collapse时，相邻border会合并 **/
+    /** border-collapse为collapse时，共同区域的border会合并(取border-width宽的那一侧) **/
     /** 此时计算td某一侧的border所占空间时，只取这一侧border长度的一半 **/
-    border: 30px black solid;
+    /** 如果涉及table的border，table的border在计算时，也只取这一侧border长度的一半 **/
+    border: 20px rgba(0, 0, 0, 0.25) solid;
+}
+
+.space td:nth-child(2) {
+    border-width: 10px;
 }
 
 .space .cell {
@@ -61,7 +69,7 @@
 }
 
 .ruler {
-    width: 30px;
+    width: 20px;
     height: 10px;
     background-color: steelblue;
 }
