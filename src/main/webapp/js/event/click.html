@@ -4,69 +4,87 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-		line-height:22px;
-	}
-	.outer{
-		width:2000px;
-		height:2000px;
-		position:relative;
-		background-color:#ccc;
-		overflow:auto;
-	}
-	.gap{
-		position:absolute;
-		top:1000px;
-		left:1000px;
-		width:300px;
-		height:300px;
-		overflow:auto;
-	}
-	.inner{
-		background-color:#fff;
-		width:500px;
-		height:500px;
-	}
-	.info{
-		position:fixed;
-		width:200px;
-		height:150px;
-		background-color:#cef;
-		right:0px;
-		top:0px;
-		z-index:500;
-	}
-	
+/** 滚动条在html之外 **/
+html {
+    width: 2000px;
+    height: 2000px;
+    background-color: #aaa;
+    font-family: 'Microsoft YaHei';
+}
+
+.container {
+    box-sizing: border-box;
+    position: absolute;
+    top: 500px;
+    left: 500px;
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+    padding-top: 100px;
+    background-color: #fff;
+}
+
+.container .title {
+    width: 500px;
+    height: 250px;
+    background-color: steelblue;
+}
+
+.container .main {
+    width: 500px;
+    height: 500px;
+    background-color: orange;
+}
+
+#info {
+    position: fixed;
+    width: 200px;
+    height: 150px;
+    background-color: #444;
+    color: #eee;
+    left: 0;
+    top: 0;
+    padding-top: 20px;
+    padding-left: 20px;
+}
 </style>
-<script type="text/javascript" src="../scripts/jquery-2.1.3.js"></script>
 <script type="text/javascript">
-	document.addEventListener('click',function(e){
-		var html = '';
-		//左上角是包括border后的左上角
-		html += 'pageY:'+e.pageY;//参考整个文档的左上角
-		html += ' <br/>';
-		html += 'clientY:'+e.clientY;//参考当前可视区域的左上角
-		html += ' <br/>';
-		html += 'screenY:'+e.screenY;//参考整个屏幕的左上角
-		html += ' <br/>';
-		html += 'layerY:'+e.layerY;//参考父节点的左上角，html/body标签参考自己的左上角(会受transform影响，慎用)
-		html += ' <br/>';
-		html +='offsetY:'+e.offsetY;//参考自己的左上角
-		html += ' <br/>';
-		html += 'y:'+e.y;//同clientY
-		$('.info').html(html);
-	});
+document.addEventListener('DOMContentLoaded', function () {
+    var infoEl = document.getElementById('info');
+
+    document.addEventListener('click',function(e){
+        var html = '';
+        //左上角是包括border后的左上角
+        html += 'pageY: ' + e.pageY;//参考整个文档的左上角
+        html += ' <br/>';
+        html += 'clientY: ' + e.clientY;//参考当前可视区域的左上角
+        html += ' <br/>';
+        html += 'screenY: ' + e.screenY;//参考整个屏幕的左上角
+        html += ' <br/>';
+        html += 'layerY: ' + e.layerY;//参考父节点的左上角，html/body标签参考自己的左上角(会受transform影响，慎用)
+        html += ' <br/>';
+        html +='offsetY: ' + e.offsetY;//参考自己的左上角
+        html += ' <br/>';
+        html += 'y: ' + e.y;//同clientY
+        infoEl.innerHTML = html;
+    });
+});
 </script>
 </head>
 <body>
-<div class='info'></div>
-<div class='outer'>
-	<div class='gap'>
-		<div style='height:50px;width:500px;background-color:#ddd;'></div>
-		<div class='inner'></div>
-	</div>
+<div class='container'>
+    <div class='title'>
+        Title
+    </div>
+    <div class='main'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
 </div>
+<div id='info'></div>
 </body>
 </html>
