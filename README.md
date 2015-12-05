@@ -7,7 +7,7 @@
 ## Index
 1. 核心
  * html
- * attr(dom属性)
+ * property
  * selection(选择器)
  * meta
  * css
