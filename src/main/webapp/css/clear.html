@@ -31,7 +31,8 @@ div {
 
 /**
     clear实际原理是为元素增加额外的margin-top长度
-    在额外长度 + 指定长度 <= 清除浮动所需距离时，指定长度的变动不会影响元素在垂直方向上的位置
+    在额外长度 > 0，且额外长度 + 指定长度 <= 清除浮动所需距离时，
+        指定长度的变动不会影响元素在垂直方向上的位置
     示例中处于文档流中的两个p元素垂直方向的margin仍会有合并效果
 **/
 p {
@@ -49,7 +50,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <div class="first">1</div>
 <div class="second">2</div>
 <div class="third">3</div>
-<p style="margin-top:300px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+<p style="margin-top:-300px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
