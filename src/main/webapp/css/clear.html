@@ -10,47 +10,47 @@ div {
     border: 1px black solid;
 }
 
-.first {
+.float-left {
     float:left;
 }
 
-/**
-    1.clear使目标元素在按顺序渲染时，要求左侧/右侧不允许出现浮动元素
-    2. 这不影响其他浮动元素渲染时的位置
-    3. 该属性只适用于块级元素
-**/
-
-.second {
+.float-right {
     float: right;
+}
+
+.clear {
     clear: both;
 }
 
-.third {
-    float:right;
-}
-
-/**
-    clear实际原理是为元素增加额外的margin-top长度
-    在额外长度 > 0，且额外长度 + 指定长度 <= 清除浮动所需距离时，
-        指定长度的变动不会影响元素在垂直方向上的位置
-    示例中处于文档流中的两个p元素垂直方向的margin仍会有合并效果
-**/
 p {
     clear: both;
 }
 </style>
 </head>
 <body>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+<div class="float-left">0</div>
+<!-- 如果清除浮动的元素之前文档流中只有浮动元素，margin-top会失效 -->
+<p style"margin-top: 10000px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<div class="first">1</div>
-<div class="second">2</div>
-<div class="third">3</div>
-<p style="margin-top:-300px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+<!--
+    1.clear使目标元素在按顺序渲染时，要求左侧/右侧不允许出现浮动元素
+    2. 这不影响其他浮动元素渲染时的位置
+    3. 该属性只适用于块级元素
+-->
+<div class="float-left clear">1</div>
+<div class="float-right">2</div>
+<div class="float-right">3</div>
+<!--
+    1. clear实际原理是为元素增加额外的margin-top长度
+    2. 在额外长度 > 0，且额外长度 + 指定长度 <= 清除浮动所需距离时，
+        指定长度的变动不会影响元素在垂直方向上的位置
+    3. 示例中处于文档流中的两个p元素垂直方向的margin仍会有合并效果
+-->
+<p style="margin-top: 300px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
