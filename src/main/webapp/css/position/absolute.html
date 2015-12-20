@@ -48,6 +48,26 @@
     height: 100%;
     background-color: green;
 }
+
+.inline-container {
+    border: 10px rgba(0, 180, 0, .6) solid;
+    padding: 10px;
+    position: relative;
+    background-color: rgba(0, 0, 180, .1);
+}
+
+.inline-container div {
+    position: absolute;
+    /** 第一行padding-top上边缘 **/
+    top:0;
+    /** 第一行padding-left左边缘 **/
+    left:0;
+    /** 最后一行padding-right右边缘 **/
+    right:0;
+    /** 最后一行padding-bottom下边缘 **/
+    bottom:0;
+    background-color:rgba(255, 0, 0, .6);
+}
 </style>
 </head>
 <body>
@@ -80,6 +100,25 @@
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<hr/>
+<div>
+    ddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd
+    <span class="inline-container">
+        <strong>Span Start</strong>
+        ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation
+            <strong>Start</strong>
+            <div></div>
+            <strong>End</strong>
+        ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <strong>Span End</strong>
+    </span>
+    ddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd
 </div>
 </body>
 </html>
