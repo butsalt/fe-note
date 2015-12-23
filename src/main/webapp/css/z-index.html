@@ -4,76 +4,78 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	body > div{
-		background: #999;
-		margin-bottom: 20px;
-	}
-	
-	.red{
-		width: 100px;
-		height: 100px;
-		background-color: #500;
-	}
-	
-	.red > div{
-		width: 80px;
-		height: 80px;
-		background-color: #a00;
-	}
-	
-	.red > div > div{
-		width: 60px;
-		height: 60px;
-		background-color: #f00;
-	}
-	
-	.green{
-		width: 100px;
-		height: 100px;
-		background-color: #050;
-	}
-	
-	.green > div{
-		width: 80px;
-		height: 80px;
-		background-color: #0a0;
-	}
-	
-	.green > div > div{
-		width: 60px;
-		height: 60px;
-		background-color: #0f0;
-	}
-	
-	.blue{
-		width: 100px;
-		height: 100px;
-		background-color: #005;
-	}
-	
-	.blue > div{
-		width: 80px;
-		height: 80px;
-		background-color: #00a;
-	}
-	
-	.blue > div > div{
-		width: 60px;
-		height: 60px;
-		background-color: #00f;
-	}
-	
-	.rel-20{
-		top: 20px;
-		left: 20px;
-	}
-	.rel-40{
-		top: 40px;
-		left: 40px;		
-	}
-	[class*="rel"]{
-		position: relative;
-	}
+body > div {
+    background: #999;
+    margin-bottom: 20px;
+}
+
+.red {
+    width: 100px;
+    height: 100px;
+    background-color: #500;
+}
+
+.red > div {
+    width: 80px;
+    height: 80px;
+    background-color: #a00;
+}
+
+.red > div > div {
+    width: 60px;
+    height: 60px;
+    background-color: #f00;
+}
+
+.green {
+    width: 100px;
+    height: 100px;
+    background-color: #050;
+}
+
+.green > div {
+    width: 80px;
+    height: 80px;
+    background-color: #0a0;
+}
+
+.green > div > div {
+    width: 60px;
+    height: 60px;
+    background-color: #0f0;
+}
+
+.blue {
+    width: 100px;
+    height: 100px;
+    background-color: #005;
+}
+
+.blue > div {
+    width: 80px;
+    height: 80px;
+    background-color: #00a;
+}
+
+.blue > div > div {
+    width: 60px;
+    height: 60px;
+    background-color: #00f;
+}
+
+.rel-20 {
+    top: 20px;
+    left: 20px;
+}
+
+.rel-40 {
+    top: 40px;
+    left: 40px;
+}
+
+[class*="rel"] {
+ position: relative;
+}
 </style>
 </head>
 <body>
@@ -105,5 +107,8 @@
 	<div class="red rel-40"></div>
 	<div class="green rel" style="z-index:1;"></div>
 </div>
+<!-- html,body的背景，html的border不会遮挡body内的元素，即使元素z-index<0 -->
+<!-- body的border仍在上述规则中判断层级关系 -->
+<!-- 创建层级的元素不会遮挡后代元素，即使后代元素z-index<0 -->
 </body>
 </html>
