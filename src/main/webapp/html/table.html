@@ -74,6 +74,27 @@
     background-color: steelblue;
 }
 
+.col {
+    /** 只有在collapse时才能对列应用border **/
+    border-collapse: collapse;
+}
+
+.col colgroup:nth-of-type(1) {
+    /** 对colgroup下的每一列应用 **/
+    width: 100px;
+    background-color: steelblue;
+}
+
+.col colgroup:nth-of-type(2) col:first-child {
+    /** 折叠不显示该列，似乎对chrome无效 **/
+    visibility: collapse;
+}
+
+.col colgroup:nth-of-type(2) col:nth-child(2) {
+    /** 在列上生成边框 **/
+    border: 1px black solid;
+}
+
 </style>
 </head>
 <body>
@@ -146,5 +167,33 @@
     </tbody>
 </table>
 <div class="ruler"></div>
+<hr/>
+<table class="col">
+    <caption>列组的例子</caption>
+    <!-- colgroup必须在caption之后，thead/tbody/tfoot/tr之前 -->
+    <!-- colgroup中不含col时，可以指定span -->
+    <colgroup span="2"></colgroup>
+    <colgroup>
+        <col/>
+        <col span="2"/>
+        <col/>
+    </colgroup>
+    <tbody>
+        <tr>
+            <td>0987-2</td>
+            <td>孙雨珩</td>
+            <td>1990-12-24</td>
+            <td>男</td>
+            <td>摩羯座</td>
+        </tr>
+        <tr>
+            <td>0987-2</td>
+            <td>黄雯</td>
+            <td>1989-11-07</td>
+            <td>女</td>
+            <td>天蝎座</td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>
