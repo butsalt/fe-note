@@ -40,32 +40,17 @@
 }
 
 .separate {
-    padding: 10px;
+    /** 这个宽包含了table水平方向上的border，水平方向上的padding **/
     width: 880px;
+    padding: 10px;
     border: 15px black solid;
     border-spacing: 10px;
-    /** border-collpase为collapse时，table的padding无效 **/
     border-collapse: separate;
 }
 
 .separate td {
-    padding: 0;
-    /** border-collapse为collapse时，共同区域的border会合并(取border-width宽的那一侧) **/
-    /** 此时计算td某一侧的border所占空间时，只取这一侧border长度的一半 **/
-    /** 如果涉及table的border，table的border在计算时，也只取这一侧border长度的一半 **/
-    border: 20px rgba(0, 0, 0, 0.25) solid;
-}
-
-.separate td:nth-child(2) {
-    border-width: 10px;
-}
-
-.separate .cell {
-    display: inline-block;
-    vertical-align: top;
-    width: 100px;
-    height: 100px;
-    background-color: darkred;
+    padding: 10px;
+    border: 15px black solid;
 }
 
 .collapse-container {
@@ -81,18 +66,32 @@
 }
 
 .collapse {
+    /** 共同区域的border会合并(取border-width宽的那一侧) **/
+    /** 计算td某一侧的border时，只取这一侧border长度的一半 **/
+    /**
+    计算table水平方向上的border时，
+        左侧border的右边缘在首行第一个单元格border-left向右1/2处，长度是此格border-left的1/2
+        右侧border的左边缘在首行最后一个单元格border-right向左1/2处，长度是此格border-right的1/2
+        上方border的下边缘在尾行border-top最长的单元格border-top向下1/2处，长度是此格border-top的1/2
+        下方border的上边缘在尾行border-bottom最长的单元格的border-bottom向上1/2处，长度是此格border-bottom的1/2
+    **/
     border-collapse: collapse;
     /** 这个宽包含了table水平方向上的border **/
-    /** border-collpase:separate时，还包括table水平方向上的padding **/
     width: 500px;
     /** border-collapse:collapse时，padding无效 **/
     /*padding: 500px;*/
 }
 
-.collapse tr:first-child td {
-    /** table左侧border的右边缘在第一行左侧border向右1/2处 **/
-    /** table右侧border的左边缘在第一行右侧border向左1/2处 **/
+.collapse tr:first-child td:first-child {
     border: 10px black solid;
+}
+
+.collapse tr:first-child td:nth-child(2) {
+    border: 20px black solid;
+}
+
+.collapse tr:first-child td:nth-child(3) {
+    border: 30px black solid;
 }
 
 .collapse tr:last-child td {
@@ -174,33 +173,17 @@
     </tbody>
 </table>
 <hr/>
-<!-- 每列取未拉伸/收缩时最宽的单元格的宽(offsetWidth)作为权数分配空间宽度 -->
-<!-- 空间宽度 = 
-        表格宽度
-        - 表格border水平方向占用宽度
-        - 表格padding水平方向占用宽度
-        - 单元格border-spacing水平方向占用宽度
--->
 <table class="separate">
     <tbody>
         <tr>
-            <td>
-                <div class="cell"></div><!--
-             --><div class="cell"></div>
-            </td>
-            <td>
-                <div class="cell"></div>
-            </td>
+            <td>孙雨珩</td>
+            <td>0987-2</td>
+            <td>男</td>
         </tr>
         <tr>
-            <td>
-                <div class="cell"></div>
-            </td>
-            <td>
-                <div class="cell"></div><!--
-             --><div class="cell"></div><!--
-             --><div class="cell"></div>
-            </td>
+            <td>黄雯</td>
+            <td>0987-2</td>
+            <td>女</td>
         </tr>
     </tbody>
 </table>
