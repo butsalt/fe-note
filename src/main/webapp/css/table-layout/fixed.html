@@ -18,17 +18,8 @@ table tr:nth-child(even) {
 
 .fixed {
     table-layout: fixed;
-    /**
-        如果设置了宽度，
-        表最终的宽度在table的width和所有已定义列宽之和中取最大值
-    **/
-    /**
-        如果宽度为auto，
-        列宽未定义的取能正常内容的最小宽度，
-        已定义列宽的列在水平方向空间实在不足的情况下
-        （比如未定义列宽的列的某个单元格内有个很宽的inline-block），
-        会开始压缩宽度
-    **/
+    /** 当width为auto时，表的table-layout会强制设为auto **/
+    /**  表最终的宽度在table的width和所有已定义列宽之和中取最大值 **/
     width: 500px;
     border-collapse: collapse;
 }
