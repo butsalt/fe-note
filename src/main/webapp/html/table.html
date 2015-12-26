@@ -116,8 +116,11 @@
 .col colgroup:nth-of-type(1) {
     /** 对colgroup下的每一列应用 **/
     /** 只能定义border，background，width，visibility **/
-    /** width限制的是单元格包含border，padding的宽度 **/
-    /** 对td设置的width默认不包含border，padding的宽度 **/
+    /** width相当于设置了这一列td包含border，padding的宽度 **/
+    /** 对td设置的width
+        如果是px，不包含水平方向上的border，padding的宽度
+        如果是百分比，包含水平方向上的border，padding的宽度
+    **/
     width: 100px;
     background-color: steelblue;
 }
