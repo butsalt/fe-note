@@ -4,50 +4,55 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	.common ul{
-		list-style-type: circle;
-		/**
-			outside: ul有right-padding，标记符号会渲染到right-padding的空间中
-			inside: li开始时先渲染标记符号再继续渲染实际内容，类似于li::before
-		**/
-		list-style-position: inside;
-	}
-	.hr{
-		border: 1px #bdbdbd solid;
-	}
-	.hr ul{
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		overflow: auto;
-	}
-	.hr li{
-		box-sizing: border-box;
-		float:left;
-		width: calc( 100% / 3 );
-		text-align: center;
-		border-left: 1px #bdbdbd solid;
-		margin: 10px 0 10px 0;
-	}
-	.hr li:nth-child(1){
-		border-left: none;
-	}
+/** ul采用left-padding实现缩进 **/
+.common ul {
+    /** 只有li的display为list-item时才会显示标记符号 **/
+    list-style-type: circle;
+    /**
+        outside: 标记符号会渲染到li开始前向左一定距离的地方，但不干扰li的layout
+        inside: li开始时先渲染标记符号再继续渲染实际内容，类似于li::before
+    **/
+    list-style-position: inside;
+}
+
+.hr {
+    border: 1px #bdbdbd solid;
+}
+
+.hr ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.hr li {
+    box-sizing: border-box;
+    float:left;
+    width: calc( 100% / 3 );
+    text-align: center;
+    border-left: 1px #bdbdbd solid;
+    margin: 10px 0;
+}
+.hr li:nth-child(1) {
+    border-left: none;
+}
 </style>
 </head>
 <body>
 <div class="common">
-	<ul>
-		<li>My</li>
-		<li>First</li>
-		<li>App</li>
-	</ul>
+    <ul>
+        <li>My</li>
+        <li>First</li>
+        <li>App</li>
+    </ul>
 </div>
 <div class="hr">
-	<ul>
-		<li>My</li>
-		<li>First</li>
-		<li>App</li>
-	</ul>
+    <ul>
+    <li>My</li>
+    <li>First</li>
+    <li>App</li>
+</ul>
 </div>
 </body>
 </html>
