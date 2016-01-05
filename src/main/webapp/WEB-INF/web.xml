@@ -20,6 +20,10 @@
 		<servlet-name>method</servlet-name>
 		<servlet-class>learn.MethodServlet</servlet-class>
 	</servlet>
+	<servlet>
+	   <servlet-name>upload</servlet-name>
+	   <servlet-class>learn.UploadServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>page</servlet-name>
 		<url-pattern>/page/*</url-pattern>
@@ -35,5 +39,9 @@
 	<servlet-mapping>
 		<servlet-name>method</servlet-name>
 		<url-pattern>/method</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
 	</servlet-mapping>
 </web-app>
