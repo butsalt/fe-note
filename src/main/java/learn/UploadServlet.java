@@ -43,21 +43,22 @@ public class UploadServlet extends HttpServlet {
 				FileItem item = items.get(i);
 				String itemJson =
 					"{" +
-						"\"field\":" + "\"" +item.getFieldName() + "\"" + "," +
-						"\"file\":" + "\"" + item.getName() + "\"" +
+						"\"field\":" + "\"" + item.getFieldName() + "\"" + "," +
+						"\"file\":" + "\"" + item.getName() + "\"" + "," +
+						"\"size\":" + "\"" + item.getSize() + "\"" +
 					"}";
 				json += itemJson;
 				if (i < size - 1) {
 					json += ",";
 				}
 			}
+			json += "]}";
+			response.getWriter()
+				.append(json)
+				.flush();
 		} catch (FileUploadException e) {
 			e.printStackTrace();
 		}
-		json += "]}";
-		response.getWriter()
-			.append(json)
-			.flush();
 	}
 
 	
