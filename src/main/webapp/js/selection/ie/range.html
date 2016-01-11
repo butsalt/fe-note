@@ -23,7 +23,7 @@ window.onload = function () {
             range.moveToElementText(target);
             //设置开始位置
             //以单词为单位，向后移2个单位
-            range.moveStart('character', 2);
+            range.moveStart('word', 1);
             //设置结束位置
             //以字符为单位，向前移2个单位
             range.moveEnd('character', -1);
