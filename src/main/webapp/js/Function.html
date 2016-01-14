@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+var a = 1;
+(function () {
+    var b = 2;
+    //全局变量可以使用，但闭包内的变量无法使用
+    var c = new Function('c','console.log(a);console.log(b);console.log(c);');
+    c(3);
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
