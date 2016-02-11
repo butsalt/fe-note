@@ -90,7 +90,13 @@ console.log(reg.exec(text));
 console.log(12);
 //(?:expression)，不捕获这个expression分组，如果expression内还有分组依旧可以被正常捕获
 reg = /^\d(?:\d(\d))$/;
-text = "123";
+text = '123';
+console.log(reg.exec(text));
+
+console.log(13);
+//\1可以引用到第一个括号中表达式匹配到的字符串
+reg = /(")([^"]+)(\1)/;
+text = '"guud"';
 console.log(reg.exec(text));
 </script>
 </head>
