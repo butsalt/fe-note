@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+/** 0, 0, 0, 1 **/
+p {
+    font-weight: bold;
+}
+
+/** 0, 0, 0, 2 **/
+p::after {
+    content: "sth";
+}
+
+/** 0, 0, 1, 0 **/
+.second {
+    color: steelblue;
+}
+
+/** 0, 0, 1, 0 **/
+/** 一整个中括号中的内容被作为一个选择条件 **/
+[data-test] {
+    color: pink;
+}
+
+/** 0, 0, 1, 1 **/
+p:hover {
+    font-weight: normal;
+}
+
+/** 0, 1, 0, 0 **/
+#target {
+    color: orange;
+}
+</style>
+</head>
+<body>
+<!-- 1, 0, 0, 0 -->
+<p style="color:red;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+<p class="second">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+<p data-test>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+<p id="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+</body>
+</html>
