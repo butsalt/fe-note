@@ -5,34 +5,39 @@
 <title>learn</title>
 <style type="text/css">
 div {
-	width: 200px;
-	height: 200px;
-	margin-top: 8px;
-	padding: 10px;
-	border: 10px rgba(255, 255, 255, 0.5) dashed;
-	background-color: orange;
-	background-image: url("/assets/maple-small.jpg");
-	background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    margin-top: 8px;
+    padding: 10px;
+    border: 10px rgba(255, 255, 255, 0.5) dashed;
+    background-color: orange;
+    background-image: url("/assets/maple-small.jpg");
+    background-repeat: no-repeat;
     /** 根据background-origin计算空间 **/
     /** content-box: 去除border，去除padding **/
     /** padding-box: 去除border **/
     /** border-box: 都不去除; **/
-	background-origin: content-box;
+    background-origin: content-box;
 }
 .percent {
-	/** left 100% top 50% **/
-	/** 100% = 要求 空间宽（高）100%的位置 与 图片宽（高）100%的位置重合 **/
-	background-position: 100% 50%;
+    /** left 100% top 50% **/
+    /** 100% = 要求 空间宽（高）100%的位置 与 图片宽（高）100%的位置重合 **/
+    background-position: 100% 50%;
 }
 .px {
-	/** left 100px top 50px **/
-	/** 移动多少就是多少 **/
-	background-position: 100px 50px;
+    /** left 100px top 50px **/
+    /** 移动多少就是多少 **/
+    background-position: 100px 50px;
+}
+.calc {
+    /** 先按百分比规则移动，再根据像素移动多少就是多少 **/
+    background-position: calc(100% - 50px) calc(100% - 50px);
 }
 </style>
 </head>
 <body>
 <div class="percent"></div>
 <div class="px"></div>
+<div class="calc"></div>
 </body>
 </html>
