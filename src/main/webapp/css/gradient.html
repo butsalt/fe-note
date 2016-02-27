@@ -4,124 +4,145 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-	}
-	html,body{
-		height:100%;
-	}
-	body{
-		background-color:#ddd;
-		display:flex;
-		flex-direction:column;
-		flex-wrap:wrap;
-	}
-	div{
-		width:250px;
-		height:100px;
-		margin-bottom:5px;
-	}
-	
-	
-	body>div:nth-of-type(1){
-		/**参数1定义了起始位置*/
-		background:-webkit-linear-gradient(bottom,red,green);
-	}
-	body>div:nth-of-type(2){
-		background:-webkit-linear-gradient(90deg,red,green);
-	}
-	body>div:nth-of-type(3){
-		background:-webkit-linear-gradient(bottom,red 0%,green 50%,blue 100%);
-	}
-	body>div:nth-of-type(4){
-		/**均匀分布*/
-		background:-webkit-linear-gradient(bottom,green,red,blue,yellow);
-	}
-	
-	
-	body>div:nth-of-type(5){
-		background:-webkit-radial-gradient(red,green,blue,yellow);
-	}
-	body>div:nth-of-type(6){
-		background:-webkit-radial-gradient(circle,red,green,blue,yellow);
-	}
-	body>div:nth-of-type(7){
-		background:-webkit-radial-gradient(red 0%,green 10%,blue 20%,yellow 100%);
-	}
-	body>div:nth-of-type(8){
-		background:-webkit-radial-gradient(25% 25%,ellipse closest-side,white,black);
-	}
-	body>div:nth-of-type(9){
-		background:-webkit-radial-gradient(25% 25%,ellipse closest-corner,white,black);
-	}
-	body>div:nth-of-type(10){
-		background:-webkit-radial-gradient(25% 25%,ellipse farthest-side,white,black);
-	}
-	body>div:nth-of-type(11){
-		background:-webkit-radial-gradient(25% 25%,ellipse farthest-corner,white,black);
-	}
-	body>div:nth-of-type(12){
-		/**即cloest-side**/
-		background:-webkit-radial-gradient(25% 25%,ellipse contain,white,black);
-	}
-	body>div:nth-of-type(13){
-		/**默认，即farthest-corner**/
-		background:-webkit-radial-gradient(25% 25%,ellipse cover,white,black);
-	}
-	body>div:nth-of-type(14){
-		background:-webkit-repeating-linear-gradient(-45deg, red, green 10px);
-	}
-	body>div:nth-of-type(15){
-		background:-webkit-repeating-radial-gradient(red,green 10px);
-	}
-	body>div:nth-of-type(16){
-		padding:10px;
-		background:-webkit-repeating-linear-gradient(45deg,#05f,#05f 10px,#eee 7px,#eee 20px);
-		border:10px black dashed;
-		/**origin要写在background之后**/
-		background-origin:border-box;
-	}
-	
-	
-	@-webkit-keyframes 'run'{
-		0% {
-			background:-webkit-repeating-linear-gradient(45deg,#05f,#05f 10px,#eee 10px,#eee 20px);
-		}
-		100% {
-			background:-webkit-repeating-linear-gradient(45deg,#eee,#eee 10px,#05f 10px,#05f 20px);
-		}
-	}
-	body>div:nth-of-type(17){
-		/**和image一样，默认从padding左上角开始**/
-		padding:10px;
-		border:10px black dashed;
-		background-origin:border-box;
-	    -webkit-animation-name:'run';/*动画属性名，也就是我们前面keyframes定义的动画名*/
-     	-webkit-animation-duration: 0.35s;/*动画持续时间*/
-     	-webkit-animation-timing-function: linear; /*动画频率，和transition-timing-function是一样的*/
-    	-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
-     	-webkit-animation-direction: normal;/*定义动画方式*/
-	}
+body {
+    background-color: #ddd;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    counter-reset: part;
+}
+
+div {
+    box-sizing: border-box;
+    width: 250px;
+    height: 100px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+ }
+
+div::before {
+    counter-increment: part;
+    content: counter(part);
+ }
+
+div:nth-of-type(1) {
+    /** 参数1定义了起始位置 **/
+    background: -webkit-linear-gradient(bottom, red, green);
+}
+
+div:nth-of-type(2) {
+    /** 逆时针为正 **/
+    background: -webkit-linear-gradient(90deg, red, green);
+}
+
+div:nth-of-type(3) {
+    background: -webkit-linear-gradient(bottom, red 0%, green 50%, blue 100%);
+}
+
+div:nth-of-type(4) {
+    /** 均匀分布 **/
+    background: -webkit-linear-gradient(bottom, green, red, blue, yellow);
+}
+
+div:nth-of-type(5) {
+    /** 默认是椭圆 **/
+    background:-webkit-radial-gradient(red, green, blue, yellow);
+}
+
+div:nth-of-type(6) {
+    background: -webkit-radial-gradient(circle, red, green, blue, yellow);
+}
+
+div:nth-of-type(7) {
+    background: -webkit-radial-gradient(red 0%, green 10%, blue 20%, yellow 100%);
+}
+
+div:nth-of-type(8) {
+    background: -webkit-radial-gradient(25% 25%, ellipse closest-side, white, black);
+}
+
+div:nth-of-type(9) {
+    background: -webkit-radial-gradient(25% 25%, ellipse closest-corner, white, black);
+}
+
+div:nth-of-type(10) {
+    background: -webkit-radial-gradient(25% 25%, ellipse farthest-side ,white, black);
+}
+
+div:nth-of-type(11) {
+    background: -webkit-radial-gradient(25% 25%, ellipse farthest-corner, white, black);
+}
+
+div:nth-of-type(12) {
+    /**即 cloest-side **/
+    background: -webkit-radial-gradient(25% 25%, ellipse contain, white, black);
+}
+
+div:nth-of-type(13) {
+    /** 默认，即farthest-corner **/
+    background: -webkit-radial-gradient(25% 25%, ellipse cover, white, black);
+}
+
+div:nth-of-type(14) {
+    background: -webkit-repeating-linear-gradient(-45deg, red, green 10px);
+}
+
+div:nth-of-type(15) {
+    background: -webkit-repeating-radial-gradient(red, green 10px);
+}
+
+div:nth-of-type(16) {
+    padding: 10px;
+    background: -webkit-repeating-linear-gradient(45deg, #05f, #05f 10px, #eee 7px, #eee 20px);
+    border: 10px black dashed;
+    background-origin: border-box;
+}
+
+
+@-webkit-keyframes "run" {
+    0% {
+        background:-webkit-repeating-linear-gradient(45deg, #05f, #05f 10px, #eee 10px, #eee 20px);
+    }
+    100% {
+        background:-webkit-repeating-linear-gradient(45deg, #eee, #eee 10px, #05f 10px, #05f 20px);
+    }
+}
+
+div:nth-of-type(17) {
+    /** 实际上就是一张background-image，默认从padding左上角开始 **/
+    padding: 10px;
+    border: 10px black dashed;
+    background-origin: border-box;
+    /** 动画属性名，也就是我们前面keyframes定义的动画名 **/
+    -webkit-animation-name: "run";
+    /** 动画持续时间 **/
+    -webkit-animation-duration: 0.35s;
+    /** 动画频率，和transition-timing-function是一样的 **/
+    -webkit-animation-timing-function: linear;
+    /** 定义循环次数，infinite为无限次 **/
+    -webkit-animation-iteration-count: infinite;
+    /** 定义动画方向 **/
+    -webkit-animation-direction: normal;
+}
 </style>
 </head>
 <body>
-<div>1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
-<div>6</div>
-<div>7</div>
-<div>8</div>
-<div>9</div>
-<div>10</div>
-<div>11</div>
-<div>12</div>
-<div>13</div>
-<div>14</div>
-<div>15</div>
-<div>16</div>
-<div>17</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
 </body>
 </html>
