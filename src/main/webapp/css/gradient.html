@@ -26,109 +26,96 @@ div::before {
  }
 
 div:nth-of-type(1) {
-    /** 参数1定义了起始位置 **/
-    background: -webkit-linear-gradient(bottom, red, green);
+    background: linear-gradient(to bottom, red, green);
 }
 
 div:nth-of-type(2) {
     /** 逆时针为正 **/
-    background: -webkit-linear-gradient(90deg, red, green);
+    background: linear-gradient(90deg, red, green);
 }
 
 div:nth-of-type(3) {
-    background: -webkit-linear-gradient(bottom, red 0%, green 50%, blue 100%);
+    /** blue 0，重置为blue 50% **/
+    background: linear-gradient(to bottom, red 0%, green 50%, blue 0, yellow 100%);
 }
 
 div:nth-of-type(4) {
     /** 均匀分布 **/
-    background: -webkit-linear-gradient(bottom, green, red, blue, yellow);
+    background: linear-gradient(to bottom, green, red, blue, yellow);
 }
 
 div:nth-of-type(5) {
     /** 默认是椭圆 **/
-    background:-webkit-radial-gradient(red, green, blue, yellow);
+    background: radial-gradient(red, green, blue, yellow);
 }
 
 div:nth-of-type(6) {
-    background: -webkit-radial-gradient(circle, red, green, blue, yellow);
+    background: radial-gradient(circle, red, green, blue, yellow);
 }
 
 div:nth-of-type(7) {
-    background: -webkit-radial-gradient(red 0%, green 10%, blue 20%, yellow 100%);
+    background: radial-gradient(red 0%, green 10%, blue 20%, yellow 100%);
 }
 
 div:nth-of-type(8) {
-    background: -webkit-radial-gradient(25% 25%, ellipse closest-side, white, black);
+    background: radial-gradient(ellipse closest-side at 25% 25%, white, black);    
 }
 
 div:nth-of-type(9) {
-    background: -webkit-radial-gradient(25% 25%, ellipse closest-corner, white, black);
+    background: radial-gradient(ellipse closest-corner at 25% 25%, white, black);
 }
 
 div:nth-of-type(10) {
-    background: -webkit-radial-gradient(25% 25%, ellipse farthest-side ,white, black);
+    background: radial-gradient(ellipse farthest-side at 25% 25% ,white, black);
 }
 
 div:nth-of-type(11) {
-    background: -webkit-radial-gradient(25% 25%, ellipse farthest-corner, white, black);
+    background: radial-gradient(ellipse farthest-corner at 25% 25%, white, black);
 }
 
 div:nth-of-type(12) {
-    /**即 cloest-side **/
-    background: -webkit-radial-gradient(25% 25%, ellipse contain, white, black);
+    background: repeating-linear-gradient(-45deg, red, green 10px);
 }
 
 div:nth-of-type(13) {
-    /** 默认，即farthest-corner **/
-    background: -webkit-radial-gradient(25% 25%, ellipse cover, white, black);
+    background: repeating-radial-gradient(red, green 10px);
 }
 
 div:nth-of-type(14) {
-    background: -webkit-repeating-linear-gradient(-45deg, red, green 10px);
-}
-
-div:nth-of-type(15) {
-    background: -webkit-repeating-radial-gradient(red, green 10px);
-}
-
-div:nth-of-type(16) {
     padding: 10px;
-    background: -webkit-repeating-linear-gradient(45deg, #05f, #05f 10px, #eee 7px, #eee 20px);
+    background: repeating-linear-gradient(45deg, #05f, #05f 10px, #eee 7px, #eee 20px);
     border: 10px black dashed;
     background-origin: border-box;
 }
 
-
-@-webkit-keyframes "run" {
+@keyframes run {
     0% {
-        background:-webkit-repeating-linear-gradient(45deg, #05f, #05f 10px, #eee 10px, #eee 20px);
+        background: repeating-linear-gradient(45deg, #05f, #05f 10px, #eee 10px, #eee 20px);
     }
     100% {
-        background:-webkit-repeating-linear-gradient(45deg, #eee, #eee 10px, #05f 10px, #05f 20px);
+        background: repeating-linear-gradient(45deg, #eee, #eee 10px, #05f 10px, #05f 20px);
     }
 }
 
-div:nth-of-type(17) {
+div:nth-of-type(15) {
     /** 实际上就是一张background-image，默认从padding左上角开始 **/
     padding: 10px;
     border: 10px black dashed;
     background-origin: border-box;
     /** 动画属性名，也就是我们前面keyframes定义的动画名 **/
-    -webkit-animation-name: "run";
+    animation-name: run;
     /** 动画持续时间 **/
-    -webkit-animation-duration: 0.35s;
+    animation-duration: 0.35s;
     /** 动画频率，和transition-timing-function是一样的 **/
-    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
     /** 定义循环次数，infinite为无限次 **/
-    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
     /** 定义动画方向 **/
-    -webkit-animation-direction: normal;
+    animation-direction: normal;
 }
 </style>
 </head>
 <body>
-<div></div>
-<div></div>
 <div></div>
 <div></div>
 <div></div>
