@@ -15,35 +15,85 @@ body {
 .container {
     height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     background-color: darkred;
 }
 
 .target {
-    box-sizing: border-box;
-    width: 100px;
-    height: 100px;
-    border: 10px black solid;
-    background-color: steelblue;
+    width: 200px;
+    height: 200px;
+    background-color: orange;
 }
 
 .port {
     perspective: 300px;
+    background: steelblue;
 }
 
 .port .target {
-    /** 1.目标元素顺时针旋转90度 **/
-    /** 2.目标元素向右平移50px **/
-    /** 3.目标元素水平方向拉伸1倍，拉伸原点根据transform-origin **/
-    transform: scaleX(2) translateX(50px) rotateZ(90deg);
+    animation-name: run;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 
+/** 1.目标元素向右平移100px **/
+/** 2.目标元素顺时针旋转90度 **/
+/** 3.目标元素水平方向拉伸1倍 **/
+@keyframes run {
+    33% {
+        transform: translateX(100px);
+    }
+
+    66% {
+        transform: translateX(100px) rotateZ(90deg);
+    }
+
+    100% {
+        transform: translateX(100px) rotateZ(90deg) scaleX(2);
+    }
+}
+
+.shadow-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.shadow-target {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 200px;
+    height: 200px;
+    background: black;
+    opacity: .2;
+}
+
+.shadow-target i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 2px;
+    height: 2px;
+    background: red;
+}
 </style>
 </head>
 <body>
 <div class="container port">
     <div class="target"></div>
+</div>
+<div class="shadow-container">
+    <div class="shadow-target">
+        <i></i>
+    </div>
 </div>
 </body>
 </html>

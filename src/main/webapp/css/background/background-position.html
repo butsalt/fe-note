@@ -19,16 +19,19 @@ div {
     /** border-box: 都不去除; **/
     background-origin: content-box;
 }
+
 .percent {
     /** left 100% top 50% **/
     /** 100% = 要求 空间宽（高）100%的位置 与 图片宽（高）100%的位置重合 **/
     background-position: 100% 50%;
 }
+
 .px {
     /** left 100px top 50px **/
     /** 移动多少就是多少 **/
     background-position: 100px 50px;
 }
+
 .calc {
     /** 先按百分比规则移动，再根据像素移动多少就是多少 **/
     background-position: calc(100% - 50px) calc(100% - 50px);
