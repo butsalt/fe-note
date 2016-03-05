@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+/** 定义动画的关键帧  **/
+@keyframes run {
+    /** 当动画进行了50%时需要对目标应用的style **/
+    50% {
+        transform: translateX(100px) translateY(100px);
+    }
+
+    /** 当动画进行了100%时需要对目标应用的style **/
+    100% {
+        background: steelblue;
+        transform: translateX(100px) translateY(100px);
+    }
+}
+
+#target {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    /** 将使用名为run的动画 **/
+    animation-name: run;
+    /** 动画将在1秒后播放 **/
+    animation-delay: 1s;
+    /** 动画会播放10秒 **/
+    animation-duration: 4s;
+    /** 动画在播放完最后一帧后，目标的style会定格 **/
+    animation-fill-mode: forwards;
+    /** 动画将匀速进行 **/
+    animation-timing-function: linear;
+    /** 动画将播放3次 **/
+    animation-iteration-count: 3;
+    /** 动画方向交替进行（第1次正放，第2次倒放，第3次正放） **/
+    animation-direction: alternate;
+}
+
+</style>
+</head>
+<body>
+<div id="target"></div>
+</body>
+</html>
