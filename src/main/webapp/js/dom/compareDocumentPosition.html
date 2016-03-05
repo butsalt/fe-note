@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    var first = document.getElementById('first');
+    var outer = document.getElementById('outer');
+    var inner = document.getElementById('inner');
+    var second = document.getElementById('second');
+
+    //outer在inner之前
+    console.log(!!(outer.compareDocumentPosition(inner) & 4));
+    //second在first之后
+    console.log(!!(second.compareDocumentPosition(first) & 2));
+    //outer包含inner
+    console.log(!!(outer.compareDocumentPosition(inner) & 16));
+    //inner被outer包含
+    console.log(!!(inner.compareDocumentPosition(outer) & 8));
+    //outer和inner并非不在同一个文档中
+    console.log(!!(outer.compareDocumentPosition(inner) & 1));
+});
+</script>
+</head>
+<body>
+<div id="first">
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+</div>
+<div id="second">
+</div>
+</body>
+</html>

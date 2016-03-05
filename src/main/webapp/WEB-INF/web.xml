@@ -5,14 +5,6 @@
 <web-app>
 	<display-name>Learn Front End</display-name>
 	<servlet>
-		<servlet-name>page</servlet-name>
-		<servlet-class>learn.PageServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>index</servlet-name>
-		<jsp-file>/page/index.html</jsp-file>
-	</servlet>
-	<servlet>
 		<servlet-name>download</servlet-name>
 		<servlet-class>learn.DownloadServlet</servlet-class>
 	</servlet>
@@ -24,14 +16,6 @@
 	   <servlet-name>upload</servlet-name>
 	   <servlet-class>learn.UploadServlet</servlet-class>
 	</servlet>
-	<servlet-mapping>
-		<servlet-name>page</servlet-name>
-		<url-pattern>/page/*</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>index</servlet-name>
-		<url-pattern>/page/index.html</url-pattern>
-	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>download</servlet-name>
 		<url-pattern>/download</url-pattern>

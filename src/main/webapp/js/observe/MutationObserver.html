@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+div {
+    padding-left: 50px;
+}
+</style>
+<script type="text/javascript">
+
+function log(mutations) {
+    mutations.forEach(function (mutate) {
+        console.log( "type:" + mutate.type );
+        console.log( mutate );
+    });
+} 
+
+document.addEventListener('DOMContentLoaded', function () {
+    var target = document.getElementById('target');
+    var sub = document.getElementById('sub');
+
+    //在该线程所有方法执行完毕后的末尾调用回调
+    var observer = new MutationObserver(log);
+
+    var config = {
+        subtree: true, //使用相同配置监听所有后代节点
+        childList: true, //监听子节点长度的变化
+        attributes: true, //监听目标节点属性的变化
+        attributeOldValue: true, //记录变化前的属性值
+        attributeFilter: ['data-text'] //只监听指定的属性值的变化
+    };
+
+    observer.observe(target, config);
+
+    target.appendChild(document.createElement('div'));
+
+    //获取并清空observer上已存在的的mutate记录
+    log(observer.takeRecords());
+
+    target.setAttribute('data-text', 'hoho');
+    target.setAttribute('data-tt', 'bar');
+
+    sub.appendChild(document.createElement('div'));
+    sub.setAttribute('data-text', 'BOOOOOOOOOOOOOO');
+
+    var textNode = document.createTextNode('TT');
+    var ob = new MutationObserver(log);
+    var cfg = {
+        characterData: true,    //如果目标节点是TextNode，监听文本的变化
+        attributeOldValue: true //记录变化前的文本
+    };
+    ob.observe(textNode, cfg);
+    textNode.data = 'KK';
+});
+
+</script>
+</head>
+<body>
+<div id="target" data-text="hehe" data-tt="foo" >
+    Text1
+    <div>Dom1</div>
+    <div>
+        Dom2
+        <div>
+            <div id="sub" data-text="OLAOLA">SubDom</div>
+        </div>
+    </div>
+    Text2
+</div>
+</body>
+</html>

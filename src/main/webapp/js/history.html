@@ -4,46 +4,45 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <script type="text/javascript">
-
 //方法签名：
-//	Object state信息
-//	String 标题
-//	String 新的url地址
+//  Object state信息
+//  String 标题
+//  String 新的url地址
 console.log(history.state);
-document.addEventListener("DOMContentLoaded", function(){
-	var target = document.getElementById("target");
-	
-	var state = history.state;
-	if( !state ){
-		state = {
-			"msg": "home",
-		};
-		//替换当前的state
-		history.replaceState( state ,"At Home","./history.html?place=home");
-	}
-	restore( state );
-	
-	var button = document.getElementById("button");
-	button.addEventListener("click", function(){
-		//推入一个新的state
-		history.pushState({
-			"msg": "school"
-		},"At School","./history.html?place=school");
-		target.innerHTML = "school";
-	});
-	
-	//在对history进行前进/后退，且由于replaceState/pushState没有刷新页面时，会触发该事件
-	//进行刷新(F5)操作时，虽然页面会重新初始化，但history不会新增一条记录，state信息不会丢失
-	window.addEventListener( "popstate", function( e ){
-		console.log( e.state );
-		if( e.state ){
-			restore( e.state );
-		}
-	} );
-	
-	function restore( state ){
-		target.innerHTML = state.msg;
-	}
+document.addEventListener('DOMContentLoaded', function () {
+    var target = document.getElementById('target');
+
+    var state = history.state;
+    if(!state){
+        state = {
+            msg: 'home'
+        };
+        //替换当前的state
+        history.replaceState(state, 'At Home', './history.html?place=home');
+    }
+    restore(state);
+
+    var button = document.getElementById("button");
+    button.addEventListener("click", function () {
+        //推入一个新的state
+        history.pushState({
+            msg: 'school'
+        }, 'At School', './history.html?place=school');
+        target.innerHTML = 'school';
+    });
+
+    //在对history进行前进/后退，且由于replaceState/pushState没有刷新页面时，会触发该事件
+    //进行刷新(F5)操作时，虽然页面会重新初始化，但history不会新增一条记录，state信息不会丢失
+    window.addEventListener('popstate', function (e) {
+        console.log(e.state);
+        if (e.state) {
+            restore(e.state);
+        }
+    });
+
+    function restore (state) {
+        target.innerHTML = state.msg;
+    }
 });
 </script>
 </head>
