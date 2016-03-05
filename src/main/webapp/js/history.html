@@ -8,46 +8,49 @@
 //  Object state信息
 //  String 标题
 //  String 新的url地址
-console.log(history.state);
 document.addEventListener('DOMContentLoaded', function () {
-    var target = document.getElementById('target');
+    var position = document.getElementById('position');
+    var button = document.getElementById('button');
+
+    function restore () {
+        var state = history.state;
+        position.textContent = state.position;
+        button.textContent = state.btnText;
+    }
+
+    //在对history进行前进/后退，且由于replaceState/pushState没有刷新页面时，会触发该事件
+    //进行刷新(F5)操作时，虽然页面会重新初始化，但history不会新增一条记录，state信息不会丢失
+    window.addEventListener('popstate', restore);
 
     var state = history.state;
     if(!state){
         state = {
-            msg: 'home'
+            position: 'at home',
+            btnText: 'go school'
         };
         //替换当前的state
         history.replaceState(state, 'At Home', './history.html?place=home');
     }
-    restore(state);
+    restore();
 
-    var button = document.getElementById("button");
-    button.addEventListener("click", function () {
-        //推入一个新的state
-        history.pushState({
-            msg: 'school'
-        }, 'At School', './history.html?place=school');
-        target.innerHTML = 'school';
-    });
-
-    //在对history进行前进/后退，且由于replaceState/pushState没有刷新页面时，会触发该事件
-    //进行刷新(F5)操作时，虽然页面会重新初始化，但history不会新增一条记录，state信息不会丢失
-    window.addEventListener('popstate', function (e) {
-        console.log(e.state);
-        if (e.state) {
-            restore(e.state);
+    button.addEventListener('click', function () {
+        var state = history.state;
+        if (state.position === 'at home') {
+            //推入一个新的state
+            history.pushState({
+                position: 'at school',
+                btnText: 'back home'
+            }, 'At School', './history.html?place=school');
+            restore();
+        } else {
+            window.history.back(1);
         }
     });
-
-    function restore (state) {
-        target.innerHTML = state.msg;
-    }
 });
 </script>
 </head>
 <body>
-<p id="target"></p>
-<button id="button">go school</button>
+<p id="position"></p>
+<button id="button"></button>
 </body>
 </html>
