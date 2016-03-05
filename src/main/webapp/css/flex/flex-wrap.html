@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+.container {
+    display: flex;
+    background: steelblue;
+    margin-bottom: 20px;
+}
+
+.container > div {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    margin: 10px;
+}
+
+.container.nowrap {
+    /** 空间不足时，收缩子元素，不换行（默认） **/
+    flex-wrap: nowrap;
+}
+
+.container.wrap {
+    /** 空间不足时，换行 **/
+    flex-wrap: wrap;
+}
+</style>
+</head>
+<body>
+<div class="container nowrap">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<div class="container wrap">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>
