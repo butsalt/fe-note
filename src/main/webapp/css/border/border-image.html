@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+div {
+    border-image-source: url(/assets/border-image.png);
+    /** 上割 右割 下割 左割 **/
+    /** 不写单位是像素，百分比相对于背景图片 **/
+    border-image-slice: 27 33.3333333333333333%;
+    border-width: 50px;
+    width: 200px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.stretch {
+    /** 默认，拉伸 **/
+    border-image-repeat: stretch;
+}
+
+.round {
+    /** 保证图片的宽高比不变形，并完全重复，有可能因此做放大/缩小操作 **/
+    border-image-repeat: round;
+}
+
+.repeat {
+    /** 从中心点向两端重复 **/
+    /** 先水平 再垂直 **/
+    border-image-repeat: repeat repeat;
+}
+</style>
+</head>
+<body>
+<div class="stretch"></div>
+<div class="round"></div>
+<div class="repeat"></div>
+</body>
+</html>
