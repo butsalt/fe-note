@@ -15,7 +15,7 @@ body {
 div {
     box-sizing: border-box;
     width: 250px;
-    height: 100px;
+    height: 250px;
     margin-right: 20px;
     margin-bottom: 20px;
  }
@@ -54,38 +54,47 @@ div:nth-of-type(6) {
 }
 
 div:nth-of-type(7) {
-    background: radial-gradient(red 0%, green 30%, blue 100%);
+    background: radial-gradient(red 0, green 30%, blue 100%);
 }
 
 div:nth-of-type(8) {
-    background: radial-gradient(ellipse closest-side at 25% 25%, white, black);
+    background: radial-gradient(red 0, red 50%, green 0, green 100%);
 }
 
 div:nth-of-type(9) {
-    background: radial-gradient(ellipse closest-corner at 25% 25%, white, black);
+    background: radial-gradient(red 0, red 125px, green 0, green 100%);
 }
 
 div:nth-of-type(10) {
-    background: radial-gradient(ellipse farthest-side at 25% 25% ,white, black);
+    background: radial-gradient(ellipse closest-side at 25% 25%, white, black);
 }
 
 div:nth-of-type(11) {
-    background: radial-gradient(ellipse farthest-corner at 25% 25%, white, black);
+    background: radial-gradient(ellipse closest-corner at 25% 25%, white, black);
 }
 
 div:nth-of-type(12) {
-    background: repeating-linear-gradient(0, red, green 50px);
+    background: radial-gradient(ellipse farthest-side at 25% 25% ,white, black);
 }
 
 div:nth-of-type(13) {
-    background: repeating-linear-gradient(0, red, green 50%);
+    /** 默认值 **/
+    background: radial-gradient(ellipse farthest-corner at 25% 25%, white, black);
 }
 
 div:nth-of-type(14) {
-    background: repeating-radial-gradient(red, green 50px);
+    background: repeating-linear-gradient(0, red, green 50px);
 }
 
 div:nth-of-type(15) {
+    background: repeating-linear-gradient(0, red, green 50%);
+}
+
+div:nth-of-type(16) {
+    background: repeating-radial-gradient(red, green 50px);
+}
+
+div:nth-of-type(17) {
     padding: 10px;
     background: repeating-linear-gradient(45deg, #05f, #05f 10px, #eee 10px, #eee 20px);
     border: 10px black dashed;
@@ -94,6 +103,8 @@ div:nth-of-type(15) {
 </style>
 </head>
 <body>
+<div></div>
+<div></div>
 <div></div>
 <div></div>
 <div></div>
