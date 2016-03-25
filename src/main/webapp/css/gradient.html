@@ -59,20 +59,21 @@ div:nth-of-type(7) {
 }
 
 div:nth-of-type(8) {
-    background: radial-gradient(ellipse closest-side at 25% 25%, white, black);
+    /** 默认值 **/
+    background: radial-gradient(ellipse farthest-corner at 25% 25%, white, black);
 }
+
 
 div:nth-of-type(9) {
-    background: radial-gradient(ellipse closest-corner at 25% 25%, white, black);
-}
-
-div:nth-of-type(10) {
     background: radial-gradient(ellipse farthest-side at 25% 25% ,white, black);
 }
 
+div:nth-of-type(10) {
+    background: radial-gradient(ellipse closest-corner at 25% 25%, white, black);
+}
+
 div:nth-of-type(11) {
-    /** 默认值 **/
-    background: radial-gradient(ellipse farthest-corner at 25% 25%, white, black);
+    background: radial-gradient(ellipse closest-side at 25% 25%, white, black);
 }
 
 div:nth-of-type(12) {
