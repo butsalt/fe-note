@@ -59,10 +59,13 @@ div:nth-of-type(7) {
 }
 
 div:nth-of-type(8) {
+    /** 100%时图案刚好占满整个元素背景 **/
     background: radial-gradient(red 0, red 50%, green 0, green 100%);
 }
 
 div:nth-of-type(9) {
+    /** 像素值定义的是横轴半径 **/
+    /** 要求当图案水平方向左右两边都触及元素左右两边时，图案上下两边也触及元素上下两边 **/
     background: radial-gradient(red 0, red 125px, green 0, green 100%);
 }
 
