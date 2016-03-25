@@ -114,6 +114,7 @@ div:nth-of-type(16) {
 div:nth-of-type(17) {
     /** closest-corner下， **/
     /** 像素值定义的是图案水平方向上的半径 **/
+    /** 要求当图案左右两边有一边触及背景区域边框时，图案上下两边至少有一边触及背景区域边框 **/
     /** 当图案已经占满至少背景区域的一个角后再增加半径，图案将直接跃进至占满整个背景区域 **/
     background: radial-gradient(closest-corner at 25% 50%, red 0, red 100px, green 0, green 100%);
 }
@@ -128,8 +129,9 @@ div:nth-of-type(18) {
 div:nth-of-type(19) {
     /** closest-side下， **/
     /** 像素值定义的是图案水平方向上的半径 **/
+    /** 要求当图案左右两边有一边将触及背景区域边框时，图案上下两边至少有一边将触及背景区域边框 **/
     /** 当图案已经占满至少背景区域的一个边后再增加半径，图案将直接跃进至占满整个背景区域 **/
-    background: radial-gradient(closest-side at 25% 50%, red 0, red 100px, green 0, green 100%);
+    background: radial-gradient(closest-side at 25% 50%, red 0, red 99px, green 0, green 100%);
 }
 
 div:nth-of-type(20) {
