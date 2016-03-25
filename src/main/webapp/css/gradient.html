@@ -15,8 +15,8 @@ body {
 
 div {
     box-sizing: border-box;
-    width: 250px;
-    height: 250px;
+    width: 400px;
+    height: 200px;
     margin-right: 20px;
     margin-bottom: 20px;
  }
@@ -59,46 +59,91 @@ div:nth-of-type(7) {
 }
 
 div:nth-of-type(8) {
-    /** 100%时图案刚好占满整个元素背景 **/
-    background: radial-gradient(red 0, red 50%, green 0, green 100%);
-}
-
-div:nth-of-type(9) {
-    /** 像素值定义的是横轴半径 **/
-    /** 要求当图案水平方向左右两边都触及元素左右两边时，图案上下两边也触及元素上下两边 **/
-    background: radial-gradient(red 0, red 125px, green 0, green 100%);
-}
-
-div:nth-of-type(10) {
     background: radial-gradient(ellipse closest-side at 25% 25%, white, black);
 }
 
-div:nth-of-type(11) {
+div:nth-of-type(9) {
     background: radial-gradient(ellipse closest-corner at 25% 25%, white, black);
 }
 
-div:nth-of-type(12) {
+div:nth-of-type(10) {
     background: radial-gradient(ellipse farthest-side at 25% 25% ,white, black);
 }
 
-div:nth-of-type(13) {
+div:nth-of-type(11) {
     /** 默认值 **/
     background: radial-gradient(ellipse farthest-corner at 25% 25%, white, black);
 }
 
+div:nth-of-type(12) {
+    /** farthest-corner下， **/
+    /** 100%时图案刚好占满整个背景区域的四个角 **/
+    background: radial-gradient(farthest-corner at 25% 50%, red 0, red 100%, green 0, green 100%);
+}
+
+div:nth-of-type(13) {
+    /** farthest-corner下， **/
+    /** 像素值定义的是图案水平方向上的半径 **/
+    /** 要求当图案左右两边分别触及背景区域左右两边时，图案上下两边也分别触及背景区域上下两边 **/
+    background: radial-gradient(farthest-corner at 25% 50%, red 0, red 298px, green 0, green 100%);
+}
+
 div:nth-of-type(14) {
-    background: repeating-linear-gradient(0, red, green 50px);
+    /** farthest-side下， **/
+    /** 99%时图案的边刚好快顶到背景区域的边 **/
+    /** 100%时图案将直接跃进占满整个背景区域 **/
+    background: radial-gradient(farthest-side at 25% 50%, red 0, red 99%, green 0, green 100%);
 }
 
 div:nth-of-type(15) {
-    background: repeating-linear-gradient(0, red, green 50%);
+    /** farthest-side下， **/
+    /** 像素值定义的是图案水平方向上的半径 **/
+    /** 要求当图案左右两边分别触及背景区域左右两边时，图案上下两边也分别触及背景区域上下两边 **/
+    /** 如果此时半径继续增加，图案将直接跃进至占满整个背景区域 **/
+    background: radial-gradient(farthest-side at 25% 50%, red 0, red 298px, green 0, green 100%);
 }
 
 div:nth-of-type(16) {
-    background: repeating-radial-gradient(red, green 50px);
+    /** closest-corner下， **/
+    /** 99%时图案刚好快占满背景区域至少1个角(非贪婪) **/
+    /** 100%时图案将直接跃进占满整个背景区域 **/
+    background: radial-gradient(closest-corner at 25% 50%, red 0, red 99%, green 0, green 100%);
 }
 
 div:nth-of-type(17) {
+    /** closest-corner下， **/
+    /** 像素值定义的是图案水平方向上的半径 **/
+    /** 当图案已经占满至少背景区域的一个角后再增加半径，图案将直接跃进至占满整个背景区域 **/
+    background: radial-gradient(closest-corner at 25% 50%, red 0, red 100px, green 0, green 100%);
+}
+
+div:nth-of-type(18) {
+    /** closest-side下， **/
+    /** 99%时图案刚好快占满背景区域至少1个边(非贪婪) **/
+    /** 100%时图案将直接跃进占满整个背景区域 **/
+    background: radial-gradient(closest-side at 25% 50%, red 0, red 99%, green 0, green 100%);
+}
+
+div:nth-of-type(19) {
+    /** closest-side下， **/
+    /** 像素值定义的是图案水平方向上的半径 **/
+    /** 当图案已经占满至少背景区域的一个边后再增加半径，图案将直接跃进至占满整个背景区域 **/
+    background: radial-gradient(closest-side at 25% 50%, red 0, red 100px, green 0, green 100%);
+}
+
+div:nth-of-type(20) {
+    background: repeating-linear-gradient(0, red, green 50px);
+}
+
+div:nth-of-type(21) {
+    background: repeating-linear-gradient(0, red, green 50%);
+}
+
+div:nth-of-type(22) {
+    background: repeating-radial-gradient(red, green 50px);
+}
+
+div:nth-of-type(23) {
     padding: 10px;
     background: repeating-linear-gradient(45deg, #05f, #05f 10px, #eee 10px, #eee 20px);
     border: 10px black dashed;
@@ -107,6 +152,12 @@ div:nth-of-type(17) {
 </style>
 </head>
 <body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
 <div></div>
 <div></div>
 <div></div>
