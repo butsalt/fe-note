@@ -4,25 +4,20 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-	}
-	/**
-		::before :选择目标对象开始位置(同before:)
-		::after :选择目标对象结束位置(同after:)
-	**/
-	h1::before{
-		background-color:#ddd;
-		font-size:20px;
-		content:"haha";
-	}
-	h1::after{
-		content:"..";
-	}
+/**
+    ::before :选择目标对象开始位置(同before:)
+    ::after :选择目标对象结束位置(同after:)
+**/
+h1::before {
+    content:"Fe ";
+}
+
+h1::after{
+    content:" " attr(data-target) " life";
+}
 </style>
 </head>
 <body>
-<h1>Test1</h1>
+<h1 data-target="my">is</h1>
 </body>
 </html>
