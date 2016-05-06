@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<form>
+    <label>
+        <input type="checkbox" id="checkbox" name="disabled"/>
+        禁用
+    </label>
+    <input type="text" id="text"/>
+    <button type="button" id="normalBtn">普通按钮</button>
+    <button type="button" id="specialBtn" autocomplete="off">关闭补完按钮</button>
+    <input type="submit" value="提交"/>
+</form>
+<script type="text/javascript">
+//当按f5刷新时，
+//  chrome会将表单中的内容重置，通过js修改的是否禁用会重置，通过js修改的是否只读会重置
+//  firefox会将表单中的内容恢复成最后一次填写的状态，通过js修改的是否禁用会恢复，通过js修改的是否只读会重置
+//    如果设置autocomplete="off"，可以阻止恢复
+
+//当通过回退恢复时，
+//  chrome会将表单中的内容重置恢复成最后一次填写的状态，通过js修改的是否禁用会重置，通过js修改的是否只读会重置
+//  firefox会将表单中的内容恢复成最后一次填写的状态，通过js修改的是否禁用会恢复，通过js修改的是否只读会恢复
+//    设置autocomplete="off"，也不可以阻止恢复
+checkbox
+    .addEventListener('click', function () {
+        var checked = this.checked;
+        normalBtn.disabled = checked;
+        specialBtn.disabled = checked;
+        text.readOnly = checked;
+    });
+</script>
+</body>
+</html>
