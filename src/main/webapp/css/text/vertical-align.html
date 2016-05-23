@@ -4,26 +4,28 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-    * {
-        margin: 0;
-        padding: 0;
+    html {
         /** simsun字体line-height等于字体实际高度 **/
         font-family: simsun;
     }
+
     div {
         background-color: #521;
         color: #ddd;
         font-size: 40px;
         line-height: 1;
     }
+
     span.dot {
         font-size: 50px;
     }
+
     div.dot{
         display: inline-block;
         width: 50px;
         height: 50px;
     }
+
     .dot{
         vertical-align: text-top;
         background-color: #383;
@@ -54,7 +56,7 @@
         1.  vertical-align的值为top时，
             对象的顶端会与父元素的顶端对齐，如果换行则会与该行顶端对齐。
         3.  vertical-align的值为text-top时，
-            对象的顶端会与父元素的默认span的文字上边缘对齐。
+            对象的顶端会与父元素的默认span元素的上边缘对齐。
         4.  vertical-align的值为super时，
             对象的baseline会与父元素的默认sup的baseline对齐。
         5.  vertical-align的值为sub时，
