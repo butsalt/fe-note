@@ -11,21 +11,26 @@ Person.prototype.talk = function () {
     console.log(this.name);
 };
 var p = new Person('butSalt');
+var obj = {
+    age: undefined
+};
 //目标对象上定义的属性可以被直接使用
 with(p) {
-    with({age: 25}) {
+    with(obj) {
         //目标对象的原型链上的属性也可以直接调用
         talk();
-        console.log(name);
-        console.log(age);
+        console.log(name === 'butSalt');
+        console.log(age === undefined);
         //声明目标对象上已定义的属性会被赋予到目标对象上
         name = 'krista';
+        age = 26;
         //声明目标对象上未定义的属性仍被赋予window上
         cls = '0987-2';
     }
 }
-console.log(p.name);
-console.log(window.cls);
+console.log(p.name === 'krista');
+console.log(obj.age === 26);
+console.log(window.cls === '0987-2');
 </script>
 </head>
 <body>
