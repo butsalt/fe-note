@@ -6,10 +6,10 @@
 <script type="text/javascript">
 var a = 1;
 (function () {
-    var b = 2;
+    var c = 3;
     //全局变量可以使用，但闭包内的变量无法使用
-    var c = new Function('c','console.log(a);console.log(b);console.log(c);');
-    c(3);
+    var callback = new Function('b','console.log(a === 1);console.log(b === 2);console.log(c);');
+    callback(2);
 })();
 </script>
 </head>
