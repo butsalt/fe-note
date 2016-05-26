@@ -12,66 +12,66 @@
 <script type="text/javascript">
 
 console.log(1);
-var reg = /"([^"]*)"/g;
+var regex = /"([^"]*)"/g;
 var text = '\"Joker!\"';
 //使用$来引用括号内匹配的文本 ^是取反的意思
-console.log(text.replace(reg,'“$1”'));
+console.log(text.replace(regex,'“$1”'));
 
 console.log(2);
 //如果是g，替换所有满足规则的字符串
 //如果不是g，只替换第一个满足匹配规则的字符串
-reg = /s/;
+regex = /s/;
 text = 'ssssssssss';
-console.log(text.replace(reg,'A'));
+console.log(text.replace(regex,'A'));
 
 console.log(3);
-reg = /S"([^"]*)"S/;
+regex = /S"([^"]*)"S/;
 text = 'S"Joker!\"S';
 //如果是g，返回一个数组，包含所有满足匹配的字符串
 //如果不是g，返回一个数组，第一个返回满足匹配的字符串，第二个返回满足匹配的字符串下的第一个子模式匹配的字符串(\1)，...
-console.log(text.match(reg));
+console.log(text.match(regex));
 
 console.log(4);
 //如果是g，调用时如果存在匹配的，记录匹配字符串的index+1的位置(lastIndex)，下一次调用时从这个位置开始，如果没找到，则将lastIndex置为0
 //如果不是g，每次查询都是从头开始查，即lastIndex始终为0
-reg = /test(\d)/g;
+regex = /test(\d)/g;
 text = 'test0test1';
-console.log(reg.exec(text));
-console.log(reg.exec(text));
-console.log(reg.exec(text));
-console.log(reg.exec(text));
+console.log(regex.exec(text));
+console.log(regex.exec(text));
+console.log(regex.exec(text));
+console.log(regex.exec(text));
 
 console.log(5);
-reg = /test(\d)/g;
+regex = /test(\d)/g;
 text = 'test0test1';
-console.log(reg.test(text));
-console.log(reg.test(text));
-console.log(reg.test(text));
+console.log(regex.test(text));
+console.log(regex.test(text));
+console.log(regex.test(text));
 
 console.log(6);
 //匹配的字符串后一定要跟着冒号
-reg = /Javascript(?=:)/;
+regex = /Javascript(?=:)/;
 text = 'Javascript:';
-console.log(reg.exec(text));
+console.log(regex.exec(text));
 
 console.log(7);
 //匹配的字符串后一定不能跟着冒号
-reg = /Javascript(?!:)/;
+regex = /Javascript(?!:)/;
 text = 'Javascripts';
-console.log(reg.exec(text));
+console.log(regex.exec(text));
 
 console.log(8);
 //\b定位到单词边界
-reg = /\b\w+\b/g;
+regex = /\b\w+\b/g;
 text = 'JavaS cooker';
-console.log(text.match(reg));
+console.log(text.match(regex));
 
 //如果没有m，将^定位到字符串的开头，将$定位到字符串的结尾
 //如果有m，将^定位到每行的开头，$定位到每行的结尾
 console.log(9);
-reg = /^\w+$/gm;
+regex = /^\w+$/gm;
 text = 'Java\nScript';
-console.log(text.match(reg));
+console.log(text.match(regex));
 
 console.log(10);
 //match是匹配的字符串    p1,p2...是匹配各个子模式的字符串    offset是匹配的字符串在整个字符串中的位置    string是整个字符串
@@ -83,21 +83,21 @@ console.log('abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer));
 
 console.log(11);
 //*? +?实现的是最小匹配，"big"已经满足了正则表达式的要求，所以匹配的是"big"
-reg = /".*?"/;
+regex = /".*?"/;
 text = '"big""boy"';
-console.log(reg.exec(text));
+console.log(regex.exec(text));
 
 console.log(12);
 //(?:expression)，不捕获这个expression分组，如果expression内还有分组依旧可以被正常捕获
-reg = /^\d(?:\d(\d))$/;
+regex = /^\d(?:\d(\d))$/;
 text = '123';
-console.log(reg.exec(text));
+console.log(regex.exec(text));
 
 console.log(13);
 //\1可以引用到第一个括号中表达式匹配到的字符串
-reg = /(")([^"]+)(\1)/;
+regex = /(")([^"]+)(\1)/;
 text = '"guud"';
-console.log(reg.exec(text));
+console.log(regex.exec(text));
 </script>
 </head>
 <body>
