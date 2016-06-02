@@ -20,6 +20,11 @@ div {
     background-origin: content-box;
 }
 
+.default {
+    /** 默认是原始图片大小 **/
+    background-size: auto auto;
+}
+
 /** 宽 高 **/
 .percent {
     /** 参考空间的宽（高） **/
@@ -32,8 +37,8 @@ div {
 }
 
 .auto {
-    /**定宽，高按图片比例缩放**/
-    background-size: 50px auto;
+    /**定宽，高按图片比例缩放(等同第二个参数设为auto)**/
+    background-size: 50px;
 }
 
 .contain {
@@ -48,6 +53,7 @@ div {
 </style>
 </head>
 <body>
+<div class="default"></div>
 <div class="percent"></div>
 <div class="px"></div>
 <div class="auto"></div>
