@@ -8,17 +8,24 @@
 <body>
 <!--
     sizes
-        使用第一个满足条件的结果作为图片将在页面中使用的宽度
+        使用第一个满足条件的结果作为图片在页面中准备使用的宽度
     srcset
-        理想资源宽度(px) = 宽度(px) * 设备像素比
-        使用最接近理想资源宽度的资源
-        与理想资源宽度差相同的资源选更优质的资源
-
-    最终图片宽度 = 由sizes决定的宽度 * (理想资源宽度 / 实际资源宽度)
+        理想资源宽度 = 准备宽度 * dpr
+        以各资源在声明中声明的宽度为根据，使用最接近理想资源宽度的资源
+    图片最终在页面中的宽度 = 准备宽度 * (实际宽度 ／ 声明宽度)
 -->
 <img
     sizes="(max-width: 800px) 100px, 200px"
-    srcset="/assets/x100.png 100w, /assets/x200.png 200w"
+    srcset="/assets/x100.png 100w, /assets/x200.png 200w, /assets/x400.png 400w"
 />
+<br/>
+<!--
+    根据设备像素比来选择资源
+    图片最终在页面中的宽度 = 资源实际宽度 / dpr
+    如果用css设置了width则直接使用css中设置的这个值
+-->
+<img
+    srcset="/assets/x100.png, /assets/x200.png 2x, /assets/x300.png 3x"
+ />
 </body>
 </html>
