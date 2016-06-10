@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+</head>
+<body>
+<!--
+    sizes
+        使用第一个满足条件的结果作为图片将在页面中使用的宽度
+    srcset
+        理想资源宽度(px) = 宽度(px) * 设备像素比
+        使用最接近理想资源宽度的资源
+        与理想资源宽度差相同的资源选更优质的资源
+-->
+<img
+    sizes="(max-width: 800px) 100px, 200px"
+    srcset="/assets/x100.png 100w, /assets/x200.png 200w"
+/>
+</body>
+</html>
