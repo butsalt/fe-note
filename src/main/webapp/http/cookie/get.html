@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+//端口号变化不影响cookie读取
+
+//test.com下的cookie，a.test.com下也可以读到
+
+// /a下的cookie，/a/b下也可以读到
+
+//越新设的cookie，在document.cookie的字符串中越靠后
+function getCookie (key) {
+    var cookies = document.cookie ? document.cookie.split('; ') : [];
+    var cookieMap = {};
+    cookies
+        .forEach(function (cookie) {
+            var part = cookie.split('=');
+            cookieMap[decodeURIComponent(part[0])] = decodeURIComponent(part[1]);
+        });
+    return cookieMap[key];
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>
