@@ -18,10 +18,37 @@
         function bb () {}
     }
     function cc () {}
-    //在逻辑中定义
+    //执行到此已定义
     console.log(aa !== undefined);
     console.log(bb === undefined);
     console.log(cc !== undefined);
+})();
+(function () {
+    //已声明，未定义
+    console.log(a === undefined);
+    var a = 1;
+    //执行到此已定义
+    console.log(a !== undefined);
+    try {
+        //b未声明，会抛出异常
+        b;
+        console.log(false);
+    } catch (e) {
+        console.log(true);
+    }
+})();
+(function () {
+    var a = function b () {
+        //函数b只能在此使用
+        console.log(b !== undefined);
+    }
+    try {
+        b;
+        console.log(false);
+    } catch (e) {
+        console.log(true);
+    }
+    a();
 })();
 </script>
 </head>
