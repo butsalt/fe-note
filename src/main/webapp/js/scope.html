@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    //已声明，未定义
+    console.log(aa === undefined);
+    //已声明，未定义
+    console.log(bb === undefined);
+    //已声明，已定义
+    console.log(cc !== undefined);
+    var flag = true;
+    if (flag) {
+        function aa () {}
+    } else {
+        function bb () {}
+    }
+    function cc () {}
+    //在逻辑中定义
+    console.log(aa !== undefined);
+    console.log(bb === undefined);
+    console.log(cc !== undefined);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
