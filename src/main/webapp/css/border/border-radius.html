@@ -24,9 +24,15 @@ div:nth-child(2) {
     /** 在空间不足的情况下，会按比例进行缩小，直到水平/垂直都在最大值约束的范围之下 **/
     border-radius: 999px 0 0 0 / 999px 0 0 0;
 }
+
+div:nth-child(3) {
+    /** 设定元素含padding，border后对应方向长度的50%为半径 **/
+    border-radius: 50%;
+}
 </style>
 </head>
 <body>
+<div></div>
 <div></div>
 <div></div>
 </body>
