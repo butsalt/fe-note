@@ -23,4 +23,4 @@
  * velocity(动画库)
  * tween(使用requestAnimationFrame驱动的动画库)
 3. 其它
- * dd(模仿工作时遇见的一个大神写的工具类，自己实现的工具类)
+ * dd(模仿黄韬写的工具类)
