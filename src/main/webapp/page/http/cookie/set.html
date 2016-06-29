@@ -10,6 +10,8 @@
 //  expires session结束时这份cookie失效
 //  secure false
 
+//当前页面下cookie允许设置的domain规则与页面允许重设的domain规则相同(查阅../domain.html)
+//path可以任意设置，比如当前页面的path是 /a/b ，此时同样可以将cookie的path设置成 /c/d
 //name，domain，path中的一项不同则被认为是不同的cookie
 function setCookie ({name, value, domain, path, expires, secure}) {
     document.cookie = [
