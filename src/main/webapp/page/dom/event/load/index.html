@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+function printTargetInfo () {
+    var targetEl = document.getElementById('target');
+    console.log('target: ' + targetEl.offsetWidth + ' x ' + targetEl.offsetHeight);
+}
+
+//当文档中dom元素初始化完成时被执行
+document.addEventListener('DOMContentLoaded', function () {
+    console.warn('dom loaded');
+    printTargetInfo();
+});
+
+//当文档中dom元素初始化完成，图片，样式加载完成时被执行
+window.addEventListener('load', function () {
+    console.warn('all loaded');
+    printTargetInfo();
+});
+</script>
+</head>
+<body>
+<img id="target" src="/assets/img/maple-small.jpg">
+<!-- js文件默认是立即加载并执行 -->
+<!-- defer使得js文件加载与后续文档解析同时进行 -->
+<!-- js执行将发生在文档中dom元素初始化完成之后，DOMContentLoaded之前 -->
+<script type="text/javascript" src="./index.js" defer></script>
+<link rel="stylesheet" type="text/css" href="./index.css">
+</body>
+</html>

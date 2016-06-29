@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	//可以在事件后加命名空间
+	//如果unbind的是click则所有click下的事件都移除
+	//如果unbind的是click.home则只有click.home下的事件才被移除
+	//如果unbind的是.home则所有在home空间下的事件都移除
+	el = $('div').on('click.home',function(){
+		console.log('..');
+	}).on('click.back',function(){
+		console.log('!!');
+	});
+	
+	//也可以是自定义事件
+	obj = $({}).on('speak.my',{name:'butSalt'},function(e){
+		//e.namespace = my  如果triiger('speak')，则namespace=''
+		//e.type = speak
+		console.log(e.data);
+		console.log(arguments);
+	});
+	//用数组来表示arguments
+	obj.trigger('speak.my',[1,2,3]);
+});
+</script>
+<style type="text/css">
+	div{
+		width:100px;
+		height:100px;
+		background-color:#78f;
+	}
+</style>
+</head>
+<body>
+<div>
+</div>
+</body>
+</html>

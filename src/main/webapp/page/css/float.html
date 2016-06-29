@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+p {
+    background-color: #eee;
+}
+
+.dot {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 255, .5);
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+span {
+    margin-top: 20px;
+}
+
+.overflow {
+    overflow: auto;
+}
+
+.margin-effect-example {
+    margin-top: 1em;
+    background: #eee;
+    width: 300px;
+    height: 300px;
+}
+
+.margin-effect-example .dot {
+    background: rgba(0, 0, 255, .5);
+    width: 50%;
+    height: 50%;
+    margin-left: 100%;
+}
+
+.full-example {
+    line-height: 3;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="left dot"></div>
+    <div class="right dot"></div>
+    <p>浮动后的元素从文档流内脱出，轮到本段落渲染时，实际上本段落已经占据了整个父元素的所有空间。但是在渲染段落中的文字时，不会渲染到浮动元素上。所以达到了文字环绕的效果。</p>
+</div>
+<div class="container">
+    <div class="left dot"></div>
+    <p>右侧的浮动元素在本段落渲染完后才渲染。</p>
+    <div class="right dot"></div>
+</div>
+<div class="container">
+    <span class="left dot">Text here!</span>
+    <p>inline标签float后display强制为block，width/height/margin-top/margin-bottom生效</p>
+</div>
+<div class="container">
+    <div class="left dot"></div>
+    <p class="overflow">overflow:auto/hidden/scroll使本元素(p)BFC，重叠消失</p>
+</div>
+<div class="container margin-effect-example">
+    <div class="left dot"></div>
+    如果父容器空间不够，过分的margin会导致元素超出父容器的范围
+</div>
+<p class="full-example">
+    <!-- 1.浮动元素最多能浮动到该行的顶端 -->
+    <!-- 2.如果所在的段落中在本浮动元素之前还存在其他浮动元素，那么本浮动元素最多能浮动到本浮动元素之前最后一个浮动元素的高度。 -->
+    <!-- 3.对浮动元素应用水平方向的margin会影响本浮动元素的位置，所在的段落中在本浮动元素之后的元素(包括浮动元素和正常流中的元素)也会根据最后的这个位置来排版 -->
+    <!-- 4.对浮动元素应用垂直方向的margin会影响本浮动元素的位置，所在的段落中在本浮动元素之后的元素(包括浮动元素和正常流中的元素)也会根据最后的这个位置来排版 -->
+    <strong>Start</strong> <img src="/assets/img/maple-big.jpg" class="left" style="margin-top:-30px"/> <strong>End</strong>
+    <strong>Start</strong> <img src="/assets/img/maple-big.jpg" class="left"/> <strong>End</strong>
+    Lorem ipsum dolor sit amet
+    <strong>Start</strong> <img src="/assets/img/maple-small.jpg" class="left"/> <strong>End</strong>
+    , consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+    <strong>Start</strong> <img src="/assets/img/maple-small.jpg" class="right"/> <strong>End</strong>
+    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    <strong>Start</strong> <img src="/assets/img/maple-small.jpg" class="right"/> <strong>End</strong>
+    Excepteur sint occaecat cupidatat non
+</p>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</body>
+</html>
