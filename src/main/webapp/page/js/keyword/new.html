@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    function Parent () {
+        console.log(new.target === Child);
+    }
+
+    function Child () {
+        //相当于new
+        //被调用的构造函数 参数列表 被用于获取prototype的构造函数
+        var obj = Reflect.construct(Parent, [], Child);
+        console.log(new.target === Child);
+        return obj;
+    }
+
+    console.log(Object.getPrototypeOf(new Child()) === Child.prototype);
+})();
+
+(function () {
+    class Parent {
+        constructor () {
+            console.log(new.target === Child);
+        }
+    }
+
+    class Child extends Parent {
+        constructor () {
+            super();
+            console.log(new.target === Child);
+        }
+    }
+
+    console.log(new Child());
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
