@@ -8,8 +8,9 @@
 1. 核心
  * css
  * js
+ * dom
+ * bom
  * html
- * property
  * selector
  * meta
  * svg
@@ -23,7 +24,3 @@
  * tween(使用requestAnimationFrame驱动的动画库)
 3. 其它
  * dd(模仿工作时遇见的一个大神写的工具类，自己实现的工具类)
-4. 资源
- * assets(测试用的图片，音乐等资源)
- * scripts(引用的第三方js库)
- * temp(制作笔记时用到的模版)
