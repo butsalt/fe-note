@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
+<script type="text/javascript" src="/assets/lib/parsley/2.4.3/parsley.js"></script>
+<script type="text/javascript">
+$(function () {
+    var $form = $('#J-target-form');
+    var instance = $form
+        .parsley({
+            errorsWrapper: '<p></p>',
+            errorTemplate: '<span></span>'
+        });
+    $form
+        .submit(function (e) {
+            e.preventDefault();
+            debugger;
+        });
+});
+</script>
+</head>
+<body>
+<form id="J-target-form" data-parsley-validate data-parsley-priority-enabled="true" >
+    <div>
+        <label>姓名：</label>
+        <input type="text" name="name" required data-parsley-minlength="5"/>
+    </div>
+    <button type="submit">提交</button>
+</form>
+</body>
+</html>
