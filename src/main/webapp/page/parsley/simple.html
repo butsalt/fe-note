@@ -16,16 +16,11 @@ $(function () {
             errorsWrapper: '<p></p>',
             errorTemplate: '<span></span>'
         });
-    $form
-        .submit(function (e) {
-            e.preventDefault();
-            debugger;
-        });
 });
 </script>
 </head>
 <body>
-<form id="J-target-form" data-parsley-validate data-parsley-priority-enabled="true" >
+<form id="J-target-form">
     <div>
         <label>姓名：</label>
         <input type="text" name="name" required data-parsley-minlength="5"/>
