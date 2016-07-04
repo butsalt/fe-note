@@ -24,14 +24,14 @@ $(function () {
 
     $form.find('.J-normal-check')
         .click(function () {
-            //如果value为空且不为required的input就跳过检查
+            //input的value为空且不为required就跳过检查
             instance
                 .validate();
         });
 
     $form.find('.J-force-check')
         .click(function () {
-            //value为空的仍然接受检查
+            //value为空即使不为required的input仍然需要接受检查
             instance
                 .validate({
                     force: true
