@@ -19,14 +19,14 @@ $(function () {
     var instance = $form
         .parsley();
 
-    $form.find('.J-normal-check')
+    $form.find('.J-normal-check-btn')
         .click(function () {
             //input的value为空且不为required就跳过检查
             instance
                 .validate();
         });
 
-    $form.find('.J-force-check')
+    $form.find('.J-force-check-btn')
         .click(function () {
             //value为空即使不为required的input仍然需要接受检查
             instance
@@ -43,8 +43,8 @@ $(function () {
         <label>姓名：</label>
         <input type="text" name="name" data-parsley-test/>
     </div>
-    <button type="button" class="J-normal-check">normal check</button>
-    <button type="button" class="J-force-check">force check</button>
+    <button type="button" class="J-normal-check-btn">normal check</button>
+    <button type="button" class="J-force-check-btn">force check</button>
 </form>
 </body>
 </html>
