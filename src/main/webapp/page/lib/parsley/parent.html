@@ -8,7 +8,7 @@
 <script type="text/javascript">
 $(function () {
     Parsley.addValidator('test', {
-        validateString: function(value, requirement, fieldInstance) {
+        validateString: function (value, requirement, fieldInstance) {
             console.log(fieldInstance.parent === formInstance);
             console.log(formInstance.parent === Parsley);
             return value === '123';
