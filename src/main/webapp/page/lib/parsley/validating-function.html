@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
+<script type="text/javascript" src="/assets/lib/parsley/2.4.3/parsley.js"></script>
+<script type="text/javascript">
+$(function () {
+    Parsley.addValidator('test', {
+        //如果是force，即使value为空，此方法仍会被调用
+        //如果不是force，value有值且转化成数值结果是NaN就直接为false，不会调用此方法
+        validateNumber: function (value, requirement, fieldInstance) {
+            debugger;
+            return !isNaN(value);
+        },
+        messages: {
+            en: 'require a number!'
+        }
+    });
+    var $form = $('#J-target-form');
+    var formInstance = $form
+        .parsley();
+
+    $form.find('.J-normal-check-btn')
+        .click(function () {
+            formInstance
+                .validate();
+        });
+
+    $form.find('.J-force-check-btn')
+        .click(function () {
+            formInstance
+                .validate({
+                    force: true
+                });
+        });
+});
+</script>
+</head>
+<body>
+<form id="J-target-form">
+    <div>
+        <label>姓名：</label>
+        <input type="text" name="name" data-parsley-test/>
+    </div>
+    <button type="button" class="J-normal-check-btn">normal check</button>
+    <button type="button" class="J-force-check-btn">force check</button>
+</form>
+</body>
+</html>
