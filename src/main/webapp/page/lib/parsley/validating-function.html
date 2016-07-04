@@ -7,7 +7,7 @@
 <script type="text/javascript" src="/assets/lib/parsley/2.4.3/parsley.js"></script>
 <script type="text/javascript">
 $(function () {
-    Parsley.addValidator('test', {
+    Parsley.addValidator('num', {
         //如果是force，即使value为空，此方法仍会被调用
         //如果不是force，value有值且转化成数值结果是NaN就直接为false，不会调用此方法
         validateNumber: function (value, requirement, fieldInstance) {
@@ -16,6 +16,18 @@ $(function () {
         },
         messages: {
             en: 'require a number!'
+        }
+    });
+    Parsley.addValidator('multi', {
+        //如果是force，即使values长度为0，此方法仍会被调用
+        //如果多个input的name相同，则会调用Validator的validateMultiple方法
+        //第一个dom被作为fieldInstance.$element
+        validateMultiple: function (values, requirement, fieldInstance) {
+            debugger;
+            return values.length === 2;
+        },
+        messages: {
+            en: 'select 2!'
         }
     });
     var $form = $('#J-target-form');
@@ -42,7 +54,22 @@ $(function () {
 <form id="J-target-form">
     <div>
         <label>姓名：</label>
-        <input type="text" name="name" data-parsley-test/>
+        <input type="text" name="name" data-parsley-num/>
+    </div>
+    <div>
+        <label>爱好：</label>
+        <label>
+            <input type="checkbox" name="hobby" data-parsley-multi/>
+            足球
+        </label>
+        <label>
+            <input type="checkbox" name="hobby"/>
+            篮球
+        </label>
+        <label>
+            <input type="checkbox" name="hobby"/>
+            羽毛球
+        </label>
     </div>
     <button type="button" class="J-normal-check-btn">normal check</button>
     <button type="button" class="J-force-check-btn">force check</button>
