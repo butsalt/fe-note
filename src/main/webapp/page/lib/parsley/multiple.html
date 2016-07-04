@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
+<script type="text/javascript" src="/assets/lib/parsley/2.4.3/parsley.js"></script>
+<script type="text/javascript">
+$(function () {
+    Parsley.addValidator('multi', {
+        validateMultiple: function (values, requirement, fieldInstance) {
+            debugger;
+            return values.length === 2;
+        },
+        messages: {
+            en: 'select 2!'
+        }
+    });
+    var $form = $('#J-target-form');
+    var formInstance = $form
+        .parsley();
+
+    $form.find('.J-normal-check-btn')
+        .click(function () {
+            formInstance
+                .validate();
+        });
+});
+</script>
+</head>
+<body>
+<form id="J-target-form">
+    <div>
+        <label>爱好：</label>
+        <label>
+            <input type="checkbox" name="hobby" data-parsley-multi/>
+            足球
+        </label>
+        <label>
+            <input type="checkbox" name="hobby"/>
+            篮球
+        </label>
+        <label>
+            <input type="checkbox" name="hobby"/>
+            羽毛球
+        </label>
+        <label>
+            <!-- 加入到name为hobby的组内 -->
+            <input type="checkbox" name="favourite" data-parsley-multiple="hobby"/>
+            羽毛球
+        </label>
+    </div>
+    <button type="button" class="J-normal-check-btn">normal check</button>
+</form>
+</body>
+</html>
