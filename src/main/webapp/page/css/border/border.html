@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+body {
+    background: steelblue;
+}
+
+p {
+    color: orange;
+}
+
+p:nth-child(1) {
+    /** border-style默认为none **/
+    /** border-color默认为currentColor **/
+    /** border-width默认为medium **/
+    border-style: solid;
+}
+
+p:nth-child(2) {
+    border-style: solid;
+    /** 没有填的项会使用默认值，导致border-style被重置回none **/
+    border: black;
+}
+</style>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia facilis nostrum, ut iusto? Eligendi, ipsa magnam. Delectus, quo, ex. Fugiat incidunt, voluptatem repudiandae iure in nesciunt illo ipsa culpa modi.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia facilis nostrum, ut iusto? Eligendi, ipsa magnam. Delectus, quo, ex. Fugiat incidunt, voluptatem repudiandae iure in nesciunt illo ipsa culpa modi.</p>
+</body>
+</html>
