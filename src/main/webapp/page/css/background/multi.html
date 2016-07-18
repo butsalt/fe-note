@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+div {
+    width: 800px;
+    height: 800px;
+    padding: 50px;
+    background-color: steelblue;
+    /** 将会生成三个background，最后一个background才有background-color **/
+    /** 先声明的盖住后声明的 **/
+    background-image: url("/assets/img/maple-small.jpg"),
+                      url("/assets/img/maple-small.jpg"),
+                      url("/assets/img/maple-big.jpg");
+    /** 前两个background的background-postion都为bottom right **/
+    /** 最后一个background的background-position为top left **/
+    background-position: bottom right,
+                         top left;
+    background-clip: padding-box,
+                     padding-box,
+                     content-box;
+    background-repeat: no-repeat;
+}
+</style>
+</head>
+<body>
+<div>
+    
+</div>
+</body>
+</html>
