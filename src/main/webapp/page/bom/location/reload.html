@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<img src="/assets/img/maple-big.jpg"/>
+<p id="target"></p>
+<script type="text/javascript">
+setTimeout(function () {
+    //如果为true，将强制浏览器从服务器获取当前页面资源
+    //如果为false（默认），会用HTTP头 If-Modified-Since 来检测服务器上的文档是否已改变
+    //    如果有改变则从服务器获取当前页面资源
+    //    如果无改变则从缓存中获取当前页面资源
+    var force = true;
+    location.reload(force);
+}, 5000);
+target.textContent = Math.random().toFixed(2);
+</script>
+</body>
+</html>
