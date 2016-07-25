@@ -3,13 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>learn</title>
-<!-- 五秒后刷新本页面 -->
+<!-- 五秒后刷新本页面，同f5刷新 -->
+<!-- 可参考 http://localhost:7070/page/html/form.html -->
 <meta http-equiv="refresh" content="5">
 </head>
 <body>
 <p id="target"></p>
+<form>
+    <label>
+        <input type="checkbox" id="checkbox" name="disabled"/>
+        禁用
+    </label>
+    <input type="text" id="text"/>
+    <button type="button" id="normalBtn">普通按钮</button>
+</form>
 <script type="text/javascript">
 target.textContent = Math.random().toFixed(2);
+checkbox
+    .addEventListener('click', function () {
+        var checked = this.checked;
+        normalBtn.disabled = checked;
+        text.readOnly = checked;
+    });
 </script>
 </body>
 </html>
