@@ -5,14 +5,32 @@
 <title>learn</title>
 <style type="text/css">
 @keyframes one-frame {
+    /** 从0% -> 100%使用动画函数ease-out **/
     100% {
         width: 400px;
     }
 }
 
 @keyframes two-frames {
+    /** 从0% -> 50%使用动画函数ease-out **/
     50% {
         width: 200px;
+    }
+    /** 从0% -> 50%使用动画函数ease-out **/
+    100% {
+        width: 400px;
+    }
+}
+
+@keyframes example {
+    /** 从0% -> 50%使用动画函数ease-out **/
+    0% {
+        animation-timing-function: ease-out;
+    }
+    /** 从50% -> 100%使用动画函数ease-in **/
+    50% {
+        width: 200px;
+        animation-timing-function: ease-in;
     }
     100% {
         width: 400px;
@@ -25,7 +43,7 @@ div {
     background: orange;
     animation-fill-mode: both;
     animation-duration: 2s;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease-out;
     margin-bottom: 100px;
 }
 
@@ -36,10 +54,15 @@ div {
 #two-frames {
     animation-name: two-frames;
 }
+
+#example {
+    animation-name: example;
+}
 </style>
 </head>
 <body>
 <div id="one-frame"></div>
 <div id="two-frames"></div>
+<div id="example"></div>
 </body>
 </html>
