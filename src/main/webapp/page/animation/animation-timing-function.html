@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+@keyframes one-frame {
+    100% {
+        width: 400px;
+    }
+}
+
+@keyframes two-frames {
+    50% {
+        width: 200px;
+    }
+    100% {
+        width: 400px;
+    }
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    animation-fill-mode: both;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    margin-bottom: 100px;
+}
+
+#one-frame {
+    animation-name: one-frame;
+}
+
+#two-frames {
+    animation-name: two-frames;
+}
+</style>
+</head>
+<body>
+<div id="one-frame"></div>
+<div id="two-frames"></div>
+</body>
+</html>
