@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+@keyframes run {
+    100% {
+        opacity: 0;
+    }
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    background: orange;
+    animation-name: run;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+}
+
+#use-start {
+    /** 每一帧定格0.5秒 **/
+    /** 当播放这一帧时，使用这一帧结束时的计算所得的css样式作为这一帧css的样式 **/
+    animation-timing-function: steps(2, start);
+}
+
+#use-end {
+    /** 每一帧定格0.5秒 **/
+    /** 默认值 **/
+    /** 当播放这一帧时，使用这一帧开始时的计算所得的css样式作为这一帧css的样式 **/
+    animation-timing-function: steps(2, end);
+}
+</style>
+</head>
+<body>
+<div id="use-start"></div>
+<div id="use-end"></div>
+</body>
+</html>
