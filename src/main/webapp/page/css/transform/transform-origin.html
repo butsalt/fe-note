@@ -39,7 +39,7 @@ body {
 
 .port .target {
     /** 固定点 **/
-    /** 参数列表： 固定点x值 固定点y值 固定点到投影平面的距离(朝向眼睛的方向为正) **/
+    /** 参数列表： 固定点x值 固定点y值 投影平面到固定点的距离(朝投影平面看去，目标元素在投影平面上方则为正值) **/
     /** (0, 0)为目标元素左上角 **/
     /** 百分比是相对于目标元素的offsetWidth/offsetHeight **/
     /** 第三个参数不能使用百分比 **/
@@ -48,10 +48,11 @@ body {
 }
 
 .self .target{
-    transform-origin: 50% 0 300px;
     /** 以transform-origin为焦点，施加一个透视投影效果 **/
     /** 保证焦点处位置不变形 **/
-    transform: perspective(300px) rotateX(15deg);
+    transform-origin: 50% 50% 150px;
+    /** 目标元素朝眼睛方向升高150px，恰好到焦点位置，所以大小恰好不发生变化 **/
+    transform: perspective(300px) translateZ(150px);
 }
 
 /** 固定点位置始终相对于元素本身 **/
