@@ -10,26 +10,35 @@ function Person (name) {
 Person.prototype.talk = function () {
     console.log(this.name);
 };
-var p = new Person('butSalt');
-var obj = {
-    age: undefined
+var person = new Person('butSalt');
+var extraInfo = {
+    age: undefined,
+    hobby: 'coding'
 };
-//目标对象上定义的属性可以被直接使用
-with(p) {
-    with(obj) {
-        //目标对象的原型链上的属性也可以直接调用
-        talk();
-        console.log(name === 'butSalt');
-        console.log(age === undefined);
-        //声明目标对象上已定义的属性会被赋予到目标对象上
-        name = 'krista';
-        age = 26;
-        //声明目标对象上未定义的属性仍被赋予window上
-        cls = '0987-2';
+(function () {
+    //目标对象上定义的属性可以被直接使用
+    with(person) {
+        with(extraInfo) {
+            //目标对象的原型链上的方法也可以直接调用
+            talk();
+            console.log(name === 'butSalt');
+            console.log(age === undefined);
+            //声明目标对象上已定义的属性会被赋予到目标对象上
+            name = 'krista';
+            age = 26;
+            //声明与目标对象上的属性名同名的变量，赋值行为仍会导致目标对象上对应属性的值被修改
+            var hobby = 'basketball';
+            //未声明就直接使用未定义在目标对象上的属性名作为变量名会暴露到全局
+            cls = '0987-2';
+            //with不会创建新的作用域
+            var gender = 'female';
+        }
     }
-}
-console.log(p.name === 'krista');
-console.log(obj.age === 26);
+    console.log(gender === 'female');
+})();
+console.log(person.name === 'krista');
+console.log(extraInfo.age === 26);
+console.log(extraInfo.hobby === 'basketball');
 console.log(window.cls === '0987-2');
 </script>
 </head>
