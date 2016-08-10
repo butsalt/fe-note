@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    var a = [1, 2, 3];
+    var b = 4;
+    //如果加数中有对象，则会尝试获取这个对象的原始值
+    //方法是：先调用这个对象的valueOf方法获取原始值，如果返回的是其本身则调用toString获取原始值
+    //Date对象获取原始值时直接调用toString
+    //如果加数其中一方是字符串，则另一方也会被转换成字符串，然后进行字符串拼接
+    console.log(a + b === '1,2,34');
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
