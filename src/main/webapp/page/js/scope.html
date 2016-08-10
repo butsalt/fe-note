@@ -50,6 +50,15 @@
     }
     a();
 })();
+(function () {
+    (function () {
+        //在创建函数的同时，声明了当前作用域下的变量a
+        function a () {}
+        a = 123;
+        console.log(a === 123);
+    })();
+    console.log(typeof a === 'undefined');
+})();
 </script>
 </head>
 <body>
