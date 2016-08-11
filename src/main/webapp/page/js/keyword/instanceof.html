@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    function Person () {
+
+    }
+
+    function Another () {
+
+    }
+
+    Person.prototype = new Another();
+
+    var p = new Person();
+    //判断构造函数的prototype是否存在于对象的原型链上
+    console.log(p instanceof Person === true);
+    console.log(Object.getPrototypeOf(p) === Person.prototype);
+    console.log(p instanceof Another === true);
+    console.log(
+        Object.getPrototypeOf(
+            Object.getPrototypeOf(p)
+        ) === Another.prototype
+    );
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
