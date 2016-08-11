@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    var krista = {
+        name: 'krista'
+    };
+    var butSalt = {
+        name: 'butSalt',
+        execArrowFunc: function () {
+            (
+                age => {
+                    //arrow function会找声明这个函数的作用域中this指代的对象
+                    console.log(this.name === 'butSalt');
+                    console.log(age === 26);
+                }
+            ).apply(krista, [26]);
+        },
+        execNormalFunc: function (age) {
+            (
+                function (age) {
+                    console.log(this.name === 'krista');
+                    console.log(age === 26);
+                }
+            ).apply(krista, [26]);
+        }
+    };
+    butSalt.execArrowFunc();
+    butSalt.execNormalFunc();
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
