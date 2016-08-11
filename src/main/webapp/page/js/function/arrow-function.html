@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    var person = {
+        name: 'butSalt',
+        execFunc: function () {
+            (
+                () => {
+                    (
+                        //arrow function的this会使用所在作用域的this
+                        () => {
+                            console.log(this.name === 'butSalt');
+                        }
+                    )();
+                }
+            )();
+        }
+    };
+    person.execFunc();
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
