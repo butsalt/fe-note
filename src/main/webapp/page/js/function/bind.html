@@ -42,6 +42,25 @@
     //2会被作为执行func时的第三个参数
     bindedFunc(1, 2);
 })();
+(function () {
+    var person = {
+        name: 'butSalt'
+    };
+    function Person (age, name) {
+        this.name = name;
+        this.age = age;
+    }
+
+    var BindedPerson = Person.bind(person, 26);
+    //new操作会使this还是指向新生成的对象
+    //26被作为执行Person的第一个参数
+    //'krista'被作为执行Person的第二个参数
+    var bindedPerson = new BindedPerson('krista');
+    console.log(bindedPerson !== person);
+    console.log(bindedPerson.name === 'krista');
+    console.log(bindedPerson.age === 26);
+    console.log(person.name === 'butSalt');
+})();
 </script>
 </head>
 <body>
