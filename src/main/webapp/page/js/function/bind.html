@@ -29,6 +29,19 @@
     (butSalt.getArrowFunc())();
     (butSalt.getNormalFunc())();
 })();
+(function () {
+    function func () {
+        console.log(arguments[0] === 0);
+        console.log(arguments[1] === 1);
+        console.log(arguments[2] === 2);
+    }
+
+    //0会被作为执行func时的第一个参数
+    var bindedFunc = func.bind(null, 0);
+    //1会被作为执行func时的第二个参数
+    //2会被作为执行func时的第三个参数
+    bindedFunc(1, 2);
+})();
 </script>
 </head>
 <body>
