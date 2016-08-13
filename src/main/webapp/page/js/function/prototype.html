@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    function Person () {}
+
+    var desc = Object.getOwnPropertyDescriptor(Person, 'prototype');
+    console.log(desc.configurable === false);
+    console.log(desc.enumerable === false);
+    console.log(desc.writable === true);
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
