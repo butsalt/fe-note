@@ -13,6 +13,7 @@
         execArrowFunc: function () {
             (
                 age => {
+                    //arrow function 优先级高于 apply
                     //arrow function会找声明这个函数的作用域中this指代的对象
                     console.log(this.name === 'butSalt');
                     console.log(age === 26);
@@ -30,6 +31,19 @@
     };
     butSalt.execArrowFunc();
     butSalt.execNormalFunc();
+})();
+(function () {
+    var butSalt = {
+        name: 'butSalt'
+    };
+    var func = (function () {
+        return this.name;
+    }).bind(butSalt);
+    var name = func.apply({
+        name: 'krista'
+    });
+    //bind 优先级高于 apply
+    console.log(name === 'butSalt');
 })();
 </script>
 </head>
