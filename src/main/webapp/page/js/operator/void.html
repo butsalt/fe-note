@@ -12,6 +12,17 @@
     result = 1 + 1;
     console.log(result === 2);
 })();
+(function () {
+    var result = (
+        num => num + 1
+    )(1);
+    console.log(result === 2);
+
+    result = (
+        num => void (num + 1)
+    )();
+    console.log(result === undefined);
+})();
 </script>
 </head>
 <body>
