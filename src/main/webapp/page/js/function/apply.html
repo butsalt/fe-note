@@ -45,6 +45,22 @@
     //bind 优先级高于 apply
     console.log(name === 'butSalt');
 })();
+(function () {
+    function print (a, b) {
+        console.log(a === 'a');
+        console.log(b === 'b');
+    }
+
+    //Array Like的对象同样可以
+    print.apply(
+        null,
+        {
+            0: 'a',
+            1: 'b',
+            length: 2
+        }
+    );
+})();
 </script>
 </head>
 <body>
