@@ -2,6 +2,7 @@ package learn;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -53,7 +54,10 @@ public class UploadServlet extends HttpServlet {
 				}
 			}
 			json += "]}";
-			response.getWriter()
+			//声明响应信息的字节数
+			response.setHeader("Content-Length", String.valueOf(json.getBytes().length));
+			Writer writer = response.getWriter();
+			writer
 				.append(json)
 				.flush();
 		} catch (FileUploadException e) {

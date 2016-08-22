@@ -23,10 +23,26 @@ document.addEventListener('DOMContentLoaded', function () {
             //method url async
             xhr.open('POST', '/upload', true);
 
+            //用json格式解析响应信息
+            xhr.responseType = 'json';
+
+            //上传过程回调
+            xhr.upload.addEventListener('progress', function (e) {
+                if (e.lengthComputable) {
+                    console.log(`total: ${e.total}byte; uploaded: ${e.loaded}byte`);
+                }
+            });
+
+            //下载过程回调
+            xhr.addEventListener('progress', function (e) {
+                if (e.lengthComputable) {
+                    console.log(`total: ${e.total}byte; downloaded: ${e.loaded}byte`);
+                }
+            });
+
+            //服务器响应回调
             xhr.addEventListener('load', function (e) {
-                console.log(
-                    JSON.parse(xhr.responseText)
-                );
+                console.log(xhr.response);
             });
             xhr.send(formData);
         });
