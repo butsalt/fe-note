@@ -9,12 +9,14 @@ p {
     width: 300px;
 }
 
+/** 默认值 **/
 /** 单词或url不允许折行(最多能在有'-'的连字符之后处折行) **/
 p:nth-child(1) {
     word-break: normal;
 }
 
 /** 可在任意字符间折行 **/
+/** 放不下的单词或url不尝试换行，直接折行 **/
 p:nth-child(2) {
     word-break: break-all;
 }
