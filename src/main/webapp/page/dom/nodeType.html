@@ -7,16 +7,24 @@
 document.addEventListener('DOMContentLoaded', function () {
     var target = document.getElementById('target');
     var nodes = target.childNodes;
-    //1: Dom节点    3: Text节点    11: DocumentFragment 
-    //"Text"
+    //1: Dom节点
+    //3: Text节点
+    //9: DocumentNode
+    //11: HTMLDocument 
+
+    //'\n    TEXT    '
     //<div>Dom</div>
-    //"\n"    换行符/空格，也被认为是一个TextNode
+    //'\n'    换行符/空格，也被认为是一个TextNode
     for( var i=0; i < nodes.length; i++ ){
+        debugger;
         console.log(nodes[i].nodeType);
     }
 
+    console.log(document.documentElement.nodeType === 1);
+    console.log(document.nodeType === 9);
+
     var frag = document.createDocumentFragment();
-    console.log(frag.nodeType);
+    console.log(frag.nodeType === 11);
 });
 </script>
 </head>
