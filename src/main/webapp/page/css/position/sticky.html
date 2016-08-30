@@ -5,24 +5,29 @@
 <title>learn</title>
 <style type="text/css">
 body {
-    height: 10000px;
-    width: 10000px;
     background: steelblue;
+}
+
+hr {
+    width: 10000px;
+    color: transparent;
 }
 
 div {
     position: sticky;
     width: 200px;
     height: 200px;
-    /** 离视窗顶部(不含水平滚动条)向下至少保留20px **/
+    /** 离视窗顶部(不含水平滚动条)向下尽可能至少保留20px **/
+    /** 百分比相对于视窗高度(不含水平滚动条) **/
     top: 20px;
-    /** 离视窗底部(含水平滚动条)向上至少保留20px **/
+    /** 离视窗底部(不含水平滚动条)向上尽可能至少保留20px **/
     bottom: 20px;
     background: orange;
 }
 </style>
 </head>
 <body>
+<hr/>
 <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
