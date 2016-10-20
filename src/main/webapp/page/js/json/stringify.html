@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    function Person () {
+        var me = this;
+        me.name = 'butSalt';
+        me.hobbyList = ['game', 'coding'];
+        Object.defineProperty(
+            me,
+            'code',
+            {
+                value: '0987-2',
+                enumerable: false
+            }
+        );
+        me.speak = function () {};
+    }
+    Person.prototype.age = 26;
+
+    var p = new Person();
+
+    //只有对象自身上且可枚举的属性会被循环
+    //继承自原型链上的属性不会被循环
+    //val如果为对象，则该对象下的key-val也会参与循环
+    var str = JSON.stringify(p, function (key, val) {
+        console.log(key);
+        if (typeof val === 'function') {
+            return 'func';
+        }
+        return val;
+    });
+    console.log(str === '{"name":"butSalt","hobbyList":["game","coding"],"speak":"func"}');
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
