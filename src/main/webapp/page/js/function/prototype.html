@@ -12,6 +12,20 @@
     console.log(desc.enumerable === false);
     console.log(desc.writable === true);
 })();
+(function () {
+    function Person () {}
+    Person.prototype = null;
+
+    var p = new Person();
+
+    //当构造函数的原型为null时，由这个构造函数创建的对象的prototype会被置为Object.prototype
+    console.log(
+        Object.getPrototypeOf(p) 
+        ===
+        Object.prototype
+    );
+
+})();
 </script>
 </head>
 <body>
