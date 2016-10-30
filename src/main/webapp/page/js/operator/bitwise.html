@@ -4,10 +4,28 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <script type="text/javascript">
+//字位运算符只适用于32位有符号整数
+//按位非
 (function () {
     var num = 0;
     //先将值转为32位有符号整数，然后按位取反
     console.log(~0 === -1);
+})();
+//按位否
+(function () {
+    console.log(
+        (1 | 2)
+        ===
+        3
+    );
+})();
+//按位与
+(function () {
+    console.log(
+        (1 & 2)
+        ===
+        0
+    );
 })();
 </script>
 </head>
