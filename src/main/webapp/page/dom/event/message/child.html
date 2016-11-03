@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+    msg:
+    <p id="J-msg"></p>
+    <button type="button" id="J-send-parent-msg-btn">to parent</button>
+    <script type="text/javascript">
+        (function () {
+            var msg = document.getElementById('J-msg');
+            document.getElementById('J-send-parent-msg-btn')
+                .addEventListener('click', function () {
+                    //第一个参数：data 具体信息
+                    //第二个参数：origin 目标window的源，如果origin不能满足要求则信息不会被发送，'*'为任意
+                    window.parent.postMessage('hello parent!', 'http://localhost:7070');
+                });
+            window.addEventListener('message', function (e) {
+                //调用postMessage的来源的origin
+                console.log(e.origin);
+                msg.textContent += e.data;
+            });
+        })();
+    </script>
+</body>
+</html>

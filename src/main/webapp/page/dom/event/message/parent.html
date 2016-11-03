@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+    msg:
+    <p id="J-msg"></p>
+    <button type="button" id="J-send-child-msg-btn">to child</button>
+    <hr/>
+    <div>
+        <iframe src="http://127.0.0.1:7070/page/dom/event/message/child.html" id="J-child"></iframe>
+    </div>
+    <script type="text/javascript">
+        (function () {
+            var msg = document.getElementById('J-msg');
+            var child = document.getElementById('J-child').contentWindow;
+            document.getElementById('J-send-child-msg-btn')
+                .addEventListener('click', function () {
+                    //第一个参数：data 具体信息
+                    //第二个参数：origin 目标window的源，如果origin不能满足要求则信息不会被发送，'*'为任意
+                    child.postMessage('hello child!', 'http://127.0.0.1:7070');
+                });
+            window.addEventListener('message', function (e) {
+                //调用postMessage的来源的origin
+                console.log(e.origin);
+                msg.textContent += e.data;
+            });
+        })();
+    </script>
+</body>
+</html>
