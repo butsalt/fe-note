@@ -19,6 +19,20 @@
     console.log(isNaN(num1) === true);
     console.log(num2 === 1);
 })();
+(function () {
+    var str = '010';
+    //在es5前，parseInt根据第一个字符来决定基数
+    //自es5起，parseInt默认用十进制解析字符串
+    console.log(parseInt(str) === 10);
+})();
+(function () {
+    var str = '10';
+    //根据第二个参数来决定基数，默认是10
+    console.log(
+        parseInt(str, 2)
+        === 2
+    );
+})();
 </script>
 </head>
 <body>
