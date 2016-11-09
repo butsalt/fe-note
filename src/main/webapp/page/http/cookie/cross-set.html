@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<!-- 请求静态资源时服务器通过meta信息也能修改浏览器的cookie -->
+<!--
+    当前页面域名  资源域名            cookie的domain          结果
+    a.test.com    b.test.com          test.com                成功
+    localhost     127.0.0.1           localhost               失败
+-->
+<script type="text/javascript" src="http://localhost:7070/setcookie"></script>
+</head>
+<body>
+
+</body>
+</html>

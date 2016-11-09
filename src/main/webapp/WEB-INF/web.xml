@@ -16,6 +16,10 @@
 	   <servlet-name>upload</servlet-name>
 	   <servlet-class>learn.UploadServlet</servlet-class>
 	</servlet>
+	<servlet>
+	   <servlet-name>setcookie</servlet-name>
+	   <servlet-class>learn.SetCookieServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>download</servlet-name>
 		<url-pattern>/download</url-pattern>
@@ -27,5 +31,9 @@
 	<servlet-mapping>
 		<servlet-name>upload</servlet-name>
 		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>setcookie</servlet-name>
+		<url-pattern>/setcookie</url-pattern>
 	</servlet-mapping>
 </web-app>
