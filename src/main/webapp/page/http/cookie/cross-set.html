@@ -7,9 +7,10 @@
 <!--
     当前页面域名  资源域名            cookie的domain          结果
     a.test.com    b.test.com          test.com                成功
+    a.test.com    b.test.com          a.test.com              失败
     localhost     127.0.0.1           localhost               失败
 -->
-<script type="text/javascript" src="http://localhost:7070/setcookie"></script>
+<script type="text/javascript" src="http://b.test.com:7070/setcookie"></script>
 </head>
 <body>
 
