@@ -22,6 +22,12 @@
             console.log(typeof func === 'function');
         });
 })();
+(function () {
+    var p = new Promise(function (resolve) {
+        resolve();
+    });
+    console.log(p === Promise.resolve(p));
+})();
 </script>
 </head>
 <body>
