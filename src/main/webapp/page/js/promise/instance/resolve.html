@@ -8,9 +8,19 @@
     new Promise(function (resolve) {
         resolve(true);
     })
-    //如果传入的不是一个function，则会用function (val) {return val}来代替
-    .then(null, function () {})
+    //如果第一个参数传入的不是一个function，则会用function (val) {return val;}来代替
+    .then(null, null)
     .then(function (val) {
+        console.log(val === true);
+    });
+})();
+(function () {
+    new Promise(function (resolve, reject) {
+        reject(true);
+    })
+    //如果第二个参数传入的不是一个function，则会用function (err) {throw err;}来代替
+    .then(null, null)
+    .catch(function (val) {
         console.log(val === true);
     });
 })();
