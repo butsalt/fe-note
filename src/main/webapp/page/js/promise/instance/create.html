@@ -50,6 +50,18 @@
         console.log(val === true);
     });
 })();
+(function () {
+    new Promise(function (resolve, reject) {
+        reject(new Promise(function (resolve, reject) {
+            resolve(true);
+        }));
+    })
+    .catch(function (val) {
+        console.log(
+            (val instanceof Promise) === true
+        );
+    });
+})();
 </script>
 </head>
 <body>
