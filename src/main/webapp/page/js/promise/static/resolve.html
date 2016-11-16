@@ -29,16 +29,6 @@
     //如果传入的是一个promise对象，会返回这个对象本身
     console.log(p === Promise.resolve(p));
 })();
-(function () {
-    new Promise(function (resolve) {
-        resolve(true);
-    })
-    //如果传入的不是一个function，则会用function (val) {return val}来代替
-    .then(null, function () {})
-    .then(function (val) {
-        console.log(val === true);
-    });
-})();
 </script>
 </head>
 <body>

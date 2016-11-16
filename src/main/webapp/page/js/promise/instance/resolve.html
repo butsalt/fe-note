@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    new Promise(function (resolve) {
+        resolve(true);
+    })
+    //如果传入的不是一个function，则会用function (val) {return val}来代替
+    .then(null, function () {})
+    .then(function (val) {
+        console.log(val === true);
+    });
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
