@@ -20,6 +20,7 @@
     })
     //如果第二个参数传入的不是一个function，则会用function (err) {throw err;}来代替
     .then(null, null)
+    //相当于.then(null, handler)
     .catch(function (val) {
         console.log(val === true);
     });
