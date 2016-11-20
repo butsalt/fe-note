@@ -91,6 +91,7 @@
     for (num of ite) {
         console.log(num);
         if (num === 1) {
+            //break肯定能跳出当前的循环
             //finally块内执行到第一个yield
             break;
         }
@@ -118,6 +119,7 @@
     for (num of ite) {
         console.log(num);
         if (num === 1) {
+            //调用迭代器的return方法后调用next方法如果done不为true则不能跳出当前的循环
             //finally块内执行到第一个yield
             res = ite.return('end');
             console.log(res.done === false);
