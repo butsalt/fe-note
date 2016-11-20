@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    var a = 0, b = 2;
+    var c;
+    //赋值 低于 ||
+    if (c = a || b) {
+
+    }
+    console.log(c === 2);
+})();
+(function () {
+    var a = 1, b = 2;
+    var c;
+    //赋值 低于 &&
+    if (c = a && b) {
+
+    }
+    console.log(c === 2);
+})();
+(function () {
+    var a = 1, b = 2, c = 3;
+    var d;
+    //赋值 低于 三目运算
+    if (d = a ? b : c) {
+
+    }
+    console.log(d == 2);
+})();
+(function () {
+    var num;
+    //, 低于 赋值
+    if (num = 0, 1) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+    console.log(num === 0);
+})();
+(function () {
+    //三目运算 低于 &&
+    var flag = 1 && 0 ? false : true;
+    console.log(flag === true);
+})();
+(function () {
+    //三目运算 低于 ||
+    var flag = 1 || 0 ? true : false;
+    console.log(flag === true);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
