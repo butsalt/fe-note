@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+function* gen () {
+    var num = 0;
+    try {
+        while (true) {
+            yield num++;
+        }
+    } finally {
+        console.log('end');
+    }
+}
+(function () {
+    var num;
+    for (num of gen()) {
+        console.log(num);
+        if (num === 1) {
+            //break时会结束迭代器内的循环，执行finally块内的内容
+            break;
+        }
+    }
+})();
+(function () {
+    var num;
+    var ite = gen();
+    var res;
+    for (num of ite) {
+        console.log(num);
+        if (num === 1) {
+            //调用return方法能结束迭代器内的循环，执行finally块的内容
+            //如果finally块内没有return，调用return方法时的传参被返回
+            res = ite.return('end');
+            console.log(res.done === true);
+            console.log(res.value === 'end');
+        }
+    }
+})();
+(function () {
+    function* gen () {
+        var num = 0;
+        try {
+            while (true) {
+                yield num++;
+            }
+        } finally {
+            console.log('end');
+            return;
+        }
+    }
+    var num;
+    var ite = gen();
+    var res;
+    for (num of ite) {
+        console.log(num);
+        if (num === 1) {
+            res = ite.return('end');
+            console.log(res.done === true);
+            //如果finally块内有return，return带回的值被返回
+            console.log(res.value === undefined);
+        }
+    }
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
