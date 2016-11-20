@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <script type="text/javascript">
-function* gen () {
-    var num = 0;
-    try {
-        while (true) {
-            yield num++;
-        }
-    } finally {
-        console.log('end');
-    }
-}
 (function () {
+    function* gen () {
+        var num = 0;
+        try {
+            while (true) {
+                yield num++;
+            }
+        } finally {
+            console.log('end');
+        }
+    }
     var num;
     for (num of gen()) {
         console.log(num);
@@ -25,6 +25,16 @@ function* gen () {
     }
 })();
 (function () {
+    function* gen () {
+        var num = 0;
+        try {
+            while (true) {
+                yield num++;
+            }
+        } finally {
+            console.log('end');
+        }
+    }
     var num;
     var ite = gen();
     var res;
@@ -61,6 +71,61 @@ function* gen () {
             console.log(res.done === true);
             //如果finally块内有return，return带回的值被返回
             console.log(res.value === undefined);
+        }
+    }
+})();
+(function () {
+    function* gen () {
+        var num = 0;
+        try {
+            while (true) {
+                yield num++;
+            }
+        } finally {
+            yield num++;
+            yield num;
+        }
+    }
+    var num;
+    var ite = gen();
+    for (num of ite) {
+        console.log(num);
+        if (num === 1) {
+            //finally块内执行到第一个yield
+            break;
+        }
+    }
+    //finally块内执行到第二个yield
+    var res = ite.next();
+    console.log(res.done === false);
+    console.log(res.value === 3);
+})();
+(function () {
+    function* gen () {
+        var num = 0;
+        try {
+            while (true) {
+                yield num++;
+            }
+        } finally {
+            yield num++;
+            yield num;
+        }
+    }
+    var num;
+    var ite = gen();
+    var res = ite.next();
+    for (num of ite) {
+        console.log(num);
+        if (num === 1) {
+            //finally块内执行到第一个yield
+            res = ite.return('end');
+            console.log(res.done === false);
+            console.log(res.value === 2);
+            res = ite.next();
+            //finally块内执行到第二个yield
+            console.log(res.done === false);
+            console.log(res.value === 3);
         }
     }
 })();
