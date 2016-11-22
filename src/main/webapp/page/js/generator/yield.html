@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    function *child () {
+        yield 2;
+        yield 3;
+    }
+
+    function *parent () {
+        yield 1;
+        yield *child();
+        yield 4;
+   }
+
+   var num;
+   for (num of parent()) {
+        console.log(num);
+   }
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
