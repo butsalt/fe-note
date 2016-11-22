@@ -8,11 +8,13 @@
     function *child () {
         yield 2;
         yield 3;
+        return 'child';
     }
 
     function *parent () {
         yield 1;
-        yield *child();
+        var msg = yield *child();
+        console.log(msg);
         yield 4;
    }
 
