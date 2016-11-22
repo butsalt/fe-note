@@ -5,7 +5,7 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    function* gen () {
+    function *gen () {
         //相当于是在这里发生了异常
         try {
 
@@ -23,7 +23,7 @@
     }
 })();
 (function () {
-    function* gen () {
+    function *gen () {
         try {
             //相当于在返回1后，阻塞时发生了异常
             yield 1;
@@ -38,7 +38,7 @@
     ite.throw('error');
 })();
 (function () {
-    function* gen () {
+    function *gen () {
         try {
 
         } catch (e) {
