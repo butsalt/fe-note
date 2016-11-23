@@ -52,6 +52,37 @@
     console.log(next.done === true);
     console.log(next.value === 'end');
 })();
+(function () {
+    function *gen () {
+        var ite = {
+            [Symbol.iterator]: function () {
+                var num = 2;
+                return {
+                    next: function () {
+                        if (num === 4) {
+                            return {
+                                value: undefined,
+                                done: true
+                            };
+                        }
+                        return {
+                            value: num++,
+                            done: false
+                        };
+                    }
+                }
+            }
+        };
+        yield 1;
+        //实际上是通过执行[Symbol.iterator]获取迭代器
+        yield *ite;
+    }
+
+    var num;
+    for (num of gen()) {
+        console.log(num);
+    }
+})();
 </script>
 </head>
 <body>
