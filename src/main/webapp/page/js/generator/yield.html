@@ -43,6 +43,7 @@
     }
     var ite = gen();
 
+    //在try块内return的值已被记录
     var next = ite.next();
     console.log(next.done === false);
     console.log(next.value === 1);
