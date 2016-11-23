@@ -18,10 +18,38 @@
         yield 4;
    }
 
-   var num;
-   for (num of parent()) {
+    var num;
+    for (num of parent()) {
         console.log(num);
-   }
+    }
+})();
+(function () {
+    function *gen () {
+        var msg = yield;
+        console.log(msg === true);
+    }
+    var ite = gen();
+    ite.next();
+    ite.next(true);
+})();
+(function () {
+    function *gen () {
+        try {
+            return 'end';
+        } finally {
+            let msg = yield 1;
+            console.log(msg === true);
+        }
+    }
+    var ite = gen();
+
+    var next = ite.next();
+    console.log(next.done === false);
+    console.log(next.value === 1);
+
+    next = ite.next(true);
+    console.log(next.done === true);
+    console.log(next.value === 'end');
 })();
 </script>
 </head>
