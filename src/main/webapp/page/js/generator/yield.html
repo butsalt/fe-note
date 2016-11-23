@@ -14,7 +14,7 @@
     function *parent () {
         yield 1;
         var msg = yield *child();
-        console.log(msg);
+        console.log(msg === 'child');
         yield 4;
    }
 
