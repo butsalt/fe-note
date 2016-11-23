@@ -5,25 +5,6 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    function *child () {
-        yield 2;
-        yield 3;
-        return 'child';
-    }
-
-    function *parent () {
-        yield 1;
-        var msg = yield *child();
-        console.log(msg === 'child');
-        yield 4;
-   }
-
-    var num;
-    for (num of parent()) {
-        console.log(num);
-    }
-})();
-(function () {
     function *gen () {
         var msg = yield;
         console.log(msg === true);
@@ -51,37 +32,6 @@
     next = ite.next(true);
     console.log(next.done === true);
     console.log(next.value === 'end');
-})();
-(function () {
-    function *gen () {
-        var ite = {
-            [Symbol.iterator]: function () {
-                var num = 2;
-                return {
-                    next: function () {
-                        if (num === 4) {
-                            return {
-                                value: undefined,
-                                done: true
-                            };
-                        }
-                        return {
-                            value: num++,
-                            done: false
-                        };
-                    }
-                }
-            }
-        };
-        yield 1;
-        //实际上是通过执行[Symbol.iterator]获取迭代器
-        yield *ite;
-    }
-
-    var num;
-    for (num of gen()) {
-        console.log(num);
-    }
 })();
 </script>
 </head>
