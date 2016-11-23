@@ -21,9 +21,9 @@
     for (num of ite) {
         console.log(num);
         if (num === 1) {
-            //返回结果的value，finally块内return的值优先于调用return方法时的传参被使用
+            //首次done时的value，finally块内return的值优先于调用return方法时的传参被使用
             //调用return方法能结束迭代器内的循环，执行finally块的内容
-            //如果finally块内没有return，调用return方法时的传参被返回
+            //如果finally块内没有return，调用return方法时的传参会被作为done时的value
             res = ite.return('end');
             console.log(res.done === true);
             console.log(res.value === 'end');
@@ -78,10 +78,15 @@
             res = ite.return('end');
             console.log(res.done === false);
             console.log(res.value === 2);
+
             res = ite.next();
             //finally块内执行到第二个yield
             console.log(res.done === false);
             console.log(res.value === 3);
+
+            res = ite.next();
+            console.log(res.done === true);
+            console.log(res.value === 'end');
         }
     }
 })();
