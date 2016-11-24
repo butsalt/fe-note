@@ -31,16 +31,16 @@
     //  除非html的position不为static，否则body的offsetParent为null
     // body的offsetTop始终为0
 
-    //	一般情况下，当offsetParent为body时，offsetTop计算结果是相对于页面顶部
-    //	但如果body的position不为static时，offsetTop计算结果是相对于body标签
+    // 一般情况下，当offsetParent为body时，offsetTop计算结果是相对于页面顶部
+    // 但如果body的position不为static时，offsetTop计算结果是相对于body标签
 
     //position: fixed
-    //	相对于窗口，但offsetParent为null
-    //	offsetTop计算结果相对于窗口顶部
+    // 相对于窗口，但offsetParent为null
+    // offsetTop计算结果相对于窗口顶部
 
     //display: none
-    //	offsetParent === null
-    //	offsetTop === 0
+    // offsetParent === null
+    // offsetTop === 0
 
     console.log('outer');
     console.log(outer.offsetParent);
