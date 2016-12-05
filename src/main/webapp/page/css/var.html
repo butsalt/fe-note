@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+/** 全局声明变量并赋值 **/
+:root {
+    --color: red;
+}
+
+div {
+    /** 使用变量 **/
+    color: var(--color);
+}
+
+.default {
+    /** 如果没有specail这个变量，则用purple代替 **/
+    color: var(--special, purple);
+}
+
+#target {
+    /** 当前这个元素上的变量值由所有与这个元素相关的选择器上的变量声明权重最高的决定 **/
+    --color: green;
+}
+</style>
+</head>
+<body>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem id, laborum saepe modi quidem voluptatem alias doloremque ad asperiores fugit cupiditate sit facilis aliquam, officia commodi cum odit incidunt quia.</div>
+<hr/>
+<div class="default">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit earum voluptates dolorum ipsum natus, explicabo necessitatibus eos quaerat vitae facilis at laudantium, est tempora aut ullam blanditiis, atque modi amet.</div>
+<hr/>
+<div id="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore natus magni doloremque voluptatum dicta quo suscipit, quibusdam, officiis fugit nostrum mollitia quas pariatur, et. At praesentium sapiente quod, totam officia.</div>
+</body>
+</html>
