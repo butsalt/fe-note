@@ -7,11 +7,13 @@
 /** 全局声明变量并赋值 **/
 :root {
     --color: red;
+    --radix: 1px;
 }
 
 div {
     /** 使用变量 **/
     color: var(--color);
+    font-size: calc(var(--radix) * 16);
 }
 
 .default {
@@ -22,6 +24,16 @@ div {
 #target {
     /** 当前这个元素上的变量值由所有与这个元素相关的选择器上的变量声明权重最高的决定 **/
     --color: green;
+    font-size: calc(var(--radix) * 20);
+}
+
+.illegal {
+    background-color: orange;
+    --bg-color: 20px;
+    /** background-color: 20px; 值非法 **
+    /** 会使用background-color的默认值代替 **/
+    /** background-color: transparent; **/
+    background-color: var(--bg-color, steelblue);
 }
 </style>
 </head>
@@ -31,5 +43,7 @@ div {
 <div class="default">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit earum voluptates dolorum ipsum natus, explicabo necessitatibus eos quaerat vitae facilis at laudantium, est tempora aut ullam blanditiis, atque modi amet.</div>
 <hr/>
 <div id="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore natus magni doloremque voluptatum dicta quo suscipit, quibusdam, officiis fugit nostrum mollitia quas pariatur, et. At praesentium sapiente quod, totam officia.</div>
+<hr/>
+<div class="illegal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi molestiae dolorum sint ipsam deleniti, recusandae qui vitae quidem omnis fuga neque iste labore nam eveniet, ipsum. Voluptatum, expedita laudantium obcaecati.</div>
 </body>
 </html>
