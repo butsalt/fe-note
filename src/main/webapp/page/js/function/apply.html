@@ -61,6 +61,40 @@
         }
     );
 })();
+(function () {
+    //如果context为null，this则指向window
+    (function () {
+        console.log(this === window)
+    }).apply(null);
+
+    //如果context为undefined，this则指向window
+    (function () {
+        console.log(this === window)
+    }).apply(undefined);
+
+    //基本类型会被封装成对象
+    (function () {
+        console.log(this instanceof Number)
+    }).apply(0);
+})();
+(function () {
+    //在严格模式context是什么，this就指向什么
+    (function () {
+        'use strict';
+        console.log(this === null)
+    }).apply(null);
+
+    (function () {
+        'use strict';
+        console.log(this === undefined)
+    }).apply(undefined);
+
+    //基本类型会被封装成对象
+    (function () {
+        'use strict';
+        console.log(this === 0)
+    }).apply(0);
+})();
 </script>
 </head>
 <body>
