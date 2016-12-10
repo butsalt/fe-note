@@ -5,18 +5,43 @@
 <title>learn</title>
 <script type="text/javascript">
 //字位运算符只适用于32位有符号整数
+//参与字位运算的一方若不为32位有符号整数，则会先转化为数值类型，然后转化为32位有符号整数
 //按位非
 (function () {
     var num = 0;
     //先将值转为32位有符号整数，然后按位取反
     console.log(~0 === -1);
 })();
-//按位否
+//按位或
 (function () {
     console.log(
         (1 | 2)
         ===
         3
+    );
+})();
+//undefined转为NaN，NaN在转为32位有符号整数时会被作为0
+(function () {
+    console.log(
+        (undefined | 0)
+        ===
+        0
+    );
+})();
+//NaN在转为32位有符号整数时会被作为0
+(function () {
+    console.log(
+        (NaN | 0)
+        ===
+        0
+    );
+})();
+//Infinity在转为32位有符号整数时会被作为0
+(function () {
+    console.log(
+        (Infinity | 0)
+        ===
+        0
     );
 })();
 //按位与
