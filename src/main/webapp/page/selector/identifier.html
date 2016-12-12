@@ -15,9 +15,25 @@
 }
 
 /** 根据通用字符集[ISO10646]，'\x26' === '&' **/
+/** \26后紧跟一个空格用来声明转义范围的终结 **/
 /** \26在进行查找时才被转化为& **/
-.b\26w {
+.b\26 w {
     background-color: gray;
+}
+
+/** \xxxxxx完整6位编码不用空格来声明转义范围的终结 **/
+.b\000026w {
+    font-weight: bold;
+}
+
+.\004e2d {
+    color: red;
+}
+
+/** 字符串内\后紧跟换行，\换行会被忽略 **/
+[class="very-\
+long"] {
+    color: red;
 }
 </style>
 </head>
@@ -30,6 +46,18 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 <div class="b&w">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class="中">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class="very-long">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -51,9 +79,15 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
     );
 
     console.log(
-        // '.b\\&w' 
-        // .b\26w
-        document.querySelector('.b\\26w')
+        // '.b\\26 w' 
+        // .b\26 w
+        document.querySelector('.b\\26 w')
+    );
+
+    console.log(
+        // '.\\004e2d' 
+        // \004e2d
+        document.querySelector('.\\004e2d')
     );
 })();
 </script>
