@@ -45,25 +45,33 @@ console.log(regex.exec(text));
 console.log(regex.exec(text));
 
 printSeq(6);
+regex = /(start)(\w)+(end)/;
+test = 'startabcend';
+//\2匹配到的是\w这个规则最后一次重复匹配到的\w
+console.log(regex.exec(test));
+
+//如果是g，调用时如果存在匹配的，记录匹配字符串的index+1的位置(lastIndex)，下一次调用时从这个位置开始，如果没找到，则将lastIndex置为0
+//如果不是g，每次检测都是从头开始查，即lastIndex始终为0
+printSeq(7);
 regex = /test(\d)/g;
 text = 'test0test1';
 console.log(regex.test(text));
 console.log(regex.test(text));
 console.log(regex.test(text));
 
-printSeq(7);
+printSeq(8);
 //匹配的字符串后一定要跟着冒号
 regex = /Javascript(?=:)/;
 text = 'Javascript:';
 console.log(regex.exec(text));
 
-printSeq(8);
+printSeq(9);
 //匹配的字符串后一定不能跟着冒号
 regex = /Javascript(?!:)/;
 text = 'Javascripts';
 console.log(regex.exec(text));
 
-printSeq(9);
+printSeq(10);
 //\b定位到单词边界
 regex = /\b\w+\b/g;
 text = 'JavaS cooker';
@@ -71,12 +79,12 @@ console.log(text.match(regex));
 
 //如果没有m，将^定位到字符串的开头，将$定位到字符串的结尾
 //如果有m，将^定位到每行的开头，$定位到每行的结尾
-printSeq(10);
+printSeq(11);
 regex = /^\w+$/gm;
 text = 'Java\nScript';
 console.log(text.match(regex));
 
-printSeq(11);
+printSeq(12);
 //match是匹配的字符串    p1,p2...是匹配各个子模式的字符串    offset是匹配的字符串在整个字符串中的位置    string是整个字符串
 //return用来替换match
 function replacer(match, p1, p2, p3, offset, string) {
@@ -84,19 +92,19 @@ function replacer(match, p1, p2, p3, offset, string) {
 }
 console.log('abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer));
 
-printSeq(12);
+printSeq(13);
 //*? +? {1,5}?实现的是最小匹配，"big"已经满足了正则表达式的要求，所以匹配的是"big"
 regex = /".*?"/;
 text = '"big""boy"';
 console.log(regex.exec(text));
 
-printSeq(13);
+printSeq(14);
 //(?:expression)，不捕获这个expression分组，如果expression内还有分组依旧可以被正常捕获
 regex = /^\d(?:\d(\d))$/;
 text = '123';
 console.log(regex.exec(text));
 
-printSeq(14);
+printSeq(15);
 //\1可以引用到第一个括号中表达式匹配到的字符串
 regex = /(")([^"]+)(\1)/;
 text = '"guud"';
