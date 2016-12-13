@@ -99,12 +99,19 @@ text = '"big""boy"';
 console.log(regex.exec(text));
 
 printSeq(14);
+//正则总会寻找字符串中第一个可能匹配的位置
+//在当前常见下第一个可能匹配的位置是下标0处
+regex = /\d+?a/;
+text = '123a';
+console.log(regex.exec(text));
+
+printSeq(15);
 //(?:expression)，不捕获这个expression分组，如果expression内还有分组依旧可以被正常捕获
 regex = /^\d(?:\d(\d))$/;
 text = '123';
 console.log(regex.exec(text));
 
-printSeq(15);
+printSeq(16);
 //\1可以引用到第一个括号中表达式匹配到的字符串
 regex = /(")([^"]+)(\1)/;
 text = '"guud"';
