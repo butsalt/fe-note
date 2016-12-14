@@ -9,12 +9,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var nodes = target.childNodes;
     //1: Dom节点
     //3: Text节点
+    //8: 注释
     //9: DocumentNode
     //11: HTMLDocument 
 
     //'\n    TEXT    '
     //<div>Dom</div>
     //'\n'    换行符/空格，也被认为是一个TextNode
+    //' comment '
+    //'\n'
     for( var i=0; i < nodes.length; i++ ){
         debugger;
         console.log(nodes[i].nodeType);
@@ -32,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <div id="target">
     Text
     <div>Dom</div>
+    <!-- comment -->
 </div>
 </body>
 </html>
