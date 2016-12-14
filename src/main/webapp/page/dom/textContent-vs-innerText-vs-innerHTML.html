@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<div id="J-target">
+    <!-- comment -->
+    some thing
+</div>
+<script type="text/javascript">
+(function () {
+    var target = document.getElementById('J-target');
+    //不包含注释，保留首尾空白
+    console.log(target.textContent);
+    //不包含注释，去首尾空白
+    console.log(target.innerText);
+    //包含注释，包含首尾空白
+    console.log(target.innerHTML);
+})();
+</script>
+</body>
+</html>
