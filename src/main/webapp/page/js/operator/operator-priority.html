@@ -5,27 +5,62 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    var a = 0, b = 2;
-    var c;
-    //赋值 低于 ||
-    if (c = a || b) {
-
-    }
-    console.log(c === 2);
+    //非运算 高于 乘除模
+    console.log(
+        (1 * ~0)
+        ===
+        -1
+    );
 })();
 (function () {
-    var a = 1, b = 2;
-    var c;
-    //赋值 低于 &&
-    if (c = a && b) {
-
-    }
-    console.log(c === 2);
+    //乘除模 高于 加减
+    console.log(
+        (1 + 1 * 2)
+        ===
+        3
+    );
+})();
+(function () {
+    //加减 高于 左移
+    console.log(
+        (1 + 0 << 1 + 1)
+        ===
+        4
+    );
+})();
+(function () {
+    //左移 高于 比较
+    console.log(
+        1 << 1
+        ===
+        2
+    );
+})();
+(function () {
+    //比较 高于 &&
+    console.log(
+        (1 && 2 > 3)
+        ===
+        false
+    );
+})();
+(function () {
+    //&& 高于 ||
+    console.log(
+        (3 || 1 && 2)
+        ===
+        3
+    );
+})();
+(function () {
+    //|| 高于 三目运算
+    var flag = 1 || 0 ? true : false;
+    console.log(flag === true);
 })();
 (function () {
     var a = 1, b = 2, c = 3;
     var d;
-    //赋值 低于 三目运算
+    //三目运算 高于 赋值
     if (d = a ? b : c) {
 
     }
@@ -33,7 +68,7 @@
 })();
 (function () {
     var num;
-    //, 低于 赋值
+    //赋值 高于 ,
     if (num = 0, 1) {
         console.log(true);
     } else {
@@ -41,16 +76,7 @@
     }
     console.log(num === 0);
 })();
-(function () {
-    //三目运算 低于 &&
-    var flag = 1 && 0 ? false : true;
-    console.log(flag === true);
-})();
-(function () {
-    //三目运算 低于 ||
-    var flag = 1 || 0 ? true : false;
-    console.log(flag === true);
-})();
+
 </script>
 </head>
 <body>
