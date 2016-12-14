@@ -11,6 +11,7 @@
 </div>
 <script type="text/javascript">
 (function () {
+    //在html解析成dom树时，\r会被去掉
     var target = document.getElementById('J-target');
     //不包含注释，不包含首尾空白
     console.log(target.textContent);
