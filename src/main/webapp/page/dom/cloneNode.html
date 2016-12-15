@@ -23,6 +23,7 @@
     //为false时，只复制当前元素
     //为true时，还会复制当前元素下的后代元素
     var cloneEl = targetEl.cloneNode(true);
+    //现代浏览器不会复制元素上自定义的属性
     //ie8还会浅复制元素上自定义的属性
     alert(cloneEl.person);
     alert(targetEl.person === cloneEl.person)
