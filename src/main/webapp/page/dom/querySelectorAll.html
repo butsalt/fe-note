@@ -33,6 +33,13 @@
         contextEl.querySelectorAll('.J-container .J-target')
     );
 })();
+(function () {
+    var contextEl = document.getElementById('J-context');
+    //使用:scope可以使选择器执行的上下文限制到contextEl
+    console.log(
+        contextEl.querySelectorAll(':scope .J-container .J-target')
+    );
+})();
 </script>
 </body>
 </html>
