@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+p {
+    /** 对于设置了line-height的元素自身来说，line-height影响的是元素内部默认文本的高度 **/
+    line-height: 20px;
+}
+
+.great-line-height {
+    /** 即使元素内没有内容，line-height还是会影响同行的排版 **/
+    line-height: 100px;
+}
+</style>
+</head>
+<body>
+<p><img src="/assets/img/x100.png"/>test</p>
+<p>test<span class="great-line-height"></span></p>
+</body>
+</html>
