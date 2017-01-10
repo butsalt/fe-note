@@ -5,18 +5,21 @@
 <title>learn</title>
 <style type="text/css">
 p {
-    /** 对于设置了line-height的元素自身来说，line-height影响的是元素内部默认文本的高度 **/
+    /** 对于设置了line-height的元素自身来说，line-height影响的是元素内作为元素子节点的TextNode的高度 **/
     line-height: 20px;
 }
 
 .great-line-height {
-    /** 即使元素内没有内容，line-height还是会影响同行的排版 **/
+    /** 对于行内元素来说即使元素内没有内容，line-height还是会影响该元素所在行的排版 **/
+    /** 对于块元素来说元素内没有内容，line-height不会影响块元素的高度 **/
     line-height: 100px;
 }
 </style>
 </head>
 <body>
 <p><img src="/assets/img/x100.png"/>test</p>
-<p>test<span class="great-line-height"></span></p>
+<p><span></span><span class="great-line-height"></span></p>
+<p class="great-line-height"></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </body>
 </html>
