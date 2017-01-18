@@ -6,25 +6,30 @@
 <script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('div').on('speak',function(e){
-		console.log($(this).attr('class'));
-		e.stopPropagation();
-	});
-	$('div').trigger('speak');
+    $('div').on(
+        'speak',
+        function (e) {
+            console.log(
+                $(this).attr('class')
+            );
+            e.stopPropagation();
+        }
+    );
+    $('div').trigger('speak');
 });
 </script>
 </head>
 <body>
 <div class="1">
-	<div class="1-1">
-		<div class="1-1-1"></div>
-	</div>
-	<div class="2-1">
-		<div class="2-1-1"></div>
-		<div class="2-1-2">
-			<div class="2-1-2-1"></div>
-		</div>
-	</div>
+    <div class="1-1">
+        <div class="1-1-1"></div>
+    </div>
+    <div class="2-1">
+        <div class="2-1-1"></div>
+        <div class="2-1-2">
+            <div class="2-1-2-1"></div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
