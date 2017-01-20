@@ -4,50 +4,71 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	h1::before{
-		content: "";
-		display: table;
-		clear: both;
-	}
-	.float-box{
-		float: left;
-		background-color: rgba(200,30,30,0.3);
-		width: 100px;
-		height: 100px;
-	}
-	.bfc{
-		overflow: hidden;
-		background-color: rgba(30,30,200,0.3);
-	}
-	.margin{
-		margin: 20px;
-	}
-	
-	/** 触发bfc的方式 **/
-	/** 1. body元素 **/
-	/** 2. float不为none **/
-	/** 3. position为absolute, fixed **/
-	/** 4. display为inline-block, tabel-cell, table-caption, flex, inline-flex **/
-	/** 5. overflow不为visible **/
+    h1::before{
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .float-box{
+        float: left;
+        background-color: rgba(200,30,30,0.3);
+        width: 100px;
+        height: 100px;
+    }
+    .bfc{
+        overflow: hidden;
+        background-color: rgba(30,30,200,0.3);
+    }
+    .margin{
+        margin: 20px;
+    }
+    
+    /** 触发bfc的方式 **/
+    /** 1. body元素 **/
+    /** 2. float不为none **/
+    /** 3. position为absolute, fixed **/
+    /** 4. display为inline-block, tabel-cell, table-caption, flex, inline-flex **/
+    /** 5. overflow不为visible **/
 </style>
 </head>
 <body>
 <h1>BFC元素不与浮动元素重叠</h1>
 <div>
-	<div class="float-box"></div>
-	<div class="bfc">不重叠！</div>
+    <div class="float-box"></div>
+    <div class="bfc">不重叠！</div>
 </div>
 <h1>BFC元素计算高度时，包括浮动元素</h1>
 <div class="bfc">
-	<div class="float-box"></div>
+    <div class="float-box"></div>
 </div>
 <h1>不同BFC下垂直方向上的margin不会合并</h1>
 <div>
-	<!-- 下面这两个兄弟元素仍然处在同一个bfc中 -->
-	<div class="bfc margin">不合并！</div>
-	<div class="bfc">
-		<div class="bfc margin">不合并！</div>
-	</div>
+    <!-- 下面这两个兄弟元素仍然处在同一个bfc中 -->
+    <div class="bfc margin">不合并！</div>
+    <div class="bfc">
+        <div class="bfc margin">不合并！</div>
+    </div>
 </div>
+<h1>即使BFC元素没有高度，它的margin-top和margin-bottom也不会合并</h1>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class="margin"></div>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class="bfc margin"></div>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 </body>
 </html>
