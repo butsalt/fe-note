@@ -4,10 +4,13 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <script type="text/javascript">
-//端口号变化不影响cookie读取
+// 端口号不被作为cookie的读取条件
+// 协议(http,https)除非在设置cookie时有特殊声明，否则也不被作为cookie的读取条件
 
-//test.com下的cookie，a.test.com下也可以读到
+// domain的约束：
+// test.com下的cookie，a.test.com下也可以读到
 
+// path的约束：
 // /a下的cookie，/a/b下也可以读到
 
 // /a下的cookie，/a/下也可以读到
