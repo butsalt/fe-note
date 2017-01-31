@@ -35,22 +35,16 @@
     }
 
     function Child () {
-        var obj = Reflect.construct(
-            // 构造函数
-            Parent,
-            // 参数列表
-            [],
-            // 被用于获取prototype的构造函数，默认就是调用函数时传的第一个参数
-            Child
-        );
-        console.log(new.target === Child);
-        return obj;
+
     }
 
-    console.log(
-        Object.getPrototypeOf(new Child())
-        ===
-        Child.prototype
+    Reflect.construct(
+        // 构造函数
+        Parent,
+        // 参数列表
+        [],
+        // 被用于获取prototype的构造函数，默认就是调用函数时传的第一个参数
+        Child
     );
 })();
 </script>
