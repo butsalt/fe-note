@@ -5,32 +5,12 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    function Parent (name) {
+    function Cls () {
         // 一般情况下，new.target指向调用new时调用的构造函数
-        // 通过Reflect.construct来创建对象时可以修改
-        console.log(new.target === Child);
-        console.log(name === 'butSalt');
+        console.log(new.target === Cls);
     }
 
-    function Child () {
-        // 相当于new
-        var obj = Reflect.construct(
-            // 构造函数
-            Parent,
-            // 参数列表
-            ['butSalt'],
-            // 被用于获取prototype的构造函数，默认就是传给函数的第一个参数
-            Child
-        );
-        console.log(new.target === Child);
-        return obj;
-    }
-
-    console.log(
-        Object.getPrototypeOf(new Child())
-        ===
-        Child.prototype
-    );
+    new Cls();
 })();
 (function () {
     class Parent {
@@ -46,7 +26,32 @@
         }
     }
 
-    console.log(new Child());
+    new Child();
+})();
+(function () {
+    function Parent () {
+        // 通过Reflect.construct来创建对象时可以修改
+        console.log(new.target === Child);
+    }
+
+    function Child () {
+        var obj = Reflect.construct(
+            // 构造函数
+            Parent,
+            // 参数列表
+            [],
+            // 被用于获取prototype的构造函数，默认就是调用函数时传的第一个参数
+            Child
+        );
+        console.log(new.target === Child);
+        return obj;
+    }
+
+    console.log(
+        Object.getPrototypeOf(new Child())
+        ===
+        Child.prototype
+    );
 })();
 </script>
 </head>
