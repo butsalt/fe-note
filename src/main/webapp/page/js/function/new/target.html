@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    class Parent {
+        constructor () {
+            console.log(new.target === Child);
+        }
+    }
+
+    class Child extends Parent {
+        constructor () {
+            super();
+            console.log(new.target === Child);
+        }
+    }
+
+    console.log(new Child());
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
