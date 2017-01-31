@@ -5,36 +5,48 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
+    var obj = {};
+    function Cls () {
+        return obj;
+    }
+    var instance = new Cls();
+
+    console.log(instance === obj);
+
+    console.log(
+        (instance instanceof Cls)
+        ===
+        false
+    );
+})();
+(function () {
+    function Cls () {
+        this.num = 123;
+        // 如果返回的是基本类型，则还是返回new时创建的对象
+        return this.num;
+    }
+    var instance = new Cls();
+
+    console.log(instance !== 123);
+    console.log(instance.num === 123)
+})();
+(function () {
     function Parent () {
         console.log(new.target === Child);
     }
 
     function Child () {
-        //相当于new
-        //被调用的构造函数 参数列表 被用于获取prototype的构造函数
+        // 相当于new
+        // 参数列表：
+        // 构造函数 参数列表 被用于获取prototype的构造函数
         var obj = Reflect.construct(Parent, [], Child);
         console.log(new.target === Child);
         return obj;
     }
 
-    console.log(Object.getPrototypeOf(new Child()) === Child.prototype);
-})();
-
-(function () {
-    class Parent {
-        constructor () {
-            console.log(new.target === Child);
-        }
-    }
-
-    class Child extends Parent {
-        constructor () {
-            super();
-            console.log(new.target === Child);
-        }
-    }
-
-    console.log(new Child());
+    console.log(
+        Object.getPrototypeOf(new Child()) === Child.prototype
+    );
 })();
 </script>
 </head>
