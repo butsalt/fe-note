@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+td {
+    border: 1px black solid;
+    font-size: 50px;
+}
+
+.dot {
+    background-color: steelblue;
+    font-size: 12px;
+}
+</style>
+</head>
+<body>
+<table>
+    <tbody>
+        <td style="vertical-align: top;">
+            <!-- 元素堆积在格子最上方 -->
+            <div class="dot">top</div>
+        </td>
+        <td style="vertical-align: text-top;">
+            <!-- 效果同vertical-align: baseline -->
+            <div class="dot">text-top</div>
+        </td>
+        <td style="vertical-align: middle;">
+            <div class="dot">middle</div>
+        </td>
+        <td style="vertical-align: baseline; font-size: 30px; padding-top: 100px; padding-bottom: 100px;">
+            <div class="dot">baseline</div>
+        </td>
+        <td style="vertical-align: baseline;">
+            <!-- inline-block元素的baseline在尾行，td的baseline在首行 -->
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </td>
+        <td style="vertical-align: text-bottom;">
+            <!-- 效果同vertical-align: baseline -->
+            <div class="dot">text-bottom</div>
+        </td>
+        <td style="vertical-align: bottom;">
+            <!-- 元素堆积在格子最下方 -->
+            <div class="dot">bottom</div>
+        </td>
+    </tbody>
+</table>
+</body>
+</html>
