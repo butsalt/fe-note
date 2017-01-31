@@ -30,24 +30,6 @@
     console.log(instance !== 123);
     console.log(instance.num === 123)
 })();
-(function () {
-    function Parent () {
-        console.log(new.target === Child);
-    }
-
-    function Child () {
-        // 相当于new
-        // 参数列表：
-        // 构造函数 参数列表 被用于获取prototype的构造函数
-        var obj = Reflect.construct(Parent, [], Child);
-        console.log(new.target === Child);
-        return obj;
-    }
-
-    console.log(
-        Object.getPrototypeOf(new Child()) === Child.prototype
-    );
-})();
 </script>
 </head>
 <body>
