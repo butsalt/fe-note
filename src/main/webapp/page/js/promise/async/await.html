@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    function sleep () {
+        return new Promise(function (resolve) {
+            setTimeout(function () {
+                resolve('resolved');
+            }, 1000);
+        });
+    }
+
+    async function test () {
+        // 返回promise resolve的结果
+        var msg = await sleep();
+        console.log(msg === 'resolved');
+    }
+
+    test();
+})();
+(function () {
+    function sleep () {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                reject('rejected');
+            }, 1000);
+        });
+    }
+
+    async function test () {
+        try {
+            await sleep();
+        // 捕获的是promise reject的结果
+        } catch (e) {
+            console.log(e === 'rejected');
+        }
+    }
+
+    test();
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
