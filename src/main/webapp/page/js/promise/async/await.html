@@ -41,6 +41,27 @@
 
     test();
 })();
+(function () {
+    async function test () {
+        return 'resolved';
+    }
+
+    // 调用async函数返回的是一个thenable对象
+    test()
+        .then(function (msg) {
+            console.log(msg === 'resolved');
+        });
+})();
+(function () {
+    async function test () {
+        throw 'rejected';
+    }
+
+    test()
+        .catch(function (msg) {
+            console.log(msg === 'rejected');
+        });
+})();
 </script>
 </head>
 <body>
