@@ -24,11 +24,21 @@ window.addEventListener('load', function () {
 </script>
 </head>
 <body>
-<img id="target" src="/assets/img/x400.png">
+<img id="target" src="http://placehold.it/400x400"/>
 <!-- js文件默认是立即加载并执行 -->
+
 <!-- defer使得js文件加载与后续文档解析同时进行 -->
-<!-- js执行将发生在文档中dom元素初始化完成之后，DOMContentLoaded之前 -->
-<script type="text/javascript" src="./index.js" defer></script>
-<link rel="stylesheet" type="text/css" href="./index.css">
+<!-- js执行发生在文档中dom元素初始化完成之后，触发document的DOMContentLoaded事件之前 -->
+<!-- 带defer属性的js执行顺序与这些js出现在文档中的顺序相同 -->
+<script type="text/javascript" src="./defer-1.js" defer></script>
+<script type="text/javascript" src="./defer-2.js" defer></script>
+
+
+<!-- async使得js文件加载与后续文档解析同时进行  -->
+<!-- js执行发生在触发window的load事件之前 -->
+<!-- 当js加载完成后立即执行，不考虑执行顺序 -->
+<script type="text/javascript" src="./async-1.js" async></script>
+<script type="text/javascript" src="./async-2.js" async></script>
+
 </body>
 </html>
