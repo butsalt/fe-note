@@ -20,27 +20,27 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             var xhr = new XMLHttpRequest();
-            //method url async
+            // method url async
             xhr.open('POST', '/upload', true);
 
-            //用json格式解析响应信息
+            // 用json格式解析响应信息
             xhr.responseType = 'json';
 
-            //上传过程回调
+            // 上传过程回调
             xhr.upload.addEventListener('progress', function (e) {
                 if (e.lengthComputable) {
                     console.log(`total: ${e.total}byte; uploaded: ${e.loaded}byte`);
                 }
             });
 
-            //下载过程回调
+            // 响应下载过程中回调
             xhr.addEventListener('progress', function (e) {
                 if (e.lengthComputable) {
                     console.log(`total: ${e.total}byte; downloaded: ${e.loaded}byte`);
                 }
             });
 
-            //服务器响应回调
+            // 响应回调
             xhr.addEventListener('load', function (e) {
                 console.log(xhr.response);
             });
