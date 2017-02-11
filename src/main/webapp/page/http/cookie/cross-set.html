@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>learn</title>
-<!-- 请求静态资源时服务器通过meta信息也能修改浏览器的cookie -->
+<!-- 请求静态资源时服务器通过消息头能修改浏览器的cookie -->
 <!--
     当前页面主机名:端口号   资源主机名:端口号   cookie的domain          结果
     localhost:8080          localhost:7070      localhost               成功
@@ -17,6 +17,10 @@
         静态资源地址
         当前页面地址
     设置这个cookie，才最终能被设置到浏览器上
+-->
+<!--
+    注意：
+    跨域的ajax请求无法发送和接收cookie
 -->
 <script type="text/javascript" src="http://localhost:7070/setcookie"></script>
 </head>
