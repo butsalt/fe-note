@@ -20,6 +20,10 @@
 	   <servlet-name>setcookie</servlet-name>
 	   <servlet-class>learn.SetCookieServlet</servlet-class>
 	</servlet>
+    <servlet>
+       <servlet-name>getcookie</servlet-name>
+       <servlet-class>learn.GetCookieServlet</servlet-class>
+    </servlet>
 	<servlet-mapping>
 		<servlet-name>download</servlet-name>
 		<url-pattern>/download</url-pattern>
@@ -36,4 +40,8 @@
 		<servlet-name>setcookie</servlet-name>
 		<url-pattern>/setcookie</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>getcookie</servlet-name>
+        <url-pattern>/getcookie</url-pattern>
+    </servlet-mapping>
 </web-app>
