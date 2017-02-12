@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var inner = document.getElementById('inner');
     var second = document.getElementById('second');
 
-    // inner不在outer所属的文档中
+    // DOCUMENT_POSITION_DISCONNECTED，inner不在outer所属的文档中
     console.log(!!(outer.compareDocumentPosition(inner) & 1));
-    // first在second之前
+    // DOCUMENT_POSITION_PRECEDING，first在second之前
     console.log(!!(second.compareDocumentPosition(first) & 2));
-    // inner在outer之后
+    // DOCUMENT_POSITION_FOLLOWING，inner在outer之后
     console.log(!!(outer.compareDocumentPosition(inner) & 4));
-    // outer包含inner
+    // DOCUMENT_POSITION_CONTAINS，outer包含inner
     console.log(!!(inner.compareDocumentPosition(outer) & 8));
-    // inner被outer包含
+    // DOCUMENT_POSITION_CONTAINED_BY，inner被outer包含
     console.log(!!(outer.compareDocumentPosition(inner) & 16));
 });
 </script>
