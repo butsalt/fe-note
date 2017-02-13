@@ -4,71 +4,71 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-	body{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateX(-50%) translateY(-50%);
-		width: 1000px;
-	}
-	.interaction-panel{
-		margin-bottom: 30px;
-	}
-	.interaction-panel .printer{
-		text-indent: 1em;
-		min-height: 1.4em;
-	}
-	.interaction-panel .buttons button{
-		margin: 0 1em;
-	}
-	.child-items{
-		display: flex;
-		justify-content: center;
-		height: 300px;
-	}
-	.child{
-		flex: 1 1 0;
-		border:1px #eee solid;
-	}
+    body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 1000px;
+    }
+    .interaction-panel {
+        margin-bottom: 30px;
+    }
+    .interaction-panel .printer {
+        text-indent: 1em;
+        min-height: 1.4em;
+    }
+    .interaction-panel .buttons button {
+        margin: 0 1em;
+    }
+    .child-items {
+        display: flex;
+        justify-content: center;
+        height: 300px;
+    }
+    .child {
+        flex: 1 1 0;
+        border:1px #eee solid;
+    }
 </style>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',function(){
-	var printer = document.getElementById('printer');
-	
-	window.meet = function( name ){
-		printer.textContent = `Hi, ${name}!`;
-	};
-	
-	var child1 = document.getElementById('child1').contentWindow;
-	var meetChild1Btn = document.getElementById('meetChild1Btn')
-	meetChild1Btn.addEventListener( 'click', function(){
-		child1.meet( 'Parent' );
-	} );
-	
-	var child2 = document.getElementById('child2').contentWindow;
-	var meetChild2Btn = document.getElementById('meetChild2Btn');
-	meetChild2Btn.addEventListener( 'click', function(){
-		child2.meet( 'Parent' );
-	} );
+document.addEventListener('DOMContentLoaded',function () {
+    var printer = document.getElementById('printer');
+    
+    window.meet = function (name) {
+        printer.textContent = `Hi, ${name}!`;
+    };
+    
+    var child1 = document.getElementById('child1').contentWindow;
+    var meetChild1Btn = document.getElementById('meetChild1Btn')
+    meetChild1Btn.addEventListener('click', function () {
+        child1.meet('Parent');
+    });
+    
+    var child2 = document.getElementById('child2').contentWindow;
+    var meetChild2Btn = document.getElementById('meetChild2Btn');
+    meetChild2Btn.addEventListener('click', function () {
+        child2.meet('Parent');
+    });
 });
 </script>
 </head>
 <body>
 <section class="interaction-panel">
-	<h1>Parent:</h1>
-	<p id="printer" class="printer"></p>
-	<section>
-		<p class="buttons"><button id='meetChild1Btn'>Say hello to child1</button><button id='meetChild2Btn'>Say hello to child2</button></p>
-	</section>
+    <h1>Parent:</h1>
+    <p id="printer" class="printer"></p>
+    <section>
+        <p class="buttons"><button id='meetChild1Btn'>Say hello to child1</button><button id='meetChild2Btn'>Say hello to child2</button></p>
+    </section>
 </section>
 <section class="child-items">
-	<!-- iframe默认有border -->
-	<!-- iframe默认有固定的width -->
-	<!-- iframe默认有固定的height -->
-	<iframe src="./child1.html" class="child" id="child1">
-	</iframe>
-	<iframe src="./child2.html" class="child" id="child2">
-	</iframe>
+    <!-- iframe默认有border -->
+    <!-- iframe默认有固定的width -->
+    <!-- iframe默认有固定的height -->
+    <iframe src="./child1.html" class="child" id="child1">
+    </iframe>
+    <iframe src="./child2.html" class="child" id="child2">
+    </iframe>
 </section>
 </body>
 </html>
