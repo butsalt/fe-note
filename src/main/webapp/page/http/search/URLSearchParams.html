@@ -5,6 +5,9 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
+    // location.search中，被encode的key和value不会被decode
+    // a标签的search属性中，被encode的key和value也不会被decode
+
     // %25 -> &
     // %3D -> =
     var searchParams = new URLSearchParams('?a=1&a=2&b=3&%26=%3D');
