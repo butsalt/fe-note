@@ -29,6 +29,11 @@
     )(1);
     console.log(result === 2);
 })();
+(function () {
+    // 第一个箭头函数返回值时第二个箭头函数
+    var res = (num1 => num2 => num1 + num2)(1)(2);
+    console.log(res === 3);
+})();
 </script>
 </head>
 <body>
