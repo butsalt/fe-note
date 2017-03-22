@@ -48,10 +48,9 @@
         }
         //相当于是在这里发生了异常
     }
-    var ite;
-
+    var ite = gen();
+    ite.next();
     try {
-        ite = gen();
         ite.throw('error');
     } catch (e) {
         console.log(true);
