@@ -11,10 +11,12 @@
     arr.forEach(function () {
         console.log(false);
     });
+    var count = 0;
     for (let val of arr) {
-        // 用迭代器，下标0, 1, 2都会被遍历到
-        console.log(true);
+        count++;
     }
+    // 用迭代器，下标0, 1, 2都会被遍历到
+    console.log(count === 3);
     //只有下标1会被遍历到
     arr[1] = true;
     arr.forEach(function (item, i) {
