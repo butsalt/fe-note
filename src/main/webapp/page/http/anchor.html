@@ -11,8 +11,10 @@ hr {
 </head>
 <body>
 <!-- url中，＃号后的内容会被认为是一个锚点的id，不会发送给服务器 -->
+<!-- location.hash === '#J-back-anchor' -->
 <a href="/page/http/anchor.html#J-back-anchor" id="J-go-anchor">go</a>
 <hr/>
+<!-- location.hash === '#J-go-anchor' -->
 <a href="/page/http/anchor.html#J-go-anchor" id="J-back-anchor">back</a>
 </body>
 </html>
