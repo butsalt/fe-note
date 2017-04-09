@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    function Person (name) {
+        var me = this;
+        Object.defineProperty(
+            me,
+            'name',
+            {
+                value: name
+            }
+        );
+    }
+
+    Person.prototype.speak = function () {};
+
+    var src = new Person('butSalt');
+
+    var target = Object.assign({}, src);
+
+    // 不可枚举的属性不会被复制
+    console.log(
+        target.name === undefined
+    );
+
+    // 继承的属性不会被复制
+    console.log(
+        target.speak === undefined
+    );
+})();
+(function () {
+    var p = {
+        name: 'butSalt'
+    };
+    var src = {
+        p: p
+    };
+
+    var target = Object.assign({}, src);
+    // 复制形式是浅复制
+    console.log(
+        target.p === p
+    );
+})();
+(function () {
+    var sym = Symbol('name');
+    var src = {
+        [sym]: 'butSalt'
+    };
+
+    var target = Object.assign({}, src);
+    // symbol属性可以复制
+    console.log(target[sym] === 'butSalt');
+})();
+(function () {
+    var src = {};
+    Object.defineProperty(
+        src,
+        'name',
+        {
+            enumerable: true,
+            get: function () {
+                return 'butSalt';
+            }
+        }
+    );
+    var target = Object.assign({}, src);
+    console.log(target.name === 'butSalt');
+    target.name = 'krista';
+    // 仅仅是调用了src上name属性的getter来获取属性的值
+    // src上name属性的propertyDescriptor并未被复制过去
+    console.log(target.name === 'krista');
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
