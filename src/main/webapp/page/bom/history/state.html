@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
         button.textContent = state.btnText;
     }
 
-    // 在对history进行后退时，
+    // 在history.back时，
     //     后退前的路径是用pushState生成，那么页面不会刷新，并会触发该事件
     //     后退前的路径是通过改变history.hash生成，那么页面不会刷新，并会触发该事件
 
-    // 在对history进行前进时，
+    // 在history.go时，
     //     前进后的路径是用pushState生成，那么页面不会刷新，并会触发该事件
     //     前进后的路径是通过改变history.hash生成，那么页面不会刷新，并会触发该事件
 
