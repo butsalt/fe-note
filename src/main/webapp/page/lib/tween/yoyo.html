@@ -5,14 +5,14 @@
 <title>learn</title>
 <style type="text/css">
 div{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -50px;
-    margin-top: -50px;
-    width: 100px;
-    height: 100px;
-    background-color: #cbd;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  width: 100px;
+  height: 100px;
+  background-color: #cbd;
 }
 </style>
 <script type="text/javascript" src="/assets/lib/tween/14/Tween.js"></script>
@@ -20,26 +20,26 @@ div{
 <script type="text/javascript">
 //yoyo:当出现repeat时yoyo会再下一次播放动画时把开始和结束参数对调
 $(function(){
-    var d = $('div');
-    var tween = new TWEEN.Tween({
-            z: 0
-        })
-        .to({
-            z: 300
-        }, 2500)
-        .yoyo(true)
-        .repeat(1)
-        .easing(TWEEN.Easing.Elastic.InOut)
-        .onUpdate(function(){
-            d.css('transform','perspective(400px) translate3d(0px,0px,' + this.z + 'px)');
-        })
-        .start();
+  var d = $('div');
+  var tween = new TWEEN.Tween({
+      z: 0
+    })
+    .to({
+      z: 300
+    }, 2500)
+    .yoyo(true)
+    .repeat(1)
+    .easing(TWEEN.Easing.Elastic.InOut)
+    .onUpdate(function(){
+      d.css('transform','perspective(400px) translate3d(0px,0px,' + this.z + 'px)');
+    })
+    .start();
 
-    animate();
-    function animate(time) {
-        requestAnimationFrame(animate);
-        TWEEN.update(time);
-    }
+  animate();
+  function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+  }
 });
 </script>
 </head>

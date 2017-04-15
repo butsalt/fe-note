@@ -5,47 +5,47 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    var arr = new Array(3);
-    console.log(arr.length === 3);
-    var count = 0;
-    arr.forEach(function () {
-        count++;
-    });
-    // 下标0, 1, 2都不会被遍历到
-    // 和循环相关的api
-    // 如forEach，map，filter，every，reduce，sort都有此影响
-    console.log(count === 0);
-    count = 0;
-    for (let val of arr) {
-        count++;
-    }
-    // 用迭代器，下标0, 1, 2都会被遍历到
-    console.log(count === 3);
-    // 只有下标1会被遍历到
-    arr[1] = true;
-    count = 0;
-    arr.forEach(function (item, i) {
-        count++;
-    });
-    console.log(count === 1);
+  var arr = new Array(3);
+  console.log(arr.length === 3);
+  var count = 0;
+  arr.forEach(function () {
+    count++;
+  });
+  // 下标0, 1, 2都不会被遍历到
+  // 和循环相关的api
+  // 如forEach，map，filter，every，reduce，sort都有此影响
+  console.log(count === 0);
+  count = 0;
+  for (let val of arr) {
+    count++;
+  }
+  // 用迭代器，下标0, 1, 2都会被遍历到
+  console.log(count === 3);
+  // 只有下标1会被遍历到
+  arr[1] = true;
+  count = 0;
+  arr.forEach(function (item, i) {
+    count++;
+  });
+  console.log(count === 1);
 
-    arr = [undefined, undefined, undefined];
-    console.log(arr.length === 3);
-    // 下标0，1，2都会被遍历到
-    count = 0;
-    arr.forEach(function () {
-        count++;
-    });
-    console.log(count === 3);
+  arr = [undefined, undefined, undefined];
+  console.log(arr.length === 3);
+  // 下标0，1，2都会被遍历到
+  count = 0;
+  arr.forEach(function () {
+    count++;
+  });
+  console.log(count === 3);
 })();
 (function () {
-    // 不用new同样能创建数组
-    var arr = Array(1, 2, 3);
-    console.log(arr.length === 3);
+  // 不用new同样能创建数组
+  var arr = Array(1, 2, 3);
+  console.log(arr.length === 3);
 })();
 (function () {
-    var arr = Array(3);
-    console.log(arr.length === 3);
+  var arr = Array(3);
+  console.log(arr.length === 3);
 })();
 </script>
 </head>

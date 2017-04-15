@@ -5,23 +5,23 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    //执行加法运算，但忽略结果并将undefined赋给变量result
-    var result = void (1 + 1);
-    console.log(result === undefined);
-    //执行加法运算，并将计算结果赋给变量result
-    result = 1 + 1;
-    console.log(result === 2);
+  //执行加法运算，但忽略结果并将undefined赋给变量result
+  var result = void (1 + 1);
+  console.log(result === undefined);
+  //执行加法运算，并将计算结果赋给变量result
+  result = 1 + 1;
+  console.log(result === 2);
 })();
 (function () {
-    var result = (
-        num => num + 1
-    )(1);
-    console.log(result === 2);
+  var result = (
+    num => num + 1
+  )(1);
+  console.log(result === 2);
 
-    result = (
-        num => void (num + 1)
-    )();
-    console.log(result === undefined);
+  result = (
+    num => void (num + 1)
+  )();
+  console.log(result === undefined);
 })();
 </script>
 </head>

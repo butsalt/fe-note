@@ -4,90 +4,90 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-    html {
-        /** simsun字体line-height等于字体实际高度 **/
-        font-family: simsun;
-    }
+  html {
+    /** simsun字体line-height等于字体实际高度 **/
+    font-family: simsun;
+  }
 
-    div {
-        background-color: #521;
-        color: #ddd;
-        font-size: 40px;
-        line-height: 1;
-    }
+  div {
+    background-color: #521;
+    color: #ddd;
+    font-size: 40px;
+    line-height: 1;
+  }
 
-    span.dot {
-        font-size: 50px;
-    }
+  span.dot {
+    font-size: 50px;
+  }
 
-    div.dot{
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-    }
+  div.dot{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+  }
 
-    .dot{
-        vertical-align: text-top;
-        background-color: #383;
-    }
+  .dot{
+    vertical-align: text-top;
+    background-color: #383;
+  }
 
-    span,
-    sub,
-    sup {
-        /**
-            line-height,默认normal,可以继承
-            120%    font-size*120%(继承时继承的是这个计算后的结果)
-            20px    继承时继承20px
-            normal  font-size*约1.2，不同字体倍数不一样(继承时继承这个倍数)
-            1.5     font-szie*1.5(继承时继承这个倍数)
-        **/
-        /**
-            1.  x的高度中心点总是在行内框高度(line-height)中心点的下方
-                当font-size为0时，x的高度中心点与行内框高度中心点重合
-            2.  baseline始终位于x的下边缘，根据字体不同可能会有几个像素的偏差
-            3.  包裹文字的父元素
-                    如果为inline，会根据文字实际大小进行包裹
-                    否则，会根据line-height的计算结果进行包裹
-                    但父元素在它的父元素中计算高度时，始终按照line-height的计算结果进行包裹
-        **/
-        background-color: #663;
-    }
+  span,
+  sub,
+  sup {
     /**
-        1.  vertical-align的值为top时，
-            对象的顶端会与父元素的顶端对齐，如果换行则会与该行顶端对齐。
-        3.  vertical-align的值为text-top时，
-            对象的顶端会与父元素的默认span元素的上边缘(此时就是文字实际上边缘，因为inline元素是按文字实际大小进行包裹)对齐。
-        4.  vertical-align的值为super时，
-            对象的baseline会与父元素的默认sup的baseline对齐。
-        5.  vertical-align的值为sub时，
-            对象的baseline会与父元素的默认sub的baseline对齐。
-        6.  vertical-align的值为middle时，
-            对象的中垂点与父元素的默认span的baseline向上再提高1/2个x的位置对齐。
-        7.  vertical-align的值为baseline时，
-            基线对齐（注意：处于baseline上的inline元素不允许超出父元素能够包裹的范围）
+      line-height,默认normal,可以继承
+      120%  font-size*120%(继承时继承的是这个计算后的结果)
+      20px  继承时继承20px
+      normal  font-size*约1.2，不同字体倍数不一样(继承时继承这个倍数)
+      1.5   font-szie*1.5(继承时继承这个倍数)
     **/
     /**
-        1.  当目标对象为inline时，
-            需要根据line-height来计算顶端 / 底部
-        2.  当目标对象为inline-block时，
-            如果已设置它的高，则直接根据形状来计算顶端 / 顶部。
-            如果未设置它的高，且内部含有文本，则需要根据line-height来计算顶端 / 底部。
-            如果内部含有文本，baseline由最后一行文本的baseline决定。
-            如果内部没有文本，baseline就是对象的底部。
+      1.  x的高度中心点总是在行内框高度(line-height)中心点的下方
+        当font-size为0时，x的高度中心点与行内框高度中心点重合
+      2.  baseline始终位于x的下边缘，根据字体不同可能会有几个像素的偏差
+      3.  包裹文字的父元素
+          如果为inline，会根据文字实际大小进行包裹
+          否则，会根据line-height的计算结果进行包裹
+          但父元素在它的父元素中计算高度时，始终按照line-height的计算结果进行包裹
     **/
+    background-color: #663;
+  }
+  /**
+    1.  vertical-align的值为top时，
+      对象的顶端会与父元素的顶端对齐，如果换行则会与该行顶端对齐。
+    3.  vertical-align的值为text-top时，
+      对象的顶端会与父元素的默认span元素的上边缘(此时就是文字实际上边缘，因为inline元素是按文字实际大小进行包裹)对齐。
+    4.  vertical-align的值为super时，
+      对象的baseline会与父元素的默认sup的baseline对齐。
+    5.  vertical-align的值为sub时，
+      对象的baseline会与父元素的默认sub的baseline对齐。
+    6.  vertical-align的值为middle时，
+      对象的中垂点与父元素的默认span的baseline向上再提高1/2个x的位置对齐。
+    7.  vertical-align的值为baseline时，
+      基线对齐（注意：处于baseline上的inline元素不允许超出父元素能够包裹的范围）
+  **/
+  /**
+    1.  当目标对象为inline时，
+      需要根据line-height来计算顶端 / 底部
+    2.  当目标对象为inline-block时，
+      如果已设置它的高，则直接根据形状来计算顶端 / 顶部。
+      如果未设置它的高，且内部含有文本，则需要根据line-height来计算顶端 / 底部。
+      如果内部含有文本，baseline由最后一行文本的baseline决定。
+      如果内部没有文本，baseline就是对象的底部。
+  **/
 </style>
 </head>
 <body>
 <div>
-    <span>Lyx中</span>
-    <sub>Lyx中</sub>
-    <sup>Lyx中</sup>
-    <div class="dot"></div>
-    <span>Lyx中</span>
-    <span class="dot">Lyx中</span>
-    <span style="font-size:60px;">Lyx中</span>
-    <span style="font-size:80px;">Lyx中</span>
-    <span style="font-size:100px;">Lyx中</span>
+  <span>Lyx中</span>
+  <sub>Lyx中</sub>
+  <sup>Lyx中</sup>
+  <div class="dot"></div>
+  <span>Lyx中</span>
+  <span class="dot">Lyx中</span>
+  <span style="font-size:60px;">Lyx中</span>
+  <span style="font-size:80px;">Lyx中</span>
+  <span style="font-size:100px;">Lyx中</span>
 </div>
 </body>
 </html>

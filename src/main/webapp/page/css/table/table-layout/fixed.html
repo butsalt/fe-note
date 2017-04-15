@@ -5,76 +5,76 @@
 <title>learn</title>
 <style type="text/css">
 table td:nth-child(odd) {
-    background-color: steelblue;
+  background-color: steelblue;
 }
 
 table td:nth-child(even) {
-    background-color: darkred;
+  background-color: darkred;
 }
 
 table tr:nth-child(even) {
-    color: #eee;
+  color: #eee;
 }
 
 .fixed {
-    table-layout: fixed;
-    /** 当width为auto时，表的table-layout会强制设为auto **/
-    /**  表最终的宽度在table的width和所有已定义列宽之和中取最大值 **/
-    width: 500px;
-    border-collapse: collapse;
+  table-layout: fixed;
+  /** 当width为auto时，表的table-layout会强制设为auto **/
+  /**  表最终的宽度在table的width和所有已定义列宽之和中取最大值 **/
+  width: 500px;
+  border-collapse: collapse;
 }
 
 /**
-    列宽定义的查找顺序：
-    1. col
-    2. 第一行对应列上单元格的padding-left + width + padding-right
+  列宽定义的查找顺序：
+  1. col
+  2. 第一行对应列上单元格的padding-left + width + padding-right
 **/
 /** 未查找到列宽的，平均分配table剩余宽度，最小为0 **/
 /** 通过min-width/max-width对未查找到列宽上的td做限制无意义 **/
 .fixed tr:first-child td:nth-last-child(2) {
-    /** 最终这一列的宽度将是10 + 50 + 5 = 65px **/
-    padding-left: 10px;
-    width: 50px;
-    padding-right: 5px;
+  /** 最终这一列的宽度将是10 + 50 + 5 = 65px **/
+  padding-left: 10px;
+  width: 50px;
+  padding-right: 5px;
 }
 
 .fixed tr:nth-child(2) td:nth-last-child(2) {
-    width: 100px;
+  width: 100px;
 }
 
 .fixed colgroup col:last-child {
-    width: 1000px;
+  width: 1000px;
 }
 
 .fixed tr:first-child td:last-child {
-    width: 200px;
+  width: 200px;
 }
 
 </style>
 </head>
 <body>
 <table class="fixed">
-    <colgroup>
-        <col/>
-        <col/>
-        <col/>
-        <col/>
-    </colgroup>
-    <tbody>
-        <tr>
-            <td>0987-2</td>
-            <td>孙雨珩</td>
-            <td>男</td>
-            <td>sth</td>
-        </tr>
-        <tr>
-            <td>0987-2</td>
-            <td>周润发</td>
-            <td>男</td>
-            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</td>
-        </tr>
-    </tbody>
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td>0987-2</td>
+      <td>孙雨珩</td>
+      <td>男</td>
+      <td>sth</td>
+    </tr>
+    <tr>
+      <td>0987-2</td>
+      <td>周润发</td>
+      <td>男</td>
+      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.</td>
+    </tr>
+  </tbody>
 </table>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <title>learn</title>
 <script type="text/javascript">
 function printSeq(seqNum) {
-    console.log(seqNum);
+  console.log(seqNum);
 }
 
 printSeq(1);
@@ -88,10 +88,10 @@ text = 'Java\nScript';
 console.log(text.match(regex));
 
 printSeq(12);
-// match是匹配的字符串    p1,p2...是匹配各个子模式的字符串    offset是匹配的字符串在整个字符串中的位置    string是整个字符串
+// match是匹配的字符串  p1,p2...是匹配各个子模式的字符串  offset是匹配的字符串在整个字符串中的位置  string是整个字符串
 // return用来替换match
 function replacer(match, p1, p2, p3, offset, string) {
-    return [p1, p2, p3].join(' - ');
+  return [p1, p2, p3].join(' - ');
 }
 console.log('abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer));
 

@@ -5,97 +5,97 @@
 <title>learn</title>
 <style type="text/css">
 .container {
-    display: flex;
-    background: steelblue;
-    width: 360px;
-    height: 300px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  background: steelblue;
+  width: 360px;
+  height: 300px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .container > div {
-    width: 100px;
-    background: orange;
-    margin: 10px;
+  width: 100px;
+  background: orange;
+  margin: 10px;
 }
 
 .container.stretch {
-    /** 拉伸每一条主轴占满剩余空间（默认） **/
-    align-content: stretch;
+  /** 拉伸每一条主轴占满剩余空间（默认） **/
+  align-content: stretch;
 }
 
 .container.center {
-    /** 主轴在侧轴中点处堆积  **/
-    align-content: center;
+  /** 主轴在侧轴中点处堆积  **/
+  align-content: center;
 }
 
 .container.start {
-    /** 主轴在侧轴起点处堆积 **/
-    align-content: flex-start;
+  /** 主轴在侧轴起点处堆积 **/
+  align-content: flex-start;
 }
 
 .container.end {
-    /** 主轴在侧轴终点处堆积 **/
-    align-content: flex-end;
+  /** 主轴在侧轴终点处堆积 **/
+  align-content: flex-end;
 }
 
 .container.space-around {
-    align-content: space-around;
+  align-content: space-around;
 }
 
 .container.space-between {
-    align-content: space-between;
+  align-content: space-between;
 }
 </style>
 </head>
 <body>
 <div class="container stretch">
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
 </div>
 <div class="container center">
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
 </div>
 <div class="container start">
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
 </div>
 <div class="container end">
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
 </div>
 <div class="container space-around">
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
 </div>
 <div class="container space-between">
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
-    <div>a</div>
-    <div>b</div>
-    <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
 </div>
 </body>
 </html>

@@ -5,37 +5,37 @@
 <title>learn</title>
 <style type="text/css">
 #target {
-    width: 200px;
-    line-height: 50px;
-    text-align: center;
-    background-color: #444;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    transition: all 800ms ease-in-out;
-    color: #eee;
+  width: 200px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #444;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 800ms ease-in-out;
+  color: #eee;
 }
 
 #target:hover {
-    width: 400px;
+  width: 400px;
 }
 </style>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('target')
-        .addEventListener('transitionend', function (e) {
-            if(this.offsetWidth === 400){
-                this.innerHTML = 'expand';
-            } else {
-                this.innerHTML = 'collapse';
-            }
-    });
+  document.getElementById('target')
+    .addEventListener('transitionend', function (e) {
+      if(this.offsetWidth === 400){
+        this.innerHTML = 'expand';
+      } else {
+        this.innerHTML = 'collapse';
+      }
+  });
 
-    //支持冒泡
-    document.body.addEventListener('transitionend', function () {
-        console.log('bubbled');
-    });
+  //支持冒泡
+  document.body.addEventListener('transitionend', function () {
+    console.log('bubbled');
+  });
 });
 </script>
 </head>

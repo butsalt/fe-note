@@ -6,66 +6,66 @@
 <style type="text/css">
 #before,
 #after {
-    background-color: #999;
-    color: #fff;
+  background-color: #999;
+  color: #fff;
 }
 
 #container {
-    background-color: #eee;
+  background-color: #eee;
 }
 
 
 </style>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded' ,function () {
-    var before = document.getElementById('before');
-    var after = document.getElementById('after');
-    var container = document.getElementById('container');
-    var start = container.childNodes.item(0);
-    var p1 = document.getElementById('p1');
-    var p2 = document.getElementById('p2');
-    var p3  = document.getElementById('p3');
-    var end = container.childNodes.item(container.childNodes.length - 1);
+  var before = document.getElementById('before');
+  var after = document.getElementById('after');
+  var container = document.getElementById('container');
+  var start = container.childNodes.item(0);
+  var p1 = document.getElementById('p1');
+  var p2 = document.getElementById('p2');
+  var p3  = document.getElementById('p3');
+  var end = container.childNodes.item(container.childNodes.length - 1);
 
 
-    document.getElementById('select-btn0')
-        .addEventListener('click', function () {
-            var selection = window.getSelection();
+  document.getElementById('select-btn0')
+    .addEventListener('click', function () {
+      var selection = window.getSelection();
 
-            var range = document.createRange();
-            //如果目标是个dom，第二个参数指定的是子元素的序号
-            range.setStart(container, 0);
-            //如果目标是个text，第二个参数指定的是字符串的序号
-            range.setEnd(end, 2);
+      var range = document.createRange();
+      //如果目标是个dom，第二个参数指定的是子元素的序号
+      range.setStart(container, 0);
+      //如果目标是个text，第二个参数指定的是字符串的序号
+      range.setEnd(end, 2);
 
-            //除火狐外，其他浏览器只支持选中单个range
-            selection.removeAllRanges();
-            selection.addRange(range);
-        });
+      //除火狐外，其他浏览器只支持选中单个range
+      selection.removeAllRanges();
+      selection.addRange(range);
+    });
 
-    document.getElementById('select-btn1')
-        .addEventListener('click', function () {
-            var selection = window.getSelection();
+  document.getElementById('select-btn1')
+    .addEventListener('click', function () {
+      var selection = window.getSelection();
 
-            var range = document.createRange();
-            //选区开始在目标元素之后
-            range.setStartBefore(start);
-            //选区结束于目标元素之前
-            range.setEndAfter(end);
+      var range = document.createRange();
+      //选区开始在目标元素之后
+      range.setStartBefore(start);
+      //选区结束于目标元素之前
+      range.setEndAfter(end);
 
-            //除火狐外，其他浏览器只支持选中单个range
-            selection.removeAllRanges();
-            selection.addRange(range);
-        });
+      //除火狐外，其他浏览器只支持选中单个range
+      selection.removeAllRanges();
+      selection.addRange(range);
+    });
 });
 </script>
 </head>
 <body>
 <div id="before">之前</div>
 <div id="container">容器开始
-    <p id="p1">段落1</p>
-    <p id="p2">段落2</p>
-    <p id="p3">段落3</p>容器结尾
+  <p id="p1">段落1</p>
+  <p id="p2">段落2</p>
+  <p id="p3">段落3</p>容器结尾
 </div>
 <div id="after">之后</div>
 <button id="select-btn0" type="button">选中0</button>

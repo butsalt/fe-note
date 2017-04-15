@@ -5,55 +5,55 @@
 <title>learn</title>
 <style type="text/css">
 .container {
-    background-color: orange;
+  background-color: orange;
 }
 
 p {
-    margin-bottom: 300px;
+  margin-bottom: 300px;
 }
 
 .float-item {
-    float: left;
+  float: left;
 }
 
 .clearfix::before,
 .clearfix::after {
-    content: "";
-    /** table内部必须至少有一个table-row **/
-    /** table-row内部必须至少有一个table-cell **/
-    /** 也就是说这里会生成一个不可见的table-cell，table-cell本身是bfc的，会避免和其他在table-cell外元素的margin重叠 **/
-    /** 这可以使得.clearfix的容器内元素的margin不会和容器的margin合并 **/
+  content: "";
+  /** table内部必须至少有一个table-row **/
+  /** table-row内部必须至少有一个table-cell **/
+  /** 也就是说这里会生成一个不可见的table-cell，table-cell本身是bfc的，会避免和其他在table-cell外元素的margin重叠 **/
+  /** 这可以使得.clearfix的容器内元素的margin不会和容器的margin合并 **/
 
-    /**  margin   **/
-    /** --------- **/
-    /**    dom    **/
-    /** --------- **/
-    /**  margin   **/
+  /**  margin   **/
+  /** --------- **/
+  /**  dom  **/
+  /** --------- **/
+  /**  margin   **/
 
-    /** --------- **/
-    /**    td     **/
-    /**  margin   **/
-    /**    dom    **/
-    /**  margin   **/
-    /**    td     **/
-    /** --------- **/
-    display: table;
+  /** --------- **/
+  /**  td   **/
+  /**  margin   **/
+  /**  dom  **/
+  /**  margin   **/
+  /**  td   **/
+  /** --------- **/
+  display: table;
 }
 
 .clearfix::after {
-    clear: both;
+  clear: both;
 }
 </style>
 </head>
 <body>
 <div class="container clearfix">
-    <img class="float-item" src="/assets/img/maple-small.jpg"/>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <img class="float-item" src="/assets/img/maple-small.jpg"/>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
 </body>
 </html>

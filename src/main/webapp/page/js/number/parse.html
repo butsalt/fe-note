@@ -5,33 +5,33 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    //对字符串的处理基本遵循数字常量的相关规则
-    //但以0开头的八进制数不按八进制处理
-    var num = Number('011');
-    console.log(num === 11);
+  //对字符串的处理基本遵循数字常量的相关规则
+  //但以0开头的八进制数不按八进制处理
+  var num = Number('011');
+  console.log(num === 11);
 })();
 (function () {
-    var str = '1px';
-    //如果字符串中出现非数字字符，则返回NaN
-    var num1 = Number(str);
-    //如果字符串前半部分可以解析成数值，后半部分无法解析，则停止解析并返回这个数值
-    var num2 = parseInt(str);
-    console.log(isNaN(num1) === true);
-    console.log(num2 === 1);
+  var str = '1px';
+  //如果字符串中出现非数字字符，则返回NaN
+  var num1 = Number(str);
+  //如果字符串前半部分可以解析成数值，后半部分无法解析，则停止解析并返回这个数值
+  var num2 = parseInt(str);
+  console.log(isNaN(num1) === true);
+  console.log(num2 === 1);
 })();
 (function () {
-    var str = '010';
-    //在es5前，parseInt根据第一个字符来决定基数
-    //自es5起，parseInt默认用十进制解析字符串
-    console.log(parseInt(str) === 10);
+  var str = '010';
+  //在es5前，parseInt根据第一个字符来决定基数
+  //自es5起，parseInt默认用十进制解析字符串
+  console.log(parseInt(str) === 10);
 })();
 (function () {
-    var str = '10';
-    //根据第二个参数来决定基数，默认是10
-    console.log(
-        parseInt(str, 2)
-        === 2
-    );
+  var str = '10';
+  //根据第二个参数来决定基数，默认是10
+  console.log(
+    parseInt(str, 2)
+    === 2
+  );
 })();
 </script>
 </head>

@@ -7,14 +7,14 @@
 // 由于name，domain，path中的一项不同则被认为是不同的cookie
 // 所以只有name，domain，path都一致才能删除对应的cookie
 function delCookie ({name, domain, path}) {
-    var date = new Date();
-    date.setTime(date.getTime() - 1);
-    document.cookie = [
-        encodeURIComponent(name) , '=',
-        domain && '; domain=' + domain,
-        path && '; path=' + path,
-        '; expires=', date.toUTCString()
-    ].join('');
+  var date = new Date();
+  date.setTime(date.getTime() - 1);
+  document.cookie = [
+    encodeURIComponent(name) , '=',
+    domain && '; domain=' + domain,
+    path && '; path=' + path,
+    '; expires=', date.toUTCString()
+  ].join('');
 }
 </script>
 </head>

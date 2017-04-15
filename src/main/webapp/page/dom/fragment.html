@@ -11,12 +11,12 @@
 var target = document.getElementById('target');
 
 function append (container) {
-    var i, li;
-    for (i = 0; i < 1000; i++) {
-        li = document.createElement('li');
-        li.textContent = i;
-        container.appendChild(li);
-    }
+  var i, li;
+  for (i = 0; i < 1000; i++) {
+    li = document.createElement('li');
+    li.textContent = i;
+    container.appendChild(li);
+  }
 }
 
 //创建一个文档片段，可以向这个片段内插入dom，再将片段一次性插入到文档流中

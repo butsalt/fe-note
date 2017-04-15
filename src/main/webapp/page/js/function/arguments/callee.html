@@ -5,17 +5,17 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    // 被调函数
-    function callee () {
-        console.log(arguments.callee === callee);
-    }
+  // 被调函数
+  function callee () {
+    console.log(arguments.callee === callee);
+  }
 
-    // 主调函数
-    function caller () {
-        callee();
-    }
+  // 主调函数
+  function caller () {
+    callee();
+  }
 
-    caller();
+  caller();
 })();
 </script>
 </head>

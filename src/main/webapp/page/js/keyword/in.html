@@ -5,46 +5,46 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    var idSymbol = Symbol('id');
-    function Person ({id, name}) {
-        var me = this;
-        me[idSymbol] = id;
-        me.name = name;
+  var idSymbol = Symbol('id');
+  function Person ({id, name}) {
+    var me = this;
+    me[idSymbol] = id;
+    me.name = name;
+  }
+
+  Object.defineProperties(
+    Person.prototype,
+    {
+      sayId: {
+        value: function () {
+          console.log(this[idSymbol]);
+        },
+        writable: true,
+        enumerable: false,
+        configurable: true
+      },
+      sayName: {
+        value: function () {
+          console.log(this.name);
+        },
+        writable: true,
+        enumerable: true,
+        configurable: true
+      }
     }
+  );
 
-    Object.defineProperties(
-        Person.prototype,
-        {
-            sayId: {
-                value: function () {
-                    console.log(this[idSymbol]);
-                },
-                writable: true,
-                enumerable: false,
-                configurable: true
-            },
-            sayName: {
-                value: function () {
-                    console.log(this.name);
-                },
-                writable: true,
-                enumerable: true,
-                configurable: true
-            }
-        }
-    );
+  
+  var person = new Person({
+    id: '10908070216',
+    name: 'butSalt'
+  });
 
-    
-    var person = new Person({
-        id: '10908070216',
-        name: 'butSalt'
-    });
-
-    //只有可枚举的字符串类型的属性键才会被循环
-    var key;
-    for (key in person) {
-        console.log(key);
-    }
+  //只有可枚举的字符串类型的属性键才会被循环
+  var key;
+  for (key in person) {
+    console.log(key);
+  }
 })();
 </script>
 </head>

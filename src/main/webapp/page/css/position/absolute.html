@@ -5,120 +5,120 @@
 <title>learn</title>
 <style type="text/css">
 .container {
-    background-color: #eee;
-    width: 500px;
-    height: 500px;
-    padding: 15px;
-    border: 10px black solid;
-    position: relative;
-    overflow: auto;
+  background-color: #eee;
+  width: 500px;
+  height: 500px;
+  padding: 15px;
+  border: 10px black solid;
+  position: relative;
+  overflow: auto;
 }
 
 .container > div {
-    display: inline-block;
-    box-sizing: border-box;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 .sibling {
-    width: 200px;
-    height: 200px;
-    background-color: steelblue;
+  width: 200px;
+  height: 200px;
+  background-color: steelblue;
 }
 
 .absolute {
-    /** 脱离文档流 **/
-    /** 定位相对于最近的position不为static的祖先元素，百分比的取值相对于最近的position不为static的祖先元素的可视范围(不含滚动条) **/
-    /** 否则定位相对于整个页面(注意不是html元素)，百分比的取值相对于窗口的可视范围(不含滚动条) **/
-    /** display被重写为block **/
-    position: absolute;
-    /** y轴方向相对位置不变，x轴方向改为元素border-top上边缘紧贴该行的顶部 **/
-    border: 10px pink solid;
-    /** 宽相对于相对元素的clientWdith **/
-    width: 10%;
-    /** 高相对于相对元素的clientHeight **/
-    height: 10%;
-    background-color: darkred;
+  /** 脱离文档流 **/
+  /** 定位相对于最近的position不为static的祖先元素，百分比的取值相对于最近的position不为static的祖先元素的可视范围(不含滚动条) **/
+  /** 否则定位相对于整个页面(注意不是html元素)，百分比的取值相对于窗口的可视范围(不含滚动条) **/
+  /** display被重写为block **/
+  position: absolute;
+  /** y轴方向相对位置不变，x轴方向改为元素border-top上边缘紧贴该行的顶部 **/
+  border: 10px pink solid;
+  /** 宽相对于相对元素的clientWdith **/
+  width: 10%;
+  /** 高相对于相对元素的clientHeight **/
+  height: 10%;
+  background-color: darkred;
 }
 
 .dropdown {
-    /** 元素border-top的上边缘紧贴相对元素border-top的下边缘 **/
-    top: 0;
-    /** 元素border-right的右边缘紧贴相对元素border-right的左边缘 **/
-    right: 0;
-    height: 100%;
-    background-color: green;
+  /** 元素border-top的上边缘紧贴相对元素border-top的下边缘 **/
+  top: 0;
+  /** 元素border-right的右边缘紧贴相对元素border-right的左边缘 **/
+  right: 0;
+  height: 100%;
+  background-color: green;
 }
 
 .inline-container {
-    border: 10px rgba(0, 180, 0, .6) solid;
-    padding: 10px;
-    position: relative;
-    background-color: rgba(0, 0, 180, .1);
+  border: 10px rgba(0, 180, 0, .6) solid;
+  padding: 10px;
+  position: relative;
+  background-color: rgba(0, 0, 180, .1);
 }
 
 .inline-container div {
-    position: absolute;
-    /** 第一行padding-top上边缘 **/
-    top:0;
-    /** 第一行padding-left左边缘 **/
-    left:0;
-    /** 最后一行padding-right右边缘 **/
-    right:0;
-    /** 最后一行padding-bottom下边缘 **/
-    bottom:0;
-    background-color:rgba(255, 0, 0, .6);
+  position: absolute;
+  /** 第一行padding-top上边缘 **/
+  top:0;
+  /** 第一行padding-left左边缘 **/
+  left:0;
+  /** 最后一行padding-right右边缘 **/
+  right:0;
+  /** 最后一行padding-bottom下边缘 **/
+  bottom:0;
+  background-color:rgba(255, 0, 0, .6);
 }
 </style>
 </head>
 <body>
 <div class="container">
-    <div class="sibling"></div><!--
+  <div class="sibling"></div><!--
   --><div class="absolute"></div><!--
   --><div class="sibling"></div><!--
   --><div class="absolute dropdown"></div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
 <hr/>
 <div>
-    ddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd
-    <span class="inline-container">
-        <strong>Span Start</strong>
-        ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation
-            <strong>Start</strong>
-            <div></div>
-            <strong>End</strong>
-        ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <strong>Span End</strong>
-    </span>
-    ddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd
+  ddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd
+  <span class="inline-container">
+    <strong>Span Start</strong>
+    ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation
+      <strong>Start</strong>
+      <div></div>
+      <strong>End</strong>
+    ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <strong>Span End</strong>
+  </span>
+  ddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd asdddddd
 </div>
 </body>
 </html>

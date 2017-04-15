@@ -5,95 +5,95 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    var krista = {
-        name: 'krista'
-    };
-    var butSalt = {
-        name: 'butSalt',
-        execArrowFunc: function () {
-            (
-                age => {
-                    //arrow function 优先级高于 apply
-                    //arrow function会找声明这个函数的作用域中this指代的对象
-                    console.log(this.name === 'butSalt');
-                    console.log(age === 26);
-                }
-            ).apply(krista, [26]);
-        },
-        execNormalFunc: function (age) {
-            (
-                function (age) {
-                    console.log(this.name === 'krista');
-                    console.log(age === 26);
-                }
-            ).apply(krista, [26]);
+  var krista = {
+    name: 'krista'
+  };
+  var butSalt = {
+    name: 'butSalt',
+    execArrowFunc: function () {
+      (
+        age => {
+          //arrow function 优先级高于 apply
+          //arrow function会找声明这个函数的作用域中this指代的对象
+          console.log(this.name === 'butSalt');
+          console.log(age === 26);
         }
-    };
-    butSalt.execArrowFunc();
-    butSalt.execNormalFunc();
-})();
-(function () {
-    var butSalt = {
-        name: 'butSalt'
-    };
-    var func = (function () {
-        return this.name;
-    }).bind(butSalt);
-    var name = func.apply({
-        name: 'krista'
-    });
-    //bind 优先级高于 apply
-    console.log(name === 'butSalt');
-})();
-(function () {
-    function print (a, b) {
-        console.log(a === 'a');
-        console.log(b === 'b');
+      ).apply(krista, [26]);
+    },
+    execNormalFunc: function (age) {
+      (
+        function (age) {
+          console.log(this.name === 'krista');
+          console.log(age === 26);
+        }
+      ).apply(krista, [26]);
     }
-
-    //Array Like的对象同样可以
-    print.apply(
-        null,
-        {
-            0: 'a',
-            1: 'b',
-            length: 2
-        }
-    );
+  };
+  butSalt.execArrowFunc();
+  butSalt.execNormalFunc();
 })();
 (function () {
-    //如果context为null，this则指向window
-    (function () {
-        console.log(this === window)
-    }).apply(null);
-
-    //如果context为undefined，this则指向window
-    (function () {
-        console.log(this === window)
-    }).apply(undefined);
-
-    //基本类型会被封装成对象
-    (function () {
-        console.log(this instanceof Number)
-    }).apply(0);
+  var butSalt = {
+    name: 'butSalt'
+  };
+  var func = (function () {
+    return this.name;
+  }).bind(butSalt);
+  var name = func.apply({
+    name: 'krista'
+  });
+  //bind 优先级高于 apply
+  console.log(name === 'butSalt');
 })();
 (function () {
-    //在严格模式context是什么，this就指向什么
-    (function () {
-        'use strict';
-        console.log(this === null)
-    }).apply(null);
+  function print (a, b) {
+    console.log(a === 'a');
+    console.log(b === 'b');
+  }
 
-    (function () {
-        'use strict';
-        console.log(this === undefined)
-    }).apply(undefined);
+  //Array Like的对象同样可以
+  print.apply(
+    null,
+    {
+      0: 'a',
+      1: 'b',
+      length: 2
+    }
+  );
+})();
+(function () {
+  //如果context为null，this则指向window
+  (function () {
+    console.log(this === window)
+  }).apply(null);
 
-    //基本类型会被封装成对象
-    (function () {
-        'use strict';
-        console.log(this === 0)
-    }).apply(0);
+  //如果context为undefined，this则指向window
+  (function () {
+    console.log(this === window)
+  }).apply(undefined);
+
+  //基本类型会被封装成对象
+  (function () {
+    console.log(this instanceof Number)
+  }).apply(0);
+})();
+(function () {
+  //在严格模式context是什么，this就指向什么
+  (function () {
+    'use strict';
+    console.log(this === null)
+  }).apply(null);
+
+  (function () {
+    'use strict';
+    console.log(this === undefined)
+  }).apply(undefined);
+
+  //基本类型会被封装成对象
+  (function () {
+    'use strict';
+    console.log(this === 0)
+  }).apply(0);
 })();
 </script>
 </head>

@@ -6,39 +6,39 @@
 <style type="text/css">
 /** \是特殊字符，需要转义 **/
 .back\\slash {
-    color: red;
+  color: red;
 }
 
 /** &是特殊字符，需要转义 **/
 .b\&w {
-    color: red;
+  color: red;
 }
 
 /** 空格是特殊字符，需要转义 **/
 #\  {
-    color: red;
+  color: red;
 }
 
 /** 根据通用字符集[ISO10646]，'\x26' === '&' **/
 /** \26后紧跟一个空格用来声明转义范围的终结 **/
 /** \26在进行查找时才被转化为& **/
 .b\26 w {
-    background-color: gray;
+  background-color: gray;
 }
 
 /** \xxxxxx完整6位编码不用空格来声明转义范围的终结 **/
 .b\000026w {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .\004e2d {
-    color: red;
+  color: red;
 }
 
 /** 字符串内\后紧跟newline，\newline会被忽略 **/
 [class="very-\
 long"] {
-    color: red;
+  color: red;
 }
 </style>
 </head>
@@ -76,34 +76,34 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 <script type="text/javascript">
 (function () {
-    console.log(
-        // '.back\\\\slash' 
-        // .back\\slash
-        // 查找规则同样式表中的选择器
-        document.querySelector('.back\\\\slash')
-    );
+  console.log(
+    // '.back\\\\slash' 
+    // .back\\slash
+    // 查找规则同样式表中的选择器
+    document.querySelector('.back\\\\slash')
+  );
 
-    console.log(
-        // '.b\\&w' 
-        // .b\&w
-        document.querySelector('.b\\&w')
-    );
+  console.log(
+    // '.b\\&w' 
+    // .b\&w
+    document.querySelector('.b\\&w')
+  );
 
-    console.log(
-        // '.b\\26 w' 
-        // .b\26 w
-        document.querySelector('.b\\26 w')
-    );
+  console.log(
+    // '.b\\26 w' 
+    // .b\26 w
+    document.querySelector('.b\\26 w')
+  );
 
-    console.log(
-        // '.\\004e2d' 
-        // .\004e2d
-        document.querySelector('.\\004e2d')
-    );
+  console.log(
+    // '.\\004e2d' 
+    // .\004e2d
+    document.querySelector('.\\004e2d')
+  );
 
-    console.log(
-        document.querySelector('[class="very-long"]')
-    );
+  console.log(
+    document.querySelector('[class="very-long"]')
+  );
 })();
 </script>
 </body>

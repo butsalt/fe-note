@@ -6,11 +6,11 @@
 <script type="text/javascript">
 var a = 1;
 (function () {
-    var c = 3;
-    //全局变量可以使用，但作用域内的变量无法使用
-    //使用变量c时会有异常发生
-    var callback = new Function('b','console.log(a === 1);console.log(b === 2);console.log(c);');
-    callback(2);
+  var c = 3;
+  //全局变量可以使用，但作用域内的变量无法使用
+  //使用变量c时会有异常发生
+  var callback = new Function('b','console.log(a === 1);console.log(b === 2);console.log(c);');
+  callback(2);
 })();
 </script>
 </head>

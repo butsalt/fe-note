@@ -5,27 +5,27 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    function Person () {}
+  function Person () {}
 
-    // 不包含继承来的属性
-    Person.prototype.p1 = false;
+  // 不包含继承来的属性
+  Person.prototype.p1 = false;
 
-    var p = new Person();
-    // 只包含自有可枚举的字符串属性
-    p.p2 = true;
-    // 不包含Symbol
-    p[Symbol('p3')] = false;
-    // 不包含不可枚举的属性
-    Object.defineProperty(
-        p,
-        'p4',
-        {
-            enumerable: false,
-            value: false
-        }
-    );
+  var p = new Person();
+  // 只包含自有可枚举的字符串属性
+  p.p2 = true;
+  // 不包含Symbol
+  p[Symbol('p3')] = false;
+  // 不包含不可枚举的属性
+  Object.defineProperty(
+    p,
+    'p4',
+    {
+      enumerable: false,
+      value: false
+    }
+  );
 
-    console.log(Object.keys(p));
+  console.log(Object.keys(p));
 })();
 </script>
 </head>

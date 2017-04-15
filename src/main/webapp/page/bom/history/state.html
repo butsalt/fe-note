@@ -9,51 +9,51 @@
 //  String 标题
 //  String 新的url地址
 document.addEventListener('DOMContentLoaded', function () {
-    var position = document.getElementById('position');
-    var button = document.getElementById('button');
+  var position = document.getElementById('position');
+  var button = document.getElementById('button');
 
-    function restore () {
-        var state = history.state;
-        position.textContent = state.position;
-        button.textContent = state.btnText;
-    }
-
-    // 在history.back时，
-    //     后退前的路径是用pushState生成，那么页面不会刷新，并会触发该事件
-    //     后退前的路径是通过改变history.hash生成，那么页面不会刷新，并会触发该事件
-
-    // 在history.go时，
-    //     前进后的路径是用pushState生成，那么页面不会刷新，并会触发该事件
-    //     前进后的路径是通过改变history.hash生成，那么页面不会刷新，并会触发该事件
-
-    // 进行刷新(F5)操作时，虽然页面会重新初始化，但history不会新增一条记录，state信息不会丢失
-    window.addEventListener('popstate', restore);
-
+  function restore () {
     var state = history.state;
-    if(!state){
-        state = {
-            position: 'at home',
-            btnText: 'go school'
-        };
-        // 替换当前的state
-        history.replaceState(state, 'At Home', './history.html?place=home');
-    }
-    restore();
+    position.textContent = state.position;
+    button.textContent = state.btnText;
+  }
 
-    button.addEventListener('click', function () {
-        var state = history.state;
-        if (state.position === 'at home') {
-            // 推入一个新的state
-            history.pushState({
-                position: 'at school',
-                btnText: 'back home'
-            }, 'At School', './history.html?place=school');
-            restore();
-        } else {
-            // 后退到上一页
-            window.history.back();
-        }
-    });
+  // 在history.back时，
+  //   后退前的路径是用pushState生成，那么页面不会刷新，并会触发该事件
+  //   后退前的路径是通过改变history.hash生成，那么页面不会刷新，并会触发该事件
+
+  // 在history.go时，
+  //   前进后的路径是用pushState生成，那么页面不会刷新，并会触发该事件
+  //   前进后的路径是通过改变history.hash生成，那么页面不会刷新，并会触发该事件
+
+  // 进行刷新(F5)操作时，虽然页面会重新初始化，但history不会新增一条记录，state信息不会丢失
+  window.addEventListener('popstate', restore);
+
+  var state = history.state;
+  if(!state){
+    state = {
+      position: 'at home',
+      btnText: 'go school'
+    };
+    // 替换当前的state
+    history.replaceState(state, 'At Home', './history.html?place=home');
+  }
+  restore();
+
+  button.addEventListener('click', function () {
+    var state = history.state;
+    if (state.position === 'at home') {
+      // 推入一个新的state
+      history.pushState({
+        position: 'at school',
+        btnText: 'back home'
+      }, 'At School', './history.html?place=school');
+      restore();
+    } else {
+      // 后退到上一页
+      window.history.back();
+    }
+  });
 });
 </script>
 </head>

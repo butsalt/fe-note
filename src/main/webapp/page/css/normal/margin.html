@@ -4,74 +4,74 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-    *{
-        margin:0;
-        padding:0;
-    }
-    .background{
-        background-color: #eee;
-    }
-    .inner-border div{
-        border: 1px black solid;
-    }
-    .first{
-        margin-top: 10px;
-        margin-left: 10px;
-        width: 500px;
-        height: 500px;
-        background-color: steelblue;
-    }
-    .second{
-        margin-top: 10px;
-        margin-left: 10px;
-        width: 250px;
-        height: 250px;
-        background-color: #f80;
-    }
-    .third{
-        margin-top: 10px;
-        margin-left: 10px;
-        width: 125px;
-        height: 125px;
-        background-color: #0f0;
-    }
-    .flex-center{
-        height: 350px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .outer{
-        width: 300px;
-        height: 300px;
-        margin: 10px;
-    }
-    .inner{
-        height: 100%;
-        margin: -10px;
-    }
-    .clear-fix::after{
-        display: table;
-        clear: both;
-        content: "";
-    }
-    .float{
-        float: left;
-    }
-    .greater-height{
-        height: 550px;
-    }
-    .inline-block{
-        display: inline-block;
-    }
-    .useless-first{
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-    .useless-second{
-        margin-top: -50px;
-        margin-bottom: 30px;
-    }
+  *{
+    margin:0;
+    padding:0;
+  }
+  .background{
+    background-color: #eee;
+  }
+  .inner-border div{
+    border: 1px black solid;
+  }
+  .first{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 500px;
+    height: 500px;
+    background-color: steelblue;
+  }
+  .second{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 250px;
+    height: 250px;
+    background-color: #f80;
+  }
+  .third{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 125px;
+    height: 125px;
+    background-color: #0f0;
+  }
+  .flex-center{
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .outer{
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+  }
+  .inner{
+    height: 100%;
+    margin: -10px;
+  }
+  .clear-fix::after{
+    display: table;
+    clear: both;
+    content: "";
+  }
+  .float{
+    float: left;
+  }
+  .greater-height{
+    height: 550px;
+  }
+  .inline-block{
+    display: inline-block;
+  }
+  .useless-first{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .useless-second{
+    margin-top: -50px;
+    margin-bottom: 30px;
+  }
 </style>
 </head>
 <body>
@@ -81,9 +81,9 @@
 <h2>有border时垂直方向上的margin不会重叠</h2>
 <div class="background inner-border">
 <div class="first">
-    <div class="second">
-        <div class="third"></div>
-    </div>
+  <div class="second">
+    <div class="third"></div>
+  </div>
 </div>
 </div>
 <!-- 最终的margin-top取最大的正数，和最小的负数进行加法计算，margin-bottom同理  -->
@@ -91,45 +91,45 @@
 <h2>没有border时垂直方向上的margin会重叠</h2>
 <div class="background">
 <div class="first">
-    <div class="second">
-        <div class="third"></div>
-    </div>
+  <div class="second">
+    <div class="third"></div>
+  </div>
 </div>
 </div>
 <!-- 左侧的超出不会引起滚动条的出现，而右侧的超出会引起滚动条的出现 -->
 <h2>inner的margin如果为负，但没指定width，左右两边会超出outer</h2>
 <div class="flex-center inner-border background">
 <div class="outer">
-    <div class="inner"></div>
+  <div class="inner"></div>
 </div>
 </div>
 <h2>inner的margin如果为负，但指定了width，只有margin的left和top发生作用</h2>
 <div class="flex-center inner-border background">
 <div class="outer">
-    <div class="inner"></div>
+  <div class="inner"></div>
 </div>
 </div>
 <h2>float可以避免目标元素与相邻元素margin重叠，避免目标元素与嵌套元素margin重叠</h2>
 <div class="clear-fix background">
-    <div class="float second">
-        <div class="third"></div>
-    </div>
-    <div class="float second">
-        <div class="third"></div>
-    </div>
+  <div class="float second">
+    <div class="third"></div>
+  </div>
+  <div class="float second">
+    <div class="third"></div>
+  </div>
 </div>
 <h2 style="clear:both">flex容器的margin不与flex元素的margin重叠，flex元素的margin不与其内部元素的margin重叠</h2>
 <div class="flex-center greater-height background">
 <div class="first">
-    <div class="second">
-        <div class="third"></div>
-    </div>
+  <div class="second">
+    <div class="third"></div>
+  </div>
 </div>
 </div>
 <h1>Inline</h1>
 <h2>inline元素的margin-top/margin-bottom无效。inline-block元素margin均有效且不与父元素的margin重叠。</h2>
 <div class="background">
-    <div class="first inline-block">Text here!</div><div class="second inline-block">More text!</div><span class="third">Text here..</span>
+  <div class="first inline-block">Text here!</div><div class="second inline-block">More text!</div><span class="third">Text here..</span>
 </div>
 <h1>其他</h1>
 <h2>空元素的margin-top等价于margin-bottom</h2>

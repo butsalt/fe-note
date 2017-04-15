@@ -5,52 +5,52 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    class Cls {
-        // 默认构造函数
-        // constructor () {
+  class Cls {
+    // 默认构造函数
+    // constructor () {
 
-        // }
-    }
+    // }
+  }
 })();
 (function () {
-    class Parent {
-        constructor (name, age) {
-            this.name = name;
-            this.age = age;
-        }
+  class Parent {
+    constructor (name, age) {
+      this.name = name;
+      this.age = age;
     }
+  }
 
-    class Child extends Parent {
-        // 默认构造函数
-        // constructor () {
-        //     super(...arguments);
-        // }
-    }
+  class Child extends Parent {
+    // 默认构造函数
+    // constructor () {
+    //   super(...arguments);
+    // }
+  }
 
-    var instance = new Child('butSalt', 26);
-    console.log(instance.name === 'butSalt');
-    console.log(instance.age === 26);
+  var instance = new Child('butSalt', 26);
+  console.log(instance.name === 'butSalt');
+  console.log(instance.age === 26);
 })();
 (function () {
-    class Parent {
-        constructor (count) {
-            // instance在这里被生成
-            // base class，不用调用super
-            this.count = count;
-        }
+  class Parent {
+    constructor (count) {
+      // instance在这里被生成
+      // base class，不用调用super
+      this.count = count;
     }
+  }
 
-    class Child extends Parent {
-        constructor (count) {
-            count++;
-            // derived class，super必须调用
-            // 在调用super前，this所指向的instance还未生成
-            // 在调用this前必须先调用super
-            super(count);
-        }
+  class Child extends Parent {
+    constructor (count) {
+      count++;
+      // derived class，super必须调用
+      // 在调用super前，this所指向的instance还未生成
+      // 在调用this前必须先调用super
+      super(count);
     }
+  }
 
-    new Child(0);
+  new Child(0);
 })();
 </script>
 </head>

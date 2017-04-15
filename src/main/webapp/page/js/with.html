@@ -5,53 +5,53 @@
 <title>learn</title>
 <script type="text/javascript">
 function Person (name) {
-    this.name = name;
+  this.name = name;
 }
 Person.prototype.talk = function () {
-    console.log(this.name);
+  console.log(this.name);
 };
 Person.prototype.type = 'animal';
 Object.defineProperty(
-    Person.prototype,
-    'immutable',
-    {
-        get: function () {
-            return 'immutable';
-        }
+  Person.prototype,
+  'immutable',
+  {
+    get: function () {
+      return 'immutable';
     }
+  }
 );
 var person = new Person('butSalt');
 var extraInfo = {
-    age: undefined,
-    hobby: 'coding'
+  age: undefined,
+  hobby: 'coding'
 };
 (function () {
-    // 目标对象上定义的属性可以被直接使用
-    with(person) {
-        with(extraInfo) {
-            // 目标对象的原型链上的方法也可以直接调用
-            talk();
-            console.log(name === 'butSalt');
-            console.log(age === undefined);
-            console.log(type === 'animal');
-            console.log(immutable === 'immutable');
-            // 声明目标对象上已定义的属性会被赋予到目标对象上
-            name = 'krista';
-            age = 26;
-            // 声明目标对象继承来的属性也会被赋予到目标对象上，但不会修改目标对象的原型上的属性
-            type = 'human';
-            // 继承来的immutable没有setter
-            immutable = 'mutable';
-            console.log(immutable === 'immutable');
-            // 声明与目标对象上的属性名同名的变量，赋值行为仍会导致目标对象上对应属性的值被修改
-            var hobby = 'basketball';
-            // 未声明就直接使用未定义在目标对象上的属性名作为变量名会暴露到全局
-            cls = '0987-2';
-            // with不会创建新的作用域
-            var gender = 'female';
-        }
+  // 目标对象上定义的属性可以被直接使用
+  with(person) {
+    with(extraInfo) {
+      // 目标对象的原型链上的方法也可以直接调用
+      talk();
+      console.log(name === 'butSalt');
+      console.log(age === undefined);
+      console.log(type === 'animal');
+      console.log(immutable === 'immutable');
+      // 声明目标对象上已定义的属性会被赋予到目标对象上
+      name = 'krista';
+      age = 26;
+      // 声明目标对象继承来的属性也会被赋予到目标对象上，但不会修改目标对象的原型上的属性
+      type = 'human';
+      // 继承来的immutable没有setter
+      immutable = 'mutable';
+      console.log(immutable === 'immutable');
+      // 声明与目标对象上的属性名同名的变量，赋值行为仍会导致目标对象上对应属性的值被修改
+      var hobby = 'basketball';
+      // 未声明就直接使用未定义在目标对象上的属性名作为变量名会暴露到全局
+      cls = '0987-2';
+      // with不会创建新的作用域
+      var gender = 'female';
     }
-    console.log(gender === 'female');
+  }
+  console.log(gender === 'female');
 })();
 console.log(person.name === 'krista');
 console.log(person.type === 'human');

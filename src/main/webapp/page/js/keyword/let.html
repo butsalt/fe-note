@@ -5,24 +5,24 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    try {
-        let total = num + 1;
-        console.log(false);
-        //let的变量声明不会提升
-        let num = 1;
-    } catch (e) {
-        console.log(true);
-    }
+  try {
+    let total = num + 1;
+    console.log(false);
+    //let的变量声明不会提升
+    let num = 1;
+  } catch (e) {
+    console.log(true);
+  }
 })();
 (function () {
-    for (let i = 0; i < 3; i++) {
-        //let声明的是块级变量
-        //每一个循环都拥有一个独立的i变量
-        setTimeout(function () {
-            console.log(i);
-        }, i * 1000 + 1000);
-    }
-    console.log(typeof i === 'undefined');
+  for (let i = 0; i < 3; i++) {
+    //let声明的是块级变量
+    //每一个循环都拥有一个独立的i变量
+    setTimeout(function () {
+      console.log(i);
+    }, i * 1000 + 1000);
+  }
+  console.log(typeof i === 'undefined');
 })();
 </script>
 </head>

@@ -5,27 +5,27 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    console.log(a() === true);
-    a = true;
-    console.log(a === true);
-    //普通声明会被提升，但晚于函数声明
-    //此处相当于是重复声明，会被忽略
-    var a;
-    //函数会优先被提升
-    function a () {
-        return true;
-    }
+  console.log(a() === true);
+  a = true;
+  console.log(a === true);
+  //普通声明会被提升，但晚于函数声明
+  //此处相当于是重复声明，会被忽略
+  var a;
+  //函数会优先被提升
+  function a () {
+    return true;
+  }
 })();
 //经过编译器处理后执行顺序将调整为：
 (function () {
-    function a () {
-        return true;
-    }
-    //重复声明，忽略
-    //var a;
-    console.log(a() === true);
-    a = true;
-    console.log(a === true);
+  function a () {
+    return true;
+  }
+  //重复声明，忽略
+  //var a;
+  console.log(a() === true);
+  a = true;
+  console.log(a === true);
 })();
 </script>
 </head>

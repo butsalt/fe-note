@@ -6,13 +6,13 @@
 <script type="text/javascript">
 var a = 1;
 (function () {
-    var b = 2;
-    //相当于是在当前闭包下执行语句
-    var c = eval('var d = 4;a++ + b;');
-    console.log(a === 2);
-    console.log(b === 2);
-    console.log(c === 3);
-    console.log(d === 4);
+  var b = 2;
+  //相当于是在当前闭包下执行语句
+  var c = eval('var d = 4;a++ + b;');
+  console.log(a === 2);
+  console.log(b === 2);
+  console.log(c === 3);
+  console.log(d === 4);
 })();
 </script>
 </head>

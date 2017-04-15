@@ -10,77 +10,77 @@
 /** 3.父节点 **/
 /** 4.从父节点逐层向外 **/
 .reset {
-    /** 将chapter的值重置为0 **/
-    counter-reset: chapter;
-    margin-left: 25px;
+  /** 将chapter的值重置为0 **/
+  counter-reset: chapter;
+  margin-left: 25px;
 }
 
 .counter:before {
-    /** chapter的值自增1 **/
-    counter-increment: chapter;
-    /** 引用chapter的值 **/
-    content: counter(chapter) ".";
+  /** chapter的值自增1 **/
+  counter-increment: chapter;
+  /** 引用chapter的值 **/
+  content: counter(chapter) ".";
 }
 
 .counters:before {
-    counter-increment: chapter;
-    /** 所有chapter的值用'-'连接起来 **/
-    content: counters(chapter, "-") ".";
+  counter-increment: chapter;
+  /** 所有chapter的值用'-'连接起来 **/
+  content: counters(chapter, "-") ".";
 }
 </style>
 </head>
 <body>
 <div class="reset">
-    <div class="counter">
-        第一章
-    </div>
-    <div class="counter">
-        第二章
-    </div>
-    <div class="counter">
-        第三章
-    </div>
+  <div class="counter">
+    第一章
+  </div>
+  <div class="counter">
+    第二章
+  </div>
+  <div class="counter">
+    第三章
+  </div>
 </div>
 <hr/>
 <div class="reset">
-    <div class="counters">
-        第一章
+  <div class="counters">
+    第一章
+    <div class="reset">
+      <div class="counters">
+        第一话
         <div class="reset">
-            <div class="counters">
-                第一话
-                <div class="reset">
-                    <div class="counters">
-                        第一节
-                    </div>
-                    <div class="counters">
-                        第二节
-                    </div>
-                </div>
-            </div>
-            <div class="counters">
-                第二话
-            </div>
+          <div class="counters">
+            第一节
+          </div>
+          <div class="counters">
+            第二节
+          </div>
         </div>
+      </div>
+      <div class="counters">
+        第二话
+      </div>
     </div>
-    <div class="counters">
-        第二章
+  </div>
+  <div class="counters">
+    第二章
+    <div class="reset">
+      <div class="counters">
+        第一话
         <div class="reset">
-            <div class="counters">
-                第一话
-                <div class="reset">
-                    <div class="counters">
-                        第一节
-                    </div>
-                    <div class="counters">
-                        第二节
-                    </div>
-                </div>
-            </div>
-            <div class="counters">
-                第二话
-            </div>
+          <div class="counters">
+            第一节
+          </div>
+          <div class="counters">
+            第二节
+          </div>
         </div>
+      </div>
+      <div class="counters">
+        第二话
+      </div>
     </div>
+  </div>
 </div>
 </body>
 </html>

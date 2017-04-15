@@ -5,16 +5,16 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    var idSymbol = Symbol('id');
-    var person = {
-        name: 'butSalt',
-        [idSymbol]: '10908070216'
-    };
+  var idSymbol = Symbol('id');
+  var person = {
+    name: 'butSalt',
+    [idSymbol]: '10908070216'
+  };
 
-    console.log('name' in person === true);
-    //不可枚举，继承来的属性，也返回true
-    console.log('toString' in person === true);
-    console.log(idSymbol in person === true);
+  console.log('name' in person === true);
+  //不可枚举，继承来的属性，也返回true
+  console.log('toString' in person === true);
+  console.log(idSymbol in person === true);
 })();
 </script>
 </head>

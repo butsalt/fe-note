@@ -4,23 +4,23 @@
 <meta charset="UTF-8">
 <title>learn</title>
 <style type="text/css">
-    div {
-        margin-bottom: 5px;
-        background-color: #eee;
-    }
-    /**.activate之后的第一个兄弟且满足特定条件的**/
-    .active + div {
-        background: steelblue;
-    }
-    /**.activate之后所有满足特定条件的兄弟**/
-    .active ~ div {
-        color: red;
-    }
+  div {
+    margin-bottom: 5px;
+    background-color: #eee;
+  }
+  /**.activate之后的第一个兄弟且满足特定条件的**/
+  .active + div {
+    background: steelblue;
+  }
+  /**.activate之后所有满足特定条件的兄弟**/
+  .active ~ div {
+    color: red;
+  }
 </style>
 </head>
 <body>
-    <div class="active">1</div>
-    <div>2</div>
-    <div>3</div>
+  <div class="active">1</div>
+  <div>2</div>
+  <div>3</div>
 </body>
 </html>

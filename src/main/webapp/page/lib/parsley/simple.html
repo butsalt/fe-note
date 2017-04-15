@@ -7,23 +7,23 @@
 <script type="text/javascript" src="/assets/lib/parsley/2.4.3/parsley.js"></script>
 <script type="text/javascript">
 $(function () {
-    var $form = $('#J-target-form');
-    var instance = $form
-        .parsley({
-            errorsWrapper: '<p></p>',
-            errorTemplate: '<span></span>'
-        });
+  var $form = $('#J-target-form');
+  var instance = $form
+    .parsley({
+      errorsWrapper: '<p></p>',
+      errorTemplate: '<span></span>'
+    });
 });
 </script>
 </head>
 <body>
 <form id="J-target-form">
-    <div>
-        <label>姓名：</label>
-        <input type="text" name="name" required data-parsley-minlength="5"/>
-    </div>
-    <!-- 当验证未成功，parsley禁止表单通过submit按钮提交 -->
-    <button type="submit">提交</button>
+  <div>
+    <label>姓名：</label>
+    <input type="text" name="name" required data-parsley-minlength="5"/>
+  </div>
+  <!-- 当验证未成功，parsley禁止表单通过submit按钮提交 -->
+  <button type="submit">提交</button>
 </form>
 </body>
 </html>

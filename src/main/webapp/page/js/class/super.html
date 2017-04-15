@@ -5,30 +5,30 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    class Parent {
-        constructor (name) {
-            this.name = name;
-        }
-
-        say () {
-            console.log(this.name);
-        }
+  class Parent {
+    constructor (name) {
+      this.name = name;
     }
 
-    class Child extends Parent {
-        constructor (name, age) {
-            super(name);
-            this.age = age;
-        }
+    say () {
+      console.log(this.name);
+    }
+  }
 
-        say () {
-            super.say();
-            console.log(this.age);
-        }
+  class Child extends Parent {
+    constructor (name, age) {
+      super(name);
+      this.age = age;
     }
 
-    var obj = new Child('butSalt', 27);
-    obj.say();
+    say () {
+      super.say();
+      console.log(this.age);
+    }
+  }
+
+  var obj = new Child('butSalt', 27);
+  obj.say();
 })();
 </script>
 </head>

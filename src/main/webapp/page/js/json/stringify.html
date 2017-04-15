@@ -5,38 +5,38 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    function Person () {
-        var me = this;
-        me.name = 'butSalt';
-        me[Symbol('age')] = 26;
-        me.hobbyList = ['game', 'coding'];
-        Object.defineProperty(
-            me,
-            'code',
-            {
-                value: '0987-2',
-                enumerable: false,
-                writable: true,
-                configurable: true
-            }
-        );
-        me.speak = function () {};
+  function Person () {
+    var me = this;
+    me.name = 'butSalt';
+    me[Symbol('age')] = 26;
+    me.hobbyList = ['game', 'coding'];
+    Object.defineProperty(
+      me,
+      'code',
+      {
+        value: '0987-2',
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    );
+    me.speak = function () {};
+  }
+  Person.prototype.gender = 'male';
+
+  var p = new Person();
+
+  //对象的自有且可枚举的属性会被循环，symbol不参与循环
+  //继承自原型链的属性不参与循环
+  //val如果为对象，则该对象的自有且可枚举的属性也会参与循环
+  var str = JSON.stringify(p, function (key, val) {
+    console.log(key);
+    if (typeof val === 'function') {
+      return 'func';
     }
-    Person.prototype.gender = 'male';
-
-    var p = new Person();
-
-    //对象的自有且可枚举的属性会被循环，symbol不参与循环
-    //继承自原型链的属性不参与循环
-    //val如果为对象，则该对象的自有且可枚举的属性也会参与循环
-    var str = JSON.stringify(p, function (key, val) {
-        console.log(key);
-        if (typeof val === 'function') {
-            return 'func';
-        }
-        return val;
-    });
-    console.log(str === '{"name":"butSalt","hobbyList":["game","coding"],"speak":"func"}');
+    return val;
+  });
+  console.log(str === '{"name":"butSalt","hobbyList":["game","coding"],"speak":"func"}');
 })();
 </script>
 </head>

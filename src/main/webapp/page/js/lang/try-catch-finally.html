@@ -5,77 +5,77 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    var i;
-    for (i = 0; i < 3; i++) {
-        try {
-            continue;
-        } finally {
-            //在每次continue之前，会先执行finally中的语句
-            console.log(i);
-        }
+  var i;
+  for (i = 0; i < 3; i++) {
+    try {
+      continue;
+    } finally {
+      //在每次continue之前，会先执行finally中的语句
+      console.log(i);
     }
+  }
 })();
 (function () {
-    function test () {
-        try {
-            //变量num的作用域在test函数内
-            var num = 0;
-            throw false;
-        } catch (e) {
-            num = num + 1;
-        } finally {
-            console.log(num === 1);
-        }
-        console.log(num === 1);
+  function test () {
+    try {
+      //变量num的作用域在test函数内
+      var num = 0;
+      throw false;
+    } catch (e) {
+      num = num + 1;
+    } finally {
+      console.log(num === 1);
     }
-    test();
+    console.log(num === 1);
+  }
+  test();
 })();
 (function () {
-    function test () {
-        var num = 0;
-        try {
-            //return时已决定返回的值
-            return num;
-        } finally {
-            num = num + 1;
-        }
+  function test () {
+    var num = 0;
+    try {
+      //return时已决定返回的值
+      return num;
+    } finally {
+      num = num + 1;
     }
-    console.log(test() === 0);
+  }
+  console.log(test() === 0);
 })();
 (function () {
-    function test () {
-        try {
-            return 1;
-        } finally {
-            //在finally使用return可以修改函数的返回结果
-            return;
-        }
-        //不会执行
-        console.log(false);
+  function test () {
+    try {
+      return 1;
+    } finally {
+      //在finally使用return可以修改函数的返回结果
+      return;
     }
-    console.log(test() === undefined);
+    //不会执行
+    console.log(false);
+  }
+  console.log(test() === undefined);
 })();
 (function () {
-    function test () {
-        try {
-            throw false;
-        } catch (e) {
-            return 1;
-        }
+  function test () {
+    try {
+      throw false;
+    } catch (e) {
+      return 1;
     }
-    console.log(test() === 1);
+  }
+  console.log(test() === 1);
 })();
 (function () {
-    function test () {
-        try {
-            throw false;
-        } catch (e) {
-            return 1;
-        } finally {
-            return 2;
-        }
+  function test () {
+    try {
+      throw false;
+    } catch (e) {
+      return 1;
+    } finally {
+      return 2;
     }
-    console.log(test() === 2);
+  }
+  console.log(test() === 2);
 })();
 </script>
 </head>

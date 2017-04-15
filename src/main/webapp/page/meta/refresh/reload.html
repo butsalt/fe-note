@@ -10,21 +10,21 @@
 <body>
 <p id="target"></p>
 <form>
-    <label>
-        <input type="checkbox" id="checkbox" name="disabled"/>
-        禁用
-    </label>
-    <input type="text" id="text"/>
-    <button type="button" id="normalBtn">普通按钮</button>
+  <label>
+    <input type="checkbox" id="checkbox" name="disabled"/>
+    禁用
+  </label>
+  <input type="text" id="text"/>
+  <button type="button" id="normalBtn">普通按钮</button>
 </form>
 <script type="text/javascript">
 target.textContent = Math.random().toFixed(2);
 checkbox
-    .addEventListener('click', function () {
-        var checked = this.checked;
-        normalBtn.disabled = checked;
-        text.readOnly = checked;
-    });
+  .addEventListener('click', function () {
+    var checked = this.checked;
+    normalBtn.disabled = checked;
+    text.readOnly = checked;
+  });
 </script>
 </body>
 </html>

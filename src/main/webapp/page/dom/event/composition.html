@@ -5,27 +5,27 @@
 <title>learn</title>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function () {
-    var composing = false;
+  var composing = false;
 
-    var msgEl = document.getElementById('msg');
-    var targetEl = document.getElementById('target');
+  var msgEl = document.getElementById('msg');
+  var targetEl = document.getElementById('target');
 
-    targetEl.addEventListener('input', function () {
-        if (composing) {
-            return;
-        }
-        msgEl.textContent = this.value;
-    });
+  targetEl.addEventListener('input', function () {
+    if (composing) {
+      return;
+    }
+    msgEl.textContent = this.value;
+  });
 
-    //输入法弹出，发生在input事件之前
-    targetEl.addEventListener('compositionstart', function () {
-        composing = true;
-    });
+  //输入法弹出，发生在input事件之前
+  targetEl.addEventListener('compositionstart', function () {
+    composing = true;
+  });
 
-    //输入法关闭，发生在input事件之前
-    targetEl.addEventListener('compositionend', function () {
-        composing = false;
-    });
+  //输入法关闭，发生在input事件之前
+  targetEl.addEventListener('compositionend', function () {
+    composing = false;
+  });
 });
 </script>
 </head>

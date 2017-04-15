@@ -21,19 +21,19 @@
 
 // 越新设的cookie，在document.cookie的字符串中越靠后
 function getCookie (key) {
-    var cookies = document.cookie ? document.cookie.split('; ') : [];
-    var cookieMap = {};
-    cookies
-        .forEach(function (cookie) {
-            var part = cookie.split('=');
-            cookieMap[decodeURIComponent(part[0])] = decodeURIComponent(part[1]);
-        });
-    return cookieMap[key];
+  var cookies = document.cookie ? document.cookie.split('; ') : [];
+  var cookieMap = {};
+  cookies
+    .forEach(function (cookie) {
+      var part = cookie.split('=');
+      cookieMap[decodeURIComponent(part[0])] = decodeURIComponent(part[1]);
+    });
+  return cookieMap[key];
 }
 
 // 当发送ajax请求时，
-//    如果是同源请求(协议，主机名，端口号全部一致)，则会把请求地址下可以获得的cookie组装成一个消息头一起发送
-//    如果不是同源请求，即使请求地址下有cookie也不会组装成一个消息头一起发送
+//  如果是同源请求(协议，主机名，端口号全部一致)，则会把请求地址下可以获得的cookie组装成一个消息头一起发送
+//  如果不是同源请求，即使请求地址下有cookie也不会组装成一个消息头一起发送
 </script>
 </head>
 <body>

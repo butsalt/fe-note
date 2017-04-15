@@ -5,51 +5,51 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    function *gen () {
-        var num = 0;
-        try {
-            while (true) {
-                yield num++;
-            }
-        } finally {
-            console.log('end');
-        }
+  function *gen () {
+    var num = 0;
+    try {
+      while (true) {
+        yield num++;
+      }
+    } finally {
+      console.log('end');
     }
-    var num;
-    for (num of gen()) {
-        console.log(num);
-        if (num === 1) {
-            //break时会结束迭代器内的循环，执行finally块内的内容
-            break;
-        }
+  }
+  var num;
+  for (num of gen()) {
+    console.log(num);
+    if (num === 1) {
+      //break时会结束迭代器内的循环，执行finally块内的内容
+      break;
     }
+  }
 })();
 (function () {
-    function *gen () {
-        var num = 0;
-        try {
-            while (true) {
-                yield num++;
-            }
-        } finally {
-            yield num++;
-            yield num;
-        }
+  function *gen () {
+    var num = 0;
+    try {
+      while (true) {
+        yield num++;
+      }
+    } finally {
+      yield num++;
+      yield num;
     }
-    var num;
-    var ite = gen();
-    for (num of ite) {
-        console.log(num);
-        if (num === 1) {
-            //break肯定能跳出当前的循环
-            //finally块内执行到第一个yield
-            break;
-        }
+  }
+  var num;
+  var ite = gen();
+  for (num of ite) {
+    console.log(num);
+    if (num === 1) {
+      //break肯定能跳出当前的循环
+      //finally块内执行到第一个yield
+      break;
     }
-    //finally块内执行到第二个yield
-    var res = ite.next();
-    console.log(res.done === false);
-    console.log(res.value === 3);
+  }
+  //finally块内执行到第二个yield
+  var res = ite.next();
+  console.log(res.done === false);
+  console.log(res.value === 3);
 })();
 </script>
 </head>

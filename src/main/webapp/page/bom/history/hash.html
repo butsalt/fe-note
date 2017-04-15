@@ -8,37 +8,37 @@
 <a id="J-go-btn"></a>
 <script type="text/javascript">
 (function () {
-    // location.hash就是location.href出现的第一个'#'开始往后的整个字符串(包括'#')
-    if (!location.hash) {
-        location.hash = '#home';
+  // location.hash就是location.href出现的第一个'#'开始往后的整个字符串(包括'#')
+  if (!location.hash) {
+    location.hash = '#home';
+  }
+  var goBtn = document.getElementById('J-go-btn');
+
+  function update () {
+    var hash = location.hash;
+    var text, href;
+    if (hash === '#home') {
+      text = 'go school';
+      href = '#school';
+    } else if (hash === '#school') {
+      text = 'go home';
+      href = '#home';
     }
-    var goBtn = document.getElementById('J-go-btn');
+    goBtn.setAttribute('href', href);
+    goBtn.text = text;
+  }
 
-    function update () {
-        var hash = location.hash;
-        var text, href;
-        if (hash === '#home') {
-            text = 'go school';
-            href = '#school';
-        } else if (hash === '#school') {
-            text = 'go home';
-            href = '#home';
-        }
-        goBtn.setAttribute('href', href);
-        goBtn.text = text;
-    }
+  update();
 
-    update();
-
-    // 当通过设置location.hash改变hash时，会触发此事件
-    // 当history.back改变了hash但未导致页面刷新时，会触发此事件
-    // 当history.go改变了hash但未导致页面刷新时，会触发此事件
-    // 当通过history.pushState改变hash时，不会触发此事件
-    // 当通过history.replaceState改变hash时，不会触发此事件
-    window.addEventListener(
-        'hashchange',
-        update
-    );
+  // 当通过设置location.hash改变hash时，会触发此事件
+  // 当history.back改变了hash但未导致页面刷新时，会触发此事件
+  // 当history.go改变了hash但未导致页面刷新时，会触发此事件
+  // 当通过history.pushState改变hash时，不会触发此事件
+  // 当通过history.replaceState改变hash时，不会触发此事件
+  window.addEventListener(
+    'hashchange',
+    update
+  );
 })();
 </script>
 </body>

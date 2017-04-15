@@ -6,35 +6,35 @@
 <style type="text/css">
 /** 0, 0, 0, 1 **/
 p {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /** 0, 0, 0, 2 **/
 /** 伪元素选择器的权重是0, 0, 0, 1 **/
 p::after {
-    content: "sth";
+  content: "sth";
 }
 
 /** 0, 0, 1, 0 **/
 .second {
-    color: steelblue;
+  color: steelblue;
 }
 
 /** 0, 0, 1, 0 **/
 /** 一整个中括号中的内容被作为一个选择条件 **/
 [data-test] {
-    color: pink;
+  color: pink;
 }
 
 /** 0, 0, 1, 1 **/
 /** 伪类选择器的权重是0, 0, 1, 0 **/
 p:hover {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 /** 0, 1, 0, 0 **/
 #target {
-    color: orange;
+  color: orange;
 }
 </style>
 </head>

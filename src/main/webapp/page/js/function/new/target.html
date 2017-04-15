@@ -5,47 +5,47 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    function Cls () {
-        // 一般情况下，new.target指向调用new时调用的构造函数
-        console.log(new.target === Cls);
-    }
+  function Cls () {
+    // 一般情况下，new.target指向调用new时调用的构造函数
+    console.log(new.target === Cls);
+  }
 
-    new Cls();
+  new Cls();
 })();
 (function () {
-    class Parent {
-        constructor () {
-            console.log(new.target === Child);
-        }
+  class Parent {
+    constructor () {
+      console.log(new.target === Child);
     }
+  }
 
-    class Child extends Parent {
-        constructor () {
-            super();
-            console.log(new.target === Child);
-        }
+  class Child extends Parent {
+    constructor () {
+      super();
+      console.log(new.target === Child);
     }
+  }
 
-    new Child();
+  new Child();
 })();
 (function () {
-    function Parent () {
-        // 通过Reflect.construct来创建对象时可以修改
-        console.log(new.target === Child);
-    }
+  function Parent () {
+    // 通过Reflect.construct来创建对象时可以修改
+    console.log(new.target === Child);
+  }
 
-    function Child () {
+  function Child () {
 
-    }
+  }
 
-    Reflect.construct(
-        // 构造函数
-        Parent,
-        // 参数列表
-        [],
-        // 被用于获取prototype的构造函数，默认就是调用函数时传的第一个参数
-        Child
-    );
+  Reflect.construct(
+    // 构造函数
+    Parent,
+    // 参数列表
+    [],
+    // 被用于获取prototype的构造函数，默认就是调用函数时传的第一个参数
+    Child
+  );
 })();
 </script>
 </head>

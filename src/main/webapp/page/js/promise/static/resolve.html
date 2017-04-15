@@ -5,29 +5,29 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    //如果传入的是一个thenable对象，会展开
-    Promise
-        .resolve({
-            then: function (resolve, reject) {
-                reject();
-            }
-        })
-        .catch(function () {
-            console.log(true);
-        });
+  //如果传入的是一个thenable对象，会展开
+  Promise
+    .resolve({
+      then: function (resolve, reject) {
+        reject();
+      }
+    })
+    .catch(function () {
+      console.log(true);
+    });
 
-    Promise
-        .resolve(function () {})
-        .then(function (func) {
-            console.log(typeof func === 'function');
-        });
+  Promise
+    .resolve(function () {})
+    .then(function (func) {
+      console.log(typeof func === 'function');
+    });
 })();
 (function () {
-    var p = new Promise(function (resolve) {
-        resolve();
-    });
-    //如果传入的是一个promise对象，会返回这个对象本身
-    console.log(p === Promise.resolve(p));
+  var p = new Promise(function (resolve) {
+    resolve();
+  });
+  //如果传入的是一个promise对象，会返回这个对象本身
+  console.log(p === Promise.resolve(p));
 })();
 </script>
 </head>

@@ -5,38 +5,38 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    class Parent {
-        constructor (name) {
-            this.name = name;
-        }
-
-        sayName () {
-            console.log(this.name);
-        }
+  class Parent {
+    constructor (name) {
+      this.name = name;
     }
 
-    class Child extends Parent {
-        constructor (name, age) {
-            // 如果存在继承
-            // 则super必须在调用this前调用
-            super(name);
-            this.age = age;
-        }
+    sayName () {
+      console.log(this.name);
+    }
+  }
 
-        sayAge () {
-            console.log(this.age);
-        }
+  class Child extends Parent {
+    constructor (name, age) {
+      // 如果存在继承
+      // 则super必须在调用this前调用
+      super(name);
+      this.age = age;
     }
 
-    var obj = new Child('butSalt', 27);
+    sayAge () {
+      console.log(this.age);
+    }
+  }
 
-    console.log(obj.name === 'butSalt');
-    obj.sayName();
+  var obj = new Child('butSalt', 27);
 
-    console.log(obj.age === 27);
-    obj.sayAge();
+  console.log(obj.name === 'butSalt');
+  obj.sayName();
 
-    Parent.say(obj);
+  console.log(obj.age === 27);
+  obj.sayAge();
+
+  Parent.say(obj);
 })();
 </script>
 </head>

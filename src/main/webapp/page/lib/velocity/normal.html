@@ -5,14 +5,14 @@
 <title>learn</title>
 <style type="text/css">
 body {
-    position: relative
+  position: relative
 }
 
 #target {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: #4485CC;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #4485CC;
 }
 </style>
 <script type="text/javascript" src="/assets//lib/jquery/2.1.3/jquery.js"></script>
@@ -20,28 +20,28 @@ body {
 <script type="text/javascript" src="/assets/lib/velocity-ui/5.0.4/velocity.ui.js"></script>
 <script type="text/javascript">
 $(function(){
-    $('#target')
-        .velocity(
-            {
-                left: '500px'
-            },
-            {
-                delay: 1000,
-                complete:
-                    function () {
-                        $(this).html('Done!');
-                }
-            }
-        )
-        .velocity(
-            {
-                left: '0px'
-            },
-            {
-                complete: function(){
-                    $(this).html('Back!');
-            }
-        });
+  $('#target')
+    .velocity(
+      {
+        left: '500px'
+      },
+      {
+        delay: 1000,
+        complete:
+          function () {
+            $(this).html('Done!');
+        }
+      }
+    )
+    .velocity(
+      {
+        left: '0px'
+      },
+      {
+        complete: function(){
+          $(this).html('Back!');
+      }
+    });
 });
 </script>
 </head>

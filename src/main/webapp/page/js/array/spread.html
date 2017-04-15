@@ -5,18 +5,18 @@
 <title>learn</title>
 <script type="text/javascript">
 (function () {
-    // 仅仅是数组长度为1，下标0处实际上并未赋值，连undefined都未赋
-    var arr = Array(1);
-    var res = [...arr];
-    // 但还是被复制过去了
-    console.log(res.length === 1);
+  // 仅仅是数组长度为1，下标0处实际上并未赋值，连undefined都未赋
+  var arr = Array(1);
+  var res = [...arr];
+  // 但还是被复制过去了
+  console.log(res.length === 1);
 })();
 (function () {
-    var p = {};
-    var arr = [p];
-    var res = [...arr];
-    // 浅复制
-    console.log(res[0] === p);
+  var p = {};
+  var arr = [p];
+  var res = [...arr];
+  // 浅复制
+  console.log(res[0] === p);
 })();
 </script>
 </head>

@@ -5,95 +5,95 @@
 <title>learn</title>
 <style type="text/css">
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: darkred;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkred;
 }
 
 .target {
-    width: 200px;
-    height: 200px;
-    background-color: orange;
+  width: 200px;
+  height: 200px;
+  background-color: orange;
 }
 
 .port {
-    perspective: 300px;
-    background: steelblue;
+  perspective: 300px;
+  background: steelblue;
 }
 
 .port .target {
-    animation-name: run;
-    animation-duration: 10s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+  animation-name: run;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 /** 1.目标元素向右平移100px **/
 /** 2.目标元素顺时针旋转90度 **/
 /** 3.目标元素水平方向拉伸1倍 **/
 @keyframes run {
-    33% {
-        transform: translateX(100px);
-    }
+  33% {
+    transform: translateX(100px);
+  }
 
-    66% {
-        transform: translateX(100px) rotateZ(90deg);
-    }
+  66% {
+    transform: translateX(100px) rotateZ(90deg);
+  }
 
-    100% {
-        transform: translateX(100px) rotateZ(90deg) scaleX(2);
-    }
+  100% {
+    transform: translateX(100px) rotateZ(90deg) scaleX(2);
+  }
 }
 
 .shadow-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 999;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
 }
 
 .shadow-target {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 200px;
-    height: 200px;
-    background: black;
-    opacity: .2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 200px;
+  height: 200px;
+  background: black;
+  opacity: .2;
 }
 
 .shadow-target i {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 2px;
-    height: 2px;
-    background: red;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 2px;
+  height: 2px;
+  background: red;
 }
 </style>
 </head>
 <body>
 <div class="container port">
-    <div class="target"></div>
+  <div class="target"></div>
 </div>
 <div class="shadow-container">
-    <div class="shadow-target">
-        <i></i>
-    </div>
+  <div class="shadow-target">
+    <i></i>
+  </div>
 </div>
 </body>
 </html>

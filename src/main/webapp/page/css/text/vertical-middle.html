@@ -5,85 +5,85 @@
 <title>learn</title>
 <style type="text/css">
 p {
-    font-family: simsun;
-    margin: 0;
-    font-size: 15px;
-    line-height: 1;
+  font-family: simsun;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1;
 }
 
 .container {
-    background-color: #999;
-    width: 150px;
-    height: 100px;
+  background-color: #999;
+  width: 150px;
+  height: 100px;
 }
 
 .button {
-    border: none;
+  border: none;
 }
 
 .table-cell {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .line-height {
-    line-height: 100px;
-    font-size: 0;
+  line-height: 100px;
+  font-size: 0;
 }
 
 .line-height .wrapper {
-    display: inline-block;
-    vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .absolute {
-    position: relative;
+  position: relative;
 }
 
 .absolute .wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
 }
 
 </style>
 </head>
 <body>
 <button class="button container">
-    <p>垂直居中的</p>
-    <p>按钮</p>
+  <p>垂直居中的</p>
+  <p>按钮</p>
 </button>
 <hr/>
 <!-- 容器本身无法水平居中 -->
 <div class="table-cell container">
-    <p>垂直居中的</p>
-    <p>单元格</p>
+  <p>垂直居中的</p>
+  <p>单元格</p>
 </div>
 <hr/>
 <div class="flex container">
-    <p>垂直居中的</p>
-    <p>flex</p>
+  <p>垂直居中的</p>
+  <p>flex</p>
 </div>
 <hr/>
 <div class="container line-height">
-    <div class="wrapper">
-        <p>垂直居中的</p>
-        <p>line-height</p>
-    </div>
+  <div class="wrapper">
+    <p>垂直居中的</p>
+    <p>line-height</p>
+  </div>
 </div>
 <hr/>
 <div class="container absolute">
-    <div class="wrapper">
-        <p>垂直居中的</p>
-        <p>abs + transform</p>
-    </div>
+  <div class="wrapper">
+    <p>垂直居中的</p>
+    <p>abs + transform</p>
+  </div>
 </div>
 </body>
 </html>
