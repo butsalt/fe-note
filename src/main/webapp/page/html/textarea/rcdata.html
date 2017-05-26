@@ -12,6 +12,12 @@
   Replaceable Character Data
   textarea标签内允许直接出现<>，字符实体会被替换
 -->
-<textarea>&gt;<>&lt;/textrea></textarea>
+<textarea id="J-tmpl">&amplt;&ampgt;<textarea>&lt;/textarea></textarea>
+<div id="J-container"></div>
+<script type="text/javascript">
+  (function () {
+    document.getElementById('J-container').innerHTML = document.getElementById('J-tmpl').value;
+  })();
+</script>
 </body>
 </html>
