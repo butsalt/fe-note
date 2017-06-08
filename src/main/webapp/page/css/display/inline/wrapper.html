@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+.wrapper {
+  background-color: #999;
+  margin-bottom: 50px;
+  line-height: 0;
+}
+
+.inline {
+  display: inline;
+  line-height: 1;
+  font-size: 20px;
+  font-family: arial;
+  background-color: green;
+}
+</style>
+</head>
+<body>
+<!--
+  inline元素的font-size，font-family决定了这个元素的文字度量的升部/降部
+  文字度量的升部／降部决定了content-area的高度
+  content-area的高度决定了inline元素的高度
+  但inline元素的父元素在包裹inline元素时，还是根据inline元素的line-height进行包裹
+-->
+<div class="wrapper">
+  <div class="inline">
+    Lorem
+  </div>
+</div>
+<!--
+  即使inline元素内部包含其他元素，inline元素的高度仍由它的contet-area的高度决定
+  但inline的父元素则还会根据这些其他元素高度的计算规则计算高度再进行包裹
+-->
+<div class="wrapper">
+  <div class="inline">
+    Lorem<span style="font-size: 100px;">Lorem</span>
+    <img src="/assets/img/maple-small.jpg"/>
+  </div>
+</div>
+</body>
+</html>
