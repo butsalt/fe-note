@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<div id="J-target">
+  <!-- comment -->
+  some thing
+  <!-- comment -->
+</div>
+<script type="text/javascript">
+(function () {
+  // 在html解析成dom树时，\r会被去掉
+  var target = document.getElementById('J-target');
+  // 不包含注释，包含首尾空白
+  // 本例中第一个注释后面的也算是首空白
+  // 本例中第二个注视前面的也算是尾空白
+  console.log(target.textContent);
+  // 不包含注释，不包含首尾空白
+  console.log(target.innerText);
+  // 包含注释，包含首尾空白
+  console.log(target.innerHTML);
+})();
+</script>
+</body>
+</html>

@@ -2,8 +2,9 @@
   "name": "learn",
   "version": "1.0.0",
   "description": "my front end note",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/butsalt/learn#readme",
   "dependencies": {
-    "koa": "^2.2.0"
+    "koa": "^2.2.0",
+    "koa-send": "^4.1.0",
+    "koa-views": "^6.0.2",
+    "nunjucks": "^3.0.1"
   }
 }

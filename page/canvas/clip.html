@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style>
+html,body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+canvas {
+  display: block;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  
+  var canvas = document.getElementById("target");
+  canvas.setAttribute( "width", width );
+  canvas.setAttribute( "height", height );
+  
+  var ctx = canvas.getContext("2d");
+  
+  // 开始描绘路径
+  ctx.beginPath();
+  ctx.moveTo( 10, 10 );
+  ctx.lineTo( 10, 110 );
+  ctx.lineTo( 110, 110 );
+  ctx.lineTo( 110, 10 );
+  // 替代closePath，形成一个闭合的剪切图案
+  ctx.clip();
+  
+  ctx.fillStyle = "steelblue";
+  ctx.fillRect( 0, 0, 200, 200 );
+});
+</script>
+</head>
+<body>
+<canvas id="target"></canvas>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+function gen () {
+  var num = 0;
+  return {
+    next: function () {
+      if (num === 5) {
+        return {
+          done: true,
+          value: 'end'
+        };
+      }
+      return {
+        done: false,
+        value: num++
+      };
+    },
+    return: function () {
+      num = 5;
+      return {
+        done: true,
+        value: 'end'
+      };
+    },
+    [Symbol.iterator]: function () {
+      return this;
+    }
+  };
+};
+(function () {
+  var ite = gen();
+  var num;
+  for (num of ite) {
+    //迭代器的return方法会被调用
+    break;
+  }
+  var res = ite.next();
+  console.log(res.done === true);
+  console.log(res.value === 'end');
+})();
+(function () {
+  var ite = gen();
+  var num;
+  var res;
+  for (num of ite) {
+    //迭代器的return方法被调用，结束循环
+    ite.return();
+  }
+  var res = ite.next();
+  console.log(res.done === true);
+  console.log(res.value === 'end');
+})();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

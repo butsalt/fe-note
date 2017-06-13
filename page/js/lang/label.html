@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  var i, j;
+  parent: for (i = 0; i < 3; i++) {
+    child: for (j = 0; j < 3; j++) {
+      if (i + j > 2) {
+        //结束parent标签所在的循环
+        break parent;
+      }
+    }
+  }
+  console.log(i === 1);
+  console.log(j === 2);
+})();
+(function () {
+  var num = 0;
+  parent: {
+    num++;
+    //在循环外，break也可以配合标签使用
+    break parent;
+    num++;
+  }
+  console.log(num === 1);
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

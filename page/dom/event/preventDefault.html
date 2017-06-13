@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<form>
+  <button id="target" type="submit">提交</button>
+</form>
+<script type="text/javascript">
+  target
+    .addEventListener('click', function (e) {
+      //防止在触发点击事件后浏览器的默认行为被执行
+      e.preventDefault();
+    });
+</script>
+</body>
+</html>

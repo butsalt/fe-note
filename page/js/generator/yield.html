@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  function *gen () {
+    var msg = yield;
+    console.log(msg === true);
+  }
+  var ite = gen();
+  ite.next();
+  ite.next(true);
+})();
+(function () {
+  function *gen () {
+    try {
+      return 'end';
+    } finally {
+      let msg = yield 1;
+      console.log(msg === true);
+    }
+  }
+  var ite = gen();
+
+  //在try块内return的值已被记录
+  var next = ite.next();
+  console.log(next.done === false);
+  console.log(next.value === 1);
+
+  next = ite.next(true);
+  console.log(next.done === true);
+  console.log(next.value === 'end');
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

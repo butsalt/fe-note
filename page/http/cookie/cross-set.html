@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<!-- 请求静态资源时服务器通过消息头能修改浏览器的cookie -->
+<!--
+  当前页面主机名:端口号   资源主机名:端口号   cookie的domain      结果
+  localhost:8080      localhost:7070    localhost         成功
+  a.test.com        b.test.com      test.com        成功(在*.test.com下均可见)
+  a.test.com        b.test.com      b.test.com        成功(只有在b.test.com下可见)
+  a.test.com        b.test.com      a.test.com        失败
+  localhost         127.0.0.1       localhost         失败
+-->
+<!--
+  总结：
+  只要要求设置的cookie的domain满足在
+    静态资源地址
+  设置这个cookie，就可以被设置到浏览器上
+-->
+<!--
+  注意：
+  跨域的ajax请求无法发送和接收cookie
+-->
+<script type="text/javascript" src="http://localhost:7070/setcookie"></script>
+</head>
+<body>
+
+</body>
+</html>

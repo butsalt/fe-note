@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+p {
+  border: 1px black solid;
+  width: 300px;
+}
+
+/** 默认值 **/
+/** 单词或url不允许折行(最多能在有'-'的连字符之后处折行) **/
+p:nth-child(1) {
+  word-break: normal;
+}
+
+/** 可在任意字符间折行 **/
+/** 放不下的单词或url不尝试换行，直接折行 **/
+p:nth-child(2) {
+  word-break: break-all;
+}
+
+/** 不同浏览器下会有差别 **/
+/**只在空格之后，回车之后，连字符('-')之后处允许折行**/
+p:nth-child(3) {
+  word-break: keep-all;
+}
+</style>
+</head>
+<body>
+<p>I have a longggggggggggggggggggggggggggggggggggggggggggggggg words! Here is my website, 这是我的这是我的网址这是我的这是我的网址http://www.gooooooooooooooooooooooooooooooooooooooooogle.com. Hah!</p>
+<p>I have a longggggggggggggggggggggggggggggggggggggggggggggggg words! Here is my website, 这是我的这是我的网址这是我的这是我的网址http://www.gooooooooooooooooooooooooooooooooooooooooogle.com. Hah!</p>
+<p>I have a longggggggggggggggggggggggggggggggggggggggggggggggg words! Here is my website, 这是我的这是我的网址这是我的这是我的网址http://www.gooooooooooooooooooooooooooooooooooooooooogle.com. Hah!</p>
+</body>
+</html>

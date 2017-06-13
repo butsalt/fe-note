@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  var obj = {};
+  function Cls () {
+    return obj;
+  }
+  var instance = new Cls();
+
+  console.log(instance === obj);
+
+  console.log(
+    (instance instanceof Cls)
+    ===
+    false
+  );
+})();
+(function () {
+  function Cls () {
+    this.num = 123;
+    // 如果返回的是基本类型，则还是返回new时创建的对象
+    return this.num;
+  }
+  var instance = new Cls();
+
+  console.log(instance !== 123);
+  console.log(instance.num === 123)
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

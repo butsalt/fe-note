@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<form>
+  <!-- prop === ture时，表单提交才会带这个参数 -->
+  <input type="checkbox" id="target" name="target" value="1"/>
+  <button type="submit">提交</button>
+</form>
+<script type="text/javascript">
+function log () {
+  console.log('hasAttr:' + (target.getAttribute('checked') !== null));
+  console.log('prop:' + target.checked);
+}
+
+function reset () {
+  target.removeAttribute('checked');
+  target.setAttribute('checked', '');
+}
+
+console.warn('init');
+//attr === null && prop === false
+log();
+target.setAttribute('checked', '');
+console.warn('setAttr');
+//attr === '' && prop === true
+log();
+target.click();
+console.warn('clicked');
+//attr === '' && prop === false
+log();
+reset();
+console.warn('reset');
+//只有在复选框未被操作过的状态下，设置attr会影响prop
+//attr === '' && prop === false
+log();
+target.click();
+target.removeAttribute('checked');
+console.warn('clicked then removeAttr');
+//attr === null && prop === true
+log();
+target.disabled = true;
+console.warn('disabled');
+//disabled 的 attr 和 prop 同步，因为这个不能因用户操作而改变
+console.log(document.querySelector('[disabled]'));
+</script>
+</body>
+</html>

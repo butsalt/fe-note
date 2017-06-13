@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+  * {
+    margin:0;
+    padding:0;
+  }
+  html,body {
+    width:100%;
+    height:100%;
+  }
+</style>
+<script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
+<script type="text/javascript" src="/assets/lib/d3/3.0.0/d3.js"></script>
+<script type="text/javascript">
+$(function () {
+  var data = [50,75,100,125];
+  var colors = d3.scale.category10();
+  var bar = d3.select(document.body)
+    .selectAll('div')
+    .data(data)
+    .enter()
+    .append('div')
+    .style('height','100px')
+    .style('background-color',function(d,i){
+      return colors(i);
+    })
+    .style('width',function(d,i){
+      return d+'px';
+    });
+  bar.append('span').html(function(d,i){
+    return d;
+  });
+  bar.append('span').html(function(d,i){
+    return '!';
+  });
+  // 将每一个bar的第一个span取出并组合成一个新的数组
+  console.log('Test1');
+  console.log(bar.select('span').each(function(d,i){
+    //0,1,2,3
+    console.log(i);
+  }));
+  
+  // 每一个bar里的所有span组成一个数组，结果是一个二维数组
+  console.log('Test2');
+  console.log(bar.selectAll('span').each(function(d,i){
+    // 0,1
+    console.log(i);
+  }));
+});
+</script>
+</head>
+<body>
+</body>
+</html>

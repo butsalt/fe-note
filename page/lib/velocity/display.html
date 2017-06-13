@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+div {
+  opacity: 1;
+  width: 100px;
+  height: 100px;
+  background-color: #eee;
+}
+</style>
+<script type="text/javascript" src="/assets//lib/jquery/2.1.3/jquery.js"></script>
+<script type="text/javascript" src="/assets//lib/velocity/1.2.2/velocity.js"></script>
+<script type="text/javascript" src="/assets/lib/velocity-ui/5.0.4/velocity.ui.js"></script>
+<script type="text/javascript">
+$(function(){
+  $('div')
+    .velocity(
+      {
+        opacity: 0,
+      },
+      {
+        duration: 1000,
+        display: 'none'
+      }
+    )
+    .velocity(
+      {
+        opacity: 1
+      },
+      {
+        duration: 1000,
+        display: 'block',
+        delay: 1000
+      }
+    );
+});
+</script>
+</head>
+<body>
+<div>
+</div>
+</body>
+</html>

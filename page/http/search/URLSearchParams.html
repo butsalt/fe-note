@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  // location.search中，被encode的key和value不会被decode
+  // a标签的search属性中，被encode的key和value也不会被decode
+
+  // %25 -> &
+  // %3D -> =
+  var searchParams = new URLSearchParams('?a=1&a=2&b=3&%26=%3D');
+
+  // 所有匹配的放在一个数组里
+  console.log(searchParams.getAll('a'));
+  // 如果一个都没有，返回一个空数组
+  console.log(searchParams.getAll('nothing').length === 0);
+
+  // 返回第一个匹配的
+  console.log(searchParams.get('b') === '3');
+  // 如果一个都没有，返回null
+  console.log(searchParams.get('c') === null);
+
+  // search中被encode的key和value会被decode
+  console.log(searchParams.get('&') === '=');
+
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

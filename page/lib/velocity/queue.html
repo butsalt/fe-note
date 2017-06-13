@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+div {
+  width: 100px;
+  height: 100px;
+  background-color: #444;
+}
+</style>
+<script type="text/javascript" src="/assets//lib/jquery/2.1.3/jquery.js"></script>
+<script type="text/javascript" src="/assets//lib/velocity/1.2.2/velocity.js"></script>
+<script type="text/javascript" src="/assets/lib/velocity-ui/5.0.4/velocity.ui.js"></script>
+<script type="text/javascript">
+$(function(){
+  $('div')
+    .velocity(
+      {
+        width: '500px'
+      },
+      {
+        duration: 3000
+      }
+    );
+  //直接将动画跳转到宽度为500px的时机(只跳转有冲突的属性,complete方法执行时机照常)，再继续播放动画
+  setTimeout(function() {
+    $('div')
+      .velocity(
+        {
+          width:' 100px'
+        },
+        {
+          queue: false,
+          duration: 1500
+        }
+      );
+  }, 1500);
+});
+</script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

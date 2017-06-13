@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style>
+html,body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+canvas {
+  display: block;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  
+  var canvas = document.getElementById("target");
+  canvas.setAttribute( "width", width );
+  canvas.setAttribute( "height", height );
+  
+  var ctx = canvas.getContext("2d");
+  ctx.fillStyle = "steelblue";
+  var i, ii;
+  for( i=0, ii=3; i<ii; i++){
+    // 在上一个translate的基础上，再进行translate
+    ctx.translate( 100, 100 );
+    // 在上一个rotate的基础上，再进行rotate(顺时针为正)
+    ctx.rotate( 30 / 180 * Math.PI );
+    ctx.fillRect( 0, 0, 100, 100 );
+  }
+});
+</script>
+</head>
+<body>
+<canvas id="target"></canvas>
+</body>
+</html>

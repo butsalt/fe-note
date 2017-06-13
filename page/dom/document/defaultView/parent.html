@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+  <p>parent</p>
+  <iframe src="./child.html" id="J-child-frame"></iframe>
+  <script type="text/javascript">
+    (function () {
+      console.log(
+        // document所属的window
+        document.defaultView === window
+      );
+    })();
+    (function () {
+      var childFrame = document.getElementById('J-child-frame');
+      var childWin = childFrame.contentWindow;
+      var childDoc = childWin.document;
+      console.log(
+        childDoc.defaultView === childWin
+      );
+      console.log(
+        childDoc.defaultView !== window
+      );
+    })();
+  </script>
+</body>
+</html>

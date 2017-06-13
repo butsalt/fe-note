@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  class Parent {
+    constructor (name) {
+      this.name = name;
+    }
+
+    sayName () {
+      console.log(this.name);
+    }
+  }
+
+  class Child extends Parent {
+    constructor (name, age) {
+      // 如果存在继承
+      // 则super必须在调用this前调用
+      super(name);
+      this.age = age;
+    }
+
+    sayAge () {
+      console.log(this.age);
+    }
+  }
+
+  var obj = new Child('butSalt', 27);
+
+  console.log(obj.name === 'butSalt');
+  obj.sayName();
+
+  console.log(obj.age === 27);
+  obj.sayAge();
+
+  Parent.say(obj);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

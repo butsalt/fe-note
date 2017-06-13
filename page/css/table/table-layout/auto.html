@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+.expanded {
+  width: 1200px;
+}
+
+.limited {
+  width: 600px;
+}
+
+table {
+  /** 此为默认值 **/
+  table-layout: auto;
+  padding: 10px;
+  border: 10px black solid;
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+table td {
+  padding: 0;
+  border: 10px rgba(0, 0, 0, 0.25) solid;
+}
+
+table .cell {
+  display: inline-block;
+  vertical-align: top;
+  width: 100px;
+  height: 100px;
+  background-color: darkred;
+}
+
+</style>
+</head>
+<body>
+<!-- 每列取未拉伸/收缩时最宽的单元格的宽(offsetWidth)作为权数分配空间宽度 -->
+<!-- 如果其中一列已经缩小到最小宽度则这一列消耗这么多空间并退出空间宽度的分配 -->
+<!-- 空间宽度 = 
+    表格宽度
+    - 表格border水平方向占用宽度
+    - 表格padding水平方向占用宽度
+    - 单元格border-spacing水平方向占用宽度
+-->
+<!--
+  如果在该列最宽的单元格上
+    设置了min-width，则该列至少有min-width这么宽，并参与空间宽度的分配
+    设置了width，则尽力实现这个width（不会超出容器的宽），消耗这么多空间并退出空间宽度的分配
+    设置了max-width，只是限制了未拉伸/收缩时单元格的最大宽度，并参与空间宽度的分配
+-->
+<table class="expanded">
+  <tbody>
+    <tr>
+      <td>
+        <div class="cell"></div><!--
+       --><div class="cell"></div>
+      </td>
+      <td>
+        <div class="cell"></div>
+      </td>
+      <td>
+        <div class="cell"></div><!--
+       --><div class="cell"></div><!--
+       --><div class="cell"></div><!--
+       --><div class="cell"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="cell"></div>
+      </td>
+      <td>
+        <div class="cell"></div><!--
+       --><div class="cell"></div><!--
+       --><div class="cell"></div>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<hr/>
+<!-- table因本身宽度限制而收缩和table因容器宽度限制而收缩的效果相同 -->
+<div class="limited">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <div class="cell"></div><!--
+         --><div class="cell"></div>
+        </td>
+        <td>
+          <div class="cell"></div>
+        </td>
+        <td>
+          <div class="cell"></div><!--
+         --><div class="cell"></div><!--
+         --><div class="cell"></div><!--
+         --><div class="cell"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cell"></div>
+        </td>
+        <td>
+          <div class="cell"></div><!--
+         --><div class="cell"></div><!--
+         --><div class="cell"></div>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

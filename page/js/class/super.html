@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  class Parent {
+    constructor (name) {
+      this.name = name;
+    }
+
+    say () {
+      console.log(this.name);
+    }
+  }
+
+  class Child extends Parent {
+    constructor (name, age) {
+      super(name);
+      this.age = age;
+    }
+
+    say () {
+      super.say();
+      console.log(this.age);
+    }
+  }
+
+  var obj = new Child('butSalt', 27);
+  obj.say();
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

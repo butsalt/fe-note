@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+
+.inline-block {
+  display: inline-block;
+  background-color: #eee;
+  width: 150px;
+  height: 150px;
+}
+
+.wrapper {
+  background-color: #eee;
+}
+/**
+  1.  没有内容(空格除外)的inline-block效果和替换元素一样
+  2.  有内容的inline-block，父元素取最后一行文字与同行元素做校准
+  3.  inline-block可以控制height，而inline不行
+  4.  垂直方向上的margin会对本元素垂直方向上的位置，本行行高造成影响
+    水平方向上的margin会对本元素水平方向上的位置，本元素之后流的排版造成影响
+  4.  垂直方向上的padding，border影响行内框高度的计算
+**/
+</style>
+</head>
+<body>
+  Here!
+  <div class="inline-block"></div>
+  <div class="inline-block">
+    Say some thing
+  </div>
+  <div class="inline-block">
+    Say some thing Happy!
+  </div>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</body>
+</html>

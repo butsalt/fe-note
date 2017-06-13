@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  function *gen () {
+    // 相当于是在这里发生了异常
+    try {
+
+    } catch (e) {
+
+    } finally {
+
+    }
+  }
+  var ite = gen();
+  try {
+    ite.throw('error');
+  } catch (e) {
+    console.log(true);
+  }
+})();
+(function () {
+  function *gen () {
+    try {
+      // 相当于在返回1后，阻塞时发生了异常
+      yield 1;
+    } catch (e) {
+      console.log(true);
+    } finally {
+
+    }
+  }
+  var ite = gen();
+  ite.next();
+  ite.throw('error');
+})();
+(function () {
+  function *gen () {
+    try {
+
+    } catch (e) {
+
+    } finally {
+
+    }
+    // 相当于是在这里发生了异常
+  }
+  var ite = gen();
+  ite.next();
+  try {
+    ite.throw('error');
+  } catch (e) {
+    console.log(true);
+  }
+})();
+(function () {
+  function *gen () {
+    // 如果在迭代过程中发生了异常且异常没有被捕获，则被认为迭代已经结束了
+    throw 1;
+    yield 2;
+  }
+  var ite = gen();
+  try {
+    ite.next();
+  } catch (e) {
+
+  }
+  var next = ite.next();
+  console.log(next.done === true);
+})();
+(function () {
+  function *gen () {
+    try {
+      // 相当于阻塞时发生了异常
+      yield;
+    } catch (e) {
+
+    }
+    // 异常被捕获，可以继续迭代
+    yield true;
+  }
+  var ite = gen();
+  ite.next();
+  var res = ite.throw();
+  console.log(res.done === false);
+  console.log(res.value === true);
+})();
+(function () {
+  function *parent () {
+    yield *child();
+    // 子迭代器中的异常被捕获，可以继续迭代
+    yield 3;
+  }
+
+  function *child () {
+    try {
+      yield 1;
+      // 异常在这里发生
+      yield 2;
+    } catch (e) {
+      console.log(true);
+    }
+  }
+
+  var ite = parent();
+  ite.next();
+  var res = ite.throw();
+  console.log(
+    res.value === 3
+  );
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

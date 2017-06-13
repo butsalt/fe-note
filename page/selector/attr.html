@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+  div{
+    margin-bottom: 5px;
+    background-color: #eee;
+  }
+  
+  /** 带有data-spec这个属性 **/
+  [data-spec]::before{
+    content: "1";
+  }
+  
+  /** 带有data-me这个属性，且属性值为full **/
+  [data-me="full"]::before{
+    content: "2";
+  }
+  
+  /** 带有data-me这个属性，且属性值含有full这个单词，单词间用空格隔开 **/
+  [data-me~="has"]::before{
+    content: "3";
+  }
+  
+  /** 带有data-me这个属性，且属性值以butsalt开头 **/
+  [data-me^="butsalt"]::before{
+    content: "4";
+  }
+  
+  /** 带有data-me这个属性，且属性值以Size结尾 **/
+  [data-me$="Size"]::before{
+    content: "5";
+  }
+  
+  /** 带有data-me这个属性，且属性值含有joke **/
+  [data-me*="joke"]::before{
+    content: "6";
+  }
+  
+  /** 带有data-me这个属性，且属性值为but或以but-开头 **/
+  [data-me|="but"]::before{
+    content: "7";
+  }
+</style>
+</head>
+<body>
+  <div data-spec></div>
+  <div data-me="full"></div>
+  <div data-me="a has c"></div>
+  <div data-me="butsalt"></div>
+  <div data-me="fullSize"></div>
+  <div data-me="ajokeforyou"></div>
+  <div data-me="but-salt"></div>
+</body>
+</html>

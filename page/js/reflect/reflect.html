@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  function Parent (name) {
+    // 一般情况下，new.target指向调用new时调用的构造函数
+    // 通过Reflect.construct来创建对象时可以修改
+    console.log(new.target === Child);
+    this.name = name;
+  }
+
+  function Child () {
+    // 这个构造函数不会被调用
+    console.log(false);
+  }
+
+  Child.prototype.speak = function () {
+    console.log(this.name);
+  };
+
+  var instance = Reflect.construct(
+    // 构造函数
+    Parent,
+    // 参数列表
+    ['butSalt'],
+    // 被用于获取prototype的构造函数，默认就是传给函数的第一个参数
+    Child
+  );
+
+  // instance的prototype是Child.prototype
+  console.log(
+    Object.getPrototypeOf(instance)
+    ===
+    Child.prototype
+  );
+
+  console.log(
+    (instance instanceof Child)
+    ===
+    true
+  );
+
+  // Parent仅作为构造函数被调用
+  console.log(
+    (instance instanceof Parent)
+    ===
+    false
+  );
+
+  instance.speak();
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

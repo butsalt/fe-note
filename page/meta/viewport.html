@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- device-width是由设备厂商决定的理想宽度值，通常代表了设备在同样尺寸的非视网膜屏下的一屏应该表现的宽度 -->
+<!-- 
+  如果设定了width但未设定initial-scale时，
+    html的宽度等于width
+    浏览器会根据device-width/width来计算initial-scale，从而将页面缩放到合适比例使得一屏宽刚好能表现设定的width值。
+
+  如果同时设定了width和initial-scale时，
+    html的宽度等于width和device-width/initial-scale中较大的那个值
+-->
+<!-- 当前一屏能显示的宽度 = device-width / initial-scale -->
+<meta name="viewport" content="width=device-width,initial-scale=0.3"/>
+<title>learn</title>
+<style type="text/css">
+body {
+  margin: 0;
+}
+
+@media screen and (width: 320px) {
+  div::before {
+    content: "由layout viewport决定的html宽度为320px";
+  }
+}
+
+div {
+  width: 160px;
+  height: 160px;
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

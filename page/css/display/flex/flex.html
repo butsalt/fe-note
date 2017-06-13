@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html,body {
+    height: 100%;
+  }
+  .container {
+    height: 100%;
+    display: flex;
+  }
+  .container div {
+    margin: 0px 5px;
+    background-color: darkred;
+    color: #ddd;
+  }
+  /**
+  initial = 0 1 auto
+  defualt = 1 1 0
+  2 = 2 1 0
+  2 2 = 2 2 0
+  2 auto = 2 1 auto
+  auto = 1 1 auto
+  none = 0 0 auto
+  
+  flex:1 1 auto;
+  第一个参数：  当父级容器的主轴上还有空余空间，按照权数参加剩余空间的分配
+  第二个参数：  当父级容器的主轴上空间不足，按照权数缩窄
+    比例1 / 权数1 = 比例2 / 权数2
+    比例1*标准长度1 + 比例2*标准长度2 = 需要紧缩的长度
+  第三个参数： 计算父级容器是否还有剩余空间的标准，auto时采用它自身在主轴上未发生扩张/紧缩时的实际长度
+  **/
+  /**
+    flex-item在主轴上将失去对空间的控制权，但当在侧轴上如果设置了相应的样式，将会覆盖默认align-items的拉伸效果
+  **/
+</style>
+</head>
+<body>
+<div class="container">
+  <div style="flex:1 1 auto">
+    div1
+  </div>
+  <div style="flex:1 1 auto">
+    div2
+  </div>
+  <div style="flex:none">
+    div3
+  </div>
+</div>
+</body>
+</html>

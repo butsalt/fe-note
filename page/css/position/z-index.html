@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+body > div {
+  background: #999;
+  margin-bottom: 20px;
+}
+
+.red {
+  width: 100px;
+  height: 100px;
+  background-color: #500;
+}
+
+.red > div {
+  width: 80px;
+  height: 80px;
+  background-color: #a00;
+}
+
+.red > div > div {
+  width: 60px;
+  height: 60px;
+  background-color: #f00;
+}
+
+.green {
+  width: 100px;
+  height: 100px;
+  background-color: #050;
+}
+
+.green > div {
+  width: 80px;
+  height: 80px;
+  background-color: #0a0;
+}
+
+.green > div > div {
+  width: 60px;
+  height: 60px;
+  background-color: #0f0;
+}
+
+.blue {
+  width: 100px;
+  height: 100px;
+  background-color: #005;
+}
+
+.blue > div {
+  width: 80px;
+  height: 80px;
+  background-color: #00a;
+}
+
+.blue > div > div {
+  width: 60px;
+  height: 60px;
+  background-color: #00f;
+}
+
+.rel-20 {
+  top: 20px;
+  left: 20px;
+}
+
+.rel-40 {
+  top: 40px;
+  left: 40px;
+}
+
+[class*="rel"] {
+ position: relative;
+}
+</style>
+</head>
+<body>
+<div>
+  <!-- 同一层级下，同为position:static的元素，后添加的总是覆盖先添加的 -->
+  <!-- 同一层级下，不为position:static的元素覆盖position:static的元素 -->
+  <!-- 同一层级下，同不为position:static的元素，后添加的总是覆盖先添加的 -->
+  <!-- position:static的元素的z-index无效-->
+  <div class="red rel-40"></div>
+  <div class="green rel-20"></div>
+  <div class="blue" style="z-index:999;"></div>
+</div>
+<!-- postion不为static且声明了z-index时，会创建一个层级 -->
+<!-- position不为static但未声明z-index时，不会创建层级，只会在它与同一层级其它元素做层次优先级时起作用 -->
+<div>
+  <div class="red rel-40">
+    <div>
+      <div></div>
+    </div>
+  </div>
+  <div class="green">
+    <div>
+      <div class="rel"></div>
+    </div>
+  </div>
+</div>
+<!-- 同一层级下，z-index高的元素覆盖z-index低的的元素 -->
+<!-- z-index:auto 在参与同层级比较时相当于 z-index:0 -->
+<div>
+  <div class="red rel-40" style="z-index:1;"></div>
+  <div class="green rel"></div>
+</div>
+<!-- html,body的背景，html的border不会遮挡body内的元素，即使元素z-index<0 -->
+<!-- body的border仍在上述规则中判断层级关系 -->
+<!-- 创建层级的元素不会遮挡后代元素，即使后代元素z-index<0 -->
+<div>
+  <div class="red rel" style="z-index:0;">
+    <div class="rel" style="z-index:-1;"></div>
+  </div>
+</div>
+<div>
+  <!-- transform,opacity(<1),filter能对目标元素应用z-index:0 -->
+  <div class="red" style="opacity:.7;">
+    <div class="rel" style="z-index:-1;"></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  var person = {
+    name: 'butSalt',
+    execFunc: function () {
+      (
+        () => {
+          (
+            //arrow function的this会使用所在作用域的this
+            () => {
+              console.log(this.name === 'butSalt');
+            }
+          )();
+        }
+      )();
+    }
+  };
+  person.execFunc();
+})();
+(function () {
+  //如果arrow function的函数体没有用大括号包裹，则计算结果会作为函数的返回值返回
+  var result = (
+    num => num + 1
+  )(1);
+  console.log(result === 2);
+})();
+(function () {
+  // 第一个箭头函数返回值时第二个箭头函数
+  var res = (num1 => num2 => num1 + num2)(1)(2);
+  console.log(res === 3);
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

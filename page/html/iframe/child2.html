@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+  .interaction-panel {
+    margin-bottom: 30px;
+  }
+  .interaction-panel .printer {
+    text-indent: 1em;
+    min-height: 1.4em;
+  }
+  .interaction-panel .buttons button {
+    margin: 0 1em;
+  }
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+  var printer = document.getElementById('printer');
+  
+  window.meet = function(name){
+    printer.textContent = `Hi, ${name}!`;
+  };
+  
+  var parent = window.parent;
+  var meetParentBtn = document.getElementById('meetParentBtn')
+  meetParentBtn.addEventListener('click', function(){
+    parent.meet( 'Child2' );
+  });
+  
+  var child1 = parent.document.getElementById('child1').contentWindow;
+  var meetChild1Btn = document.getElementById('meetChild1Btn');
+  meetChild1Btn.addEventListener('click', function(){
+    child1.meet( 'Child2' );
+  });
+});
+</script>
+</head>
+<body>
+<section class="interaction-panel">
+  <h1>Child2:</h1>
+  <p id="printer" class="printer"></p>
+  <section>
+    <p class="buttons"><button id='meetParentBtn'>Say hello to parent</button><button id='meetChild1Btn'>Say hello to child1</button></p>
+  </section>
+</section>
+</body>
+</html>

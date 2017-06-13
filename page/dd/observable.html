@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+  * {
+    margin:0;
+    padding:0;
+  }
+</style>
+<script type="text/javascript" src="/assets/lib/dd.js"></script>
+<script type="text/javascript">
+  var P = function(){};
+  dd.observable(P);
+  var p = new P();
+  p.once('say',function(word){
+    console.log(word);
+  });
+  p.on('say',function(){
+    console.log('he say sth');
+  });
+  p.fire('say',['hello']);
+  p.fire('say',['hi']);
+</script>
+</head>
+<body>
+
+</body>
+</html>

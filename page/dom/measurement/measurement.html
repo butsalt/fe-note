@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+body {
+  background-color: #333;
+}
+
+#outer {
+  width: 500px;
+  height: 500px;
+  border: 10px #fff solid;
+  overflow: auto;
+}
+
+#inner {
+  width: 1000px;
+  height: 1000px;
+  color: #ddd;
+  background-color: #516;
+}
+
+/**
+1.  offsetHeight: 包括border的可视区域高度
+2.  clientHeight: 除去border，除去滚动条后的可视区域高度
+  页面可视区域高度: document.documentElement.clientHeight
+3.  clientTop: border-top的长度
+4.  scrollHeight: 可以滚动的区域高度(在overflow:hidden下，显示的仍是可以滚动状态下的滚动区域的高度)
+  chrome浏览器，页面可以滚动的区域高度: document.body.scrollHeight
+  其他浏览器，页面可以滚动的区域高度: document.documentElement.scrollHeight
+  html的overflow控制的是窗口的溢出逻辑，html本身总是允许溢出
+  若未给html设置overflow，body的overflow控制的是窗口的溢出逻辑
+  若已给html设置overflow，body的overflow控制的是body本身的溢出逻辑
+5.  scrollTop:当前已向下滚动的距离
+  chrome浏览器，页面当前已向下滚动的距离: document.body.scrollTop
+  其他浏览器，页面当前已向下滚动的距离: document.documentElement.scrollTop
+**/
+</style>
+</head>
+<body>
+  <div id="outer">
+    <div id="inner">Here is message...</div>
+  </div>
+</body>
+</html>

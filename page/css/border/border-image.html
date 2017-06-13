@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+div {
+  border-image-source: url(/assets/img/border-image.png);
+  /** 上割 右割 下割 左割 **/
+  /** 不写单位是像素，像素和百分比都相对于背景图片 **/
+  border-image-slice: 27 33.3333333333333333%;
+  border-width: 50px;
+  width: 200px;
+  height: 100px;
+  margin: 0 auto 40px;
+  /** 必须设置border-style来使border生效 **/
+  border-style: solid;
+}
+
+/** repeat **/
+.stretch {
+  /** 默认值 **/
+  /** 默认情况下裁剪后的图片水平，垂直缩放比例会参照应用到相邻角上的图片 **/
+  /** 垂直方向上为了覆盖区域，裁剪图片有可能会做第二次垂直方向的缩放 **/
+  /** 水平方向上为了覆盖区域，裁剪图片有可能会做第二次水平方向的缩放 **/
+  border-image-repeat: stretch;
+}
+
+.round {
+  /** 默认情况下裁剪后的图片水平，垂直缩放比例会参照应用到相邻角上的图片 **/
+  /** 需要重复时完整重复，有可能因此做第二次缩放操作，但裁剪后的图片的宽高比不会再变 **/
+  border-image-repeat: round;
+}
+
+.repeat {
+  /** 默认情况下裁剪后的图片水平，垂直缩放比例会参照应用到相邻角上的图片 **/
+  /** 从中心点向两端重复，不保证完整重复 **/
+  /** 先水平 再垂直 **/
+  border-image-repeat: repeat repeat;
+}
+
+/** outset **/
+.no-outset {
+  border-image-outset: 0;
+}
+
+.has-outset {
+  /** 四个角再向外扩张20px **/
+  border-image-outset: 20px;
+}
+</style>
+</head>
+<body>
+<h1>repeat</h1>
+<div class="stretch"></div>
+<div class="round"></div>
+<div class="repeat"></div>
+<hr/>
+<h1>outset</h1>
+<div class="no-outset"></div>
+<div class="has-outset"></div>
+<h1></h1>
+</body>
+</html>

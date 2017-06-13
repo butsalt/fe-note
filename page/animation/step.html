@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+@keyframes run {
+  50% {
+    width: 200px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  background: orange;
+  animation-name: run;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+#use-start {
+  /** 从0% -> 50%，分成两帧，每一帧定格0.25秒 **/
+  /** 第一帧：25%时的样式 **/
+  /** 第二帧：50%时的样式 **/
+
+  /** 从50% -> 100%，分成两帧，每一帧定格0.25秒 **/
+  /** 第一帧：75%时的样式 **/
+  /** 第二帧：100%时的样式 **/
+  animation-timing-function: steps(2, start);
+}
+
+#use-end {
+  /** 默认用end **/
+
+  /** 从0% -> 50%，分成两帧，每一帧定格0.25秒 **/
+  /** 第一帧：0%时的样式 **/
+  /** 第二帧：25%时的样式 **/
+
+  /** 从50% -> 100%，分成两帧，每一帧定格0.25秒 **/
+  /** 第一帧：50%时的样式 **/
+  /** 第二帧：75%时的样式 **/
+  animation-timing-function: steps(2, end);
+}
+</style>
+</head>
+<body>
+<div id="use-start"></div>
+<div id="use-end"></div>
+</body>
+</html>

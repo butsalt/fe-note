@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<!-- 即使没用';'结尾，&reg也被转义成了® -->
+&regs
+<!-- &nbsp;转移后的结果不是' ' -->
+<span id="J-space">&nbsp;</span>
+<script type="text/javascript">
+  (function () {
+    var spaceEl = document.getElementById('J-space');
+    var space = spaceEl.textContent;
+    console.log(space !== ' ');
+    console.log(space.codePointAt(0).toString(16));
+  })();
+</script>
+</body>
+</html>

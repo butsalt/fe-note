@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  class Cls {
+    set name (name) {
+      this._name = name;
+    }
+
+    get name () {
+      return this._name;
+    }
+  }
+
+  var obj = new Cls();
+  obj.name = 'butSalt';
+  console.log(
+    obj.name === obj._name
+  );
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

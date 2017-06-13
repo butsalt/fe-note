@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+</head>
+<body>
+<div class="J-target">
+  outer
+  <!-- 这种写法绑定的事件会被复制 -->
+  <button onclick="alert('!!')">alert</button>
+  <div>
+    inner
+  </div>
+</div>
+<script type="text/javascript">
+(function () {
+  var targetEl = document.querySelector('.J-target');
+  var p = {
+    name: 'butSalt'
+  };
+  targetEl.person = p;
+  //为false时，只复制当前元素
+  //为true时，还会复制当前元素下的后代元素
+  var cloneEl = targetEl.cloneNode(true);
+  //现代浏览器不会复制元素上自定义的属性
+  //ie8还会浅复制元素上自定义的属性
+  alert(cloneEl.person);
+  alert(targetEl.person === cloneEl.person)
+
+  document.body.appendChild(cloneEl);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+  //如果比较双方中存在对象，则会尝试获取这个对象的原始值
+  //方法是：先调用这个对象的valueOf方法获取原始值，如果返回的是其本身则调用toString获取原始值
+  //Date对象获取原始值时直接调用toString
+  //如果比较双方存在数值，则会将另一方也转换成数值
+  console.log(['a'] < 1 === false);
+  console.log(['a'] > 1 === false);
+  //如果比较双方都是字符串，则会按照unicode编码大小逐位比较
+  console.log('aa' < 'ab' === true);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

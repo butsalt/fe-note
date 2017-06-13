@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+/** table是块级元素，但默认宽度不会占满整行 **/
+/** 设置height，background-color不包括caption **/
+.example {
+  background-color: #eee;
+  width: 100%;
+  /** 设置成collapse(默认)时，border-spacing无效 **/
+  border-collapse: separate;
+  /** 一个单元格的间隙 水平 垂直 **/
+  border-spacing: 3px 10px;
+  /** 设置成hide时，隐藏空的单元格 **/
+  empty-cells: show;
+}
+
+.example caption {
+  background-color: #999;
+}
+
+/** thead，tbody，tfoot，tr不占空间 **/
+/** 被border-spacing隔开的空间无法被thead，tbody，tfoot，tr设置背景色 **/
+.example thead {
+  background-color: #fff;
+}
+
+.example tbody {
+  background-color: #ddd;
+}
+.example tfoot {
+  background-color: #fff;
+}
+
+/** 前4个限宽度，后面的自适应 **/
+.example th:not(:nth-child(n+5)) {
+  width: 10%;
+}
+
+.separate {
+  /** 这个宽包含了table水平方向上的border，水平方向上的padding **/
+  width: 880px;
+  padding: 10px;
+  border: 15px black solid;
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+.separate td {
+  padding: 10px;
+  border: 15px black solid;
+}
+
+.collapse-container {
+  display: inline-block;
+  border: 10px #aaa solid;
+  position: relative;
+}
+
+.collapse-container .width-ruler {
+  width: 500px;
+  height: 10px;
+  background-color: steelblue;
+}
+
+.collapse {
+  /** 共同区域的border会合并(取border-width宽的那一侧) **/
+  /** 计算td某一侧的border时，只取这一侧border长度的一半 **/
+  /**
+  计算table的border时，
+    左侧border的右边缘在首行第一个单元格border-left向右1/2处，长度是此格border-left的1/2
+    右侧border的左边缘在首行最后一个单元格border-right向左1/2处，长度是此格border-right的1/2
+    上方border的下边缘在尾行border-top最长的单元格border-top向下1/2处，长度是此格border-top的1/2
+    下方border的上边缘在尾行border-bottom最长的单元格的border-bottom向上1/2处，长度是此格border-bottom的1/2
+  **/
+  border-collapse: collapse;
+  /** 这个宽包含了table水平方向上的border **/
+  width: 500px;
+  /** border-collapse:collapse时，padding无效 **/
+  /*padding: 500px;*/
+}
+
+.collapse tr:first-child td:first-child {
+  border: 10px black solid;
+}
+
+.collapse tr:first-child td:nth-child(2) {
+  border: 20px black solid;
+}
+
+.collapse tr:first-child td:nth-child(3) {
+  border: 30px black solid;
+}
+
+.collapse tr:last-child td {
+  /** 该行border水平方向上左右各会有 40/2 - 30/2 = 5px 的溢出 **/
+  border: 40px red solid;
+}
+
+.collapse-container .border-ruler {
+  width: 5px;
+  height: 10px;
+  background-color: steelblue;
+  left: 100%;
+  margin-top: -10px;
+  position: absolute;
+}
+
+.col {
+  /** 只有在collapse时才能对列应用border **/
+  border-collapse: collapse;
+}
+
+.col colgroup:nth-of-type(1) {
+  /** 对colgroup下的每一列应用 **/
+  /** 只能定义border，background，width，visibility **/
+  /** width相当于设置了这一列td包含border，padding的宽度 **/
+  /** 对td设置的width
+    如果是px，不包含水平方向上的border，padding的宽度
+    如果是百分比，包含border，padding的宽度 = 表格空间 * 百分比
+  **/
+  width: 100px;
+  background-color: steelblue;
+}
+
+.col colgroup:nth-of-type(2) col:first-child {
+  /** 折叠不显示该列，似乎对chrome无效 **/
+  visibility: collapse;
+}
+
+.col colgroup:nth-of-type(2) col:nth-child(2) {
+  /** 在列上生成边框 **/
+  border: 1px black solid;
+}
+
+</style>
+</head>
+<body>
+<table class="example">
+  <caption>
+    学生列表
+  </caption>
+  <thead>
+    <tr>
+      <!-- th是表头单元格，声明这个格子是这一列/这一行的头部 -->
+      <th>姓名</th>
+      <th>性别</th>
+      <th>年级</th>
+      <th>班级</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <!-- tfoot虽设置在tbody前，显示在tbody后 -->
+  <tfoot>
+    <tr>
+      <td colspan="5">共计2人</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <!-- td是普通单元格，用来承载数据 -->
+      <td>孙雨珩</td>
+      <td>男</td>
+      <td colspan="2">已毕业</td>
+      <td>哈哈</td>
+    </tr>
+    <tr>
+      <td>黄雯</td>
+      <td>女</td>
+      <td>大一</td>
+      <td>0987-2</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<hr/>
+<table class="separate">
+  <tbody>
+    <tr>
+      <td>孙雨珩</td>
+      <td>0987-2</td>
+      <td>男</td>
+    </tr>
+    <tr>
+      <td>黄雯</td>
+      <td>0987-2</td>
+      <td>女</td>
+    </tr>
+  </tbody>
+</table>
+<hr/>
+<div class="collapse-container">
+  <div class="width-ruler"></div>
+  <table class="collapse">
+    <tbody>
+      <tr>
+        <td>
+          0987-2
+        </td>
+        <td>
+          孙雨珩
+        </td>
+        <td>
+          1990-12-24
+        </td>
+      </tr>
+      <tr>
+        <td>
+          0987-2
+        </td>
+        <td>
+          黄雯
+        </td>
+        <td>
+          1989-11-07
+        </td>
+      </tr>
+      <tr>
+        <td>
+          0987-2
+        </td>
+        <td>
+          周杰伦
+        </td>
+        <td>
+          1943-05-07
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="border-ruler"></div>
+</div>
+<hr/>
+<table class="col">
+  <caption>列组的例子</caption>
+  <!-- colgroup必须在caption之后，thead/tbody/tfoot/tr之前 -->
+  <!-- colgroup中不含col时，可以指定span -->
+  <colgroup span="2"></colgroup>
+  <colgroup>
+    <col/>
+    <col span="2"/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td>0987-2</td>
+      <td>孙雨珩</td>
+      <td>1990-12-24</td>
+      <td>男</td>
+      <td>摩羯座</td>
+    </tr>
+    <tr>
+      <td>0987-2</td>
+      <td>黄雯</td>
+      <td>1989-11-07</td>
+      <td>女</td>
+      <td>天蝎座</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learn</title>
+<style type="text/css">
+body {
+  background-color: #ddd;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  counter-reset: part;
+}
+
+div {
+  box-sizing: border-box;
+  width: 400px;
+  height: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+   /** 不拼接画布 **/
+  background-repeat: no-repeat;
+ }
+
+div::before {
+  counter-increment: part;
+  content: counter(part);
+}
+
+div:nth-of-type(1) {
+  /** 确定画布默认左上角位置，可摆放空间 **/
+  background-origin: content-box;
+  padding: 50px;
+  /** 保持图片原始大小，图片本身即画布 **/
+  background-image: url("/assets/img/maple-small.jpg");
+  /** 画布左上角位置不变，相对可摆放空间进行缩放 **/
+  background-size: 50% 50%;
+  /** 画布相对可摆放空间进行摆放(见background-position) **/
+  background-position: 100% 100%;
+}
+
+div:nth-of-type(2) {
+  /** 确定画布默认左上角位置，大小，可摆放空间 **/
+  background-origin: content-box;
+  padding: 50px;
+  /** 画布左上角位置不变，相对默认大小进行缩放 **/
+  /** 第二个参数未填即为auto，这会保证画布宽高比不变 **/
+  background-size: 50%;
+  /** 画布相对可摆放空间进行摆放(见background-position) **/
+  background-position: 100% 100%;
+  /** 根据当前画布大小将百分比换算成实际像素值，开始绘制图片 **/
+  background-image: linear-gradient(red, green 50%);
+}
+</style>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+</html>
