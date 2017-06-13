@@ -2,7 +2,9 @@
 这里记录了我的前端笔记。
 
 ## Run
-进入到项目根目录，使用Maven指令`jetty:run`就可以在本地的7070端口上把项目运行起来。
+1. npm install
+2. npm start
+3. 访问http://localhost:3000/pages
 
 ## Index
 1. 核心

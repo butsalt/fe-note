@@ -1,0 +1,33 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "my front end note",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/butsalt/learn.git"
+  },
+  "keywords": [
+    "fe",
+    "note"
+  ],
+  "author": "butSalt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/butsalt/learn/issues"
+  },
+  "homepage": "https://github.com/butsalt/learn#readme",
+  "dependencies": {
+    "busboy": "^0.2.14",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.0",
+    "koa-send": "^4.1.0",
+    "koa-views": "^6.0.2",
+    "nunjucks": "^3.0.1"
+  }
+}
