@@ -25,7 +25,7 @@ app.use(async (ctx) => {
       ctx,
       ctxPath.replace(/^\/assets\//, '/public/')
     );
-  } else if (ctxPath.startsWith('/page')) {
+  } else if (ctxPath.startsWith('/pages')) {
     // 展示page下的文件夹内容或页面
     await renderPage(ctx);
   }
