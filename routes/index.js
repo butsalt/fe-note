@@ -12,6 +12,10 @@ router
   .use(
     '/cookie',
     require('./cookie').routes()
+  )
+  .use(
+    '/download',
+    require('./download').routes()
   );
 
 module.exports = router;

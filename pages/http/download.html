@@ -20,11 +20,11 @@
     return false;
   }
 
-  var url = '/download';
-  var filePath = 'assets/img';
+  var url = '/api/download';
+  var folderPath = '/public/img/';
   var fileName = 'maple-small.jpg';
 
-  url += '?filePath=' + filePath + '&' + 'fileName=' + fileName;
+  url += '?folderPath=' + folderPath + '&fileName=' + fileName;
 
   var success = false;
   if (supports()) {
