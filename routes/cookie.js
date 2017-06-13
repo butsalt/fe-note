@@ -3,7 +3,7 @@ const router = require('koa-router')();
 router
   .get('/get', function (ctx) {
     ctx.body = `
-      name: ${ctx.cookies.get('name')}
+      console.log('name: ${ctx.cookies.get('name')}');
     `;
   })
   .get('/set', function (ctx) {
@@ -15,7 +15,9 @@ router
         path: '/',
       }
     );
-    ctx.body = `name=butSalt`;
+    ctx.body = `
+      console.log('set cookie: name=butSalt');
+    `;
   });
 
 module.exports = router;
