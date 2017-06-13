@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var xhr = new XMLHttpRequest();
       // method url async
-      xhr.open('POST', '/upload', true);
+      xhr.open('POST', '/api/upload/', true);
 
       // 用json格式解析响应信息
       xhr.responseType = 'json';
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // 响应下载过程中回调
       xhr.addEventListener('progress', function (e) {
         if (e.lengthComputable) {
+          // 响应需要设置Content-Length消息头，才能lengthComputable
           console.log(`total: ${e.total}byte; downloaded: ${e.loaded}byte`);
         }
       });

@@ -16,6 +16,10 @@ router
   .use(
     '/download',
     require('./download').routes()
+  )
+  .use(
+    '/upload',
+    require('./upload').routes()
   );
 
 module.exports = router;
