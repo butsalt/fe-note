@@ -23,6 +23,8 @@
   "homepage": "https://github.com/butsalt/learn#readme",
   "dependencies": {
     "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.0",
     "koa-send": "^4.1.0",
     "koa-views": "^6.0.2",
     "nunjucks": "^3.0.1"
