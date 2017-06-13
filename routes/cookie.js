@@ -1,12 +1,12 @@
 const router = require('koa-router')();
 
 router
-  .get('/get', function (ctx) {
+  .get('/get', async (ctx) => {
     ctx.body = `
       console.log('name: ${ctx.cookies.get('name')}');
     `;
   })
-  .get('/set', function (ctx) {
+  .get('/set', async (ctx) => {
     ctx.cookies.set(
       'name',
       'butSalt',

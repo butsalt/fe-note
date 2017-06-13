@@ -1,12 +1,12 @@
 const router = require('koa-router')();
 
 router
-  .get('/', function (ctx) {
+  .get('/', async (ctx) => {
     ctx.body = `
       GET: ${ctx.query.msg}
     `;
   })
-  .post('/', function (ctx) {
+  .post('/', async (ctx) => {
     ctx.body = `
       POST: ${ctx.request.body.msg}
     `;
