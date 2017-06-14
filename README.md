@@ -1,6 +1,9 @@
 # fe-note
 这里记录了我的前端笔记。
 
+## Requirements
+* node版本需要在7.6.0或更高
+
 ## Run
 1. npm install
 2. npm start
