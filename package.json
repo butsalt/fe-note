@@ -1,5 +1,5 @@
 {
-  "name": "learn",
+  "name": "fe-note",
   "version": "1.0.0",
   "description": "my front end note",
   "main": "app.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/butsalt/learn.git"
+    "url": "git+https://github.com/butsalt/fe-note.git"
   },
   "keywords": [
     "fe",
@@ -18,9 +18,9 @@
   "author": "butSalt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/butsalt/learn/issues"
+    "url": "https://github.com/butsalt/fe-note/issues"
   },
-  "homepage": "https://github.com/butsalt/learn#readme",
+  "homepage": "https://github.com/butsalt/fe-note#readme",
   "dependencies": {
     "busboy": "^0.2.14",
     "koa": "^2.2.0",

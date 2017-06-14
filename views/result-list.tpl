@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>learn</title>
+<title>fe-note</title>
 <style type="text/css">
   li {
     line-height: 2;

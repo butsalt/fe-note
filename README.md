@@ -1,4 +1,4 @@
-# learn
+# fe-note
 这里记录了我的前端笔记。
 
 ## Run
