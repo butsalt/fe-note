@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  border: 1px black solid;
+}
+</style>
+</head>
+<body>
+<svg width="250" height="250" viewbox="0,0,125,125">
+  <circle cx="125" cy="125" r="100" fill="steelblue" id="J-circle"/>
+</svg>
+<script type="text/javascript">
+  (function () {
+    var circle = document.getElementById('J-circle');
+    circle.addEventListener('mousemove', function (e) {
+      // 即使svg的视窗改变，事件显示的坐标仍采用标准视窗的坐标体系
+      console.log(`${e.x}, ${e.y}`);
+    });
+  })();
+</script>
+</body>
+</html>
