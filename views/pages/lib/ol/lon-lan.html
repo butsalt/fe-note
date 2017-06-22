@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<link rel="stylesheet" type="text/css" href="/assets/lib/ol/4.2.0/ol.css"/>
+<style type="text/css">
+  .map {
+    width: 500px;
+    height: 400px;
+  }
+</style>
+</head>
+<body>
+<div id="J-map" class="map"></div>
+<script type="text/javascript" src="/assets/lib/ol/4.2.0/ol.js"></script>
+<script type="text/javascript">
+  (function() {
+    // 经度单位是度，东经是正，西经是负
+    // 纬度单位是度，北纬是正，南纬是负
+    // 13° 41′ 21″ E, 47° 23′ 39″ N, 
+    // ->
+    // [13.689167, 47.394167]
+    var washingtonLonLat = [-77.036667, 38.895];
+    var washingtonWebMercator = ol.proj.fromLonLat(washingtonLonLat);
+    var map = new ol.Map({
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ],
+      controls: [],
+      target: 'J-map',
+      view: new ol.View({
+        center: washingtonWebMercator,
+        zoom: 8,
+        projection:'EPSG:3857',
+      }),
+    });
+  })();
+</script>
+</body>
+</html>

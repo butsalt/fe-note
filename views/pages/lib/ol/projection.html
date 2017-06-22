@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<link rel="stylesheet" type="text/css" href="/assets/lib/ol/4.2.0/ol.css"/>
+<style type="text/css">
+  .map {
+    width: 500px;
+    height: 400px;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<div id="J-epsg-4326" class="map"></div>
+<div id="J-epsg-3857" class="map"></div>
+<script type="text/javascript" src="/assets/lib/ol/4.2.0/ol.js"></script>
+<script type="text/javascript">
+  // 地球是一个三维的球体，展示到电脑屏幕上时则要用二维平面进行展示
+  // projection定义了三维球体到二维平面的映射规则，不同规则下最终展现到平面上的样子会不一样
+  (function() {
+    var map = new ol.Map({
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ],
+      controls: [],
+      target: 'J-epsg-4326',
+      view: new ol.View({
+        // 单位是米
+        // 往右x增，往左x减
+        // 往上y增，往下y减
+        center: [0, 0],
+        zoom: 2,
+        projection:'EPSG:4326',
+      }),
+    });
+    setTimeout(function() {
+      // 海拔的值也会随着projection的变化而变化
+      console.log(map.getView().getResolution());
+    }, 1000);
+  })();
+  (function() {
+    map = new ol.Map({
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ],
+      controls: [],
+      target: 'J-epsg-3857',
+      view: new ol.View({
+        // 单位是米
+        // 往右x增，往左x减
+        // 往上y增，往下y减
+        center: [0, 0],
+        zoom: 2,
+        // EPSG:3857是默认的projection
+        projection:'EPSG:3857',
+      }),
+    });
+    setTimeout(function() {
+      // 海拔的值也会随着projection的变化而变化
+      console.log(map.getView().getResolution());
+    }, 1000);
+  })();
+</script>
+</body>
+</html>
