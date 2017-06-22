@@ -28,5 +28,6 @@
  * velocity(动画库)
  * tween(使用requestAnimationFrame驱动的动画库)
  * parsley(表单验证)
+ * openlayers(地图)
 3. 其它
  * dd(模仿黄韬写的工具类)
