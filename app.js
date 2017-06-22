@@ -1,6 +1,7 @@
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const views = require('koa-views');
+const send = require('koa-send');
 
 const renderPage = require('./lib/renderPage');
 
