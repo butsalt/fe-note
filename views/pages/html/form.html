@@ -27,7 +27,7 @@
 //  firefox会将表单中的内容恢复成最后一次填写的状态，通过js修改的是否禁用会恢复，通过js修改的是否只读会恢复
 //  设置autocomplete="off"，也不可以阻止恢复
 checkbox
-  .addEventListener('click', function () {
+  .addEventListener('click', function() {
     var checked = this.checked;
     normalBtn.disabled = checked;
     specialBtn.disabled = checked;

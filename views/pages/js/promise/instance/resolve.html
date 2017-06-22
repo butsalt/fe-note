@@ -4,24 +4,24 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
-  new Promise(function (resolve) {
+(function() {
+  new Promise(function(resolve) {
     resolve(true);
   })
-  //如果第一个参数传入的不是一个function，则会用function (val) {return val;}来代替
+  //如果第一个参数传入的不是一个function，则会用function(val) {return val;}来代替
   .then(null, null)
-  .then(function (val) {
+  .then(function(val) {
     console.log(val === true);
   });
 })();
-(function () {
-  new Promise(function (resolve, reject) {
+(function() {
+  new Promise(function(resolve, reject) {
     reject(true);
   })
-  //如果第二个参数传入的不是一个function，则会用function (err) {throw err;}来代替
+  //如果第二个参数传入的不是一个function，则会用function(err) {throw err;}来代替
   .then(null, null)
   //相当于.then(null, handler)
-  .catch(function (val) {
+  .catch(function(val) {
     console.log(val === true);
   });
 })();

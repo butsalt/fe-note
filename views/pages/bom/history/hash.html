@@ -7,14 +7,14 @@
 <body>
 <a id="J-go-btn"></a>
 <script type="text/javascript">
-(function () {
+(function() {
   // location.hash就是location.href出现的第一个'#'开始往后的整个字符串(包括'#')
   if (!location.hash) {
     location.hash = '#home';
   }
   var goBtn = document.getElementById('J-go-btn');
 
-  function update () {
+  function update() {
     var hash = location.hash;
     var text, href;
     if (hash === '#home') {

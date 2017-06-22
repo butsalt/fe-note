@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-function gen () {
+function gen() {
   var num = 0;
   return {
-    next: function () {
+    next: function() {
       if (num === 5) {
         return {
           done: true,
@@ -19,19 +19,19 @@ function gen () {
         value: num++
       };
     },
-    return: function () {
+    return: function() {
       num = 5;
       return {
         done: true,
         value: 'end'
       };
     },
-    [Symbol.iterator]: function () {
+    [Symbol.iterator]: function() {
       return this;
     }
   };
 };
-(function () {
+(function() {
   var ite = gen();
   var num;
   for (num of ite) {
@@ -42,7 +42,7 @@ function gen () {
   console.log(res.done === true);
   console.log(res.value === 'end');
 })();
-(function () {
+(function() {
   var ite = gen();
   var num;
   var res;

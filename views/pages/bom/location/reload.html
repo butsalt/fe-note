@@ -19,13 +19,13 @@
 target.textContent = Math.random().toFixed(2);
 
 checkbox
-  .addEventListener('click', function () {
+  .addEventListener('click', function() {
     var checked = this.checked;
     normalBtn.disabled = checked;
     text.readOnly = checked;
   });
 
-setTimeout(function () {
+setTimeout(function() {
   //如果为true，将强制浏览器从服务器获取当前页面资源，表单信息不会保留
   //如果为false（默认），则为f5刷新
   //  可参考 http://localhost:7070/page/html/form.html

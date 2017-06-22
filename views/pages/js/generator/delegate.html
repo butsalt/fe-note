@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
-  function *child () {
+(function() {
+  function *child() {
     yield 2;
     yield 3;
     return 'child';
   }
 
-  function *parent () {
+  function *parent() {
     yield 1;
     var msg = yield *child();
     console.log(msg === 'child');
@@ -23,13 +23,13 @@
     console.log(num);
   }
 })();
-(function () {
-  function *gen () {
+(function() {
+  function *gen() {
     var ite = {
-      [Symbol.iterator]: function () {
+      [Symbol.iterator]: function() {
         var num = 2;
         return {
-          next: function () {
+          next: function() {
             if (num === 4) {
               return {
                 value: undefined,
@@ -54,8 +54,8 @@
     console.log(num);
   }
 })();
-(function () {
-  function *child () {
+(function() {
+  function *child() {
     try {
       //相当于在此处阻塞时发生异常
       yield 2;
@@ -65,7 +65,7 @@
     yield 3;
   }
 
-  function *parent () {
+  function *parent() {
     yield 1;
     yield *child();
     yield 4;
@@ -77,8 +77,8 @@
   console.log(res.done === false);
   console.log(res.value === 3);
 })();
-(function () {
-  function *child () {
+(function() {
+  function *child() {
     try {
       yield 2;
       yield 3;
@@ -87,7 +87,7 @@
     }
   }
 
-  function *parent () {
+  function *parent() {
     yield 1;
     yield *child();
     yield 4;
@@ -100,8 +100,8 @@
   console.log(res.done === true);
   console.log(res.value === 'end');
 })();
-(function () {
-  function *child () {
+(function() {
+  function *child() {
     try {
       yield 2;
       yield 3;
@@ -110,7 +110,7 @@
     }
   }
 
-  function *parent () {
+  function *parent() {
     try {
       yield 1;
       yield *child();

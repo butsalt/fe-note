@@ -4,26 +4,26 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
+(function() {
   class Parent {
-    constructor (name) {
+    constructor(name) {
       this.name = name;
     }
 
-    sayName () {
+    sayName() {
       console.log(this.name);
     }
   }
 
   class Child extends Parent {
-    constructor (name, age) {
+    constructor(name, age) {
       // 如果存在继承
       // 则super必须在调用this前调用
       super(name);
       this.age = age;
     }
 
-    sayAge () {
+    sayAge() {
       console.log(this.age);
     }
   }

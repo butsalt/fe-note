@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
+(function() {
   var krista = {
     name: 'krista'
   };
   var butSalt = {
     name: 'butSalt',
-    execArrowFunc: function () {
+    execArrowFunc: function() {
       (
         age => {
           //arrow function 优先级高于 apply
@@ -20,9 +20,9 @@
         }
       ).apply(krista, [26]);
     },
-    execNormalFunc: function (age) {
+    execNormalFunc: function(age) {
       (
-        function (age) {
+        function(age) {
           console.log(this.name === 'krista');
           console.log(age === 26);
         }
@@ -32,11 +32,11 @@
   butSalt.execArrowFunc();
   butSalt.execNormalFunc();
 })();
-(function () {
+(function() {
   var butSalt = {
     name: 'butSalt'
   };
-  var func = (function () {
+  var func = (function() {
     return this.name;
   }).bind(butSalt);
   var name = func.apply({
@@ -45,8 +45,8 @@
   //bind 优先级高于 apply
   console.log(name === 'butSalt');
 })();
-(function () {
-  function print (a, b) {
+(function() {
+  function print(a, b) {
     console.log(a === 'a');
     console.log(b === 'b');
   }
@@ -61,36 +61,36 @@
     }
   );
 })();
-(function () {
+(function() {
   //如果context为null，this则指向window
-  (function () {
+  (function() {
     console.log(this === window)
   }).apply(null);
 
   //如果context为undefined，this则指向window
-  (function () {
+  (function() {
     console.log(this === window)
   }).apply(undefined);
 
   //基本类型会被封装成对象
-  (function () {
+  (function() {
     console.log(this instanceof Number)
   }).apply(0);
 })();
-(function () {
+(function() {
   //在严格模式context是什么，this就指向什么
-  (function () {
+  (function() {
     'use strict';
     console.log(this === null)
   }).apply(null);
 
-  (function () {
+  (function() {
     'use strict';
     console.log(this === undefined)
   }).apply(undefined);
 
   //基本类型会被封装成对象
-  (function () {
+  (function() {
     'use strict';
     console.log(this === 0)
   }).apply(0);

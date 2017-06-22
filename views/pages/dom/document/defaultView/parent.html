@@ -8,13 +8,13 @@
   <p>parent</p>
   <iframe src="./child.html" id="J-child-frame"></iframe>
   <script type="text/javascript">
-    (function () {
+    (function() {
       console.log(
         // document所属的window
         document.defaultView === window
       );
     })();
-    (function () {
+    (function() {
       var childFrame = document.getElementById('J-child-frame');
       var childWin = childFrame.contentWindow;
       var childDoc = childWin.document;

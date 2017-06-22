@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
+(function() {
   var b = 3;
-  (function () {
+  (function() {
     //var若要使用，必须出现在语句的最开始
     //使用var的场合，逗号相隔的每条语句都要是赋值语句
     var a = 1, b = 2;
@@ -15,11 +15,11 @@
   })();
   console.log(b === 3);
 })();
-(function () {
-  function num0 () {
+(function() {
+  function num0() {
     return 0;
   }
-  function num1 () {
+  function num1() {
     return 1;
   }
   var num;
@@ -28,7 +28,7 @@
   num = (num0(), num1());
   console.log(num === 1);
 })();
-(function () {
+(function() {
   var a;
   //, 低于 赋值
   a = 0, 1;

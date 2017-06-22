@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
-  function *gen () {
+(function() {
+  function *gen() {
     var msg = yield;
     console.log(msg === true);
   }
@@ -13,8 +13,8 @@
   ite.next();
   ite.next(true);
 })();
-(function () {
-  function *gen () {
+(function() {
+  function *gen() {
     try {
       return 'end';
     } finally {

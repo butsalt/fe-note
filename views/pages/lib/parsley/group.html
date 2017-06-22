@@ -6,13 +6,13 @@
 <script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
 <script type="text/javascript" src="/assets/lib/parsley/2.4.3/parsley.js"></script>
 <script type="text/javascript">
-$(function () {
+$(function() {
   var $form = $('#J-target-form');
   var instance = $form
     .parsley();
 
   $form.find('.J-check-group-1-btn')
-    .click(function () {
+    .click(function() {
       //只检查标记为group-1下的input
       instance
         .validate({
@@ -21,7 +21,7 @@ $(function () {
     });
 
   $form.find('.J-check-group-2-btn')
-    .click(function () {
+    .click(function() {
       //只检查标记为group-2下的input
       instance
         .validate({

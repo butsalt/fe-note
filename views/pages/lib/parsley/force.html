@@ -6,9 +6,9 @@
 <script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
 <script type="text/javascript" src="/assets/lib/parsley/2.4.3/parsley.js"></script>
 <script type="text/javascript">
-$(function () {
+$(function() {
   Parsley.addValidator('test', {
-    validateString: function (value) {
+    validateString: function(value) {
       return value === '123';
     },
     messages: {
@@ -20,14 +20,14 @@ $(function () {
     .parsley();
 
   $form.find('.J-normal-check-btn')
-    .click(function () {
+    .click(function() {
       //input的value为空且不为required就跳过检查
       instance
         .validate();
     });
 
   $form.find('.J-force-check-btn')
-    .click(function () {
+    .click(function() {
       //value为空即使不为required的input仍然需要接受检查
       instance
         .validate({

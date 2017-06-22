@@ -20,11 +20,11 @@
 // /下的cookie，在所有path（首页的path即为/）下都可以读到
 
 // 越新设的cookie，在document.cookie的字符串中越靠后
-function getCookie (key) {
+function getCookie(key) {
   var cookies = document.cookie ? document.cookie.split('; ') : [];
   var cookieMap = {};
   cookies
-    .forEach(function (cookie) {
+    .forEach(function(cookie) {
       var part = cookie.split('=');
       cookieMap[decodeURIComponent(part[0])] = decodeURIComponent(part[1]);
     });

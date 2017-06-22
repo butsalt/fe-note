@@ -32,22 +32,22 @@
   }
 </style>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',function () {
+document.addEventListener('DOMContentLoaded',function() {
   var printer = document.getElementById('printer');
   
-  window.meet = function (name) {
+  window.meet = function(name) {
     printer.textContent = `Hi, ${name}!`;
   };
   
   var child1 = document.getElementById('child1').contentWindow;
   var meetChild1Btn = document.getElementById('meetChild1Btn')
-  meetChild1Btn.addEventListener('click', function () {
+  meetChild1Btn.addEventListener('click', function() {
     child1.meet('Parent');
   });
   
   var child2 = document.getElementById('child2').contentWindow;
   var meetChild2Btn = document.getElementById('meetChild2Btn');
-  meetChild2Btn.addEventListener('click', function () {
+  meetChild2Btn.addEventListener('click', function() {
     child2.meet('Parent');
   });
 });

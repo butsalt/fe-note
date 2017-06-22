@@ -22,9 +22,9 @@
 }
 </style>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('target')
-    .addEventListener('transitionend', function (e) {
+    .addEventListener('transitionend', function(e) {
       if(this.offsetWidth === 400){
         this.innerHTML = 'expand';
       } else {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   //支持冒泡
-  document.body.addEventListener('transitionend', function () {
+  document.body.addEventListener('transitionend', function() {
     console.log('bubbled');
   });
 });

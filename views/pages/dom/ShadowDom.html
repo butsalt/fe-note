@@ -38,7 +38,7 @@
 //查找模板
 var template = document.getElementById('person-tmpl');
 //将模板注入到宿主节点上
-function transform (host) {
+function transform(host) {
   var root = host.createShadowRoot();
   //将模板的内容复制一份，作为子节点插入到宿主节点下
   //importNode用于将节点从另一个文档中复制出来

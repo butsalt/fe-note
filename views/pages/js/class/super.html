@@ -4,24 +4,24 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
+(function() {
   class Parent {
-    constructor (name) {
+    constructor(name) {
       this.name = name;
     }
 
-    say () {
+    say() {
       console.log(this.name);
     }
   }
 
   class Child extends Parent {
-    constructor (name, age) {
+    constructor(name, age) {
       super(name);
       this.age = age;
     }
 
-    say () {
+    say() {
       super.say();
       console.log(this.age);
     }

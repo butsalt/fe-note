@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
+(function() {
   var i;
   for (i = 0; i < 3; i++) {
     try {
@@ -15,8 +15,8 @@
     }
   }
 })();
-(function () {
-  function test () {
+(function() {
+  function test() {
     try {
       //变量num的作用域在test函数内
       var num = 0;
@@ -30,8 +30,8 @@
   }
   test();
 })();
-(function () {
-  function test () {
+(function() {
+  function test() {
     var num = 0;
     try {
       //return时已决定返回的值
@@ -42,8 +42,8 @@
   }
   console.log(test() === 0);
 })();
-(function () {
-  function test () {
+(function() {
+  function test() {
     try {
       return 1;
     } finally {
@@ -55,8 +55,8 @@
   }
   console.log(test() === undefined);
 })();
-(function () {
-  function test () {
+(function() {
+  function test() {
     try {
       throw false;
     } catch (e) {
@@ -65,8 +65,8 @@
   }
   console.log(test() === 1);
 })();
-(function () {
-  function test () {
+(function() {
+  function test() {
     try {
       throw false;
     } catch (e) {

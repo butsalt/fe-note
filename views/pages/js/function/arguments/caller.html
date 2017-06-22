@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
+(function() {
   // 被调函数
-  function callee () {
+  function callee() {
     console.log(callee.caller === caller);
   }
 
   // 主调函数
-  function caller () {
+  function caller() {
     callee();
   }
 

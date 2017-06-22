@@ -31,7 +31,7 @@ new Vue({
         /** 如果本实例的alert方法不返回true **/
         /** 将导致child实例的fired事件停止冒泡 **/
         /** 结果是本实例上监听fired事件的函数不会被调用 **/
-        fired: function () {
+        fired: function() {
           alert('parent-events');
         }
       },
@@ -39,7 +39,7 @@ new Vue({
         /** 此函数会在child实例上监听fired事件 **/
         /** 调用级别优先于child实例上通过events配置的监听fired事件的函数 **/
         /** 如果该函数执行结果不为true，则会导致停止此次的冒泡 **/
-        alert: function () {
+        alert: function() {
           alert('parent-method');
           return true;
         }
@@ -49,12 +49,12 @@ new Vue({
           template: '#child',
           events: {
             /** 先执行parent实例的alert方法，后调用本方法 **/
-            fired: function () {
+            fired: function() {
               alert('child-events');
             }
           },
           methods: {
-            fire: function () {
+            fire: function() {
               var me = this;
               //先执行在本实例上监听fired事件的函数
               //如果执行结果为true

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
-  function *gen () {
+(function() {
+  function *gen() {
     // 相当于是在这里发生了异常
     try {
 
@@ -22,8 +22,8 @@
     console.log(true);
   }
 })();
-(function () {
-  function *gen () {
+(function() {
+  function *gen() {
     try {
       // 相当于在返回1后，阻塞时发生了异常
       yield 1;
@@ -37,8 +37,8 @@
   ite.next();
   ite.throw('error');
 })();
-(function () {
-  function *gen () {
+(function() {
+  function *gen() {
     try {
 
     } catch (e) {
@@ -56,8 +56,8 @@
     console.log(true);
   }
 })();
-(function () {
-  function *gen () {
+(function() {
+  function *gen() {
     // 如果在迭代过程中发生了异常且异常没有被捕获，则被认为迭代已经结束了
     throw 1;
     yield 2;
@@ -71,8 +71,8 @@
   var next = ite.next();
   console.log(next.done === true);
 })();
-(function () {
-  function *gen () {
+(function() {
+  function *gen() {
     try {
       // 相当于阻塞时发生了异常
       yield;
@@ -88,14 +88,14 @@
   console.log(res.done === false);
   console.log(res.value === true);
 })();
-(function () {
-  function *parent () {
+(function() {
+  function *parent() {
     yield *child();
     // 子迭代器中的异常被捕获，可以继续迭代
     yield 3;
   }
 
-  function *child () {
+  function *child() {
     try {
       yield 1;
       // 异常在这里发生

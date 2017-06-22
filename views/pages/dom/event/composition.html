@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   var composing = false;
 
   var msgEl = document.getElementById('msg');
   var targetEl = document.getElementById('target');
 
-  targetEl.addEventListener('input', function () {
+  targetEl.addEventListener('input', function() {
     if (composing) {
       return;
     }
@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   //输入法弹出，发生在input事件之前
-  targetEl.addEventListener('compositionstart', function () {
+  targetEl.addEventListener('compositionstart', function() {
     composing = true;
   });
 
   //输入法关闭，发生在input事件之前
-  targetEl.addEventListener('compositionend', function () {
+  targetEl.addEventListener('compositionend', function() {
     composing = false;
   });
 });

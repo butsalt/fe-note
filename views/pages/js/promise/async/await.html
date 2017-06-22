@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
-  function sleep () {
-    return new Promise(function (resolve) {
-      setTimeout(function () {
+(function() {
+  function sleep() {
+    return new Promise(function(resolve) {
+      setTimeout(function() {
         resolve('resolved');
       }, 1000);
     });
   }
 
-  async function test () {
+  async function test() {
     // 返回promise resolve的结果
     var msg = await sleep();
     console.log(msg === 'resolved');
@@ -21,16 +21,16 @@
 
   test();
 })();
-(function () {
-  function sleep () {
-    return new Promise(function (resolve, reject) {
-      setTimeout(function () {
+(function() {
+  function sleep() {
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
         reject('rejected');
       }, 1000);
     });
   }
 
-  async function test () {
+  async function test() {
     try {
       await sleep();
     // 捕获的是promise reject的结果
@@ -41,24 +41,24 @@
 
   test();
 })();
-(function () {
-  async function test () {
+(function() {
+  async function test() {
     return 'resolved';
   }
 
   // 调用async函数返回的是一个thenable对象
   test()
-    .then(function (msg) {
+    .then(function(msg) {
       console.log(msg === 'resolved');
     });
 })();
-(function () {
-  async function test () {
+(function() {
+  async function test() {
     throw 'rejected';
   }
 
   test()
-    .catch(function (msg) {
+    .catch(function(msg) {
       console.log(msg === 'rejected');
     });
 })();

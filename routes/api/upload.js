@@ -2,7 +2,7 @@ const Busboy = require('busboy');
 
 const router = require('koa-router')();
 
-function parseUploadingFiles (req) {
+function parseUploadingFiles(req) {
   return new Promise((resolve, reject) => {
     const busboy = new Busboy({
       headers: req.headers,

@@ -4,45 +4,45 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
-  new Promise(function (resolve) {
+(function() {
+  new Promise(function(resolve) {
     resolve();
   })
-  .then(function () {
+  .then(function() {
     //如果返回的是一个promise对象，则这个节点的状态由promise的决议结果决定
-    return new Promise(function (resolve) {
+    return new Promise(function(resolve) {
       resolve(true);
     });
   })
-  .then(function (val) {
+  .then(function(val) {
     console.log(val === true);
   });
 })();
-(function () {
-  new Promise(function (resolve) {
+(function() {
+  new Promise(function(resolve) {
     resolve();
   })
-  .then(function () {
+  .then(function() {
     //如果返回的是一个promise对象，则这个节点的状态由promise的决议结果决定
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
       reject(true);
     });
   })
-  .catch(function (val) {
+  .catch(function(val) {
     console.log(val === true);
   });
 })();
-(function () {
-  new Promise(function (resolve, reject) {
+(function() {
+  new Promise(function(resolve, reject) {
     reject();
   })
   //对于errorHandler同样适用
-  .then(null, function () {
-    return new Promise(function (resolve) {
+  .then(null, function() {
+    return new Promise(function(resolve) {
       resolve(true);
     });
   })
-  .then(function (val) {
+  .then(function(val) {
     console.log(val === true);
   });
 })();

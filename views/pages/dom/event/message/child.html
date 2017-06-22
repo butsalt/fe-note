@@ -9,10 +9,10 @@
   <p id="J-msg"></p>
   <button type="button" id="J-send-parent-msg-btn">to parent</button>
   <script type="text/javascript">
-    (function () {
+    (function() {
       var msg = document.getElementById('J-msg');
       document.getElementById('J-send-parent-msg-btn')
-        .addEventListener('click', function () {
+        .addEventListener('click', function() {
           //第一个参数：data 具体信息
           //第二个参数：origin 目标window的源，如果不匹配则信息不会被发送，'*'为任意
           //origin规则:
@@ -20,7 +20,7 @@
           //修改目标window的domain不影响origin的判断
           window.parent.postMessage('hello parent!', 'http://localhost:7070');
         });
-      window.addEventListener('message', function (e) {
+      window.addEventListener('message', function(e) {
         //调用postMessage的来源的origin
         console.log(e.origin);
         msg.textContent += e.data;

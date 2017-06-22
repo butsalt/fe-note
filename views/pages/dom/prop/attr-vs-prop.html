@@ -11,12 +11,12 @@
   <button type="submit">提交</button>
 </form>
 <script type="text/javascript">
-function log () {
+function log() {
   console.log('hasAttr:' + (target.getAttribute('checked') !== null));
   console.log('prop:' + target.checked);
 }
 
-function reset () {
+function reset() {
   target.removeAttribute('checked');
   target.setAttribute('checked', '');
 }

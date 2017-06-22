@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function () {
-  function Person () {}
+(function() {
+  function Person() {}
 
   var desc = Object.getOwnPropertyDescriptor(Person, 'prototype');
   console.log(desc.configurable === false);
   console.log(desc.enumerable === false);
   console.log(desc.writable === true);
 })();
-(function () {
-  function Person () {}
+(function() {
+  function Person() {}
   Person.prototype = null;
 
   var p = new Person();
