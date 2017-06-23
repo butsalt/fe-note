@@ -18,14 +18,14 @@
 
 </style>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var draggableItem = document.getElementById('draggable-item');
   var zone = document.getElementById('zone');
 
   //注意以下拖拽事件都会冒泡
 
   //开始拖拽
-  draggableItem.addEventListener('dragstart', function(e) {
+  draggableItem.addEventListener('dragstart', function (e) {
     console.log('start');
     var dataTransfer = e.dataTransfer;
     //设置需要在事件中传递的数据，只有在dragstart中才能设置
@@ -40,22 +40,22 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   //拖拽过程中该事件会被不断触发
-  draggableItem.addEventListener('drag', function(e) {
+  draggableItem.addEventListener('drag', function (e) {
 
   });
 
   //开始拖拽后，松开鼠标
-  draggableItem.addEventListener('dragend', function(e) {
+  draggableItem.addEventListener('dragend', function (e) {
     console.log('end');
   });
 
   //鼠标拖拽着对象进入区域
-  zone.addEventListener('dragenter', function(e) {
+  zone.addEventListener('dragenter', function (e) {
     console.log('enter');
   });
 
   //鼠标拖拽着对象在区域中时该事件会被不断触发
-  zone.addEventListener('dragover', function(e) {
+  zone.addEventListener('dragover', function (e) {
     console.log('over');
     //通过调用e.preventDefault方法来声明该区域允许放置
     e.preventDefault();
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   //鼠标拖拽着对象进入区域，对象已在dragover事件中被声明允许放置，松开鼠标
-  zone.addEventListener('drop', function(e) {
+  zone.addEventListener('drop', function (e) {
     //firefox下会打开一个新窗口
     var dataTransfer = e.dataTransfer;
     this.appendChild(
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   //鼠标拖拽着对象离开区域
-  zone.addEventListener('dragleave', function() {
+  zone.addEventListener('dragleave', function () {
     console.log('leave');
   });
 

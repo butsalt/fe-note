@@ -8,7 +8,7 @@
 //  Object state信息
 //  String 标题
 //  String 新的url地址
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var position = document.getElementById('position');
   var button = document.getElementById('button');
 
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('popstate', restore);
 
   var state = history.state;
-  if(!state){
+  if(!state) {
     state = {
       position: 'at home',
       btnText: 'go school'
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   restore();
 
-  button.addEventListener('click', function() {
+  button.addEventListener('click', function () {
     var state = history.state;
     if (state.position === 'at home') {
       // 推入一个新的state

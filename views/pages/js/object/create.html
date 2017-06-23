@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   function Person(name) {
     this.name = name;
   }
 
-  Person.prototype.speak = function() {
+  Person.prototype.speak = function () {
     console.log('speak');
   };
 
@@ -21,11 +21,11 @@
       enumerable: true
     },
     id: {
-      get: function() {
+      get: function () {
         //如果是this.id就会循环调用
         return this._id;
       },
-      set: function(id) {
+      set: function (id) {
         this._id = id;
       },
       configurable: true,

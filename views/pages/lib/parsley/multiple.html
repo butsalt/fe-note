@@ -6,9 +6,9 @@
 <script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
 <script type="text/javascript" src="/assets/lib/parsley/2.4.3/parsley.js"></script>
 <script type="text/javascript">
-$(function() {
+$(function () {
   Parsley.addValidator('multi', {
-    validateMultiple: function(values, requirement, fieldInstance) {
+    validateMultiple: function (values, requirement, fieldInstance) {
       debugger;
       return values.length === 2;
     },
@@ -21,7 +21,7 @@ $(function() {
     .parsley();
 
   $form.find('.J-normal-check-btn')
-    .click(function() {
+    .click(function () {
       formInstance
         .validate();
     });

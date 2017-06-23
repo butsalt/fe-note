@@ -19,7 +19,7 @@ body {
 <script type="text/javascript" src="/assets//lib/velocity/1.2.2/velocity.js"></script>
 <script type="text/javascript" src="/assets/lib/velocity-ui/5.0.4/velocity.ui.js"></script>
 <script type="text/javascript">
-$(function(){
+$(function () {
   $('#target')
     .velocity(
       {
@@ -28,7 +28,7 @@ $(function(){
       {
         delay: 1000,
         complete:
-          function() {
+          function () {
             $(this).html('Done!');
         }
       }
@@ -38,7 +38,7 @@ $(function(){
         left: '0px'
       },
       {
-        complete: function(){
+        complete: function () {
           $(this).html('Back!');
       }
     });

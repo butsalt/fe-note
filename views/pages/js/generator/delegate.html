@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   function *child() {
     yield 2;
     yield 3;
@@ -23,13 +23,13 @@
     console.log(num);
   }
 })();
-(function() {
+(function () {
   function *gen() {
     var ite = {
-      [Symbol.iterator]: function() {
+      [Symbol.iterator]: function () {
         var num = 2;
         return {
-          next: function() {
+          next: function () {
             if (num === 4) {
               return {
                 value: undefined,
@@ -54,7 +54,7 @@
     console.log(num);
   }
 })();
-(function() {
+(function () {
   function *child() {
     try {
       //相当于在此处阻塞时发生异常
@@ -77,7 +77,7 @@
   console.log(res.done === false);
   console.log(res.value === 3);
 })();
-(function() {
+(function () {
   function *child() {
     try {
       yield 2;
@@ -100,7 +100,7 @@
   console.log(res.done === true);
   console.log(res.value === 'end');
 })();
-(function() {
+(function () {
   function *child() {
     try {
       yield 2;

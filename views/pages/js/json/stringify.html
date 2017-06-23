@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   function Person() {
     var me = this;
     me.name = 'butSalt';
@@ -20,7 +20,7 @@
         configurable: true
       }
     );
-    me.speak = function() {};
+    me.speak = function () {};
   }
   Person.prototype.gender = 'male';
 
@@ -29,7 +29,7 @@
   //对象的自有且可枚举的属性会被循环，symbol不参与循环
   //继承自原型链的属性不参与循环
   //val如果为对象，则该对象的自有且可枚举的属性也会参与循环
-  var str = JSON.stringify(p, function(key, val) {
+  var str = JSON.stringify(p, function (key, val) {
     console.log(key);
     if (typeof val === 'function') {
       return 'func';

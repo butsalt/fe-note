@@ -14,7 +14,7 @@ div {
 <script type="text/javascript" src="/assets//lib/velocity/1.2.2/velocity.js"></script>
 <script type="text/javascript" src="/assets/lib/velocity-ui/5.0.4/velocity.ui.js"></script>
 <script type="text/javascript">
-$(function(){
+$(function () {
   $('div')
     .velocity(
       {
@@ -25,7 +25,7 @@ $(function(){
       }
     );
   //直接将动画跳转到宽度为500px的时机(只跳转有冲突的属性,complete方法执行时机照常)，再继续播放动画
-  setTimeout(function() {
+  setTimeout(function () {
     $('div')
       .velocity(
         {

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   //非运算 高于 乘除模
   console.log(
     (1 * ~0)
@@ -12,7 +12,7 @@
     -1
   );
 })();
-(function() {
+(function () {
   //乘除模 高于 加减
   console.log(
     (1 + 1 * 2)
@@ -20,7 +20,7 @@
     3
   );
 })();
-(function() {
+(function () {
   //加减 高于 移位
   console.log(
     (1 + 0 << 1 + 1)
@@ -28,7 +28,7 @@
     4
   );
 })();
-(function() {
+(function () {
   //移位 高于 > >= < <=
   console.log(
     (
@@ -40,7 +40,7 @@
     true
   );
 })();
-(function() {
+(function () {
   //> >= < <= 高于 == <> === != !== in instanceof
   console.log(
     (
@@ -52,7 +52,7 @@
     true
   );
 })();
-(function() {
+(function () {
   //== <> === != !== in instanceof 高于 &
   console.log(
     (
@@ -64,7 +64,7 @@
     1
   );
 })();
-(function() {
+(function () {
   //& 高于 ^
   console.log(
     (
@@ -76,7 +76,7 @@
     1
   );
 })();
-(function() {
+(function () {
   //^ 高于 |
   console.log(
     (
@@ -88,7 +88,7 @@
     3
   );
 })();
-(function() {
+(function () {
   //| 高于 &&
   console.log(
     (1 && 2 | 1)
@@ -96,7 +96,7 @@
     3
   );
 })();
-(function() {
+(function () {
   //&& 高于 ||
   console.log(
     (3 || 1 && 2)
@@ -104,12 +104,12 @@
     3
   );
 })();
-(function() {
+(function () {
   //|| 高于 三目运算
   var flag = 1 || 0 ? true : false;
   console.log(flag === true);
 })();
-(function() {
+(function () {
   var a = 1, b = 2, c = 3;
   var d;
   //三目运算 高于 赋值
@@ -118,7 +118,7 @@
   }
   console.log(d == 2);
 })();
-(function() {
+(function () {
   var num;
   //赋值 高于 ,
   if (num = 0, 1) {

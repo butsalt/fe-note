@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',function() {
+document.addEventListener('DOMContentLoaded',function () {
   var container = document.getElementById('container');
   //注释作为一个TextNode
   var comment = container.childNodes[0];
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded',function() {
   var textNode = container.childNodes[1];
   console.log(textNode.data === '\n  MyNode\n');
   document.getElementById('change-btn')
-    .addEventListener('click', function(){
+    .addEventListener('click', function () {
       //通过修改data从而改变文本，整个字符串不会被翻译成dom
       textNode.data = "<span>YourNode</span>";
     });

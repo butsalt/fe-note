@@ -11,16 +11,16 @@
 </style>
 <script type="text/javascript" src="/assets/lib/dd.js"></script>
 <script type="text/javascript">
-  var P = function(){
+  var P = function () {
     
   };
   dd.clearable(P);
   
   var p = new P();
-  p.addClear(function(){
+  p.addClear(function () {
     console.log('..');
   });
-  p.addClear('test',function(){
+  p.addClear('test',function () {
     console.log('test');
   },'test');
   p.clear('test');

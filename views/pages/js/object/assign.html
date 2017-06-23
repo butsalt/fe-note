@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   function Person(name) {
     var me = this;
     Object.defineProperty(
@@ -16,7 +16,7 @@
     );
   }
 
-  Person.prototype.speak = function() {};
+  Person.prototype.speak = function () {};
 
   var src = new Person('butSalt');
 
@@ -32,7 +32,7 @@
     target.speak === undefined
   );
 })();
-(function() {
+(function () {
   var p = {
     name: 'butSalt'
   };
@@ -46,7 +46,7 @@
     target.p === p
   );
 })();
-(function() {
+(function () {
   var sym = Symbol('name');
   var src = {
     [sym]: 'butSalt'
@@ -56,14 +56,14 @@
   // symbol属性可以复制
   console.log(target[sym] === 'butSalt');
 })();
-(function() {
+(function () {
   var src = {};
   Object.defineProperty(
     src,
     'name',
     {
       enumerable: true,
-      get: function() {
+      get: function () {
         return 'butSalt';
       }
     }

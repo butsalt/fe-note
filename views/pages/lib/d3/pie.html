@@ -19,7 +19,7 @@
 <script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
 <script type="text/javascript" src="/assets/lib/d3/3.0.0/d3.js"></script>
 <script type="text/javascript">
-  $(function(){
+  $(function () {
     var width = 500;
     var height = 500;
     var outerR = 100;
@@ -32,20 +32,20 @@
     g.attr('transform','translate('+width/2+','+height/2+')');
     
     var arc = d3.svg.arc().outerRadius(outerR - 10).innerRadius(innerR);
-    var pie = d3.layout.pie().sort(null).value(function(d) { return 1}).startAngle(Math.PI/6);
+    var pie = d3.layout.pie().sort(null).value(function (d) { return 1}).startAngle(Math.PI/6);
     
     var groups = g.selectAll('path').data(pie(data)).enter().append('g');
     
     var ps = groups.append('path').attr('d',arc);
-    ps.style('fill',function(d,i){
+    ps.style('fill',function (d,i) {
       return colors(i);
     });
     
-    var ts = groups.append('text').attr("transform", function(d){
+    var ts = groups.append('text').attr("transform", function (d) {
       return 'translate('+arc.centroid(d)+')'; 
     });
     ts.attr("dy", ".35em").style("text-anchor", "middle")
-    ts.text(function(d) {
+    ts.text(function (d) {
       return d.data;
     });
   });

@@ -6,9 +6,9 @@
 <script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
 <script type="text/javascript" src="/assets/lib/parsley/2.4.3/parsley.js"></script>
 <script type="text/javascript">
-$(function() {
+$(function () {
   Parsley.addValidator('test', {
-    validateString: function(value, requirement, fieldInstance) {
+    validateString: function (value, requirement, fieldInstance) {
       console.log(fieldInstance.parent === formInstance);
       console.log(formInstance.parent === Parsley);
       return value === '123';
@@ -22,7 +22,7 @@ $(function() {
     .parsley();
 
   $form.find('.J-force-check-btn')
-    .click(function() {
+    .click(function () {
       formInstance
         .validate({
           force: true

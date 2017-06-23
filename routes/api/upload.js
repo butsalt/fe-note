@@ -8,14 +8,14 @@ function parseUploadingFiles(req) {
       headers: req.headers,
     });
     const files = [];
-    busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+    busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
       const fileInfo = {
         field: fieldname,
         file: filename,
         size: 0,
       };
       files.push(fileInfo);
-      file.on('data', function(data) {
+      file.on('data', function (data) {
         fileInfo.size += data.length;
       });
     });

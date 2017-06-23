@@ -16,7 +16,7 @@
 <script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
 <script type="text/javascript" src="/assets/lib/d3/3.0.0/d3.js"></script>
 <script type="text/javascript">
-$(function(){
+$(function () {
   var data = [
     [0,1,2,3],
     [10,20,30,40]
@@ -28,12 +28,12 @@ $(function(){
     .append('tr')
     .selectAll('td')
     // d是父元素的数据，i是父元素在队列中的顺序
-    .data(function( d, i ){
+    .data(function ( d, i ) {
       return d;
     })
     .enter()
     .append('td')
-    .text(function( d, i ){
+    .text(function ( d, i ) {
       return d;
     });
   // 选中的是所有td

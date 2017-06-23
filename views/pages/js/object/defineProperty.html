@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   function Person() {}
 
   Object.defineProperty(
@@ -41,7 +41,7 @@
   delete p.name;
   console.log(p.name === 'butSalt');
 })();
-(function() {
+(function () {
   function Person() {}
 
   var _name;
@@ -49,10 +49,10 @@
     Person.prototype,
     'name',
     {
-      get: function() {
+      get: function () {
         return _name;
       },
-      set: function(name) {
+      set: function (name) {
         _name = name;
       },
       enumerable: true,

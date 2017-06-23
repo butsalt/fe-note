@@ -24,7 +24,7 @@ function getCookie(key) {
   var cookies = document.cookie ? document.cookie.split('; ') : [];
   var cookieMap = {};
   cookies
-    .forEach(function(cookie) {
+    .forEach(function (cookie) {
       var part = cookie.split('=');
       cookieMap[decodeURIComponent(part[0])] = decodeURIComponent(part[1]);
     });

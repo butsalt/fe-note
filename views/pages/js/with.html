@@ -7,7 +7,7 @@
 function Person(name) {
   this.name = name;
 }
-Person.prototype.talk = function() {
+Person.prototype.talk = function () {
   console.log(this.name);
 };
 Person.prototype.type = 'animal';
@@ -15,7 +15,7 @@ Object.defineProperty(
   Person.prototype,
   'immutable',
   {
-    get: function() {
+    get: function () {
       return 'immutable';
     }
   }
@@ -25,7 +25,7 @@ var extraInfo = {
   age: undefined,
   hobby: 'coding'
 };
-(function() {
+(function () {
   // 目标对象上定义的属性可以被直接使用
   with(person) {
     with(extraInfo) {

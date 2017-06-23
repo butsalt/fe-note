@@ -10,14 +10,14 @@ function printTargetInfo() {
 }
 
 // 当文档中dom元素初始化完成时被执行
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   console.warn('dom loaded');
   printTargetInfo();
 });
 
 // 当文档中dom元素初始化完成，图片，样式加载完成时被执行
 // 如果在load事件发生之前又有新的加载任务产生，则要等所有加载任务完成load事件才会被触发
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   console.warn('all loaded');
   printTargetInfo();
 });

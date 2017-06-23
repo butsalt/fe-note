@@ -4,59 +4,59 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   //如果resolve接收的对象是thenable或是promise则会展开，否则确定决议结果
   //reject立即确定决议结果
-  new Promise(function(resolve) {
+  new Promise(function (resolve) {
     resolve({
-      then: function(resolve, reject) {
+      then: function (resolve, reject) {
         resolve(true);
       }
     });
   })
-  .then(function(val) {
+  .then(function (val) {
     console.log(val === true);
   });
 })();
-(function() {
-  new Promise(function(resolve) {
-    resolve(new Promise(function(resolve, reject) {
+(function () {
+  new Promise(function (resolve) {
+    resolve(new Promise(function (resolve, reject) {
       resolve(true);
     }));
   })
-  .then(function(val) {
+  .then(function (val) {
     console.log(val === true);
   });
 })();
-(function() {
-  new Promise(function(resolve) {
+(function () {
+  new Promise(function (resolve) {
     resolve({
-      then: function(resolve, reject) {
+      then: function (resolve, reject) {
         reject(true);
       }
     });
   })
-  .catch(function(err) {
+  .catch(function (err) {
     console.log(err === true);
   });
 })();
-(function() {
-  new Promise(function(resolve) {
-    resolve(new Promise(function(resolve, reject) {
+(function () {
+  new Promise(function (resolve) {
+    resolve(new Promise(function (resolve, reject) {
       reject(true);
     }));
   })
-  .catch(function(val) {
+  .catch(function (val) {
     console.log(val === true);
   });
 })();
-(function() {
-  new Promise(function(resolve, reject) {
-    reject(new Promise(function(resolve, reject) {
+(function () {
+  new Promise(function (resolve, reject) {
+    reject(new Promise(function (resolve, reject) {
       resolve(true);
     }));
   })
-  .catch(function(val) {
+  .catch(function (val) {
     console.log(
       (val instanceof Promise) === true
     );

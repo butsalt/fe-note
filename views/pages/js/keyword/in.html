@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   var idSymbol = Symbol('id');
   function Person({id, name}) {
     var me = this;
@@ -16,7 +16,7 @@
     Person.prototype,
     {
       sayId: {
-        value: function() {
+        value: function () {
           console.log(this[idSymbol]);
         },
         writable: true,
@@ -24,7 +24,7 @@
         configurable: true
       },
       sayName: {
-        value: function() {
+        value: function () {
           console.log(this.name);
         },
         writable: true,

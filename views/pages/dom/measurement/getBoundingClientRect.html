@@ -14,11 +14,11 @@ div{
 }
 </style>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var target = document.getElementById('target');
   var positions = ['0%','25%','50%','75%'];
   var i = 0;
-  setInterval(function() {
+  setInterval(function () {
     target.style.setProperty('top', positions[i++ % positions.length]);
     //包含四个属性：left、top、right和bottom
     //计算结果包含border和padding

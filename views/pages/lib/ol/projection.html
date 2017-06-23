@@ -19,7 +19,7 @@
 <script type="text/javascript">
   // 地球是一个三维的球体，展示到电脑屏幕上时则要用二维平面进行展示
   // projection定义了三维球体到二维平面的映射规则，不同规则下最终展现到平面上的样子会不一样
-  (function() {
+  (function () {
     var map = new ol.Map({
       layers: [
         new ol.layer.Tile({
@@ -37,12 +37,12 @@
         projection:'EPSG:4326',
       }),
     });
-    setTimeout(function() {
+    setTimeout(function () {
       // 海拔的值也会随着projection的变化而变化
       console.log(map.getView().getResolution());
     }, 1000);
   })();
-  (function() {
+  (function () {
     map = new ol.Map({
       layers: [
         new ol.layer.Tile({
@@ -61,7 +61,7 @@
         projection:'EPSG:3857',
       }),
     });
-    setTimeout(function() {
+    setTimeout(function () {
       // 海拔的值也会随着projection的变化而变化
       console.log(map.getView().getResolution());
     }, 1000);

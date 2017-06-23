@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   //已声明，未定义
   console.log(aa === undefined);
   //已声明，未定义
@@ -23,7 +23,7 @@
   console.log(bb === undefined);
   console.log(cc !== undefined);
 })();
-(function() {
+(function () {
   //已声明，未定义
   console.log(a === undefined);
   var a = 1;
@@ -37,7 +37,7 @@
     console.log(true);
   }
 })();
-(function() {
+(function () {
   var a = function b() {
     //函数b只能在此使用
     console.log(b !== undefined);
@@ -50,8 +50,8 @@
   }
   a();
 })();
-(function() {
-  (function() {
+(function () {
+  (function () {
     //在创建函数的同时，声明了当前作用域下的变量a
     function a() {}
     a = 123;

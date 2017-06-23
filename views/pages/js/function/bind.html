@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   var krista = {
     name: 'krista'
   };
   var butSalt = {
     name: 'butSalt',
-    getArrowFunc: function() {
+    getArrowFunc: function () {
       return (
         () => {
           //arrow function 优先级高于 bind
@@ -19,9 +19,9 @@
         }
       ).bind(krista);
     },
-    getNormalFunc: function() {
+    getNormalFunc: function () {
       return (
-        function() {
+        function () {
           console.log(this.name === 'krista');
         }
       ).bind(krista);
@@ -30,7 +30,7 @@
   (butSalt.getArrowFunc())();
   (butSalt.getNormalFunc())();
 })();
-(function() {
+(function () {
   function func() {
     console.log(arguments[0] === 0);
     console.log(arguments[1] === 1);
@@ -43,7 +43,7 @@
   //2会被作为执行func时的第三个参数
   bindedFunc(1, 2);
 })();
-(function() {
+(function () {
   var person = {
     name: 'butSalt'
   };

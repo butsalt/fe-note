@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   function Cls() {
     // 一般情况下，new.target指向调用new时调用的构造函数
     console.log(new.target === Cls);
@@ -12,7 +12,7 @@
 
   new Cls();
 })();
-(function() {
+(function () {
   class Parent {
     constructor () {
       console.log(new.target === Child);
@@ -28,7 +28,7 @@
 
   new Child();
 })();
-(function() {
+(function () {
   function Parent() {
     // 通过Reflect.construct来创建对象时可以修改
     console.log(new.target === Child);

@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   function sleep() {
-    return new Promise(function(resolve) {
-      setTimeout(function() {
+    return new Promise(function (resolve) {
+      setTimeout(function () {
         resolve('resolved');
       }, 1000);
     });
@@ -21,10 +21,10 @@
 
   test();
 })();
-(function() {
+(function () {
   function sleep() {
-    return new Promise(function(resolve, reject) {
-      setTimeout(function() {
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
         reject('rejected');
       }, 1000);
     });
@@ -41,24 +41,24 @@
 
   test();
 })();
-(function() {
+(function () {
   async function test() {
     return 'resolved';
   }
 
   // 调用async函数返回的是一个thenable对象
   test()
-    .then(function(msg) {
+    .then(function (msg) {
       console.log(msg === 'resolved');
     });
 })();
-(function() {
+(function () {
   async function test() {
     throw 'rejected';
   }
 
   test()
-    .catch(function(msg) {
+    .catch(function (msg) {
       console.log(msg === 'rejected');
     });
 })();

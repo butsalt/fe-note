@@ -16,7 +16,7 @@ body {
 }
 </style>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var targetEl = document.getElementById('target');
 
   //会冒泡
@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
     //clientY 参考当前可视区域的左上角
     //creenY 参考整个屏幕的左上角
 
-  targetEl.addEventListener('touchstart', function(e) {
+  targetEl.addEventListener('touchstart', function (e) {
     console.log('target:start');
     //changedTouches 新增加的touches
     console.log(e);
   });
 
-  targetEl.addEventListener('touchmove', function(e) {
+  targetEl.addEventListener('touchmove', function (e) {
     console.log('target:move');
     //changedTouches 位置发生变化的touches
     console.log(e);
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
   });
 
-  targetEl.addEventListener('touchend', function(e) {
+  targetEl.addEventListener('touchend', function (e) {
     console.log('target:end');
     //changedTouches 离开触摸平面的touches
     console.log(e);

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-(function() {
+(function () {
   function Parent(name) {
     // 一般情况下，new.target指向调用new时调用的构造函数
     // 通过Reflect.construct来创建对象时可以修改
@@ -17,7 +17,7 @@
     console.log(false);
   }
 
-  Child.prototype.speak = function() {
+  Child.prototype.speak = function () {
     console.log(this.name);
   };
 
