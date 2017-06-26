@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+.collapse-container {
+  display: inline-block;
+  border: 10px #aaa solid;
+  position: relative;
+}
+
+.collapse-container .width-ruler {
+  width: 500px;
+  height: 10px;
+  background-color: steelblue;
+}
+
+.collapse {
+  /** 共同区域的border会合并(取border-width宽的那一侧) **/
+  /** 计算td某一侧的border时，只取这一侧border长度的一半 **/
+  /**
+  计算table的border时，
+    左侧border的右边缘在首行第一个单元格border-left向右1/2处，长度是此格border-left的1/2
+    右侧border的左边缘在首行最后一个单元格border-right向左1/2处，长度是此格border-right的1/2
+    上方border的下边缘在尾行border-top最长的单元格border-top向下1/2处，长度是此格border-top的1/2
+    下方border的上边缘在尾行border-bottom最长的单元格的border-bottom向上1/2处，长度是此格border-bottom的1/2
+  **/
+  border-collapse: collapse;
+  /** 这个宽包含了table水平方向上的border **/
+  width: 500px;
+  /** border-collapse:collapse时，padding无效 **/
+  /*padding: 500px;*/
+}
+
+.collapse tr:first-child td:first-child {
+  border: 10px black solid;
+}
+
+.collapse tr:first-child td:nth-child(2) {
+  border: 20px black solid;
+}
+
+.collapse tr:first-child td:nth-child(3) {
+  border: 30px black solid;
+}
+
+.collapse tr:last-child td {
+  /** 该行border水平方向上左右各会有 40/2 - 30/2 = 5px 的溢出 **/
+  border: 40px red solid;
+}
+
+.collapse-container .border-ruler {
+  width: 5px;
+  height: 10px;
+  background-color: steelblue;
+  left: 100%;
+  margin-top: -10px;
+  position: absolute;
+}
+</style>
+</head>
+<body>
+<div class="collapse-container">
+  <div class="width-ruler"></div>
+  <table class="collapse">
+    <tbody>
+      <tr>
+        <td>
+          0987-2
+        </td>
+        <td>
+          孙雨珩
+        </td>
+        <td>
+          1990-12-24
+        </td>
+      </tr>
+      <tr>
+        <td>
+          0987-2
+        </td>
+        <td>
+          黄雯
+        </td>
+        <td>
+          1989-11-07
+        </td>
+      </tr>
+      <tr>
+        <td>
+          0987-2
+        </td>
+        <td>
+          周杰伦
+        </td>
+        <td>
+          1943-05-07
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="border-ruler"></div>
+</div>
+</body>
+</html>
