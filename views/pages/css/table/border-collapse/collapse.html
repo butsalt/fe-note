@@ -17,13 +17,16 @@
 }
 
 .collapse {
-  /** 共同区域的border会合并(取border-width宽的那一侧) **/
+  /**
+    该逻辑在单元格间border合并，单元格与table间border合并均有效：
+    共同区域的border会合并(取border-width宽的那一侧)
+  **/
   /** 计算td某一侧的border时，只取这一侧border长度的一半 **/
   /**
   计算table的border时，
     左侧border的右边缘在首行第一个单元格border-left向右1/2处，长度是此格border-left的1/2
     右侧border的左边缘在首行最后一个单元格border-right向左1/2处，长度是此格border-right的1/2
-    上方border的下边缘在尾行border-top最长的单元格border-top向下1/2处，长度是此格border-top的1/2
+    上方border的下边缘在首行border-top最长的单元格border-top向下1/2处，长度是此格border-top的1/2
     下方border的上边缘在尾行border-bottom最长的单元格的border-bottom向上1/2处，长度是此格border-bottom的1/2
   **/
   border-collapse: collapse;
