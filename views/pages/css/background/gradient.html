@@ -42,6 +42,9 @@ div:nth-of-type(3) {
 
 div:nth-of-type(4) {
   /** 均匀分布 **/
+  /** 如果第一个color-stop没有位置值，那么默认取0% **/
+  /** 如果最后一个color-stop没有位置值，那么默认取100% **/
+  /** 如果一个color-stop没有位置值，且它不是第一个也不是最后一个，那么默认取前后两个color-stop的中间点 **/
   background: linear-gradient(to bottom, green, red, blue);
 }
 
@@ -79,21 +82,21 @@ div:nth-of-type(11) {
 div:nth-of-type(12) {
   /** farthest-corner下， **/
   /** 100%时图案刚好占满整个背景区域的四个角 **/
-  background: radial-gradient(farthest-corner at 25% 50%, red 0, red 100%, green 0, green 100%);
+  background: radial-gradient(farthest-corner at 25% 50%, red 100%, green 0);
 }
 
 div:nth-of-type(13) {
   /** farthest-corner下， **/
   /** 像素值定义的是图案水平方向上的半径 **/
   /** 要求当图案左右两边分别触及背景区域左右两边时，图案上下两边也分别触及背景区域上下两边 **/
-  background: radial-gradient(farthest-corner at 25% 50%, red 0, red 298px, green 0, green 100%);
+  background: radial-gradient(farthest-corner at 25% 50%, red 298px, green 0);
 }
 
 div:nth-of-type(14) {
   /** farthest-side下， **/
   /** 99%时图案的边刚好快顶到背景区域的边 **/
   /** 100%时图案将直接跃进占满整个背景区域 **/
-  background: radial-gradient(farthest-side at 25% 50%, red 0, red 99%, green 0, green 100%);
+  background: radial-gradient(farthest-side at 25% 50%, red 99%, green 0);
 }
 
 div:nth-of-type(15) {
@@ -101,14 +104,14 @@ div:nth-of-type(15) {
   /** 像素值定义的是图案水平方向上的半径 **/
   /** 要求当图案左右两边分别触及背景区域左右两边时，图案上下两边也分别触及背景区域上下两边 **/
   /** 如果此时半径继续增加，图案将直接跃进至占满整个背景区域 **/
-  background: radial-gradient(farthest-side at 25% 50%, red 0, red 298px, green 0, green 100%);
+  background: radial-gradient(farthest-side at 25% 50%, red 298px, green 0);
 }
 
 div:nth-of-type(16) {
   /** closest-corner下， **/
   /** 99%时图案刚好快占满背景区域至少1个角(非贪婪) **/
   /** 100%时图案将直接跃进占满整个背景区域 **/
-  background: radial-gradient(closest-corner at 25% 50%, red 0, red 99%, green 0, green 100%);
+  background: radial-gradient(closest-corner at 25% 50%, red 99%, green 0);
 }
 
 div:nth-of-type(17) {
@@ -116,14 +119,14 @@ div:nth-of-type(17) {
   /** 像素值定义的是图案水平方向上的半径 **/
   /** 要求当图案左右两边有一边触及背景区域边框时，图案上下两边至少有一边触及背景区域边框 **/
   /** 当图案已经占满至少背景区域的一个角后再增加半径，图案将直接跃进至占满整个背景区域 **/
-  background: radial-gradient(closest-corner at 25% 50%, red 0, red 100px, green 0, green 100%);
+  background: radial-gradient(closest-corner at 25% 50%, red 100px, green 0);
 }
 
 div:nth-of-type(18) {
   /** closest-side下， **/
   /** 99%时图案刚好快占满背景区域至少1个边(非贪婪) **/
   /** 100%时图案将直接跃进占满整个背景区域 **/
-  background: radial-gradient(closest-side at 25% 50%, red 0, red 99%, green 0, green 100%);
+  background: radial-gradient(closest-side at 25% 50%, red 99%, green 0);
 }
 
 div:nth-of-type(19) {
@@ -131,7 +134,7 @@ div:nth-of-type(19) {
   /** 像素值定义的是图案水平方向上的半径 **/
   /** 要求当图案左右两边有一边将触及背景区域边框时，图案上下两边至少有一边将触及背景区域边框 **/
   /** 当图案已经占满至少背景区域的一个边后再增加半径，图案将直接跃进至占满整个背景区域 **/
-  background: radial-gradient(closest-side at 25% 50%, red 0, red 99px, green 0, green 100%);
+  background: radial-gradient(closest-side at 25% 50%, red 99px, green 0);
 }
 
 div:nth-of-type(20) {
