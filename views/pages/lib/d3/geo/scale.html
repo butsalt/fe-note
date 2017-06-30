@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<script type="text/javascript" src="/assets/lib/d3/3.5.17/d3.js"></script>
+<style type="text/css">
+  svg {
+    border: 1px black solid;
+  }
+</style>
+</head>
+<body>
+<svg id="J-svg"></svg>
+<script type="text/javascript">
+  (function () {
+    var geoJSON = {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Polygon',
+            coordinates: [[
+              [0, 1],
+              [1, -1],
+              [-1, -1],
+              [0, 1]
+            ]]
+          }
+        }
+      ],
+    };
+    var width = 400;
+    var height = 200;
+    var $svg = d3.select('#J-svg')
+      .attr('width', width)
+      .attr('height', height);
+    var bbox = d3.geo.bounds(geoJSON);
+    // 要将度数转换成弧度，这样算出来的比率意思是当达到指定弧度时，长度达到最大值
+    var projection = d3.geo.mercator()
+      .scale(
+        Math.min(
+          width, height
+        ) / (2 * Math.PI / 180)
+      )
+      .center(
+        [
+          (bbox[1][0] + bbox[0][0]) / 2,
+          (bbox[1][1] + bbox[0][1]) / 2
+        ]
+      )
+      .translate(
+        [
+          width / 2,
+          height / 2
+        ]
+      );
+    var path = d3.geo.path()
+      .projection(projection);
+
+    var $feature = $svg.selectAll('.J-feature')
+      .data(geoJSON.features);
+    $feature.enter()
+      .append('path')
+      .classed('J-feature', true)
+      .attr('fill', 'red');
+    $feature.exit()
+      .remove();
+    $feature
+      .attr('d', path);
+  })();
+</script>
+</body>
+</html>
