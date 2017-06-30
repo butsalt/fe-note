@@ -17,8 +17,18 @@
 <div id="J-epsg-3857" class="map"></div>
 <script type="text/javascript" src="/assets/lib/ol/4.2.0/ol.js"></script>
 <script type="text/javascript">
+  // 什么是projection？
   // 地球是一个三维的球体，展示到电脑屏幕上时则要用二维平面进行展示
-  // projection定义了三维球体到二维平面的映射规则，不同规则下最终展现到平面上的样子会不一样
+  // projection定义了三维球体到二维平面的映射规则
+  // 也就是说，projection定义了地图上每个坐标点在一张二维地图上的位置
+  // 不同规则下，最终地球展现到平面上的样子会不一样
+
+  // 什么是epsg？
+  // epsg存储了世界上各类的坐标体系和坐标变换方案，其中epsg-4326指的就是wgs84坐标体系
+
+  // geoJSON使用的坐标体系
+  // geoJSON使用的坐标体系(crs)就是wgs84，也就是epsg-4326
+  // 原先规范允许在geoJSON中通过crs属性声明使用的坐标体系，但现在已经被废弃了
   (function () {
     var map = new ol.Map({
       layers: [
@@ -39,7 +49,7 @@
       }),
     });
     setTimeout(function () {
-      // 海拔的值也会随着projection的变化而变化
+      // 海拔单位是度
       console.log(map.getView().getResolution());
     }, 1000);
   })();
@@ -64,7 +74,7 @@
       }),
     });
     setTimeout(function () {
-      // 海拔的值也会随着projection的变化而变化
+      // 海拔单位是米
       console.log(map.getView().getResolution());
     }, 1000);
   })();
