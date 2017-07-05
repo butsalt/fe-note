@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  display: block;
+  border: 1px black solid;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<!-- 展示的图片的宽高比不会变 -->
+<svg width="200" height="200">
+  <!-- image本身的宽高值为设定值 -->
+  <!-- 展示的图片会放在image的中心 -->
+  <image
+    width="200"
+    height="100"
+    x="0"
+    y="0"
+    href="/assets/img/x100.png"
+  />
+</svg>
+<svg width="200" height="200">
+  <!--展示的图片缩放比例按照最小比例来 -->
+  <!-- 宽的缩放比是50 / 100 = 0.5 -->
+  <!-- 高的缩放比是100 / 100 = 1 -->
+  <!-- 所以最终采用的缩放比例是0.5 -->
+  <image
+    width="50"
+    height="200"
+    x="0"
+    y="0"
+    href="/assets/img/x100.png"
+  />
+</svg>
+</body>
+</html>
