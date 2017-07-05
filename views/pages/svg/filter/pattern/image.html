@@ -6,10 +6,55 @@
 <style type="text/css">
 svg {
   border: 1px black solid;
+  display: block;
+  margin-bottom: 10px;
 }
 </style>
 </head>
 <body>
+<svg width="300" height="300">
+  <defs>
+    <!-- patternUnits默认值是objectBoundingBox -->
+    <!-- patternContentUnits默认值是userSpaceOnUse -->
+    <pattern
+      patternUnits="objectBoundingBox"
+      patternContentUnits="objectBoundingBox"
+      x="-0.5"
+      y="-0.5"
+      width="50%"
+      height=".5"
+      id="J-object-filter"
+    >
+      <!--
+        patternContentUnits="objectBoundingBox"，
+        使得pattern内元素的单位相对于应用了pattern的元素
+      -->
+      <image
+        width=".5"
+        height=".5"
+        x="0"
+        y="0"
+        href="/assets/img/x100.png"
+      />
+    </pattern>
+  </defs>
+  <!-- 
+    patternUnits="userSpaceOnUse" x="0" y="0"时，
+    pattern默认是从svg的左上角开始重复
+  -->
+  <!--
+    transform发生在pattern渲染完之后
+  -->
+  <g transform="translate(25, 25)">
+    <rect
+      fill="url(#J-object-filter)"
+      x="25"
+      y="25"
+      width="200"
+      height="200"
+    />
+  </g>
+</svg>
 <svg width="300" height="300">
   <defs>
     <!-- patternUnits默认值是objectBoundingBox -->
@@ -19,7 +64,7 @@ svg {
       y="0"
       width="100"
       height="100"
-      id="J-filter"
+      id="J-user-filter"
     >
       <image
         width="100"
@@ -30,15 +75,22 @@ svg {
       />
     </pattern>
   </defs>
-  <!-- 默认pattern的中心和元素的中心重合 -->
-  <!--可以通过修改pattern的x属性，y属性的值来调整  -->
-  <rect
-    fill="url(#J-filter)"
-    x="50"
-    y="50"
-    width="200"
-    height="200"
-  />
+  <!-- 
+    patternUnits=userSpaceOnUse，x=0，y=0时，
+    pattern默认是从svg的左上角开始重复
+  -->
+  <!--
+    transform发生在pattern渲染完之后
+  -->
+  <g transform="translate(25, 25)">
+    <rect
+      fill="url(#J-user-filter)"
+      x="25"
+      y="25"
+      width="200"
+      height="200"
+    />
+  </g>
 </svg>
 </body>
 </html>
