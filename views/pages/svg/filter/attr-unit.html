@@ -95,5 +95,31 @@ svg {
     style="fill: green; stroke: red; filter: url(#J-user-filter);"
   />
 </svg>
+<svg width="200" height="200">
+  <defs>
+    <filter
+      id="J-circle-filter"
+      filterUnits="userSpaceOnUse"
+      x="0"
+      y="0" 
+      width="150"
+      height="150"
+    >
+      <feOffset in="SourceGraphic" dx="50" dy="50"></feOffset>
+    </filter>
+  </defs>
+  <!-- filter在transform之前表达 -->
+  <g
+    transform="translate(50, 50)"
+  >
+    <circle
+      cx="50"
+      cy="50"
+      r="50"
+      stroke-width="0"
+      style="fill: green; filter: url(#J-circle-filter);"
+    />
+  </g>
+</svg>
 </body>
 </html>
