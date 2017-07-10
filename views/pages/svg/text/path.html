@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  border: 1px black solid;
+  display: block;
+  margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+<svg width="200" height="200">
+  <defs>
+    <path
+      id="J-h-path"
+      d="M0 40 Q 40 60 80 40"
+      fill="none"
+    />
+  </defs>
+  <text font-size="20" y="20" x="20" writing-mode="rl-tb">
+    text
+  </text>
+  <use xlink:href="#J-h-path" stroke="red"/>
+  <!-- path定义在svg的坐标体系中，文字根据text中x属性的值再进行相对偏移 -->
+  <!-- 在水平模式下，属性y无效 -->
+  <!-- 属性x就像是调整了startOffset -->
+  <text
+    font-size="20"
+    x="20"
+    y="-9999"
+    writing-mode="rl-tb"
+  >
+    <!-- startOffset和属性y是叠加的 -->
+    <textPath xlink:href="#J-h-path" startOffset="25%">
+      text
+    </textPath>
+  </text>
+</svg>
+<svg width="200" height="200">
+  <defs>
+    <path
+      id="J-v-path"
+      d="M40 0 Q 60 40 40 80"
+      fill="none"
+    />
+  </defs>
+  <text font-size="20" y="20" x="20" writing-mode="tb-rl">
+    text
+  </text>
+  <use xlink:href="#J-v-path" stroke="red"/>
+  <!-- 在垂直模式下，属性x无效 -->
+  <!-- 属性y就像是调整了startOffset -->
+  <text
+    font-size="20"
+    x="-9999"
+    y="20"
+    writing-mode="tb-rl"
+  >
+    <textPath xlink:href="#J-v-path">
+      text
+    </textPath>
+  </text>
+</svg>
+</body>
+</html>
