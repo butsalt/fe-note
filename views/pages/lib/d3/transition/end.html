@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<script type="text/javascript" src="/assets/lib/d3/3.5.17/d3.js"></script>
+<style type="text/css">
+  .bar {
+    background: steelblue;
+    height: 30px;
+    width: 0;
+  }
+</style>
+</head>
+<body>
+<div class="bar" id="J-bar"></div>
+<script type="text/javascript">
+  (function () {
+    // 就算
+    var $bar = d3.select('#J-bar')
+
+    function animate() {
+      console.log('animte!');
+      $bar
+        .transition(2000)
+        .each('end', animate);
+    }
+    animate();
+  })();
+</script>
+</body>
+</html>
