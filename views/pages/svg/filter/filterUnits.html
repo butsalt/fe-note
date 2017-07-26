@@ -62,16 +62,18 @@ svg {
 <svg width="200" height="200">
   <defs>
     <!--
-      width="100"，画布的宽是100px
-      x="50"，画布的左上点距离svg左侧50px
+      x="25"，画布的左上点距离svg左侧200 * 0.25 = 50px
+      y="50"，画布的左上点距离svg左侧50px
+      width="50"，画布的宽是50px
+      height="25%"，画布的高是200 * 0.25 = 50px
     -->
     <filter
       id="J-user-filter"
       filterUnits="userSpaceOnUse"
-      x="50"
-      y="50" 
+      x="25%"
+      y="50"
       width="50"
-      height="50"
+      height="25%"
     >
       <feOffset in="SourceGraphic" dx="0" dy="0"></feOffset>
     </filter>
