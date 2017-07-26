@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  border: 1px black solid;
+  margin-bottom: 20px;
+  display: block;
+}
+</style>
+</head>
+<body>
+<svg width="400" height="200">
+  <defs>
+    <filter
+      id="J-flood-filter"
+      x="0"
+      y="0"
+      width="1"
+      height="1"
+    >
+      <!-- 在filter定义的区域内，根据设定填充一块区域 -->
+      <!-- x，y，width，height单位为px -->
+      <!-- x=0 y=0时，位于svg左上角 -->
+      <feFlood
+        x="100"
+        y="0"
+        width="200"
+        height="200"
+        flood-color="yellow"
+        flood-opacity="0.5"
+      />
+    </filter>
+    <feBlend in="SourceGraphic" in2="floodFill" mode="multiply"/>
+  </defs>
+  <rect
+    x="200"
+    y="0"
+    width="200"
+    height="200"
+    stroke-width="0"
+    style="fill: green; filter: url(#J-flood-filter);"
+  />
+</svg>
+</body>
+</html>
