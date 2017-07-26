@@ -15,7 +15,7 @@ svg {
 <svg width="600" height="600">
   <defs>
     <filter
-      id="J-blur-filter"
+      id="J-user-blur"
       filterUnits="userSpaceOnUse"
       x="50"
       y="50"
@@ -38,7 +38,33 @@ svg {
     width="400"
     height="400"
     stroke-width="0"
-    style="fill: green; filter: url(#J-blur-filter);"
+    style="fill: green; filter: url(#J-user-blur);"
+  />
+</svg>
+<hr/>
+<svg width="600" height="600">
+  <defs>
+    <filter
+      id="J-obj-blur"
+      filterUnits="userSpaceOnUse"
+      primitiveUnits="objectBoundingBox"
+      x="50"
+      y="50"
+      width="500"
+      height="500"
+    >
+      <!-- 水平方向σ参考元素的宽 -->
+      <!-- 水平方向σ参考元素的高 -->
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".0625" />
+    </filter>
+  </defs>
+  <rect
+    x="100"
+    y="100"
+    width="400"
+    height="400"
+    stroke-width="0"
+    style="fill: green; filter: url(#J-obj-blur);"
   />
 </svg>
 </body>
