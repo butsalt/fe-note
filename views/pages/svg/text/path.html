@@ -27,13 +27,16 @@ svg {
   <!-- path定义在svg的坐标体系中，文字根据text中x属性的值再进行相对偏移 -->
   <!-- 在水平模式下，属性y无效 -->
   <!-- 属性x就像是调整了startOffset -->
+  <!-- startOffset和属性x的效果是叠加的 -->
+  <!-- x的单位虽然是像素但x不能简单理解成是让text移动*个像素的距离 -->
   <text
     font-size="20"
     x="20"
     y="-9999"
     writing-mode="rl-tb"
   >
-    <!-- startOffset和属性y是叠加的 -->
+    <!-- 使用百分比时是相对于整个路径长度移动*%的距离 -->
+    <!-- 没使用百分比时就是沿着路径移动*个px像素的距离 -->
     <textPath xlink:href="#J-h-path" startOffset="25%">
       text
     </textPath>
