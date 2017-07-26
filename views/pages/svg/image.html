@@ -15,12 +15,13 @@ svg {
 <!-- 展示的图片的宽高比不会变 -->
 <svg width="200" height="200">
   <!-- image本身的宽高值为设定值 -->
-  <!-- 展示的图片会放在image的中心 -->
+  <!-- 因为preserveAspectRatio的默认值是xMidYMid meet展示的图片会放在image的中心 -->
   <image
     width="200"
     height="100"
     x="0"
     y="0"
+    preserveAspectRatio="xMidYMid meet"
     href="/assets/img/x100.png"
   />
 </svg>
