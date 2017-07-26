@@ -12,7 +12,7 @@ svg {
 </style>
 </head>
 <body>
-<svg width="200" height="200">
+<svg width="400" height="200">
   <defs>
     <path
       id="J-h-path"
@@ -23,11 +23,11 @@ svg {
   <use xlink:href="#J-h-path" stroke="red"/>
   <!-- path定义在svg的坐标体系中，文字根据text中x属性的值再进行相对偏移 -->
   <!-- 在水平模式下，属性y无效 -->
-  <!-- 属性x的值就是调整了startOffset -->
+  <!-- 属性x的值就是调整了startOffset，但使用百分比时是相对svg的宽 -->
   <!-- 如果startOffset的值是50，x的值是50，那么相当于在路径上移动了100px -->
   <text
     font-size="20"
-    x="50"
+    x="12.5%"
     y="-9999"
     writing-mode="rl-tb"
   >
@@ -38,7 +38,7 @@ svg {
     </textPath>
   </text>
 </svg>
-<svg width="200" height="200">
+<svg width="200" height="400">
   <defs>
     <path
       id="J-v-path"
@@ -48,11 +48,11 @@ svg {
   </defs>
   <use xlink:href="#J-v-path" stroke="red"/>
   <!-- 在垂直模式下，属性x无效 -->
-  <!-- 属性y就像是调整了startOffset -->
+  <!-- 属性y就是调整了startOffset，但使用百分比时是相对svg的高 -->
   <text
     font-size="20"
     x="-9999"
-    y="50"
+    y="12.5%"
     writing-mode="tb-rl"
   >
     <textPath xlink:href="#J-v-path" startOffset="50">
