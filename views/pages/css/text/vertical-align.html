@@ -44,7 +44,7 @@
         当font-size为0时，x的高度中心点与行内框高度中心点重合
       2.  baseline始终位于x的下边缘，根据字体不同可能会有几个像素的偏差
       3.  包裹文字的父元素
-          如果为inline，会根据文字实际大小进行包裹
+          如果为inline，会根据文字实际大小进行包裹(这个范围又被称为content-area)
           否则，会根据line-height的计算结果进行包裹
           但父元素在它的父元素中计算高度时，始终按照line-height的计算结果进行包裹
     **/
@@ -54,7 +54,7 @@
     1.  vertical-align的值为top时，
       对象的顶端会与该行顶端对齐。
     3.  vertical-align的值为text-top时，
-      对象的顶端会与父元素的默认span元素的content-area上边缘(此时就是文字实际上边缘，因为inline元素是按文字实际大小进行包裹)对齐。
+      对象的顶端会与父元素的默认span元素的content-area上边缘对齐。
     4.  vertical-align的值为super时，
       对象的baseline会与父元素的默认sup的baseline对齐。
     5.  vertical-align的值为sub时，
