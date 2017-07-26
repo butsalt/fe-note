@@ -22,11 +22,7 @@ svg {
       width="500"
       height="500"
     >
-      <!--
-          如果stdDeviation的单位是px，在当前设置下应该可以完整呈现模糊效果
-          实际效果不能完整呈现
-          足以证明stdDeviation的单位不是px，值越大越模糊
-      -->
+      <!-- stdDeviation = σ -->
       <feGaussianBlur in="SourceGraphic" stdDeviation="50" />
     </filter>
   </defs>
