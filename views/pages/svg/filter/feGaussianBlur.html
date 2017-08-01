@@ -27,7 +27,7 @@ svg {
         51px * 51px这个范围内的像素点权数比较高
       -->
       <!-- 所以，距离元素边缘50px处的范围内是模糊效果最明显的范围 -->
-      <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="25"/>
     </filter>
   </defs>
   <rect
@@ -35,7 +35,6 @@ svg {
     y="100"
     width="400"
     height="400"
-    stroke-width="0"
     style="fill: green; filter: url(#J-user-blur);"
   />
 </svg>
@@ -53,7 +52,7 @@ svg {
     >
       <!-- 水平方向σ参考元素的宽 -->
       <!-- 水平方向σ参考元素的高 -->
-      <feGaussianBlur in="SourceGraphic" stdDeviation=".0625" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".0625"/>
     </filter>
   </defs>
   <rect
@@ -61,7 +60,6 @@ svg {
     y="100"
     width="400"
     height="400"
-    stroke-width="0"
     style="fill: green; filter: url(#J-obj-blur);"
   />
 </svg>
