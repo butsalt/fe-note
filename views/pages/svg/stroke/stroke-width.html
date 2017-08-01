@@ -30,5 +30,20 @@ svg {
     fill="rgba(0, 0, 0, .2)"
   />
 </svg>
+<hr/>
+<svg width="150" height="150">
+  <!--
+    当stroke-width小于2，且shape-rendering值不为crispEdges时，
+    stroke-width会被设置回2，边缘两侧各1px，且颜色变浅
+  -->
+  <line x1="20" y1="50" x2="130" y2="50" stroke="black" stroke-width="1"/>
+</svg>
+<svg width="150" height="150">
+  <!--
+    当stroke-width小于2，且shape-rendering值不为crispEdges时，
+    stroke-width会被设置回2，边缘两侧各1px，且颜色变浅
+  -->
+  <path d="M20 50 h 110" stroke="black" stroke-width="1"/>
+</svg>
 </body>
 </html>
