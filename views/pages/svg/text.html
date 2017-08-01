@@ -4,28 +4,26 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <style type="text/css">
-body {
-  background-color:#ddd;
-}
+
 </style>
 </head>
 <body>
 <svg width="500" height="500">
-<!-- text-anchor定义的是text声名的点(x,y)相对于文本在水平方向上的位置 -->
-<!-- text在垂直方向上它的底部位于声明的点(x,y)的上方 -->
-<g transform="translate(0,50)">
-  <!-- (50,0)是文本水平方向上的起点 -->
-  <!-- dx,dy表示的是与原位置的相对位移(relative) -->
-  <text x="50" y="0" style="fill:red;" text-anchor="start">Hi!<tspan dx="10" dy="10">Hello!</tspan></text>
-</g>
-<g transform="translate(0,100)">
-  <!-- (50,0)在文本水平方向上的中间位置 -->
-  <text x="50" y="0" style="fill:red;" text-anchor="middle">Hi!<tspan rotate="30">Hello!</tspan></text>
-</g>
-<g transform="translate(0,150)">
-  <!-- (50,0)是文本水平方向上的终点 -->
-  <text x="50" y="0" style="fill:red;" text-anchor="end">Hi!<tspan rotate="30">Hello!</tspan></text>
-</g>
+  <!-- text-anchor定义的是text声名的点(x,y)相对于文本在水平方向上的位置 -->
+  <!-- text在垂直方向上它的底部位于声明的点(x,y)的上方 -->
+  <g transform="translate(0,50)">
+    <!-- (50,0)是文本水平方向上的起点 -->
+    <!-- dx,dy表示的是与原位置的相对位移(relative) -->
+    <text x="50" y="0" style="fill:red;" text-anchor="start">Hi!<tspan dx="10" dy="10">Hello!</tspan></text>
+  </g>
+  <g transform="translate(0,100)">
+    <!-- (50,0)在文本水平方向上的中间位置 -->
+    <text x="50" y="0" style="fill:red;" text-anchor="middle">Hi!<tspan rotate="30">Hello!</tspan></text>
+  </g>
+  <g transform="translate(0,150)">
+    <!-- (50,0)是文本水平方向上的终点 -->
+    <text x="50" y="0" style="fill:red;" text-anchor="end">Hi!<tspan rotate="30">Hello!</tspan></text>
+  </g>
 </svg>
 </body>
 </html>
