@@ -4,40 +4,26 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <style type="text/css">
-svg {
-  border: 1px black solid;
-}
 
-.ruler {
-  font-size: 100px;
-  line-height: 1;
-  transform-origin: left center;
-  transform: rotateZ(90deg) translateX(-49px);
-  color: red;
-  opacity: .5;
-  position: absolute;
-}
 </style>
 </head>
 <body>
-<svg width="200" height="200">
-  <!-- 属性x，属性y决定了文本中第一个字的position，下一个字的位置根据前一个字的位置来计算 -->
-  <!--
-    水平显示时，
-    x是baseline的最左边一个点的x值
-    y是baseline的最左边一个点的y值
-  -->
-  <text font-size="100" x="0" y="0">xtesp</text>
-</svg>
-<hr/>
-<div class="ruler">xtesp</div>
-<svg width="200" height="200">
-  <!--
-    这里说的高度，不考虑文字content-area，只考虑文字line-height的高度
-    x是第一个字在line-height下中线对应的x值
-    y是第一个字最左边对应的的y值
-  -->
-  <text font-size="100" x="0" y="0" writing-mode="tb-rl">xtesp</text>
+<svg width="500" height="500">
+  <!-- text-anchor定义的是text声名的点(x,y)相对于文本在水平方向上的位置 -->
+  <!-- text在垂直方向上它的底部位于声明的点(x,y)的上方 -->
+  <g transform="translate(0, 50)">
+    <!-- (50,0)是文本水平方向上的起点 -->
+    <!-- dx,dy表示的是与原位置的相对位移(relative) -->
+    <text x="50" y="0" fill="red" text-anchor="start">Hi!<tspan dx="10" dy="10">Hello!</tspan></text>
+  </g>
+  <g transform="translate(0, 100)">
+    <!-- (50,0)在文本水平方向上的中间位置 -->
+    <text x="50" y="0" fill="red" text-anchor="middle">Hi!<tspan rotate="30">Hello!</tspan></text>
+  </g>
+  <g transform="translate(0, 150)">
+    <!-- (50,0)是文本水平方向上的终点 -->
+    <text x="50" y="0" fill="red" text-anchor="end">Hi!<tspan rotate="30">Hello!</tspan></text>
+  </g>
 </svg>
 </body>
 </html>

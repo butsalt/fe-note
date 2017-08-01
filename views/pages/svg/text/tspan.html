@@ -36,12 +36,12 @@ svg {
     因为后一个的postion是根据前一个字的position来计算的，所以后面文字计算position的值都会随之改变
   -->
   <!-- 属性x，属性y是相对于svg左上角 -->
-  <text font-size="50" x="50" y="50" style="fill: url(#J-user-filter);">H<tspan x="50" y="50">e</tspan>llop</text>
+  <text font-size="50" x="50" y="50" fill="url(#J-user-filter)">H<tspan x="50" y="50">e</tspan>llop</text>
 </svg>
 <hr/>
 <svg width="200" height="200">
   <!-- 属性dx，属性dy是相对于文字内容未偏移前的左上角 -->
-  <text font-size="50" y="50" style="fill: url(#J-user-filter);">H<tspan dx="20" dy="20">e</tspan>llop</text>
+  <text font-size="50" y="50" fill="url(#J-user-filter)">H<tspan dx="20" dy="20">e</tspan>llop</text>
 </svg>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  border: 1px black solid;
+}
+
+.ruler {
+  font-size: 100px;
+  line-height: 1;
+  transform-origin: left center;
+  transform: rotateZ(90deg) translateX(-49px);
+  color: red;
+  opacity: .5;
+  position: absolute;
+}
+</style>
+</head>
+<body>
+<svg width="200" height="200">
+  <!-- 属性x，属性y决定了文本中第一个字的position，下一个字的位置根据前一个字的位置来计算 -->
+  <!--
+    水平显示时，
+    x是baseline的最左边一个点的x值
+    y是baseline的最左边一个点的y值
+  -->
+  <text font-size="100" x="0" y="0">xtesp</text>
+</svg>
+<hr/>
+<div class="ruler">xtesp</div>
+<svg width="200" height="200">
+  <!--
+    这里说的高度，不考虑文字content-area，只考虑文字line-height的高度
+    x是第一个字在line-height下中线对应的x值
+    y是第一个字最左边对应的的y值
+  -->
+  <text font-size="100" x="0" y="0" writing-mode="tb-rl">xtesp</text>
+</svg>
+</body>
+</html>
