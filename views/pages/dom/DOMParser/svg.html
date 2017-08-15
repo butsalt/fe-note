@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+</head>
+<body>
+  <div id="J-container"></div>
+  <script type="text/javascript">
+    (function () {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(
+        '<svg><rect x="0" y="0" width="50" height="50" fill="red"/></svg>',
+        // chrome下image/svg+xml并不能使得直接创建svg里的元素
+        'text/html'
+      );
+      var rect = doc.body.firstElementChild;
+      document.getElementById('J-container')
+        .appendChild(rect)
+    })();
+  </script>
+</body>
+</html>

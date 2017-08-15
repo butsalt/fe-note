@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+</head>
+<body>
+  <ul id="J-container"></ul>
+  <script type="text/javascript">
+    (function () {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(
+        '<li>item</li>',
+        'text/html'
+      );
+      var li = doc.body.firstElementChild
+      document.getElementById('J-container')
+        .appendChild(li)
+    })();
+  </script>
+</body>
+</html>
