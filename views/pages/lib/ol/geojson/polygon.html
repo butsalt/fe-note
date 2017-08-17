@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<link rel="stylesheet" type="text/css" href="/assets/lib/ol/4.2.0/ol.css"/>
+<style type="text/css">
+  .map {
+    width: 500px;
+    height: 400px;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<div id="J-epsg-4326" class="map"></div>
+<script type="text/javascript" src="/assets/lib/ol/4.2.0/ol.js"></script>
+<script type="text/javascript">
+  (function () {
+    var map = new ol.Map({
+      layers: [
+        new ol.layer.Vector({
+          source: new ol.source.Vector({
+            features: (new ol.format.GeoJSON().readFeatures({
+              'type': 'FeatureCollection',
+              'crs': {
+                'type': 'name',
+                'properties': {
+                  'name': 'EPSG:4326'
+                }
+              },
+              'features': [{
+                'type': 'Feature',
+                'geometry': {
+                  'type': 'Polygon',
+                  'coordinates': [
+                    // 奇怪的是canvas的movoTo，lineTo顺时针填充，逆时针切割
+                    // 首尾坐标点表示的坐标位置必须一致
+                    // 外圈逆时针，必须排第一个
+                    [[-3, 3], [-3, -3], [3, -3], [3, 3], [-3, 3]],
+                    // 内圈顺时针
+                    [[-1, 1], [1, 1], [1, -1], [-1, -1], [-1, 1]]
+                  ]
+                }
+              }]
+            }))
+          }),
+          style: new ol.style.Style({
+            fill: new ol.style.Fill({
+              color: 'steelblue'
+            })
+          })
+        })
+      ],
+      controls: [],
+      target: 'J-epsg-4326',
+      view: new ol.View({
+        center: [0, 0],
+        zoom: 2,
+        projection:'EPSG:4326',
+      }),
+    });
+  })();
+</script>
+</body>
+</html>
