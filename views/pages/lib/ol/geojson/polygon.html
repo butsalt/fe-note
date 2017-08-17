@@ -34,7 +34,12 @@
                 'geometry': {
                   'type': 'Polygon',
                   'coordinates': [
+                    // http://jsfiddle.net/dg2caqsx/
                     // 奇怪的是canvas的movoTo，lineTo顺时针填充，逆时针切割
+
+                    // mapbox内部则是要求外圈顺时针，内圈逆时针
+                    // 所以mapbox在读取geojson时要做一次转换
+
                     // 首尾坐标点表示的坐标位置必须一致
                     // 外圈逆时针，必须排第一个
                     [[-3, 3], [-3, -3], [3, -3], [3, 3], [-3, 3]],
