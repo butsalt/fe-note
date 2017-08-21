@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  border: 1px black solid;
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+<svg width="300" height="300">
+  <defs>
+    <path d="M0 0 L300 300" id="J-path" stroke="black" id="J-path"/>
+  </defs>
+  <use href="#J-path"/>
+  <!-- 重写d无效 -->
+  <use href="#J-path" d="M300 0 L0 300" transform="translate(50,0)"/>
+</svg>
+</body>
+</html>
