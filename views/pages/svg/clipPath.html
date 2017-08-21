@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  border: 1px black solid;
+}
+</style>
+</head>
+<body>
+<svg width="300" height="300">
+  <clipPath id="J-user-clip-path" clipPathUnits="userSpaceOnUse">
+    <!-- 相对于svg（默认） -->
+    <!-- 坐标原点是svg的左上角 -->
+    <circle cx="150" cy="150" r="100"/>
+  </clipPath>
+  <rect x="50" y="50" width="200" height="200" fill="steelblue" clip-path="url(#J-user-clip-path)"/>
+</svg>
+<hr/>
+<svg width="300" height="300">
+  <clipPath id="J-obj-clip-path" clipPathUnits="objectBoundingBox">
+    <!-- 相对于应用元素 -->
+    <!-- 坐标原点是应用元素的左上角 -->
+    <circle cx=".5" cy=".5" r=".5"/>
+  </clipPath>
+  <rect x="50" y="50" width="200" height="200" fill="steelblue" clip-path="url(#J-obj-clip-path)"/>
+</svg>
+</body>
+</html>
