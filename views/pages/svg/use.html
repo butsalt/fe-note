@@ -17,7 +17,9 @@ svg {
   </defs>
   <use href="#J-path"/>
   <!-- 重写d无效 -->
-  <use href="#J-path" d="M300 0 L0 300" transform="translate(50,0)"/>
+  <!-- use会被替换成一个g元素x="50" -> transform="translate(50, 0)" -->
+  <!-- href中的内容会深拷贝，然后放到g元素内 -->
+  <use href="#J-path" d="M300 0 L0 300" x="50"/>
 </svg>
 </body>
 </html>
