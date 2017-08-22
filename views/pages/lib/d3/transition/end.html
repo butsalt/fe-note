@@ -16,9 +16,9 @@
 <div class="bar" id="J-bar"></div>
 <script type="text/javascript">
   (function () {
-    // 就算
     var $bar = d3.select('#J-bar')
 
+    // 就算没有属性变换,2000毫秒后end还是被触发
     function animate() {
       console.log('animte!');
       $bar
