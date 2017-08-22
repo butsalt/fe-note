@@ -45,5 +45,15 @@ svg {
   -->
   <path d="M20 50 h 110" stroke="black" stroke-width="1"/>
 </svg>
+<hr/>
+<svg width="150" height="150">
+  <!--
+       x，y的值确定了指定像素点的左上角
+       当shape-rendering="crispEdges"
+       如果stroke-width="1"，那么渲染范围从这个像素点开始向右下
+       如果stroke-width="2"，那么渲染范围从这个像素点向左上移一个像素点后开始向右下
+  -->
+  <rect x="1" y="1" width="4" height="4" stroke-width="1" stroke="red" shape-rendering="crispEdges"/>
+</svg>
 </body>
 </html>
