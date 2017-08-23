@@ -3,91 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <title>fe-note</title>
-<style type="text/css">
-  * {
-    margin:0;
-    padding:0;
-  }
-  html,body {
-    width:100%;
-    height:100%;
-  }
-</style>
-<script type="text/javascript" src="/assets/lib/jquery/2.1.3/jquery.js"></script>
 <script type="text/javascript" src="/assets/lib/d3/3.0.0/d3.js"></script>
-<script type="text/javascript">
-$(function () {
-  var data = [50,75,100,125];
-  var colors = d3.scale.category10();
-  // bar维护一个长度为4的数组，但每个位置上都是null
-  var bar = d3.select(document.body)
-    .selectAll('div')
-    .data(data);
-  
-  // barEnter只关心新加入的对象
-  var barEnter = bar
-    .enter()
-    .append('div')
-    .style('height','100px')
-    .style('background-color',function (d,i) {
-      return colors(i);
-    })
-    .style('width',function (d,i) {
-      return d+'px';
-    });
-    /**如果直接append到span，则barEnter指向所有span而不是div
-    .append("span")
-    .html(function (d) {
-      return d;
-    });
-    **/
-  // enter后，bar维护的数组被div对象填满
-  
-  window.look = function () {
-    bar.each(function ( d, i ) {
-      console.log(i+":");
-      console.log("data: "+d);
-      console.log(this);
-    });
-  };
-  
-  window.add = function () {
-    var data2 = [125,100,75,50,99];
-    // extra只包含新增的
-    var extra = bar.data(data2)
-      .enter()
-      .append('div')
-      .style('height','100px')
-      .style('background-color',function (d,i) {
-        return colors(i);
-      })
-      .style('width',function (d,i) {
-        return d+'px';
-      });
-    // bar 只包含前4个，当调用bar.data时，bar选择的四个元素上绑定的数据已经改变了
-    bar.style('width',function (d,i) {
-      return d+'px';
-    });
-    // 为了选择所有元素，必须重新选择
-    bar = d3.selectAll('div');
-  };
-  
-  window.remove = function () {
-    var data2 = [125,100,75];
-    // extra只包含被舍去的(也就是最后一个)
-    var extra = bar.data(data2)
-      .exit()
-      .remove();
-    // bar 此时仍然包含4个，且当调用bar.data时，bar选择的前三个元素上绑定的数据已经改变了
-    // 为了使得bar的指向正确，必须重新选择
-    bar = d3.selectAll('div');
-    bar.style('width',function (d,i) {
-      return d + 'px';
-    });
-  };
-});
-</script>
 </head>
 <body>
+<div>
+  <p>
+    <span></span>
+  </p>
+</div>
+<div>
+  <p>
+    <span></span>
+  </p>
+  <p>
+    <span></span>
+  </p>
+  <p>
+    <span></span>
+  </p>
+</div>
+<script type="text/javascript">
+(function () {
+  // 1个group，这个group下包含页面上所有div元素
+  // 这个group的parentNode是document.documentElement
+  var div = d3.selectAll('div');
+  console.log(div[0].parentNode === document.documentElement)
+
+  // 1个group，这个group下只包含d3查找到的第1个div元素
+  // div = d3.select('div');
+
+  var data = [
+    [1],
+    [2, 3, 4]
+  ];
+  // 给每个group设置data
+  // 设置后，每个group的data是一致的
+
+  // 第1个group下第1个div元素，对应的data被设置为data[0]
+  // 第1个group下第2个div元素，对应的data被设置为data[1]
+  div.data(data);
+
+  // 根据div分group，现在有2个div，所以分成2个group
+  // 第1个group，parentNode是第1个div，包含1个span元素
+  // 第2个group，parentNode是第2个div，包含3个span元素
+  var span = div.selectAll('span');
+
+  // 给每个group设置data
+  // 根据返回值确定group的data
+  span.data(function (parentData, i) {
+    // parentData是这个group的parentNode的data
+    // i是这个group在整个group列表中的下标
+    return parentData;
+  });
+
+  span.text(function (num) {
+    return num;
+  })
+})();
+</script>
 </body>
 </html>
