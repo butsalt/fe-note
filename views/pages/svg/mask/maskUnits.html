@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  border: 1px black solid;
+}
+</style>
+</head>
+<body>
+<svg width="300" height="300">
+  <!-- maskUnits默认值是objectBoundingBox  -->
+  <!-- maskUnits控制的是设置mask区域的单位 -->
+  <mask
+    id="J-obj-mask"
+    maskUnits="objectBoundingBox"
+    x="0"
+    y="0"
+    width="1"
+    height="1"
+  >
+    <!-- 根据颜色确定实际显示范围 -->
+    <circle cx="150" cy="150" r="100" fill="#fff"/>
+  </mask>
+  <rect x="50" y="50" width="200" height="200" fill="red" mask="url(#J-obj-mask)"/>
+</svg>
+<hr/>
+<svg width="300" height="300">
+  <mask
+    id="J-user-mask"
+    maskUnits="userSpaceOnUse"
+    x="50"
+    y="50"
+    width="200"
+    height="200"
+  >
+    <!-- 根据颜色确定实际显示范围 -->
+    <circle cx="150" cy="150" r="100" fill="#fff"/>
+  </mask>
+  <rect x="50" y="50" width="200" height="200" fill="red" mask="url(#J-user-mask)"/>
+</svg>
+</body>
+</html>

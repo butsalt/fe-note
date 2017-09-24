@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<script type="text/javascript">
+(function () {
+  var d = new Date(10000);
+
+  var str = d + 1;
+  // 参与'+'运算时，对象都是直接调toString方法
+  console.log(str == 'Thu Jan 01 1970 08:00:10 GMT+0800 (中国标准时间)1');
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

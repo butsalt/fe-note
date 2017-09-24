@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<script type="text/javascript">
+(function () {
+  var d = new Date(10000);
+
+  console.log(d != 10000);
+  // date对象的valueOf方法虽然返回的是一个基本类型，但是它在参与'=='运算时，直接调toString
+  console.log(d == 'Thu Jan 01 1970 08:00:10 GMT+0800 (中国标准时间)');
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

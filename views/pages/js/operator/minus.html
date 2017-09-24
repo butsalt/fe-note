@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<script type="text/javascript">
+(function () {
+  var d = new Date(10000);
+
+  var num = d - 1;
+  // 参与'-'运算时，对象都是直接调valueOf方法
+  console.log(num === 9999);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
