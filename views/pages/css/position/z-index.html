@@ -108,9 +108,10 @@ body > div {
   <div class="red rel-40" style="z-index:1;"></div>
   <div class="green rel"></div>
 </div>
+<!-- 创建层叠上下文的元素不会遮挡后代元素，即使后代元素z-index<0 -->
+<!-- html元素会创建初始的层叠上下文 -->
 <!-- html,body的背景，html的border不会遮挡body内的元素，即使元素z-index<0 -->
 <!-- body的border仍在上述规则中判断层级关系 -->
-<!-- 创建层级的元素不会遮挡后代元素，即使后代元素z-index<0 -->
 <div>
   <div class="red rel" style="z-index:0;">
     <div class="rel" style="z-index:-1;"></div>
