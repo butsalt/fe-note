@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  display: block;
+  margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+<svg width="100" height="100">
+  <defs>
+    <filter
+      id="J-red-filter"
+      x="0"
+      y="0"
+      width="1"
+      height="1"
+    >
+      <feImage
+        xlink:href="./img/red-bg.png"
+        x="0"
+        y="0"
+        width="100"
+        height="100"
+        result="bg"
+      />
+      <feComposite in="SourceGraphic" in2="bg" operator="in" />
+    </filter>
+  </defs>
+  <rect
+    width="100"
+    height="100"
+    fill="rgba(0, 0, 255, .5)"
+    filter="url(#J-red-filter)"
+  />
+</svg>
+<svg width="100" height="100">
+  <defs>
+    <filter
+      id="J-green-filter"
+      x="0"
+      y="0"
+      width="1"
+      height="1"
+    >
+      <feImage
+        xlink:href="./img/green-bg.png"
+        x="0"
+        y="0"
+        width="100"
+        height="100"
+        result="bg"
+      />
+      <feComposite in="SourceGraphic" in2="bg" operator="in" />
+    </filter>
+  </defs>
+  <rect
+    width="100"
+    height="100"
+    fill="rgba(0, 0, 255, .5)"
+    filter="url(#J-green-filter)"
+  />
+</svg>
+<!--
+  底图不显示
+  顶图只显示存在于底图不完全透明区域的部分
+  
+  顶图显示部分的每个点的alpha值
+    = 
+  底图对应位置上像素点的alpha值
+    *
+  顶图对应位置上像素点的alpha的值
+-->
+<div style="width: 100px; height: 100px; background-color: rgba(0, 0, 255, .25);"></div>
+</body>
+</html>

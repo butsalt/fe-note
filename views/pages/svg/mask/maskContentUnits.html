@@ -21,7 +21,8 @@ svg {
     width="1"
     height="1"
   >
-    <!-- 根据颜色确定实际显示范围 -->
+    <!-- 根据颜色和alpha值确定实际显示范围 -->
+    <!-- 颜色为#000或alpha值为0，就不显示 -->
     <circle cx="150" cy="150" r="100" fill="#fff"/>
   </mask>
   <rect x="50" y="50" width="200" height="200" fill="red" mask="url(#J-user-mask)"/>
@@ -36,7 +37,8 @@ svg {
     width="1"
     height="1"
   >
-    <!-- 根据颜色确定实际显示范围 -->
+    <!-- 根据颜色和alpha值确定实际显示范围 -->
+    <!-- 颜色为#000或alpha值为0，就不显示 -->
     <circle cx=".5" cy=".5" r=".5" fill="#fff"/>
   </mask>
   <rect x="50" y="50" width="200" height="200" fill="red" mask="url(#J-obj-mask)"/>

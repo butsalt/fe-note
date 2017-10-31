@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  display: block;
+  margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+<svg width="100" height="100">
+  <defs>
+    <filter
+      id="J-red-filter"
+      x="0"
+      y="0"
+      width="1"
+      height="1"
+    >
+      <feImage
+        xlink:href="./img/red-bg.png"
+        x="0"
+        y="0"
+        width="100"
+        height="100"
+        result="bg"
+      />
+      <feComposite in="SourceGraphic" in2="bg" operator="atop" />
+    </filter>
+  </defs>
+  <rect
+    width="100"
+    height="100"
+    fill="#00f"
+    filter="url(#J-red-filter)"
+  />
+</svg>
+<svg width="100" height="100">
+  <defs>
+    <filter
+      id="J-green-filter"
+      x="0"
+      y="0"
+      width="1"
+      height="1"
+    >
+      <feImage
+        xlink:href="./img/green-bg.png"
+        x="0"
+        y="0"
+        width="100"
+        height="100"
+        result="bg"
+      />
+      <feComposite in="SourceGraphic" in2="bg" operator="atop" />
+    </filter>
+  </defs>
+  <rect
+    width="100"
+    height="100"
+    fill="#00f"
+    filter="url(#J-green-filter)"
+  />
+</svg>
+<svg width="100" height="100">
+  <defs>
+    <filter
+      id="J-opacity-filter"
+      x="0"
+      y="0"
+      width="1"
+      height="1"
+    >
+      <feImage
+        xlink:href="./img/red-bg.png"
+        x="0"
+        y="0"
+        width="100"
+        height="100"
+        result="bg"
+      />
+      <feComposite in="SourceGraphic" in2="bg" operator="atop" />
+    </filter>
+  </defs>
+  <rect
+    width="100"
+    height="100"
+    fill="rgba(0, 0, 255, .5)"
+    filter="url(#J-opacity-filter)"
+  />
+</svg>
+<!--
+  底图完全展示
+  顶图只展示存在于底图不透明区域内的部分
+
+  如果顶图的原图像素点alpha值=1，
+    就算计算后alpha值<1，底图的样子还是看不到
+  如果顶图的原图像素点alpha值<1，
+    底图的样子可以看到(即顶图存在半透明效果)
+-->
+<div style="width: 100px; height: 100px; background-color: rgba(0, 0, 255, .5)"></div>
+</body>
+</html>
