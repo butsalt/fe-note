@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+svg {
+  border: 1px black solid;
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+<svg width="300" height="300">
+  <!-- 新建一个坐标系，原点从0,0 移动至 100,100 -->
+  <g transform="translate(100, 100)">
+    <!-- 新建一个坐标系，原点100,100，横纵轴都扩大到2倍 -->
+    <rect transform="scale(2)" width="100" height="100" fill="steelblue" />
+  </g>
+</svg>
+<hr />
+<svg width="300" height="300">
+  <!-- 新建一个坐标系，原点从0,0 移动至 100,100，然后横纵轴都扩大到2倍 -->
+  <rect transform="translate(100, 100) scale(2)" width="100" height="100" fill="steelblue" />
+</svg>
+</body>
+</html>
