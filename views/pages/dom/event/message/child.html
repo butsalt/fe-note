@@ -18,7 +18,7 @@
           //origin规则:
           //协议 + '://' + 主机名 + ':' + 端口号（若为80，可省略）
           //修改目标window的domain不影响origin的判断
-          window.parent.postMessage('hello parent!', 'http://localhost:7070');
+          window.parent.postMessage('hello parent!', 'http://localhost:3000');
         });
       window.addEventListener('message', function (e) {
         //调用postMessage的来源的origin
