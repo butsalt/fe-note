@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded',function () {
   <!-- iframe默认有border -->
   <!-- iframe默认有固定的width -->
   <!-- iframe默认有固定的height -->
+  <!-- 主页面与iframe的js执行在同个线程中 -->
+  <!-- 不同tab的js执行在不同线程中 -->
   <iframe src="./child1.html" class="child" id="child1">
   </iframe>
   <iframe src="./child2.html" class="child" id="child2">
