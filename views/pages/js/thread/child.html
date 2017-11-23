@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>fe-note</title>
+</head>
+
+<body>
+  <section>
+    <h1>child</h1>
+  </section>
+  <script>
+    (function () {
+      window.addEventListener('message', function (e) {
+        setTimeout(function () {
+          var i = 9999999999;
+          var sum = 0;
+          while (i--) {
+            sum += i;
+          }
+        }, 1000);
+      });
+    })();
+  </script>
+</body>
+
+</html>

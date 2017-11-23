@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>fe-note</title>
+</head>
+
+<body>
+  <section>
+    <h1>parent</h1>
+    <p id="J-msg"></p>
+    <button type="button" id="J-btn">stuck child</button>
+    <button type="button">nouse btn</button>
+  </section>
+  <!-- 页面与页面下的iframe共用一个js线程 -->
+  <!-- 各个tab的js线程相互独立 -->
+  <iframe id="J-child" src="./child.html"></iframe>
+  <script type="text/javascript">
+    (function () {
+      var child = document.getElementById('J-child').contentWindow;
+      var msg = document.getElementById('J-msg');
+      setInterval(function () {
+        msg.innerText = new Date().toLocaleTimeString();
+      }, 1000);
+      document.getElementById('J-btn')
+        .addEventListener('click', function () {
+          child.postMessage('stuck', '*');
+        });
+    })();
+  </script>
+</body>
+
+</html>
