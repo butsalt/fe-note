@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+  /* 通过css应用于svg元素的width和height，能改变svg画布的尺寸 */
+  svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* 通过css应用于canvas元素的width和height，不会改变canvas画布的尺寸，只是对画好的图形进行拉伸/收缩 */
+  canvas {
+    width: 100px;
+    height: 100px;
+  }
+</style>
+</head>
+<body>
+<svg width="50" height="50">
+  <circle cx="50" cy="50" r="50" />
+</svg>
+<canvas id="J-canvas" width="50" height="50"></canvas>
+<script>
+  (function () {
+    var canvas = document.getElementById('J-canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(50, 50, 50, 0, 2 * Math.PI);
+    ctx.fill();
+  })();
+</script>
+</body>
+</html>
