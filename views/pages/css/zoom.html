@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+  .containers {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .container {
+    position: relative;
+    flex: none;
+    width: 200px;
+    height: 200px;
+    background-color: steelblue;
+    margin: 20px;
+  }
+
+  .box {
+    background-color: orange;
+  }
+
+  .percent-box {
+    width: 50%;
+    height: 50%;
+  }
+
+  .px-box {
+    width: 100px;
+    height: 100px;
+  }
+
+  .abs-percent-box {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    bottom: 50%;
+    left: 0;
+  }
+
+  .abs-px-box {
+    position: absolute;
+    top: 0;
+    right: 100px;
+    bottom: 100px;
+    left: 0;
+  }
+
+  .zoom {
+    zoom: 2;
+  }
+</style>
+</head>
+<body>
+<div class="containers">
+  <div class="container">
+    <div class="box"></div>
+  </div>
+  <div class="container">
+    <!-- 元素所有以像素为单位的尺寸都会受zoom影响 -->
+    <div class="box px-box box zoom"></div>
+  </div>
+  <div class="container">
+    <!-- 元素所有以百分比为单位的尺寸不会受zoom影响 -->
+    <div class="box percent-box zoom"></div>
+  </div>
+  <!-- 元素所有以百分比为单位的尺寸不会受zoom影响，0由于是原点，所以单位不管是百分比还是像素都不受影响 -->
+  <div class="container">
+    <div class="box abs-percent-box zoom"></div>
+  </div>
+  <div class="container">
+    <div class="box abs-px-box zoom"></div>
+  </div>
+</div>
+</body>
+</html>
