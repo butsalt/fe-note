@@ -8,20 +8,31 @@ body {
   height: 2000px;
 }
 
+.container {
+  width: 100px;
+  height: 100px;
+  overflow: auto;
+}
+
 /** 元素的display会被重写为block **/
 .fixed {
   position: fixed;
   background-color: steelblue;
   left: 0;
-  /** 取值相对于窗口的可视范围(不含滚动条) **/
+  /** 取值相对于最近的有transform，perspective，filter的祖先元素 **/
+  /** 如果没有，则相对于窗口的可视范围(不含滚动条) **/
   top: 50%;
   width: 100%;
 }
 </style>
 </head>
 <body>
-<div class="fixed">
-  Hello!
+<div class="container">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda perspiciatis odit dolorum voluptates saepe distinctio ipsam, exercitationem reprehenderit quod. Iste deserunt sed expedita repudiandae labore! Aspernatur laborum ab vero pariatur.
+  <!-- 即使容器overflow的值不为visible，fixed元素也可超出容器可显示区域显示 -->
+  <div class="fixed">
+    Hello!
+  </div>
 </div>
 </body>
 </html>
