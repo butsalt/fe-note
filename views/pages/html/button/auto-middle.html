@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+  button {
+    padding: 0;
+    background-color: steelblue;
+    border: none;
+    line-height: 1;
+    width: 300px;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  div {
+    background-color: orange;
+  }
+
+  .big {
+    background-color: red;
+    font-size: 60px;
+  }
+
+  .small {
+    background-color: red;
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+<button>
+  <!-- 垂直水平居中 -->
+  <div>Lyx中</div>
+</button>
+<button>
+  <div>Lyx中</div>
+  <div>Lyx中</div>
+</button>
+<hr/>
+<button>
+  <div>
+    Lyx中
+    <span class="big">Lyx中</span>
+  </div>
+</button>
+<button>
+  <div>
+    <span class="big">Lyx中</span>
+  </div>
+</button>
+<hr/>
+<button>
+  <div>
+    Lyx中
+    <span class="small">Lyx中</span>
+  </div>
+</button>
+<button>
+  <div>
+    <!-- 受幽灵字符影响，该文本位置在按钮偏下的位置 -->
+    <span class="small">Lyx中</span>
+  </div>
+</button>
+</body>
+</html>
