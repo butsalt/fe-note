@@ -55,17 +55,26 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click',function (e) {
     var html = '';
     //左上角是包括border后的左上角
-    html += 'pageY: ' + e.pageY;//参考整个文档的左上角
+    // 参考整个文档的左上角，点到哪就是哪
+    html += 'pageY: ' + e.pageY;
     html += ' <br/>';
-    html += 'clientY: ' + e.clientY;//参考当前可视区域的左上角
+    // 参考当前可视区域的左上角，点到哪就是哪
+    html += 'clientY: ' + e.clientY;
     html += ' <br/>';
-    html += 'screenY: ' + e.screenY;//参考整个屏幕的左上角
+    // 参考整个屏幕的左上角，点到哪就是哪
+    html += 'screenY: ' + e.screenY;
     html += ' <br/>';
-    html += 'layerY: ' + e.layerY;//参考父节点的左上角，html/body标签参考自己的左上角(会受transform影响，慎用)
+    // 参考父节点的左上角，html/body标签参考自己的左上角(会受transform影响，慎用)
+    html += 'layerY: ' + e.layerY;
     html += ' <br/>';
-    html +='offsetY: ' + e.offsetY;//参考自己的左上角
+    // 参考自己的左上角
+    // transform调整大小后还是相对于未调整前尺寸
+    // 比如元素宽100px，通过transform放大至200px点击元素右下角时，offsetX仍然是100
+    // zoom调整大小后点到哪就是哪
+    html +='offsetY: ' + e.offsetY;
     html += ' <br/>';
-    html += 'y: ' + e.y;//同clientY
+    // 同clientY
+    html += 'y: ' + e.y;
     infoEl.innerHTML = html;
   });
 });
