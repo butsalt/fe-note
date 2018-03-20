@@ -5,7 +5,14 @@
 <title>fe-note</title>
 <style type="text/css">
   html {
-    /** simsun字体line-height等于字体实际高度 **/
+    /**
+      font-size设置的是em-square的高度，
+      一般字体的em-square的高度与content-area的高度有区别
+    **/
+    /**
+      simsun字体的em-square的高度与conten-area的高度相同，
+      所以它的font-size的值等于content-area的高度
+    **/
     font-family: simsun;
   }
 
@@ -32,6 +39,11 @@
   span,
   sub,
   sup {
+    /**
+      line-height和content-area之间的计算高度差异称为行距
+      这个行距一半在content-area的顶部，另一半在底部
+      content-area始终位于line-height的中间
+    **/
     /**
       line-height,默认normal,可以继承
       120%  font-size*120%(继承时继承的是这个计算后的结果)
