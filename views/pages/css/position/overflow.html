@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+  .container {
+    /* 如果该元素的position不为static，那么后代元素无法溢出可见 */
+    overflow: hidden;
+    background-color: steelblue;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 100px;
+  }
+
+  .dot {
+    width: 50px;
+    height: 50px;
+    margin-left: 100px;
+    background-color: orange;
+  }
+
+  .absolute {
+    /* 所有浏览器，fixed元素能溢出overflow: hidden的容器可见 */
+    position: absolute;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .fixed {
+    /* chrome，safari下fixed元素能溢出overflow: hidden的容器可见 */
+    position: fixed;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class=" absolute dot"></div>
+  </div>
+
+  <div class="container">
+    <div class=" relative dot"></div>
+  </div>
+
+  <div class="container">
+    <div class=" fixed dot"></div>
+  </div>
+</body>
+</html>
