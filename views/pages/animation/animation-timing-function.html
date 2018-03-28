@@ -23,18 +23,19 @@
 }
 
 @keyframes example {
-  /** 从0% -> 50%使用动画函数ease-out **/
   0% {
+    /** 从0% -> 50%，width使用动画函数ease-out **/
+    /** 从0% -> 100%，height使用动画函数ease-out **/
     animation-timing-function: ease-out;
   }
-  /** 从50% -> 100%使用动画函数ease-in **/
   50% {
+    /** 从50% -> 100%，width使用动画函数ease-in **/
     width: 100px;
+    /** 这里没有声明height的值，此帧对于height无效 **/
     animation-timing-function: ease-in;
   }
   100% {
     width: 150px;
-    /** 从0% -> 100%使用动画函数ease-out **/
     height: 150px;
   }
 }
