@@ -4,13 +4,17 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <style type="text/css">
-/** 全局声明变量并赋值 **/
+html {
+  --color: pink;
+}
+
+/** 全局声明变量并赋值(相当于在html上声明变量) **/
 :root {
   --color: red;
   --radix: 1px;
 }
 
-div {
+.normal {
   /** 使用变量 **/
   color: var(--color);
   font-size: calc(var(--radix) * 16);
@@ -35,15 +39,37 @@ div {
   /** background-color: transparent; **/
   background-color: var(--bg-color, steelblue);
 }
+
+.ancestor {
+  --color: steelblue;
+}
+
+.parent {
+  --color: orange;
+}
+
+.child {
+  /** 变量可以继承 **/
+  background-color: var(--color);
+}
 </style>
 </head>
 <body>
-<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem id, laborum saepe modi quidem voluptatem alias doloremque ad asperiores fugit cupiditate sit facilis aliquam, officia commodi cum odit incidunt quia.</div>
+<div class="normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem id, laborum saepe modi quidem voluptatem alias doloremque ad asperiores fugit cupiditate sit facilis aliquam, officia commodi cum odit incidunt quia.</div>
 <hr/>
 <div class="default">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit earum voluptates dolorum ipsum natus, explicabo necessitatibus eos quaerat vitae facilis at laudantium, est tempora aut ullam blanditiis, atque modi amet.</div>
 <hr/>
-<div id="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore natus magni doloremque voluptatum dicta quo suscipit, quibusdam, officiis fugit nostrum mollitia quas pariatur, et. At praesentium sapiente quod, totam officia.</div>
+<div class="normal" id="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore natus magni doloremque voluptatum dicta quo suscipit, quibusdam, officiis fugit nostrum mollitia quas pariatur, et. At praesentium sapiente quod, totam officia.</div>
 <hr/>
 <div class="illegal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi molestiae dolorum sint ipsam deleniti, recusandae qui vitae quidem omnis fuga neque iste labore nam eveniet, ipsum. Voluptatum, expedita laudantium obcaecati.</div>
+<hr/>
+<div class="ancestor">
+  <div class="child">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque architecto officia maiores amet facilis necessitatibus molestias a dolorem, voluptate, fuga ducimus, quae dolores aut enim cum totam provident dolorum veniam!</div>
+  <div class="parent">
+    <div class="child">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione molestiae impedit cumque sint facilis repudiandae dolorum natus officia, quos sequi quod incidunt culpa eveniet unde consectetur adipisci. Dicta, ipsam earum.
+    </div>
+  </div>
+</div>
 </body>
 </html>
