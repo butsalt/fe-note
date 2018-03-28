@@ -5,18 +5,18 @@
 <title>fe-note</title>
 <style type="text/css">
 @keyframes one-frame {
-  /** 从0% -> 100%使用动画函数ease-out **/
+  /** 从0% -> 100%，width使用动画函数ease-out **/
   100% {
     width: 150px;
   }
 }
 
 @keyframes two-frames {
-  /** 从0% -> 50%使用动画函数ease-out **/
+  /** 从0% -> 50%，width使用动画函数ease-out **/
   50% {
     width: 100px;
   }
-  /** 从50% -> 100%使用动画函数ease-out **/
+  /** 从50% -> 100%，width使用动画函数ease-out **/
   100% {
     width: 150px;
   }
@@ -24,15 +24,15 @@
 
 @keyframes example {
   0% {
+    animation-timing-function: ease-out;
     /** 从0% -> 50%，width使用动画函数ease-out **/
     /** 从0% -> 100%，height使用动画函数ease-out **/
-    animation-timing-function: ease-out;
   }
   50% {
+    animation-timing-function: ease-in;
     /** 从50% -> 100%，width使用动画函数ease-in **/
     width: 100px;
     /** 这里没有声明height的值，此帧对于height无效 **/
-    animation-timing-function: ease-in;
   }
   100% {
     width: 150px;
