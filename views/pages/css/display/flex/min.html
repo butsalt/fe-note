@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>fe-note</title>
+  <style>
+      .container {
+        display: flex;
+        width: 500px;
+        background-color: steelblue;
+      }
+
+      .aside {
+        flex: none;
+        width: 200px;
+        height: 300px;
+        background-color: orange;
+      }
+
+      .main {
+        /**
+          https://drafts.csswg.org/css-flexbox/#min-size-auto
+          flex-item的min-width，min-height默认值为auto
+          min-width: auto，相当于声明flex-item的最小宽度由后代元素的宽度决定
+        **/
+        flex: 1 1 0;
+      }
+      
+      .truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="aside"></div>
+    <div class="main">
+      <div>
+        <!-- 由于该元素文本不能换行，所以它的宽度是不换行的文本的宽度 -->
+        <div class="truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor officia ipsum voluptatum ex aspernatur quo iure obcaecati eius, nostrum consequuntur temporibus amet, laboriosam incidunt in adipisci quia cumque, voluptatem tempora?</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
