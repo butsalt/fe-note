@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+  .block {
+    /** 可替换元素即使将它设为block，由于拥有固有宽度，它也不会撑满容器 **/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container {
+    display: flex;
+    width: 300px;
+    background-color: steelblue;
+  }
+
+  .aside {
+    width: 100px;
+    height: 200px;
+    background-color: orange;
+  }
+
+  .main {
+    /** 可替换元素仍然可伸缩 **/
+    flex: 1 1 0;
+  }
+</style>
+</head>
+<body>
+  <!-- https://developer.mozilla.org/zh-CN/docs/Web/CSS/Replaced_element -->
+  <button class="block">btn</button>
+  <div class="container">
+    <div class="aside"></div>
+    <button class="main">btn</button>
+  </div>
+</body>
+</html>
