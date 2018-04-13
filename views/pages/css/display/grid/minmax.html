@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>fe-note</title>
+  <style type="text/css">
+    .container {
+      width: 80vw;
+      height: 100px;
+      display: grid;
+      /** 至少100px，最多容器50%的宽 **/
+      grid-template-columns: minmax(100px, 50%) 1fr 1fr;
+      grid-gap: 10px;
+      grid-template-areas: "main first-dot second-dot";
+      background-color: orange;
+      padding: 10px;
+    }
+
+    .main {
+      grid-area: main;
+      background-color: gray;
+    }
+
+    .first-dot {
+      grid-area: first-dot;
+      background-color: steelblue;
+    }
+
+    .second-dot {
+      grid-area: second-dot;
+      background-color: steelblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main"></div>
+    <div class="first-dot"></div>
+    <div class="second-dot"></div>
+  </div>
+</body>
+
+</html>
