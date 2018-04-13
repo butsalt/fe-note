@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>fe-note</title>
+  <style type="text/css">
+    .container {
+      display: grid;
+      grid-template-columns: 50px 100px;
+      grid-template-rows: 50px 100px 150px;
+      grid-template-areas:
+        "aside header"
+        "aside main"
+        "aside main";
+      grid-column-gap:  10px;
+      grid-row-gap: 10px;
+    }
+
+    .aside {
+      grid-area: aside;
+      background-color: gray;
+    }
+
+    .header {
+      grid-area: header;
+      background-color: steelblue;
+    }
+
+    .main {
+      grid-area: main;
+      background-color: orange;
+      display: subgrid;
+      grid-template-areas:
+        "dot";
+    }
+
+    .dot {
+      grid-area: dot;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="aside"></div>
+    <div class="header"></div>
+    <div class="main">
+      <div class="dot"></div>
+    </div>
+  </div>
+</body>
+
+</html>
