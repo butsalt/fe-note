@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+.container {
+  overflow: auto;
+  width: 200px;
+  height: 200px;
+  background-color: steelblue;
+  margin-bottom: 100px;
+}
+
+.content {
+  background-color: orange;
+  height: 400px;
+}
+
+.margin {
+  margin-top: -100px;
+}
+</style>
+</head>
+<body>
+<!-- scrollHeight === 400 -->
+<div class="container">
+  <div class="margin"></div>
+  <div style="margin-top: 100px;" class="content"></div>
+</div>
+<!-- chrome浏览器，scrollHeight === 500 -->
+<div class="container">
+  <div style="margin-bottom: 100px;" class="content"></div>
+  <!-- chrome浏览器，即使.margin抵消了前一个元素的margin-bottom，scrollHeight仍然包含抵消的部分 -->
+  <div class="margin"></div>
+</div>
+</body>
+</html>
