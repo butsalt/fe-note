@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+</head>
+<body>
+<input type="text" id="target"/>
+<script>
+  (
+    function () {
+      var composing = false;
+
+      var targetEl = document.getElementById('target');
+
+      // blur的时候才触发
+      targetEl.addEventListener('change', function () {
+        console.log('change');
+      });
+    }
+  )();
+</script>
+</body>
+</html>
