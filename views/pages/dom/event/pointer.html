@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>fe-note</title>
+  <style>
+    .rect {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="rect" id="J-target"></div>
+  <script>
+    (
+      function () {
+        var target = document.getElementById('J-target');
+
+        target.addEventListener(
+          'pointerdown',
+          function (e) {
+            // preventDefault后，mousedown事件不会再被触发
+            e.preventDefault();
+            console.log('pointerdown');
+          }
+        );
+
+        target.addEventListener(
+          'mousedown',
+          function () {
+            console.log('mousedown');
+          }
+        );
+      }
+    )();
+  </script>
+</body>
+
+</html>
