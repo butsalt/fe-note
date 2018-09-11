@@ -45,7 +45,17 @@ document.addEventListener('DOMContentLoaded', function () {
       xhr.addEventListener('load', function (e) {
         console.log(xhr.response);
       });
+
       xhr.send(formData);
+      
+      // level1
+      // onreadystatechange
+      // xhr.readyState === 4时，
+      //  xhr.status === 200成功，
+      //  xhr.status !== 200失败
+
+      // level2
+      // onprogress onload onerror onabort
     });
 });
 </script>
