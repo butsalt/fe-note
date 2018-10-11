@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <script type="text/javascript">
-// 默认
+// 缺省值
 //  domain 主机名(location.hostname)
 //  path 当前页面的目录
 //  expires session结束时这份cookie失效(这里指的session仅指浏览器关闭)
@@ -15,6 +15,10 @@
 // 当前页面下cookie允许设置的domain规则与页面允许重设的domain规则相同(查阅../domain.html)
 // path可以任意设置，比如当前页面的path是 /a/b ，此时同样可以将cookie的path设置成 /c/d
 // name，domain，path中的一项不同则被认为是不同的cookie
+
+// domain缺省时，实际设置上的domain不会以'.'开始
+// domain不缺省时，实际设置上的domain以'.'开始
+// 如果当前访问的域名是test.com，如果设置cookie时domain缺省，那么在a.test.com下是不能访问到这个cookie的
 function setCookie({name, value, domain, path, expires, secure}) {
   document.cookie = [
     // 避免key，value中可能包含的'='，' ;'对cookie声明造成影响
