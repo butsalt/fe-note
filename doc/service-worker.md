@@ -14,4 +14,4 @@
 
 # scope
 1. 假设service-worker.js的路径是http://test.com/a/b/sw.js，那么它的scope最多是`/a/b/`
-2. 假设scope是`/a`，那么当浏览器打开`/a`下的资源时(比如`/a/b.html`)，都会激活service worker，该资源触发的请求(包括其本身)都会触发service worker的`fetch`事件
+2. 假设scope是`/a`，那么当浏览器打开`/a`下的资源时(比如`/a/b.html`)，都会激活service worker(即使资源本身没有注册service worker)，该资源触发的请求(包括其本身)都会触发service worker的`fetch`事件
