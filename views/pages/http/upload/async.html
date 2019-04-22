@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // 响应回调
       xhr.addEventListener('load', function (e) {
+        // 即使xhr.status不为200时，load事件也会触发，error事件不会触发
         console.log(xhr.response);
       });
 
@@ -56,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // level2
       // onprogress onload onerror onabort onloadend
-      //  成功时onload被触发，失败时onerror被触发，主动关闭时onabort被触发
-      //  在onload || onerror || onabort触发后，onloadend始终被触发
+      //  服务器有响应时(xhr.status不为0)onload被触发，无法连接服务器时onerror被触发，主动关闭时onabort被触发，超时时ontimeout被触发
+      //  在onload || onerror || onabort || ontimeout 触发后，onloadend始终被触发
     });
 });
 </script>
