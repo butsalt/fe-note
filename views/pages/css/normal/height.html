@@ -18,11 +18,28 @@
   height: 100%;
   padding: 20px;
 }
+
+.percentage-container {
+  width: 400px;
+  height: 400px;
+  border: 50px black solid;
+  padding: 50px;
+  overflow: scroll;
+}
+
+.percentage {
+  /* 父对象去掉border，去掉padding，去掉滚动条后的高度为100% */
+  height: 100%;
+  background-color: orange;
+}
 </style>
 </head>
 <body>
 <div class="outer">
   <div class="inner"></div>
+</div>
+<div class="percentage-container">
+  <div class="percentage"></div>
 </div>
 </body>
 </html>
