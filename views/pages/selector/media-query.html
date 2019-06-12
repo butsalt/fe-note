@@ -10,9 +10,24 @@
       display:none;
     }
   }
+
+  #box {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+  }
+
+  /** 当页面宽度小于等于600px，或页面宽度大于等于1000px时应用 **/
+  @media (max-width: 600px), (min-width: 1000px) {
+    #box {
+      width: 40px;
+      height: 40px;
+    }
+  }
 </style>
 </head>
 <body>
   <div id="target">I'm Here!</div>
+  <div id="box"></div>
 </body>
 </html>
