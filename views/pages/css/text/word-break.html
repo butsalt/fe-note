@@ -21,8 +21,10 @@ p:nth-child(2) {
   word-break: break-all;
 }
 
-/** 不同浏览器下会有差别 **/
-/**只在空格之后，回车之后，连字符('-')之后处允许折行**/
+/** (不同浏览器下会有差别) **/
+/** 在normal情况下，Chinese/Japanese/Korean(CJK)会在任意字符间折行 **/
+/** 在keep-all情况下，CJK折行表现与其他文字表现相同 **/
+/** 也就是说，所有文字都只在标点之后，空格之后，回车之后，连字符('-')之后处允许折行 **/
 p:nth-child(3) {
   word-break: keep-all;
 }
