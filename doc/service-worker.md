@@ -9,6 +9,8 @@
     service worker对应的fetch事件拿到的request mode是`cors`
     link标签引用的字体对应的fetch事件拿到的request mode是`cors`(如果字体资源与页面不是同域的话，字体资源必须开启allow cross origin才可以正常被css使用)
     link标签引用的图片对应的fetch事件拿到的request mode是`no-cors`(如果图片资源与页面不是同域的话，图片资源不开启allow cross origin也可以正常被css使用)
+4. `cache.addAll`，fetch，xhr发起cors请求时，在fetch事件拿到的request.header.get('origin')为undefined
+   crossorigin下的img发起cors请求时，在fetch事件拿到的request.header.get('origin')有值
 
 # import-scripts
 1. 只要service-worker.js的内容不变，即使importScripts引入的代码内容改变，也不会触发service worker安装，importScripts执行的代码始终是最后一次触发安装时引入的代码.
