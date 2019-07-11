@@ -1,5 +1,6 @@
 #typescript
 
+
 ## namespace vs module
 namespace: 用namespace的语法创建全局对象
 module: 用ESNext的模块化语法创建对象
@@ -13,6 +14,7 @@ module: 用ESNext的模块化语法创建对象
 3. 'ES6'模块语法不支持dynamic import
 
 4. 在编译时通过`moduleResolution`告知编译器该如何resolve依赖，'classic'是typescript过去的resolve方式，'node'是目前最流行的，比如`node_modules`，`module/index.js`都包含在'node'提出的resolve方式中
+
 
 ## namespace
 
@@ -31,6 +33,7 @@ module: 用ESNext的模块化语法创建对象
 
   console.log(name);
 ```
+
 
 ## declare关键字
 delcare关键字用于为*本地未实现的*或*本地虽有实现但无法提供typescript类型描述的*module或全局对象提供typescript类型描述
@@ -69,3 +72,9 @@ delcare关键字用于为*本地未实现的*或*本地虽有实现但无法提�
 ```typescript
   console.log(D.name);
 ```
+
+
+### /// <reference>
+1. 用于声明文件间的依赖，当所有文件最终通过`--outFile`打包到一个文件时，如果源代码仅使用namespace来实现，就可以通过`/// <reference>`来调整内容顺序（比如a依赖b，通过reference声明后，b就会先于a被输出）。如果使用了module来实现，就可以不用，因为module本身就描述了依赖关系
+
+2. `/// <reference types="..." />`只在`.d.ts`文件中使用，用于声明新的`.d.ts`依赖了其他`d.ts`中的内容（比如为已存在的namespace补充声明，或是用到了已存在的namespace中的type）
