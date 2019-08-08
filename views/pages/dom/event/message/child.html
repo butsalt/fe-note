@@ -6,12 +6,12 @@
 </head>
 <body>
   msg:
-  <p id="J-msg"></p>
-  <button type="button" id="J-send-parent-msg-btn">to parent</button>
+  <p id="J_msg"></p>
+  <button type="button" id="J_send-parent-msg-btn">to parent</button>
   <script type="text/javascript">
     (function () {
-      var msg = document.getElementById('J-msg');
-      document.getElementById('J-send-parent-msg-btn')
+      var msg = document.getElementById('J_msg');
+      document.getElementById('J_send-parent-msg-btn')
         .addEventListener('click', function () {
           //第一个参数：data 具体信息
           //第二个参数：origin 目标window的源，如果不匹配则信息不会被发送，'*'为任意

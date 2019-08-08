@@ -14,7 +14,7 @@ svg {
   <!-- maskUnits默认值是objectBoundingBox  -->
   <!-- maskUnits控制的是设置mask区域的单位 -->
   <mask
-    id="J-obj-mask"
+    id="J_obj-mask"
     maskUnits="objectBoundingBox"
     x="0"
     y="0"
@@ -25,12 +25,12 @@ svg {
     <!-- 颜色为#000或alpha值为0，就不显示 -->
     <circle cx="150" cy="150" r="100" fill="#fff"/>
   </mask>
-  <rect x="50" y="50" width="200" height="200" fill="red" mask="url(#J-obj-mask)"/>
+  <rect x="50" y="50" width="200" height="200" fill="red" mask="url(#J_obj-mask)"/>
 </svg>
 <hr/>
 <svg width="300" height="300">
   <mask
-    id="J-user-mask"
+    id="J_user-mask"
     maskUnits="userSpaceOnUse"
     x="50"
     y="50"
@@ -41,7 +41,7 @@ svg {
     <!-- 颜色为#000或alpha值为0，就不显示 -->
     <circle cx="150" cy="150" r="100" fill="#fff"/>
   </mask>
-  <rect x="50" y="50" width="200" height="200" fill="red" mask="url(#J-user-mask)"/>
+  <rect x="50" y="50" width="200" height="200" fill="red" mask="url(#J_user-mask)"/>
 </svg>
 </body>
 </html>

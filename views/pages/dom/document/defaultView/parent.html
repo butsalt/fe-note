@@ -6,7 +6,7 @@
 </head>
 <body>
   <p>parent</p>
-  <iframe src="./child.html" id="J-child-frame"></iframe>
+  <iframe src="./child.html" id="J_child-frame"></iframe>
   <script type="text/javascript">
     (function () {
       console.log(
@@ -15,7 +15,7 @@
       );
     })();
     (function () {
-      var childFrame = document.getElementById('J-child-frame');
+      var childFrame = document.getElementById('J_child-frame');
       var childWin = childFrame.contentWindow;
       var childDoc = childWin.document;
       console.log(

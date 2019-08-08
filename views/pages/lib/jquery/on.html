@@ -10,7 +10,7 @@
     // 如果unbind的是'click'，则所有click下的事件都移除
     // 如果unbind的是'click.home'，则只有click.home下的事件才被移除
     // 如果unbind的是'.home'，则所有在home空间下的事件都移除
-    el = $('#J-btn')
+    el = $('#J_btn')
       .on('click.home', function () {
         console.log('home');
       })
@@ -39,6 +39,6 @@
 </script>
 </head>
 <body>
-  <button type="button" id="J-btn">click me</button>
+  <button type="button" id="J_btn">click me</button>
 </body>
 </html>

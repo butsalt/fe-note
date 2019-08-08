@@ -13,14 +13,14 @@ svg {
 <body>
 <svg width="300" height="300">
   <defs>
-    <path d="M0 0 L300 300" id="J-path" stroke="black" id="J-path"/>
+    <path d="M0 0 L300 300" id="J_path" stroke="black" id="J_path"/>
   </defs>
-  <use href="#J-path"/>
+  <use href="#J_path"/>
   <!-- use会被替换成一个g元素 -->
   <!-- use上除x，y，width，height，href外的属性会被拷贝到g元素上 -->
   <!-- use上x="50" y="0" => g上transform="translate(50, 0)" -->
   <!-- use上href指向的内容会被深拷贝，然后放到g元素内 -->
-  <use href="#J-path" d="M300 0 L0 300" x="50" y="0"/>
+  <use href="#J_path" d="M300 0 L0 300" x="50" y="0"/>
 </svg>
 </body>
 </html>

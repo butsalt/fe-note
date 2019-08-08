@@ -6,9 +6,9 @@
 </head>
 <body>
 <div>
-  <div id="J-context" class="J-container">
+  <div id="J_context" class="J_container">
     <!-- 被选中的是这个元素 -->
-    <div class="J-target">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    <div class="J_target">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -16,8 +16,8 @@
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
   </div>
 </div>
-<div class="J-container">
-  <div class="J-target">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+<div class="J_container">
+  <div class="J_target">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -26,18 +26,18 @@
 </div>
 <script type="text/javascript">
 (function () {
-  var contextEl = document.getElementById('J-context');
+  var contextEl = document.getElementById('J_context');
   //选择器执行的上下文是整个文档
   //找到的元素如果在contextEl内，则会被返回
   console.log(
-    contextEl.querySelectorAll('.J-container .J-target')
+    contextEl.querySelectorAll('.J_container .J_target')
   );
 })();
 (function () {
-  var contextEl = document.getElementById('J-context');
+  var contextEl = document.getElementById('J_context');
   //使用:scope可以使选择器执行的上下文限制到contextEl
   console.log(
-    contextEl.querySelectorAll(':scope .J-container .J-target')
+    contextEl.querySelectorAll(':scope .J_container .J_target')
   );
 })();
 </script>

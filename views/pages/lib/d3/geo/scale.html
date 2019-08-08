@@ -11,7 +11,7 @@
 </style>
 </head>
 <body>
-<svg id="J-svg"></svg>
+<svg id="J_svg"></svg>
 <script type="text/javascript">
   (function () {
     var geoJSON = {
@@ -33,7 +33,7 @@
     };
     var width = 400;
     var height = 200;
-    var $svg = d3.select('#J-svg')
+    var $svg = d3.select('#J_svg')
       .attr('width', width)
       .attr('height', height);
     var bbox = d3.geo.bounds(geoJSON);
@@ -59,11 +59,11 @@
     var path = d3.geo.path()
       .projection(projection);
 
-    var $feature = $svg.selectAll('.J-feature')
+    var $feature = $svg.selectAll('.J_feature')
       .data(geoJSON.features);
     $feature.enter()
       .append('path')
-      .classed('J-feature', true)
+      .classed('J_feature', true)
       .attr('fill', 'red');
     $feature.exit()
       .remove();

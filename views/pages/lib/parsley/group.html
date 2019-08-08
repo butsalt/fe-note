@@ -7,11 +7,11 @@
 <script type="text/javascript" src="/assets/lib/parsley/2.4.3/parsley.js"></script>
 <script type="text/javascript">
 $(function () {
-  var $form = $('#J-target-form');
+  var $form = $('#J_target-form');
   var instance = $form
     .parsley();
 
-  $form.find('.J-check-group-1-btn')
+  $form.find('.J_check-group-1-btn')
     .click(function () {
       //只检查标记为group-1下的input
       instance
@@ -20,7 +20,7 @@ $(function () {
         });
     });
 
-  $form.find('.J-check-group-2-btn')
+  $form.find('.J_check-group-2-btn')
     .click(function () {
       //只检查标记为group-2下的input
       instance
@@ -32,7 +32,7 @@ $(function () {
 </script>
 </head>
 <body>
-<form id="J-target-form">
+<form id="J_target-form">
   <div>
     <label>group1:</label>
     <input type="text" name="name" required data-parsley-group="group-1"/>
@@ -41,8 +41,8 @@ $(function () {
     <label>group2:</label>
     <input type="text" name="name" required data-parsley-group="group-2"/>
   </div>
-  <button type="button" class="J-check-group-1-btn">check-group-1</button>
-  <button type="button" class="J-check-group-2-btn">check-group-2</button>
+  <button type="button" class="J_check-group-1-btn">check-group-1</button>
+  <button type="button" class="J_check-group-2-btn">check-group-2</button>
 </form>
 </body>
 </html>

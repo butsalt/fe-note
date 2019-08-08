@@ -30,17 +30,17 @@ $(function () {
       en: 'select 2!'
     }
   });
-  var $form = $('#J-target-form');
+  var $form = $('#J_target-form');
   var formInstance = $form
     .parsley();
 
-  $form.find('.J-normal-check-btn')
+  $form.find('.J_normal-check-btn')
     .click(function () {
       formInstance
         .validate();
     });
 
-  $form.find('.J-force-check-btn')
+  $form.find('.J_force-check-btn')
     .click(function () {
       formInstance
         .validate({
@@ -51,7 +51,7 @@ $(function () {
 </script>
 </head>
 <body>
-<form id="J-target-form">
+<form id="J_target-form">
   <div>
     <label>ID：</label>
     <input type="text" name="id" data-parsley-num/>
@@ -71,8 +71,8 @@ $(function () {
       羽毛球
     </label>
   </div>
-  <button type="button" class="J-normal-check-btn">normal check</button>
-  <button type="button" class="J-force-check-btn">force check</button>
+  <button type="button" class="J_normal-check-btn">normal check</button>
+  <button type="button" class="J_force-check-btn">force check</button>
 </form>
 </body>
 </html>
