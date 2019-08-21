@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+</head>
+<body>
+  <a id="J_dom0" href="https://butsalt.github.io">Dom 0</a>
+  <a id="J_dom2" href="https://butsalt.github.io">Dom 2</a>
+  <script>
+    (
+      () => {
+        document.onclick = () => {
+          console.log('propagation');
+        };
+
+        document.getElementById('J_dom0').onclick = () => {
+          // 相当于preventDefault，没有阻止冒泡的效果
+          return false;
+        };
+
+        document.getElementById('J_dom2').addEventListener(
+          'click',
+          () => {
+            // 无效
+            return false;
+          }
+        );
+      }
+    )();
+  </script>
+</body>
+</html>
