@@ -1,4 +1,4 @@
-#typescript
+# typescript
 
 
 ## namespace vs module
