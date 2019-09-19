@@ -29,9 +29,8 @@ module: 用ESNext的模块化语法创建对象
 ```
 
 ```typescript
-  import { name } from 'D';
-
-  console.log(name);
+  // A是全局对象，直接使用
+  console.log(A.name);
 ```
 
 
