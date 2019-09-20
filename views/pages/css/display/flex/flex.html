@@ -28,7 +28,7 @@
   2 auto = 2 1 auto
   auto = 1 1 auto
   none = 0 0 auto
-  
+
   flex:1 1 auto;
   第一个参数：  当父级容器的主轴上还有空余空间，按照权数参加剩余空间的分配
   第二个参数：  当父级容器的主轴上空间不足，按照权数缩窄
@@ -38,6 +38,8 @@
   **/
   /**
     flex-item在主轴上将失去对空间的控制权，但当在侧轴上如果设置了相应的样式，将会覆盖默认align-items的拉伸效果
+
+    在计算剩余空间时，无论flex-item的flex属性值是什么，主轴方向上flex-item的padding，margin需要先被固定减去，不会参与扩张/紧缩
   **/
 </style>
 </head>
