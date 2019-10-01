@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+  /*
+  * group选择器所有分组必须都是能被当前浏览器能识别的，否则分组下所有选择器都无效
+  * -webkit-开头的伪类选择器即使无法识别也能被chrome，firefox，safari接受
+  */
+  .card,
+  .test::-webkit-test {
+    width: 100px;
+    height: 100px;
+    background-color: steelblue;
+  }
+</style>
+</head>
+<body>
+  <div class="card"></div>
+</body>
+</html>
