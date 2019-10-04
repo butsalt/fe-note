@@ -1,9 +1,9 @@
 # 选项
 
-1. --max-new-space-size=xxx 单位：M
+* --max-new-space-size=xxx 单位：M
 描述：新生代空间，实际使用的空间将会是这个数值的4倍。原因是垃圾回收时需要2倍的空间进行交换，新空间又需要保留2倍用来对齐
 默认设置：32位 16M 64位 32M
 
-2. --max-old-space-size=1024 单位：M
+* --max-old-space-size=1024 单位：M
 描述：旧生代空间
 默认设置：32位 0.7G 64位 1.4G
