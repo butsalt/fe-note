@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style>
+
+</style>
+</head>
+<body>
+<button type="button" id="J_btn">Click</button>
+<script type="text/javascript">
+  (
+    () => {
+      document.getElementById('J_btn')
+        .addEventListener(
+          'click',
+          () => {
+            // 如果不插入到文档流，onload触发后也获取不到图片的尺寸信息
+
+            const imageDom1 = document.createElement('img');
+            imageDom1
+              .addEventListener(
+                'load',
+                () => {
+                  console.log('1 loaded');
+                  console.log(imageDom1.offsetWidth, imageDom1.offsetHeight);
+                },
+                {
+                  once: true
+                }
+              );
+
+            imageDom1.src = '/assets/img/maple-small.jpg';
+
+            document.body.appendChild(
+              imageDom1
+            );
+
+            const imageDom2 = document.createElement('img');
+            imageDom2
+              .addEventListener(
+                'load',
+                () => {
+                  console.log('2 loaded');
+                  console.log(imageDom2.offsetWidth, imageDom2.offsetHeight);
+                },
+                {
+                  once: true
+                }
+              );
+              
+              imageDom2.src = '/assets/img/maple-small.jpg';
+          }
+        );
+    }
+  )();
+</script>
+</body>
+</html>
