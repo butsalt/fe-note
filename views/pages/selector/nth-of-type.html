@@ -4,42 +4,33 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <style type="text/css">
+
+.container {
+  margin: 20px;
+}
+
 /** 元素类型必须为p，同级p元素队列内排第二 **/
 p:nth-of-type(2) {
   color: red;
 }
 
-/** 查找data-target这个属性的元素 **/
+/** 查找带有target这个class的元素 **/
 /** 获取元素的类型，该元素在同级同类型元素队列内须排第二 **/
-[data-target]:nth-of-type(2) {
+.target:nth-of-type(2) {
   font-weight: bold;
 }
 </style>
 </head>
 <body>
-<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-<p data-target>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div>div</div>
+<p>p</p>
+<div>div</div>
+<p class="target">p</p>
+<div class="container">
+  <div>div</div>
+  <p>p</p>
+  <p class="target">p</p>
+  <div class="target">div</div>
+</div>
 </body>
 </html>
