@@ -10,6 +10,8 @@
 //  expires session结束时这份cookie失效(这里指的session仅指浏览器关闭)
 //  secure false
 
+// 一旦cookie过期，就无法通过document.cookie获取，即使进入页面时cookie并没过期
+
 // 设置cookie时不能指定端口号
 
 // 当前页面下cookie允许设置的domain规则与页面允许重设的domain规则相同(查阅../domain.html)
