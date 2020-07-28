@@ -21,3 +21,11 @@
 * `POST`或其他带有消息实体的请求，`xhr`总是会将body以UTF-8进行编码。如果开发者设置了`Content-Type`消息头并且消息头的值有`charset`信息，会将`Content-Type`值的`charset`设成`UTF-8`。如果开发者设置了`Content-Type`消息头并且消息头的值没有`charset`信息，则该消息头保持原样。如果开发者没有设置`Content-Type`消息头，则会根据body的类型来设置，且`charset`总是为`UTF-8`。
 
 * 通过`form`发起`POST`或其他带有消息实体的请求时，可通过设置`form`的`accept-charset`属性来改变消息实体的编码，而`xhr`总是以`UTF-8`进行编码
+
+## withCredentials
+
+* 为`true`时，发送的请求会将与请求地址对应的域下满足条件的`cookie`带给后端
+
+* 为`true`时，响应可以使用`Set-Cookie`消息头在与请求地址对应的域下设置`cookie`
+
+* 为`true`时，响应的消息头`Access-Control-Allow-Credentials`的值必须为`true`，否则浏览器不会解析响应
