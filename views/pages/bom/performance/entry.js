@@ -3,6 +3,14 @@ window.addEventListener('load', () => {
     () => {
       const entries = performance.getEntries();
 
+      // entryType(entry的class类型)
+      // navigation mark resource
+
+      // initiatorType(发起者)
+      // fetch xmlhttprequest
+      // script
+      // link
+      // style 样式表中由url发起
       console.log(entries);
 
       // duration = loadEventEnd - startTime
