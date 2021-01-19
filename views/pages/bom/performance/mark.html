@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<script type="text/javascript">
+  // 开始
+  const start = performance.mark('test-start');
+
+  setTimeout(() => {
+    // 结束
+    const end = performance.mark('test-end');
+
+    // 区间
+    const measure = performance.measure('test', 'test-start', 'test-end');
+
+    console.log(
+      start,
+      end,
+      measure
+    );
+  }, 3000);
+</script>
+</head>
+<body>
+</body>
+</html>
