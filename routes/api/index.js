@@ -16,6 +16,10 @@ router
   .use(
     '/upload',
     require('./upload').routes()
+  )
+  .use(
+    '/performance',
+    require('./performance').routes()
   );
 
 module.exports = router;
