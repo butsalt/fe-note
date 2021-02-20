@@ -75,6 +75,20 @@ text = 'Javascripts';
 console.log(regex.exec(text));
 
 printSeq(10);
+// 匹配的字符串后一定要以#开始
+// (?<=)内的字符串不捕获
+regex = /(?<=#)123/;
+text = '#123';
+console.log(regex.exec(text));
+
+printSeq(11);
+// 匹配的字符串后一定不以#开始
+// (?<!)内的字符串不捕获
+regex = /(?<!#)123/;
+text = '123';
+console.log(regex.exec(text));
+
+printSeq(12);
 // \b定位到单词边界
 regex = /\b\w+\b/g;
 text = 'JavaS cooker';
@@ -82,12 +96,12 @@ console.log(text.match(regex));
 
 // 如果没有m，将^定位到字符串的开头，将$定位到字符串的结尾
 // 如果有m，将^定位到每行的开头，$定位到每行的结尾
-printSeq(11);
+printSeq(13);
 regex = /^\w+$/gm;
 text = 'Java\nScript';
 console.log(text.match(regex));
 
-printSeq(12);
+printSeq(14);
 // match是匹配的字符串  p1,p2...是匹配各个子模式的字符串  offset是匹配的字符串在整个字符串中的位置  string是整个字符串
 // return用来替换match
 function replacer(match, p1, p2, p3, offset, string) {
@@ -95,29 +109,41 @@ function replacer(match, p1, p2, p3, offset, string) {
 }
 console.log('abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer));
 
-printSeq(13);
+printSeq(15);
 // *? +? {1,5}?实现的是最小匹配，"big"已经满足了正则表达式的要求，所以匹配的是"big"
 regex = /".*?"/;
 text = '"big""boy"';
 console.log(regex.exec(text));
 
-printSeq(14);
+printSeq(16);
 // 正则总会寻找字符串中第一个可能匹配的位置
 // 在当前常见下第一个可能匹配的位置是下标0处
 regex = /\d+?a/;
 text = '123a';
 console.log(regex.exec(text));
 
-printSeq(15);
+printSeq(17);
 // (?:expression)，不捕获这个expression分组，如果expression内还有分组依旧可以被正常捕获
 regex = /^\d(?:\d(\d))$/;
 text = '123';
 console.log(regex.exec(text));
 
-printSeq(16);
+printSeq(18);
 // \1可以引用到第一个括号中表达式匹配到的字符串
 regex = /(")([^"]+)(\1)/;
 text = '"guud"';
+console.log(regex.exec(text));
+
+printSeq(19);
+// 给分组命名
+regex = /(?<first>\w+) (?<second>\w+)/;
+text = 'hello world';
+console.log(regex.exec(text));
+
+printSeq(20);
+// 用unicode属性进行匹配
+regex = /\p{Emoji_Presentation}+/u;
+text = 'Hello 👦👧 !';
 console.log(regex.exec(text));
 </script>
 </head>
