@@ -50,6 +50,7 @@
         const shadowRoot = this.attachShadow({mode: 'closed'});
 
         shadowRoot.appendChild(
+          // true会克隆该节点的后代节点
           template.content.cloneNode(true)
         );
 
