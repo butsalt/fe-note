@@ -5,53 +5,62 @@
 <title>fe-note</title>
 </head>
 <body>
-<div class="person">
-  <span class="name-tag">butSalt</span>
-  <span class="age-tag">26</span>
-</div>
-<div class="person">
-  <span class="name-tag">Krista</span>
-  <span class="age-tag">27</span>
-</div>
+  <ui-person name="butSalt" age="30"></ui-person>
+  <ui-person name="Krista" age="31"></ui-person>
+  <div class="container">
+    <div>
+      <span class="label">姓名：</span><span>Liz</span>
+    </div>
+    <div>
+      <span class="label">年龄：</span><span>13</span>
+    </div>
+  </div>
 <!-- template下的内容属于一个新的文档 -->
-<template id="person-tmpl">
+<template id="J_ui-person-tmpl">
   <style>
-  /** 模板中的样式，只作用在模板内部 **/
-  .container {
-    background-color: steelblue;
-    margin-top: 8px;
-  }
-  .name {
-    font-weight: bold;
-  }
+    /** 样式只作用于shadowRoot内部 **/
+    .container {
+      background-color: steelblue;
+      margin-top: 8px;
+    }
+
+    .label {
+      font-weight: bold;
+    }
+
   </style>
   <div class="container">
-    <div class="name">
-      姓名：<content select=".name-tag"></content>
+    <div>
+      <span class="label">姓名：</span><span class="J_name"></span>
     </div>
-    <div class="age">
-      年龄：<content select=".age-tag"></content>
+    <div>
+      <span class="label">年龄：</span><span class="J_age"></span>
     </div>
   </div>
 </template>
 <script>
-//查找模板
-var template = document.getElementById('person-tmpl');
-//将模板注入到宿主节点上
-function transform(host) {
-  var root = host.createShadowRoot();
-  //将模板的内容复制一份，作为子节点插入到宿主节点下
-  //importNode用于将节点从另一个文档中复制出来
-  root.appendChild(
-    document.importNode(template.content, true)
-  );
-}
+  (() => {
+    class UiPerson extends HTMLElement {
+      constructor() {
+        super();
 
-var els = document.querySelectorAll('.person');
-var i, ii;
-for (i = 0, ii = els.length; i < ii; i++) {
-  transform(els[i]);
-}
+        const template = document.getElementById('J_ui-person-tmpl');
+
+        // document.querySelector('ui-person').shadowRoot === null
+        const shadowRoot = this.attachShadow({mode: 'closed'});
+
+        shadowRoot.appendChild(
+          template.content.cloneNode(true)
+        );
+
+        shadowRoot.querySelector('.J_name').innerText = this.getAttribute('name');
+
+        shadowRoot.querySelector('.J_age').innerText = this.getAttribute('age');
+      }
+    }
+
+    customElements.define('ui-person', UiPerson);
+  })();
 </script>
 </body>
 </html>
