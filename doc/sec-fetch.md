@@ -13,4 +13,5 @@
 * `cross-site`，发起者与目标是不同域
 
 ## no-cors -> cors
-当一个`<script>`标签设置了`crossorigin="anonymous"`时，`sec-fetch-mode`就会变成`cors`,不同源的情况下会要求target响应携带Access-Control-Allow-Origin
+* 当一个`<script>`标签设置了`crossorigin="anonymous"`时，`sec-fetch-mode`就会变成`cors`,不同源的情况下会要求target响应携带Access-Control-Allow-Origin
+* 当`<script>`标签设置了`type="module"`时，也会变成cors请求
