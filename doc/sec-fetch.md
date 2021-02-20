@@ -11,3 +11,6 @@
 * `same-origin`，发起者的location.origin与目标的location.origin一致
 * `same-site`，发起者与目标的大域一致(端口号不同，也属于same-site)
 * `cross-site`，发起者与目标是不同域
+
+## no-cors -> cors
+当一个`<script>`标签设置了`crossorigin="anonymous"`时，`sec-fetch-mode`就会变成`cors`,不同源的情况下会要求target响应携带Access-Control-Allow-Origin
