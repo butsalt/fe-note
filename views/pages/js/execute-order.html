@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+</head>
+<body>
+  <div id="J_dom">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae accusantium autem praesentium labore rem, tempora quia fugit iure, aut porro perspiciatis obcaecati rerum quis omnis iste, maxime eius laborum neque.</div>
+<script type="text/javascript">
+  (() => {
+    const dom = document.getElementById('J_dom');
+    dom.style.color = 'red';
+  
+    requestIdleCallback(() => {
+      console.log(8, 'requestIdleCallback');
+    });
+  
+    requestAnimationFrame(() => {
+      // 触发在重绘下一帧之前
+      console.log('repaint');
+    });
+
+    // 宏任务
+    setTimeout(() => {
+      console.log(7, 'setTimeout');
+    }, 0);
+  
+    console.log(1, '同步执行');
+  
+    const channel = new MessageChannel();
+    channel.port1.postMessage('');
+    channel.port2.onmessage = () => {
+      // 宏任务，但执行比setTimeout靠前
+      console.log(6, 'channel message');
+    };
+  
+    (new Promise(
+      resolve => {
+        // 同步执行
+        console.log(2, '同步执行');
+  
+        resolve();
+      }
+    ))
+      .then(() => {
+        // 微任务
+        console.log(4, 'promise.then');
+      })
+      .then(() => {
+        // 微任务
+        console.log(5, 'promise.then');
+      });
+  
+    console.log(3, '同步执行');
+  })();
+  </script>
+</body>
+</html>
