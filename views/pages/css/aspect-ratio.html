@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+  .normal {
+    aspect-ratio: 1 / 1;
+    width: 100px;
+    background-color: orange;
+  }
+
+  .min-height {
+    /* min-* > max-* > * > 内容 > aspect-ratio */
+    aspect-ratio: 1 / 1;
+    width: 100px;
+    min-height: 0;
+    background-color: steelblue;
+  }
+</style>
+</head>
+<body>
+  <div class="normal"></div>
+  <div class="min-height">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam veritatis eum dolorem dolor perferendis officiis nostrum sapiente non nulla delectus rem nesciunt odio voluptatem, repellendus mollitia. In laudantium ex sed.</div>
+</body>
+</html>
