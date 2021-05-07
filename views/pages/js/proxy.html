@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+</head>
+<body>
+<script>
+  (() => {
+    const origin = {
+      name: 'butSalt',
+      _name: 'sdp'
+    };
+
+    const p = new Proxy(
+      origin,
+      {
+        // obj 被代理的原对象
+        // prop 访问的键名
+        // receiver 本次调用的发起者
+        get(obj, prop, receiver) {
+          // 指向handler
+          console.log(this);
+
+          console.log(arguments);
+
+          return obj._name;
+        }
+      }
+    );
+
+    p.name;
+
+    Reflect.get(p, name, { useless: true });
+  })();
+</script>
+</body>
+</html>
