@@ -3,34 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <title>fe-note</title>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function () {
-  var composing = false;
-
-  var msgEl = document.getElementById('msg');
-  var targetEl = document.getElementById('target');
-
-  targetEl.addEventListener('input', function () {
-    if (composing) {
-      return;
-    }
-    msgEl.textContent = this.value;
-  });
-
-  //输入法弹出，发生在input事件之前
-  targetEl.addEventListener('compositionstart', function () {
-    composing = true;
-  });
-
-  //输入法关闭，发生在input事件之前
-  targetEl.addEventListener('compositionend', function () {
-    composing = false;
-  });
-});
-</script>
 </head>
 <body>
 <p>I say:&nbsp;<span id="msg"></span></p>
 <input type="text" id="target"/>
+<script type="text/javascript">
+  (() => {
+    /**
+     * windows部分版本下自带中文输入法的bug
+     * 即使只是输入英文,数字也会触发composition事件
+     * 比如输入'1'，执行顺序是
+     * compositionstart
+     * input
+     * input
+     * compositionend
+     * 如果要修改输入框中的内容(比如增加千分位符)，应在compositionend后再进行
+     * 否则的话会出现重复输入的问题，并且compositionend事件会丢失
+     * 比如现在的逻辑是在input事件时在尾部追加'1'
+     * 用户输入 '1'
+     * 期待的结果是 '11'
+     * 实际的结果是 '1111'
+     * 
+     * 原因
+     * 第一次input事件触发时，输入框修改前的值是'1'，修改后的值是'11'
+     * 第二次input事件触发时，输入框修改前的值是'111'，修改后的值是'1111'
+     **/
+    let composing = false;
+  
+    const msgEl = document.getElementById('msg');
+    const targetEl = document.getElementById('target');
+  
+    targetEl.addEventListener('input', function () {
+      if (composing) {
+        return;
+      }
+      msgEl.textContent = this.value;
+    });
+  
+    //输入法弹出，发生在input事件之前
+    targetEl.addEventListener('compositionstart', function () {
+      composing = true;
+    });
+  
+    //输入法关闭
+    // firefox发生在inpu事件之前
+    // chrome，safari发生在input事件之后
+    targetEl.addEventListener('compositionend', function () {
+      composing = false;
+      msgEl.textContent = this.value;
+    });
+  })();
+  </script>
 </body>
 </html>
