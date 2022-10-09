@@ -5,24 +5,29 @@
 <title>fe-note</title>
 <style type="text/css">
   /*
-  * 等同于 div > h1, div > h2, div > h3
+  * 对后代元素有h1标签的div生效
   * 优先级由括号内选择器的优先级确定
   * 0, 0, 0, 2
   */
-  div > :is(h1, h2, h3) {
+  div:has(h1) {
     color: red;
   }
 
-  div h1 {
-    color: black;
+  div {
+    color: steelblue;
   }
 </style>
 </head>
 <body>
   <div>
     <h1>h1</h1>
+  </div>
+  <div>
     <h2>h2</h2>
+  </div>
+  <div>
     <h3>h3</h3>
+  </div>
   </div>
 </body>
 </html>
