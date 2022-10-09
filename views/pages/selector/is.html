@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+  /*
+  * 等同于 div > h1, div > h2, div > h3
+  */
+  div > :is(h1, h2, h3) {
+    color: red;
+  }
+
+  div >  h1 {
+    color: black;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+  </div>
+</body>
+</html>
