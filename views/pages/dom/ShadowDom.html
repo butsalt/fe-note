@@ -5,21 +5,19 @@
 <title>fe-note</title>
 </head>
 <body>
-  <ui-person name="butSalt" age="30"></ui-person>
-  <ui-person name="Krista" age="31"></ui-person>
-  <div class="container">
-    <div>
-      <span class="label">姓名：</span><span>Liz</span>
-    </div>
-    <div>
-      <span class="label">年龄：</span><span>13</span>
-    </div>
+  <header>
+    <ui-person name="header" age="25"></ui-person>
+  </header>
+  <ui-person name="normal" age="26"></ui-person>
+  <ui-person class="important" name="important" age="27"></ui-person>
   </div>
 <!-- template下的内容属于一个新的文档 -->
 <template id="J_ui-person-tmpl">
   <style>
     /** 样式只作用于shadowRoot内部 **/
-    .container {
+
+    :host {
+      display: block;
       background-color: steelblue;
       margin-top: 8px;
     }
@@ -28,15 +26,20 @@
       font-weight: bold;
     }
 
+    :host-context(header) .name {
+      font-style: italic;
+    }
+
+    :host(.important) {
+      background-color: red;
+    }
   </style>
-  <div class="container">
-    <div>
+    <div class="name">
       <span class="label">姓名：</span><span class="J_name"></span>
     </div>
-    <div>
+    <div class="age">
       <span class="label">年龄：</span><span class="J_age"></span>
     </div>
-  </div>
 </template>
 <script>
   (() => {
