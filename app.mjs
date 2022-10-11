@@ -16,7 +16,9 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload({
+  // busboy配置
   // 用于解析FormDataItem的内容
+  // busboy可以解析整个表单，但fileUpload只解析表单中的文件，所以这个设置项意义不大
   defCharset: 'utf8',
   // 用于解析FormDataItem的Content-Disposition头部的内容
   defParamCharset: 'utf8'
