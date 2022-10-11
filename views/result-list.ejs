@@ -12,11 +12,11 @@
 <body>
 <h1>Result List</h1>
 <ul>
-  {% for result in resultList %}
+  <% resultList.forEach(item => { %>
     <li>
-      {{ result }}
+      <%= item %>
     </li>
-  {% endfor %}
+  <% }) %>
 </ul>
 </body>
 </html>

@@ -2,10 +2,9 @@
   "name": "fe-note",
   "version": "1.0.0",
   "description": "my front end note",
-  "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run dev",
+    "dev": "node app.mjs"
   },
   "repository": {
     "type": "git",
@@ -22,12 +21,9 @@
   },
   "homepage": "https://github.com/butsalt/fe-note#readme",
   "dependencies": {
-    "busboy": "^0.2.14",
-    "koa": "^2.2.0",
-    "koa-bodyparser": "^4.2.0",
-    "koa-router": "^7.2.0",
-    "koa-send": "^4.1.0",
-    "koa-views": "^6.0.2",
-    "nunjucks": "^3.0.1"
+    "cookie-parser": "1.4.6",
+    "ejs": "3.1.8",
+    "express": "4.18.2",
+    "express-fileupload": "1.4.0"
   }
 }

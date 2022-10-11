@@ -12,20 +12,20 @@
 <body>
 <h1>Page List</h1>
 <ul>
-  {% if not isRoot %}
+  <% if (isRoot) { %>
     <li>
       <a href="../">
         ..
       </a>
     </li>
-  {% endif %}
-  {% for item in pages %}
+  <% } %>
+  <% pages.forEach(item => { %>
     <li>
-      <a href="./{{ item }}">
-        {{ item }}
+      <a href="./<%= item %>">
+        <%= item %>
       </a>
     </li>
-  {% endfor %}
+  <% }); %>
 </ul>
 </body>
 </html>
