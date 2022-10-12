@@ -2,7 +2,7 @@
 这里记录了我的前端笔记。
 
 ## Requirements
-* node版本需要在7.6.0或更高
+* node版本需要在16.17.1或更高
 
 ## Run
 1. npm install
