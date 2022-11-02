@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // method url async
       xhr.open('POST', '/api/upload/', true);
 
+      // 需要xhr.readyState不为XMLHttpRequest.LOADING，且不为XMLHttpRequest.DONE时才能设置
       // 用json格式解析响应信息
       xhr.responseType = 'json';
 
