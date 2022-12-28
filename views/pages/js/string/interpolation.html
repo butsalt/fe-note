@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<script type="text/javascript">
+(() => {
+  function interpolation (strs) {
+    console.log(strs);
+
+    console.log(strs[0] === '\n');
+    console.log(strs.raw[0] === '\\n');
+
+    console.log(strs[1] === '\n');
+    console.log(strs.raw[1] === '\n');
+  }
+
+  const name = 'butSalt';
+  interpolation`\n${name}
+`
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
