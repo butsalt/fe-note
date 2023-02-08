@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, ipsam repellat officiis saepe nisi, quibusdam, provident porro et maxime reprehenderit ullam. Sit optio doloremque, tenetur eum nihil fugiat officiis non?</p>
+  <script>
+    const style = document.createElement('style');
+    console.log(style.sheet === null);
+
+    // style只有添加到文档流后才会有sheet属性
+    document.body.appendChild(style);
+    style.sheet.insertRule('p { color: red; }', 0);
+    console.log(style.sheet.cssRules.length === 1);
+    const sheet = style.sheet;
+
+    // style从文档流移除后，sheet会被移除，所有添加的rule失效
+    document.body.removeChild(style);
+    console.log(style.sheet === null);
+  </script>
+</body>
+</html>
