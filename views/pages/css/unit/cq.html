@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<style type="text/css">
+  /* https://www.zhangxinxu.com/wordpress/2022/09/css-container-rule/ */
+  /* https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_container_queries */
+  .outer {
+    /* 容器元素类型：size是行方向和块方向都考虑的容器，inline是只考虑行方向的容器 */
+    container-type: size;
+    background-color: steelblue;
+    width: 200px;
+    height: 100px;
+  }
+
+  .inner {
+    background-color: orange;
+    /* 相对容器宽度50% */
+    width: 50cqw;
+    /* 相对容器高度50% */
+    height: 50cqh;
+  }
+</style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner"></div>
+  </div>
+</body>
+</html>
