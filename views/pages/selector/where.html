@@ -4,22 +4,24 @@
 <meta charset="UTF-8">
 <title>fe-note</title>
 <style type="text/css">
-  h1 {
-    color: black;
-  }
-
   /*
-  * 等同于 div > h1, div > h2, div > h3
-  * 与:is的区别是，where会将选择器的优先级降到0
+  * 近似等同于 div > h1, div > h2, div > h3
+  * 与:is的区别是，:where选择器内的表达式不参与选择器优先级的计算
+  * 0, 0, 0, 1
   */
   div > :where(h1, h2, h3) {
     color: red;
+  }
+
+  /* 0, 0, 0, 1 */
+  h1 {
+    color: black;
   }
 </style>
 </head>
 <body>
   <div>
-    <h1>h1</h1>
+    <h1 class="c">h1</h1>
     <h2>h2</h2>
     <h3>h3</h3>
   </div>

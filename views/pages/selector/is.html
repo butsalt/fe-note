@@ -6,13 +6,14 @@
 <style type="text/css">
   /*
   * 等同于 div > h1, div > h2, div > h3
-  * 优先级由括号内选择器的优先级确定
+  * :is选择器的优先级由:is选择器内的表达式决定
   * 0, 0, 0, 2
   */
   div > :is(h1, h2, h3) {
     color: red;
   }
 
+  /* 0, 0, 0, 2 */
   div h1 {
     color: black;
   }
