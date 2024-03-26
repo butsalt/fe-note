@@ -29,6 +29,7 @@ window.addEventListener('load', function () {
 
 <!-- defer使得js文件加载与后续文档解析同时进行 -->
 <!-- js执行发生在文档中dom元素初始化完成之后，触发document的DOMContentLoaded事件之前 -->
+<!-- 早期带defer属性的js不会等待已解析的样式表加载完成就开始执行，现在会等待(https://github.com/whatwg/html/issues/3890) -->
 <!-- 带defer属性的js执行顺序与这些js出现在文档中的顺序相同 -->
 <script type="text/javascript" src="./defer-1.js" defer></script>
 <script type="text/javascript" src="./defer-2.js" defer></script>
