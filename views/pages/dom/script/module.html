@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fe-note</title>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('module脚本执行完后才触发');
+  });
+</script>
+<script type="module">
+  // type="module"的script自动defer，会在文档解析完成，样式加载后才执行
+  const style = window.getComputedStyle(document.querySelector('div'));
+  console.log(style.fontSize === '100px');
+</script>
+</head>
+<body>
+  <link rel="stylesheet" type="text/css" href="/api/css/long-time.css"></link>
+  <div id="J_target">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus blanditiis perspiciatis, tenetur quo numquam accusantium quia aperiam aliquid rem dolorum, possimus architecto inventore itaque tempore ratione dolore vitae dolor voluptatem!</div>
+</body>
+</html>
