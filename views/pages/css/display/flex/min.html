@@ -23,7 +23,10 @@
         /**
           https://drafts.csswg.org/css-flexbox/#min-size-auto
           flex-item的min-width，min-height默认值为auto
-          min-width: auto，相当于声明flex-item的最小宽度由后代元素的宽度决定
+          min-width: auto，
+          如果flex-item的overflow为visible，相当于声明flex-item的最小宽度由后代元素的内容决定：
+          the minimum size is determined by the length of the longest string of characters that cannot be broken
+          如果flex-item的overflow不为visible，则最小宽度为0
         **/
         flex: 1 1 0;
         background-color: rgba(0, 0, 0, .1);
