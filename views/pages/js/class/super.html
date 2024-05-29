@@ -10,7 +10,7 @@
       this.name = name;
     }
 
-    say() {
+    parentSay() {
       console.log(this.name);
     }
   }
@@ -21,16 +21,16 @@
       this.age = age;
     }
 
-    say() {
-      // super指向定义了方法的对象的prototype
-      // 当前方法定义在Child.prototype上，那么super就指向Object.getPrototypeOf(Child.prototype)，也就是Parent.prototype
-      super.say();
+    childSay() {
+      // super指向定义了方法的对象的prototype，并且这种指向不能像this一样可以通过call/apply进行改变
+      // childSay定义在Child.prototype上，那么super就指向Object.getPrototypeOf(Child.prototype)，也就是Parent.prototype
+      super.parentSay();
       console.log(this.age);
     }
   }
 
   var obj = new Child('butSalt', 27);
-  obj.say();
+  obj.childSay();
 })();
 </script>
 </head>
