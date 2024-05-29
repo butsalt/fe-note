@@ -22,6 +22,8 @@
     }
 
     say() {
+      // super指向定义了方法的对象的prototype
+      // 当前方法定义在Child.prototype上，那么super就指向Object.getPrototypeOf(Child.prototype)，也就是Parent.prototype
       super.say();
       console.log(this.age);
     }
