@@ -5,8 +5,12 @@
 <title>fe-note</title>
 <script type="text/javascript">
 function printTargetInfo() {
-  var targetEl = document.getElementById('target');
-  console.log('target: ' + targetEl.offsetWidth + ' x ' + targetEl.offsetHeight);
+  const text = document.getElementById('J_text');
+  const textStyle = getComputedStyle(text);
+  console.log('text font size:' + textStyle.fontSize);
+
+  const img = document.getElementById('J_img');
+  console.log('img: ' + img.offsetWidth + ' x ' + img.offsetHeight);
 }
 
 // 当文档中dom元素初始化完成时被执行
@@ -22,9 +26,11 @@ window.addEventListener('load', function () {
   printTargetInfo();
 });
 </script>
+<link rel="stylesheet" href="/api/css/long-time.css" />
 </head>
 <body>
-<img id="target" src="http://placehold.it/400x400"/>
+<div id="J_text">123</div>
+<img id="J_img" src="https://placehold.it/400x400"/>
 <!-- js文件默认是立即加载并执行 -->
 
 <!-- defer使得js文件加载与后续文档解析同时进行 -->
